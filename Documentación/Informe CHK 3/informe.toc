@@ -1,0 +1,19 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Objetivo}{2}{}%
+\contentsline {section}{\numberline {2}Desarrollo}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Fabricación de la PCB}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Mediciones}{2}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Banco de Pruebas}{2}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Regulación de carga estática y dinámica}{2}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Regulación de línea}{2}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Limitación de corriente}{2}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}Eficiencia}{2}{}%
+\contentsline {section}{\numberline {3}Simulaciones}{2}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{2}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{3}{}%
+\contentsline {subsection}{\numberline {A.1}LDO}{3}{}%
+\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{4}{}%
+\contentsline {subsection}{\numberline {B.1}LDO}{4}{}%
+\contentsline {section}{\numberline {C}Apéndice III: PCB}{5}{}%
+\contentsline {subsection}{\numberline {C.1}LDO capa superior}{6}{}%
+\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{7}{}%

@@ -1,0 +1,214 @@
+
+\documentclass[]{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1.5cm,top=1.5cm,bottom=1.5cm,a4paper]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec} % Required for customizing section titles
+\usepackage[margin=1.5cm,top=1.5cm, bottom=1.5cm]{geometry} % Ajusta los márgenes aquí
+\usepackage{multicol} % Required for multicols environment
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{dingbat}
+\usepackage{booktabs} 
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{placeins}
+
+\newif\ifcheckpoint
+\checkpointfalse
+
+% función que devuelve color según checkpoint
+\newcommand{\checkpointcolor}[1]{%
+	\ifcase#1
+	yellow%
+	\or blue%
+	\or green%
+	\or red%
+	\or orange%
+	\else gray%
+	\fi
+}
+\newcommand{\checkpointstart}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Inicio checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\newcommand{\checkpointend}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Fin checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{babel}
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+citestyle=apa
+]{biblatex}
+
+\addbibresource{referencias.bib}
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		
+		\centering
+		{\includegraphics[scale=0.5]{img/Caratula.jpg}}
+		
+		\centerline
+		
+		{\bfseries\LARGE Taller de Diseño de Circuitos Electrónicos   \par}
+		
+		{\bfseries\LARGE TA138  \par}
+		\vspace{.5cm}
+		{\scshape\Large Facultad de Ingenier\'ia Universidad de Buenos Aires \par}
+		\vspace{1.5cm}
+		%{\scshape\Huge Trabajo Pr\'actico \par}
+		{\scshape\Huge Diseño de Fuente de Alimentación \par}
+		\vspace{2cm}
+		{\scshape\Large Checkpoint 3: Caracterización y validación de regulador lineal con lazo de tensión y corriente.\par}
+		
+		
+		\vspace{2cm}
+		
+		\begin{tabular}{ p{4cm} p{2cm} p{4cm}}
+			\textbf{Alumnos:} & \textbf{Padr\'on:} & \textbf{Mail:} \\
+			Lazo, Sebastian Nahuel & 106213 &slazo@fi.uba.ar \\
+			Flores, Ahmed Ali & 106238 & aaflores@fi.uba.ar  \\
+			Mántaras, Ramiro  & 111510 &rmantaras@fi.uba.ar \\
+			
+		\end{tabular}
+		
+		
+		\vspace{1cm}
+		
+		\begin{tabular}{ p{6cm} p{6cm} p{6cm}}
+			\textbf{Docentes:}  
+			\\Teóricas: Julio Zola & Tutor: Sergio Andres Quinteros  
+		\end{tabular}
+		
+	\end{titlepage}
+	
+	
+	\newpage
+	
+	
+	\tableofcontents \label{Indice}
+	\newpage
+	
+	\checkpointstart{1}
+	\section{Objetivo}
+
+	Continuando con el diseño de un regulador lineal que cumpla con las especificaciones definidas en informes previos, en este \textit{checkpoint} se avanza hacia su implementación en un prototipo de circuito impreso (PCB), con el fin de caracterizar y validar experimentalmente las prestaciones obtenidas en la etapa de diseño.
+	
+	\section{Desarrollo}
+	
+	\subsection{Fabricación de la PCB}
+	
+	
+	\subsection{Mediciones} 
+	\subsubsection{Banco de Pruebas}
+	
+	\subsubsection{Regulación de carga estática y dinámica}
+	
+	\subsubsection{Regulación de línea}
+	
+	\subsubsection{Limitación de corriente}
+	
+	\subsubsection{Eficiencia}
+
+	\section{Simulaciones}
+	\label{sec:simulaciones}
+	
+	\input{conclusiones}
+
+	{\footnotesize
+		\printbibliography
+	}
+	
+	
+	\appendix
+	\begin{landscape}
+	\section{Apéndice I: Simulaciones}
+	\label{sec:apendice_simulaciónes}
+	
+	\subsection{LDO}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/LDO/Esquematico_LDO_LTSPICE2}
+		\caption{Captura de simulación en LtSpice.}
+		\label{fig:esquematicoldoltspice}
+	\end{figure}
+
+	\section{Apéndice II: Esquemáticos}
+	\label{sec:apendice_esquematicos}
+		
+	\subsection{LDO}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/LDO/esquematico_kicad_LDO}
+		\caption{Esquemático de la implementación del regulador lineal LDO.}
+		\label{fig:esquematicokicadldo}
+	\end{figure}
+	\end{landscape}
+\section{Apéndice III: PCB}
+\label{sec:apendice_PCB}
+
+\includepdf[
+pages=1,
+pagecommand={
+	\subsection{LDO capa superior}
+}
+]{img/LDO/pistas_LDO.pdf}
+
+\includepdf[
+pages=1,
+pagecommand={
+	\subsection{LDO capa inferior}
+}
+]{img/LDO/pistas_LDO_inferior.pdf}
+
+	
+\end{document}

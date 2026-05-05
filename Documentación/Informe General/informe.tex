@@ -1,0 +1,2085 @@
+
+\documentclass[]{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1.5cm,top=1.5cm,bottom=1.5cm,a4paper]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec} % Required for customizing section titles
+\usepackage[margin=1.5cm,top=1.5cm, bottom=1.5cm]{geometry} % Ajusta los márgenes aquí
+\usepackage{multicol} % Required for multicols environment
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{dingbat}
+\usepackage{booktabs} 
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{placeins}
+
+\newif\ifcheckpoint
+\checkpointtrue
+
+% función que devuelve color según checkpoint
+\newcommand{\checkpointcolor}[1]{%
+	\ifcase#1
+	yellow%
+	\or blue%
+	\or green%
+	\or red%
+	\or orange%
+	\else gray%
+	\fi
+}
+\newcommand{\checkpointstart}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Inicio checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\newcommand{\checkpointend}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Fin checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{babel}
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+citestyle=apa
+]{biblatex}
+
+\addbibresource{referencias.bib}
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		
+		\centering
+		{\includegraphics[scale=0.5]{img/Caratula.jpg}}
+		
+		\centerline
+		
+		{\bfseries\LARGE Taller de Diseño de Circuitos Electrónicos   \par}
+		
+		{\bfseries\LARGE TA138  \par}
+		\vspace{.5cm}
+		{\scshape\Large Facultad de Ingenier\'ia Universidad de Buenos Aires \par}
+		\vspace{1.5cm}
+		%{\scshape\Huge Trabajo Pr\'actico \par}
+		{\scshape\Huge Diseño de Fuente de Alimentación \par}
+		\vspace{2cm}
+		{\scshape\Large Checkpoint 2: Compensación de lazos y análisis térmico. \par}
+		
+		
+		\vspace{2cm}
+		
+		\begin{tabular}{ p{4cm} p{2cm} p{4cm}}
+			\textbf{Alumnos:} & \textbf{Padr\'on:} & \textbf{Mail:} \\
+			Lazo, Sebastian Nahuel & 106213 &slazo@fi.uba.ar \\
+			Flores, Ahmed Ali & 106238 & aaflores@fi.uba.ar  \\
+			Mántaras, Ramiro  & 111510 &rmantaras@fi.uba.ar \\
+			
+		\end{tabular}
+		
+		
+		\vspace{1cm}
+		
+		\begin{tabular}{ p{6cm} p{6cm} p{6cm}}
+			\textbf{Docentes:}  
+			\\Teóricas: Julio Zola & Tutor: Sergio Andres Quinteros  
+		\end{tabular}
+		
+	\end{titlepage}
+	
+	
+	\newpage
+	
+	
+	\tableofcontents \label{Indice}
+	\newpage
+	
+	\checkpointstart{1}
+	\section{Objetivo}
+
+	
+	Se propone el diseño, validación e implementación de un sistema electrónico capaz de generar una tensión regulada de 5 V a partir de una fuente de alimentación proveniente de una batería cuya tensión puede variar en un amplio rango comprendido entre 12 V y 30 V. Además de garantizar una salida estable, el sistema debe ser energéticamente eficiente, ya que en aplicaciones reales la eficiencia de conversión es un aspecto fundamental para reducir pérdidas de potencia, calentamiento y consumo energético.
+	
+	
+	El diseño resultante tiene como objetivo combinar alta eficiencia energética, estabilidad de la tensión de salida y confiabilidad operativa, características fundamentales en sistemas de alimentación destinados a cargas como
+	microprocesadores, sensores y transceptores de comunicación, tanto para aplicaciones automotrices como industriales.
+	
+	En total, el dispositivo debe contar con las siguientes especificaciones:
+	
+	\begin{table}[h]
+		\centering
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|p{3cm}|l|l|c|c|c|c|}
+			\hline
+			\textbf{Característica} & \textbf{Símbolo} & \textbf{Condiciones de prueba} & \textbf{Min.} & \textbf{Tip.} & \textbf{Max.} & \textbf{Unidades} \\
+			\hline
+			
+			\multicolumn{7}{|l|}{\textbf{Especificaciones Generales}} \\
+			\hline
+			
+			Rango de operación tensión de entrada & VIN &  & 12 & 24 & 30 & V \\
+			\hline
+			
+		%	VIN UVLO \par arranque & VIN\_UVLO\_START & VIN creciendo &  &  &  & V \\
+		%	\hline
+			
+		%	VIN UVLO \par apagado & VIN\_UVLO\_STOP & VIN decreciendo &  &  &  & V \\
+		%	\hline
+			
+		%	VIN UVLO \par histéresis & VIN\_UVLO\_HYST &  &  &  &  & V \\
+		%	\hline
+			
+		%	\multirow{2}{3cm}{Corriente de alimentación inactivo} & IQ & VIN=12V &  &  &  & mA \\
+		%	\cline{2-7}
+		%	& IQ\_Sleep & ENABLE=0 &  &  &  & mA \\
+		%	\hline
+		\end{tabular}
+		\caption{Especificaciones Generales.}
+	\end{table}
+	
+	\section{Desarrollo}
+	
+	La construcción del dispositivo se divide en dos secciones: 
+	\begin{itemize}
+		\item \textbf{Fuente Switching}: Encargada de pre-regular la tensión de forma eficiente desde la fuente de energía hacia el regulador lineal.
+		\item \textbf{Regulador Lineal}: Sacrifica eficiencia a cambio de precisión y control. Interactúa de forma directa con la carga.
+	\end{itemize}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/esquema_general}
+		\caption{Esquema general del dispositivo.}
+		\label{fig:esquemageneral}
+	\end{figure}
+
+	\subsection{Fuente de alimentación conmutada}
+	
+	
+	\subsection{Regulador de baja caída (LDO,Low Dropout Regulator)}
+	
+	\subsubsection{Especificaciones e implementación}
+	\FloatBarrier
+	El propósito de esta etapa es regular la tensión de salida de la fuente conmutada de forma precisa, sacrificando la eficiencia. Se espera de esta etapa las especificaciones de la tabla \ref{tabla:especificaciones_ldo}.
+	
+	\begin{table}[h]
+		\centering
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|p{3cm}|l|p{5cm}|c|c|c|c|}
+			\hline
+			\textbf{Característica} & \textbf{Símbolo} & \textbf{Condiciones de prueba} & \textbf{Min.} & \textbf{Tip.} & \textbf{Max.} & \textbf{Unidades} \\
+			\hline
+			
+			\multicolumn{7}{|l|}{\textbf{Especificaciones regulador lineal Vo}} \\
+			\hline
+			
+			Vo exactitud y regulación de carga & Vo & $\SI{100}{mA} < I_{out} < \SI{1.5}{A}$ \break $VREG = \SI{9.5}{V}$ & 4,9 & 5 & 5,1 & V \\
+			\hline
+			
+			Vo rango de capacidad de carga & COUT(Vo) &  & 1,0 & 2,2 & 15,0 & \si{\micro\farad} \\
+			\hline
+			
+			Io corriente límite & ILIM(Vo) &  &  & 1,5 &  & A \\
+			\hline
+			
+			Corriente de foldback & IFBK &  &  & 400 &  & \si{mA} \\
+			\hline
+		
+			%\multirow{2}{3cm}{Vo startup time} & t(start) & $C = \SI{2.2}{\micro\farad},\ I = \SI{100}{\milli\ampere}$ &  &  &  & ms \\
+			%\cline{2-7}
+			% & t(start) & $C = \SI{2.2}{\micro\farad},\ I = \SI{100}{\milli\ampere}$ &  &  &  & ms \\
+			%\hline
+		\end{tabular}
+		
+		\caption{Especificaciones del regulador lineal LDO.}
+		\label{tabla:especificaciones_ldo}
+	\end{table}
+	
+Para la implementación, se utilizará un transistor de paso, responsable de disipar la potencia de recorte, realimentado por tensión y corriente, y se modela la entrada de tensión pre-regulada con una componente continua y una alterna de acuerdo a la figura \ref{fig:bloques_ldo}.
+
+\begin{figure}[h]
+	\centering
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\node[op amp, xscale=-0.78, yscale=-0.78] at (14.572, 8.132){};
+	\draw (11, 12) to[american voltage source, mirror, l_={$V_{cc}$}] (11, 10);
+	\draw (11, 12) to[sinusoidal voltage source, l={$v_{ac}$}] (11, 14);
+	\node[pigfete, rotate=90](N1) at (17.27, 14){} node[anchor=south] at (N1.text){$T_p$};
+	\draw (11, 14) -- (16.5, 14);
+	\node[spdt, rotate=-90] at (17, 11.5){};
+	\draw (21, 12) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_L$}] (21, 10);
+	\draw (15, 12.75) to[push button] (16.5, 12.75);
+	\draw (16.5, 12.75) -| (17, 13.02);
+	\draw (15, 12.75) -- (14.5, 12.75) -- (14.5, 14);
+	\draw (12.5, 10.75) to[full ZZener diode, mirror, /tikz/circuitikz/bipoles/length=0.700cm] (12.5, 12.25);
+	\draw (12.5, 12.25) -| (12.5, 14);
+	\draw (12.5, 10.75) |- (11, 10);
+	\draw (21, 10) -- (12.5, 10);
+	\node[shape=rectangle, draw, line width=1pt, minimum width=0.965cm, minimum height=1.465cm] at (12.5, 11.5){};
+	\draw (13, 11.5) -- (13.5, 11.5);
+	\node[circ](N2) at (13.5, 11.5){} node[anchor=west] at (N2.text){$v_{ref}$};
+	\draw (17, 12.095) -| (17, 12.75);
+	\draw (15.5, 7.75) -- (15.75, 7.75);
+	\node[circ](N3) at (15.75, 7.75){} node[anchor=west] at (N3.text){$v_{ref-t}$};
+	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=1.215cm] at (18.5, 8.125){};
+	\draw (19, 8.5) -| (20, 12) -- (21, 12);
+	\draw (19, 7.75) -| (21, 10);
+	\draw (18, 8.5) to[american controlled voltage source, mirror, /tikz/circuitikz/bipoles/length=0.700cm] (18, 7.75);
+	\draw (18, 8.5) |- (15.5, 8.514);
+	\draw (18, 7.75) -- (17.25, 7.75) -- (17, 7.75) -| (17, 7.25);
+	\node[op amp, xscale=-0.78, yscale=-0.78] at (14.572, 6.257){};
+	\draw (15.5, 5.875) -- (15.75, 5.875);
+	\node[circ](N4) at (15.75, 5.875){} node[anchor=west] at (N4.text){$v_{ref-c}$};
+	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=1.215cm] at (18.5, 6.25){};
+	\draw (18, 6.625) to[american controlled voltage source, mirror, /tikz/circuitikz/bipoles/length=0.700cm] (18, 5.875);
+	\draw (18, 6.625) |- (15.5, 6.639);
+	\draw (18, 5.875) -- (17.25, 5.875) -- (17, 5.875) -| (17, 5.375);
+	\draw (19, 6.5) -| (22, 12.5) -- (21, 12.5);
+	\draw (21, 13.25) -- (22.75, 13.25) |- (19, 6);
+	\draw (19, 6.5) -| (19, 6);
+	\draw (21, 12) -| (21, 12.5);
+	\draw (21, 13.25) |- (18.04, 14);
+	\node[tlground] at (17, 5.375){};
+	\node[tlground] at (17, 7.25){};
+	\draw (13.644, 6.257) -| (13, 6.25) -| (13, 9.75) -- (16.5, 9.75) -| (16.685, 10.905);
+	\draw (13.644, 8.132) |- (17.25, 9.25) -| (17.315, 10.905);
+	\node[shape=rectangle, minimum width=0.715cm, minimum height=0.715cm] at (18.5, 9.125){} node[anchor=north west, align=left, text width=0.327cm, inner sep=6pt] at (18.125, 9.5){$f_v$};
+	\node[shape=rectangle, minimum width=0.715cm, minimum height=0.715cm] at (18.5, 5.25){} node[anchor=north west, align=left, text width=0.327cm, inner sep=6pt] at (18.125, 5.625){$f_A$};
+	\node[circ] at (19, 7.75){};
+	\node[circ] at (19, 8.5){};
+	\node[circ] at (14.5, 14){};
+	\node[circ] at (12.5, 14){};
+	\node[circ] at (12.5, 10){};
+	\node[circ] at (17, 12.75){};
+	\node[circ] at (21, 12){};
+	\node[circ] at (21, 10){};
+	\node[shape=rectangle, draw, line width=1pt, minimum width=1.59cm, minimum height=1.31cm] at (17, 11.5){};
+	\node[shape=rectangle, draw, line width=1pt, minimum width=1.715cm, minimum height=0.715cm] at (15.75, 12.875){};
+	\draw (11, 10) -| (11, 9.75);
+	\node[tlground] at (11, 9.75){};
+\end{tikzpicture}
+	\caption{Circuito simplificado del circuito regulador LDO.}
+	\label{fig:bloques_ldo}
+\end{figure}
+\FloatBarrier
+\subsubsection{El transistor de paso (Tipo MOS)}
+\FloatBarrier
+La elección del transistor de paso es nuestro primer paso de diseño, y para su elección deben tenerse en cuenta los siguientes puntos:
+
+\textbf{Canal} \par
+
+El canal del transistor determinará sobre dónde se efectúa el control. 
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[pigfete, rotate=90] at (8.73, 6.5){};
+		\node[nigfete, rotate=90] at (11.02, 6.5){};
+		\node[circ](N1) at (7.96, 6.5){} node[anchor=south] at (N1.text){$v_s$};
+		\node[circ](N2) at (9.5, 6.5){} node[anchor=south] at (N2.text){$v_d$};
+		\node[circ](N3) at (8.46, 5.52){} node[anchor=north] at (N3.text){$v_g$};
+		\node[circ](N4) at (11.29, 5.52){} node[anchor=north] at (N4.text){$v_g$};
+		\node[circ](N5) at (11.79, 6.5){} node[anchor=south] at (N5.text){$v_s$};
+		\node[circ](N6) at (10.25, 6.5){} node[anchor=south] at (N6.text){$v_d$};
+	\end{tikzpicture}
+	\caption{Transitor de paso tipo MOS canal P y canal N.}
+	\label{fig:transistor_PN}
+\end{figure}
+
+Se conoce que la eficiencia de un transistor canal N es superior a la que exhibe un canal P (siendo ambos del mismo tamaño y características equiparables). Sin embargo, no necesariamente esto lo hace una elección atractiva para la implementación.\\ En este caso, al tratarse de una fuente controlada LDO, se espera que la alimentación de la fuente sea tan solo $V_{DO}$ mayor a $V_{o}$ para que comience a regular, y por ende se espera que el circuito de control opere con tensiones menores o lo más cercanas posibles a $V_{o}$.
+
+En este caso, en la figura \ref{fig:transistor_PN} se observa que para el control efectivo del transistor canal N, $v_g$ deberá ser al menos $v_o + V_{th}$ para polarizarlo en modo triodo y poder hacer un control de tensión y corriente. Esto implica que el circuito de control requerirá \textit{al menos} de una tensión de alimentación de $v_o + V_th$. Esto significa $V_{DO} > V_{th}$. Para valores comerciales, esto significa más de \SI{4}{V}.
+
+En consecuencia, el canal debe ser P, para simplificar el circuito y hacer posible un $V_{DO} < \SI{1}{V}$.
+
+\textbf{Modelo} \par
+
+La elección del modelo, en este caso, no es complicada debido a la escasa oferta de transistores PMOS disponibles, que a su vez cuentan con un modelo de spice para su fácil simulación.
+
+Fundamental es que las tensiones y corrientes de operación se encuentren en el rango operativo del regulador, es decir
+
+$$V_{DSmax} = V_i - V_o \approx 4,5 \,V \qquad I_{DSmax} = \SI{1.5}{A}.$$
+
+Además, debe operar dentro de la zona de operación segura (SOA).
+
+Con estas cosas en mente, se escoge el modelo \textbf{IRF4905}. Es un transistor que no sobredimensiona en gran medida la capacidad del regulador, normalmente pensado para switching pero aun así apto para la tarea.
+
+Una de las complicaciones de elegir este tipo de canal es que $\|V_{th}\|$ puede tomar valores de hasta $v_o + V_{DO}$ sin afectar en gran medida el diseño circuital, pero los valores comerciales rondan $V_{th} \approx \SI{4}{V}$. Esto puede perjudicar $V_{DO}$, pues $V_{th} \approx V_{reg}$, sin embargo, es un compromiso de diseño que debe hacerse, pues no hay modelos de fácil acceso con otro valor $V_{th}$.
+\FloatBarrier
+\subsubsection{Lazo de Tensión}
+\label{sec:lazo_tension}
+\FloatBarrier
+
+Cuando se tiene como objetivo estabilizar un valor de tensión es usual utilizar un sistema con realimentación negativa, que muestree la señal de salida y, ante cambios en la misma, se sume a la señal de control un incremento opuesto al cambio. Como primer aproximación tenemos el esquema de la figura \ref{fig:ldo_primera_aprox}, allí se observa que la señal de control viene dada por la salida de un operacional: $ \quad V_{ctrl} = a_{o} (V^+ - V^-) = a_{o}( VRef - V_F)\quad $ , dicha señal controla un transistor de paso el cual brinda la corriente necesaria para obtener la tensión que se busca establecer, dicha tensión de salida $V_o$ se muestreara mediante un divisor resistivo formado de tal modo que idealmente $V_o\frac{R_1}{ R_1 + R_2 } = V_o \cdot f $.
+
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[pigfete] at (-14.25, 9.77){};
+		\draw (-23.73, 10.04) to[american voltage source, l={$V_{Ref}$}] (-23.73, 8.039);
+		\node[op amp, yscale=1] at (-18.79, 10.05){};
+		\draw (-19.98, 10.539) -| (-23.73, 10.04);
+		\node[ground] at (-23.73, 8.039){};
+		\draw (-14.25, 9) to[generic, l={$Z_L$}] (-14.25, 6);
+		\node[ground] at (-14.25, 6){};
+		\draw (-17.98, 8.54) to[american resistor, l={$R_4$}] (-15.23, 8.54);
+		\draw (-17.98, 6.04) to[american resistor, l={$R_5$}] (-17.98, 8.54);
+		\draw (-15.23, 8.54) -- (-14.23, 8.54);
+		\node[ground] at (-17.98, 6.04){};
+		\draw (-19.98, 9.56) -| (-21.23, 9.54) |- (-17.98, 8.54);
+		\draw (-17.6, 10.05) -| (-15.23, 10.04);
+		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-14.115, 10.79){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-14.75, 11.289){Vcc};
+		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-13.73, 8.54){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-14.365, 9.039){Vo};
+		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.115, 9.54){} node[anchor=north west, align=left, text width=0.917cm, inner sep=5pt] at (-20.75, 10.039){$V_F$};
+		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.23, 10.54){} node[anchor=north west, align=left, text width=0.917cm, inner sep=5pt] at (-20.865, 11.039){$V_{ref-t}$};
+		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-16.615, 10.29){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-17.25, 10.789){$V_{ctrl}$};
+	\end{tikzpicture}
+	
+	\caption{Diagrama simplificado del lazo regulador de tensión.}
+	\label{fig:ldo_primera_aprox}
+\end{figure}
+
+%	\begin{figure}
+	%		\centering
+	%		\begin{tikzpicture}[transform shape]
+		%			% Paths, nodes and wires:
+		%			\node[pigfete, rotate=90] at (8.73, 6.5){};
+		%			\node[circ](N1) at (7.96, 6.5){} node[anchor=south] at (N1.text){$v_s$};
+		%			\node[circ](N2) at (9.5, 6.5){} node[anchor=south] at (N2.text){$v_d$};
+		%			\draw (1.96, 4.5) to[american voltage source, l={$V_{cc}$}] (1.96, 1.5);
+		%			\draw (1.96, 4.5) to[sinusoidal voltage source, l_={$V_{ac}$}] (1.96, 6.5);
+		%			\draw (1.96, 6.5) -- (7.96, 6.5);
+		%			\draw (1.96, 1.5) -| (11.96, 2);
+		%			\draw (1.96, 1.5) -- (1.96, 1.25);
+		%			\node[tlground] at (1.96, 1.25){};
+		%			\node[circ] at (1.96, 1.5){};
+		%			\draw (11.96, 2) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l_={$R_L$}] (12, 4);
+		%			\draw (12, 4.5) |- (9.5, 6.5);
+		%			\node[op amp, xscale=-0.7, yscale=-0.7] at (7.667, 4.157){};
+		%			\draw (9.5, 1.5) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l_={$R_2$}] (9.54, 4.5);
+		%			\draw (9.54, 4.5) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l_={$R_1$}] (12, 4.5);
+		%			\node[circ](N3) at (12, 4.5){} node[anchor=west] at (N3.text){$v_o$};
+		%			\draw (7.084, 4.157) -| (6.5, 5.5) -| (8.461, 5.52);
+		%			\node[circ] at (9.54, 4.5){};
+		%			\node[circ] at (9.5, 1.5){};
+		%			\draw (9.5, 4.5) -- (8.5, 4.5);
+		%			\node[circ](N4) at (8.5, 3.814){} node[anchor=west] at (N4.text){$v_{reg}$};
+		%			\draw (12, 4.5) -| (12, 4);
+		%		\end{tikzpicture}
+	%		\caption{Circuito simplificado con lazo de tensión.}
+	%		\label{fig:lazo_tension}
+	%	\end{figure}
+
+
+Siendo $a_o$ la ganancia del operacional y siguiendo el esquema, se puede llegar a la siguiente condición de utilidad:
+
+\begin{equation}
+	V_o = a_o ( V_{Ref} - f \cdot V_o )
+\end{equation}
+
+\begin{equation}
+	A = \frac{V_o}{V_{Ref}} = \frac{a_o ( V_{Ref} - f\cdot V_o )}{V_{Ref}} 
+\end{equation}
+
+
+\begin{equation}
+	A = \frac{V_o}{V_{Ref}} = a_o - a_o \cdot f \cdot A
+\end{equation}
+
+
+\begin{equation}
+	A + a_o \cdot f \cdot A  = a_o 
+\end{equation}
+
+
+
+\begin{equation}
+	A(1+ a_o \cdot f ) = a_o 
+\end{equation}
+
+
+\begin{equation}
+	A = \frac{a_o}{(1+ a_o \cdot f )} 
+\end{equation}
+
+
+Si se cumple que $a_o\cdot f \gg 1 $
+
+\begin{equation}
+	A \approx \frac{1}{f}  = \frac{ R_4 + R_5}{ R_5 }
+\end{equation}
+
+
+De esta forma la tensión de salida se puede ajustar mediante los resistores. 
+
+\begin{equation}	
+	Vo = A \cdot V_{Ref}
+\end{equation}
+
+En nuestro caso $V_o = 5\, V $, de allí debemos encontrar valores de resistencias y de tensión de referencia adecuados.
+
+
+Finalmente, se diseña el amplificador diferencial. El diseño final puede verse en la figura \ref{fig:lazo_tension2}.
+
+\begin{figure}[h]
+	\centering
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\node[npn, xscale=0.98, yscale=0.98](N1) at (10, 6.755){} node[anchor=west] at (N1.text){$Q_3$};
+	\draw (7, 5.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_r$}] (7, 6.75);
+	\draw (7, 6.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_1$}] (9.177, 6.755);
+	\node[npn, xscale=-0.98, yscale=0.98](N2) at (12, 6.745){} node[anchor=east] at (N2.text){$Q_4$};
+	\node[npn, xscale=0.98, yscale=0.98](N3) at (11, 4.755){} node[anchor=west] at (N3.text){$Q_5$};
+	\draw (11, 5.509) -| (11, 5.75) -- (10, 5.75) -| (10, 6);
+	\draw (11, 5.75) -- (12, 5.75) -| (12, 6);
+	\node[npn, xscale=-0.98, yscale=0.98](N4) at (7, 4.745){} node[anchor=east] at (N4.text){$Q_6$};
+	\draw (9, 6.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l_={$R_2$}] (9, 5.5);
+	\node[tlground] at (9, 5.5){};
+	\draw (7, 5.5) -- (8, 5.5) -| (8, 4.75) -| (10.177, 4.755);
+	\draw (8, 4.75) |- (7.823, 4.745);
+	\draw (7, 6.75) -| (7, 7.25);
+	\node[rground, xscale=-0.88, yscale=-0.88](N5) at (7, 7.25){} node[anchor=north] at ([yshift=0.82cm]N5.text){$v_{ref}$};
+	\node[pnp, xscale=-0.98, yscale=0.98](N6) at (10, 8.495){} node[anchor=east] at (N6.text){$Q_1$};
+	\node[pnp, xscale=0.98, yscale=0.98](N7) at (12, 8.495){} node[anchor=west] at (N7.text){$Q_2$};
+	\draw (10, 7.509) |- (10, 7.75);
+	\draw (12, 7.5) -| (12, 7.75);
+	\draw (11.177, 8.505) |- (10.823, 8.495);
+	\draw (11.177, 8.5) |- (12, 7.75);
+	\node[pigfetebulk, rotate=90](N8) at (15.23, 9.25){} node[anchor=south] at (N8.text){$Q_p$};
+	\draw (13.573, 6.745) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (15.75, 6.75);
+	\draw (7, 3.991) -| (17, 4);
+	\draw (13.25, 6.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_5$}] (13.255, 4.323);
+	\draw (13.25, 6.5) -| (13.25, 6.75);
+	\draw (13.255, 4.323) |- (13.25, 4);
+	\draw (16, 6.75) to[american potentiometer, mirror, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_6$}] (16, 4);
+	\draw (15.664, 5.375) -- (15, 5.375);
+	\draw (13.25, 6.75) -- (15, 5.375);
+	\draw (16, 6.75) -- (17, 6.75);
+	\draw (17, 6.75) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_L$}] (17, 4);
+	\draw (17, 6.75) |- (16, 9.25);
+	\draw (12, 9.259) |- (7, 9.25);
+	\draw (12, 9.25) -- (14.46, 9.25);
+	\draw (15.23, 9.25) -- (14.5, 9.25);
+	\draw (14.96, 8.27) |- (10, 7.5);
+	\draw (5, 6.75) to[american voltage source, l={$V_{cc}$}] (5, 4);
+	\draw (5, 6.75) to[sinusoidal voltage source, l_={$V_{ac}$}] (5, 9.25);
+	\draw (5, 9.25) -- (7, 9.25);
+	\draw (5, 4) -- (7, 4);
+	\draw (12.823, 6.745) -| (13.573, 6.745);
+	\draw (15.75, 6.75) -- (16, 6.75);
+	\node[circ] at (7, 6.75){};
+	\node[circ] at (7, 5.5){};
+	\node[circ] at (8, 4.75){};
+	\node[circ](N9) at (9, 6.75){} node[anchor=south] at (N9.text){$v_{ref-t}$};
+	\node[circ] at (11, 5.75){};
+	\node[circ] at (10, 7.509){};
+	\node[circ] at (11.177, 8.505){};
+	\node[circ] at (10, 9.25){};
+	\node[circ] at (12, 9.25){};
+	\node[circ] at (12, 7.741){};
+	\node[circ] at (13.25, 6.75){};
+	\node[circ] at (13.25, 4){};
+	\node[circ] at (11, 4){};
+	\node[circ] at (7, 4){};
+	\node[circ] at (16, 4){};
+	\node[circ] at (16, 6.75){};
+	\node[circ] at (17, 6.75){};
+	\draw (5, 4) -| (5, 3.75);
+	\node[tlground] at (5, 3.75){};
+	\node[circ] at (5, 4){};
+\end{tikzpicture}
+	\caption{Diseño final de lazo de tensión.}
+	\label{fig:lazo_tension2}
+\end{figure}
+
+Rápidamente, las ecuaciones que definen la ganancia de la etapa son las siguientes:
+
+\begin{equation}
+	Av_{d} = gm_{3/4} (\frac{ro_{1/2}}{4})
+\end{equation}
+
+\begin{equation}
+	Av_{c} = \frac{gm_4 \cdot 1/gm_2}{1+2 gm_3 \cdot ro_5 }
+\end{equation}
+
+
+A partir de la expresión general de salida:
+
+\[
+v_o = v_{ic} \cdot A_{vc} + v_{id} \cdot A_{vd}
+\]
+
+
+En condiciones ideales, se desea que la ganancia en modo común sea nula (\(A_{vc} \approx 0\)), de modo que la salida dependa exclusivamente de la señal diferencial, siendo esta la ganancia a considerar:
+
+\[
+v_o \approx v_{id} \cdot A_{vd}
+\]
+
+
+Es fácil de ver que, para resistencias $r_o > \SI{100}{\kilo\ohm}$, siempre se dará $a_o \cdot f \gg1$.
+
+Algunas consideraciones de diseño:
+
+\textbf{Rango de rechazo de modo común}\\
+Se espera un rango de rechazo de modo común de 
+\begin{itemize}
+	\item $RTMC^+ = V_{cc} - vbe_{on} - vce_{on} + vbe_{on} \approx V_{cc} - \SI{0.3}{V}$
+	\item $RTMC^- = 0V + vce_{on} + vbe_{on} \approx \SI{1}{V}$.
+\end{itemize}
+Notar que esto limita el valor de $V_{DO} \ge \SI{0.3}{V}$.
+
+\textbf{Fuentes de corriente}\\
+El amplificador diferencial cuenta con una fuente de corriente espejo como carga activa, y una fuente de corriente espejo simple que regula la alimentación general. La implementación de cargas activas es fundamental tanto para conservar un rango de rechazo de modo común aceptable como para mejorar enormemente la ganancia $a_o$ y el rechazo de modo común RRMC.
+
+\textbf{Alimentación del par diferencial}\\
+La alimentación puede colocarse directamente sobre $v_{cc}$, pues las variaciones se ven reflejadas a la entrada como tension común.
+
+\textbf{Elección de transistores}\\
+Se utilizan los modelos \textbf{BC547} y \textbf{BC557}, por ser modelos aptos para la operación con los valores de tensión de trabajo y tener alta ganancia, ideal para los pares diferenciales.
+
+\textbf{Mejora de $V_{DO}$}\\
+La tensión de referencia $v_{ref}$ deberá ser lo más baja posible para asegurar una tensión $V_{DO}$ lo más chica posible. Esto se debe a que, para una $V_{th} = \SI{4}{V}$ y una tensión de alimentación $V_{cc} \sim \SI{5}{V}$, se corre el riesgo de subir demasiado la tensión $vce_5 = v_{reg} - vbe_{on}$ por encima de $V_{cc} - V_{th}$, saturando el par diferencial. Para una tensión de referencia de $V_{reg-t} = \SI{2.5}{V}$ --- la mínima alcanzable con un \textbf{TL431} ---, la tensión $vce_5 \approx \SI{1.8}{V}$. Esto limita nuevamente la tensión $V_{DO} = (vce_5 + V_{th}) - V_{reg} = \SI{800}{mV}$. \\ Para solucionar este problema, se usa el divisor resistivo $R_1 = R_2$, para obtner una $v_{ref-t} = \SI{1.25}{V}$.
+
+Esto sólo es válido pues, según el modelo pi, la resistencia vista hacia la base del transistor $T_3 \approx r_{\pi} + \beta r_o (T_5)$. O, visto de otra forma, la corriente de base $ib_3 \ll v_{ref} / (R_1+R_2)$.
+
+\textbf{Elección de $R_r$}\\
+Se fija $R_r$ en un valor estándar que aporte una corriente de operación normal $\sim \SI{1}{mA}$. En este caso $R_r = \SI{1}{\kilo\ohm}$, esto da una corriente de operación de \SI{1,8}{mA} para una tensión de referencia $V_{ref} = \SI{2,5}{V}$, lo que es \SI{900}{mA} para cada transistor del par diferencial.
+
+\textbf{Agregado de $R_6$}
+El agregado de $R_6$ tiene como propósito la sencilla modificación de $f_v = \frac{R_5}{R_5+R_6}$, de forma lineal. Esto lo hace modificando ambos valores de resistencia simultáneamente. Notar que si se colocara sobre $R_5$ o $R_6$, se corre el riesgo de variar enormemente $f_v$ con pequeñas variaciones mecánicas.
+\FloatBarrier
+\subsubsection{Tensión de referencia $V_{Ref}$}
+\FloatBarrier
+Para obtener una tensión de referencia se utiliza un circuito basado en un diodo zener en polarización inversa, el cual fija una tensión de acuerdo a la configuración de un divisor resistivo. En este caso se optó por el circuito integrado TL431, el cuál es un regulador de derivación ajustables de tres terminales, con estabilidad térmica especificada en rangos de temperatura aplicables para aplicaciones automotrices y comerciales. La tensión de salida puede ajustarse a cualquier valor entre 2,5 V y 36 V, con dos resistencias externas tal como se observa en el diagrama de la figura \ref{fig:vref_t}.
+
+\begin{figure}[h]
+	\centering
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\draw (12, 7) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (12, 9.5);
+	\draw (12, 9.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_1$}] (12, 11);
+	\draw (10, 9.5) -- (12, 9.5);
+	\draw (10, 8) to[full ZZener diode, /tikz/circuitikz/bipoles/length=0.840cm, l={$TL431$}] (10, 11);
+	\node[npn](N1) at (12, 12){} node[anchor=west] at (N1.text){$T_1$};
+	\node[circ] at (10, 9.5){};
+	\node[circ] at (10, 12){};
+	\draw (10, 12) -- (11.16, 12);
+	\draw (12, 11.23) -| (12, 11);
+	\draw (10, 12) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_s$}] (10, 13.25);
+	\draw (12, 12.75) -| (12, 13.25) -- (10, 13.25);
+	\node[rground, xscale=-1, yscale=-1](N2) at (11, 13.25){} node[anchor=south] at ([yshift=0.35cm]N2.text){$V_{cc}$};
+	\node[circ] at (11, 13.25){};
+	\draw (12, 11) -- (13, 11);
+	\node[circ](N3) at (13, 11){} node[anchor=west] at (N3.text){$V_{ref}$};
+	\node[circ] at (12, 11){};
+	\node[tlground] at (11, 6.75){};
+	\draw (11, 7) -| (11, 6.75);
+	\node[circ] at (11, 7){};
+	\draw (12, 7) |- (10, 7) -| (10, 8);
+	\draw (10, 11) -| (10, 12);
+	\node[circ] at (12, 9.5){};
+\end{tikzpicture}
+	
+	\caption{Diagrama simplificado del circuito de tensión de referencia para regular tensión.}
+	\label{fig:vref_t}
+\end{figure}
+
+El transistor $T_1$ sirve a la función de entregar corriente, manteniendo la tensión de referencia fija. Este elemento es fundamental para alimentar las fuentes de corriente de los pares diferenciales del lazo de tensión (figura \ref{fig:lazo_tension2}) y del lazo de corriente.
+
+De la hoja de datos, se obtiene la siguiente fórmula para esta topología:
+
+\begin{equation}
+V_{ref} = \SI{2.5}{V} \cdot \left( 1 + \frac{R_1}{R_2}\right)
+\end{equation}
+
+Se busca la menor tensión de referencia posible, entonces se puede asignar $R_1 = 0$ para obtener una tensión de \SI{2.5}{V}.
+
+La resistencia $R_s$ cumple la función de limitador de corriente, pues 
+
+\begin{equation}
+I_{TL431} = \frac{V_{cc}-(V_{ref} + vbe_{on})}{R_s},
+\end{equation}
+
+como tal, se utiliza una resistencia $R_s = \SI{2,2}{\kilo\ohm} \rightarrow I_{TL431} = \SI{2.86}{mA}$. Esto permite que, al variar la entrada fuera de los valores de operación normales $V_{cc} = \SI{9.5}{V}$, el dispositivo siga regulando correctamente: $V_{cc} = \SI{6}{V} \rightarrow I_{TL431} = \SI{1.3}{mA}$, pero que no consuma corriente excesiva.
+\FloatBarrier
+\subsubsection{Lazo de Corriente}
+\FloatBarrier
+Ya conociendo una regulación básica de tensión, la regulación de corriente requiere un muestreo de la misma, el cual se da al medir la tensión en un resistor de bajo valor de resistencia colocado en serie con la carga, usualmente llamado \textit{"shunt"}. Luego se utiliza un amplificador diferencial para lograr obtener la muestra de tensión sin afectar la carga y se realimenta negativamente, a menor tensión menor corriente sobre la carga, tal como muestra la figura \ref{fig:regulador_corriente_basico}.
+
+
+
+
+\begin{figure}[h]
+	\centering
+%	\begin{tikzpicture}[transform shape]
+%		 Paths, nodes and wires:
+%		\node[pigfete] at (-14.25, 9.77){};
+%		\draw (-23.73, 10.04) to[american voltage source, l={$V_{Ref}$}] (-23.73, 8.039);
+%		\node[op amp, yscale=-1] at (-18.79, 10.05){};
+%		\draw (-19.98, 10.539) -| (-23.73, 10.04);
+%		\node[ground] at (-23.73, 8.039){};
+%		\draw (-14.25, 7) to[generic, l={$Z_L$}] (-14.25, 4);
+%		\node[ground] at (-14.25, 4){};
+%		\draw (-17.6, 10.05) -| (-15.23, 10.04);
+%		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-14.115, 10.789){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-14.75, 11.289){Vcc};
+%		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-13.75, 6.5){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-14.385, 7){Vo};
+%		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.115, 9.539){} node[anchor=north west, align=left, text width=0.917cm, inner sep=5pt] at (-20.75, 10.039){$V_F$};
+%		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.23, 10.539){} node[anchor=north west, align=left, text width=0.917cm, inner sep=5pt] at (-20.865, 11.039){$V_{Ref}$};
+%		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-16.615, 10.29){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-17.25, 10.789){$V_{ctrl}$};
+%		\draw (-14.25, 9) to[american resistor, l={$R_s$}] (-14.25, 7);
+%		\node[op amp, xscale=-0.85, yscale=-0.85] at (-19.821, 5.708){};
+%		\draw (-18.809, 5.292) to[american resistor, /tikz/circuitikz/bipoles/length=1.19cm, l={$R_1$}] (-16.809, 5.292);
+%		\draw (-18.809, 6.125) to[american resistor, /tikz/circuitikz/bipoles/length=1.19cm, l={$R_1'$}] (-16.809, 6.125);
+%		\draw (-20.809, 7.625) to[american resistor, /tikz/circuitikz/bipoles/length=1.19cm, l={$R_2'$}] (-18.809, 7.625);
+%		\draw (-18.809, 7.625) -- (-18.809, 6.125);
+%		\draw (-20.809, 4.042) to[american resistor, /tikz/circuitikz/bipoles/length=1.19cm, l={$R_2$}] (-18.809, 4.042);
+%		\draw (-18.809, 4.042) -| (-18.809, 5.292);
+%		\node[ground] at (-20.809, 4.042){};
+%		\node[ground] at (-20.809, 7.625){};
+%		\draw (-14.25, 9) -- (-16.75, 9) |- (-16.809, 6.125);
+%		\draw (-16.809, 5.292) -| (-15.25, 7) -| (-14.385, 7) -| (-14.25, 7);
+%		\draw (-19.98, 9.56) -| (-22, 9.5) |- (-20.832, 5.708);
+%	\end{tikzpicture}
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[pigfete] at (10, 11.23){};
+		\draw (10, 10.46) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_s$}] (10, 8);
+		\draw (10, 8) to[generic, l={$Z_L$}] (10, 4.5);
+		\node[op amp, xscale=-0.7, yscale=-0.7] at (3.627, 7.343){};
+		\draw (4.96, 6) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_2$}] (2.5, 6);
+		\draw (5.71, 7) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_3$}] (5.71, 4.54);
+		\draw (8.17, 7) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_1$}] (5.71, 7);
+		\draw (4.96, 9) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_2'$}] (2.5, 9);
+		\draw (4.92, 10) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_3'$}] (2.5, 10);
+		\draw (8.21, 9) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_1'$}] (5.75, 9);
+		\node[op amp, xscale=0.7, yscale=0.7] at (4.167, 11.5){};
+		\draw (0.5, 11) to[american voltage source, l_={$V_{ref-c}$}] (0.5, 9);
+		\node[tlground] at (0.5, 9){};
+		\node[tlground] at (10, 4.5){};
+		\node[tlground] at (5.71, 4.54){};
+		\node[tlground] at (2.5, 8.5){};
+		\draw (2.5, 10) -| (2.5, 8.5);
+		\draw (4.92, 10) -| (5.25, 10) -| (5.25, 9) -- (5.75, 9);
+		\draw (5, 9) -- (5.25, 9);
+		\draw (5.25, 9) -| (5.25, 7.75) |- (4.46, 7.686);
+		\draw (5.71, 7) |- (4.46, 7);
+		\draw (4.96, 6) -| (5, 7);
+		\draw (2.5, 6) |- (2.794, 7.343);
+		\draw (2.5, 7.343) -| (1.75, 11) |- (3.334, 11.157);
+		\draw (0.5, 11) |- (3.334, 11.843);
+		\draw (5, 11.5) -| (9.02, 11.5);
+		\draw (8.21, 9) -| (8.5, 10.25) |- (10, 10.46);
+		\draw (8.17, 7) |- (8.5, 7) |- (10, 8);
+		\node[circ] at (5.71, 7){};
+		\node[circ] at (5, 7){};
+		\node[circ] at (2.5, 7.343){};
+		\node[circ] at (2.5, 9){};
+		\node[circ] at (5.25, 9){};
+		\node[circ] at (10, 10.46){};
+		\node[circ] at (10, 8){};
+		\node[shape=rectangle, minimum width=0.965cm, minimum height=0.465cm] at (3.334, 11.407){} node[anchor=north west, align=left, text width=0.577cm, inner sep=6pt] at (2.834, 11.657){$v_f$};
+		\node[rground, xscale=-1, yscale=-1](N1) at (10, 12){} node[anchor=south] at ([yshift=0.32cm]N1.text){$V_{cc}$};
+	\end{tikzpicture}
+	\caption{Diagrama simplificado del circuito regulador de corriente.}
+	\label{fig:regulador_corriente_basico}
+\end{figure}
+
+
+A su vez, se puede lograr limitar la corriente estableciendo un máximo de corriente con el objetivo de proteger la carga de sobre corrientes. Esto se puede establecer dentro de la misma regulación de corriente estableciendo una tensión de referencia que contenga información de la corriente máxima. De allí denotamos $V_{Ref-c}$ la tensión de referencia que establece la corriente máxima y $V_{Ref-t}$ la tensión de referencia que establece la tensión de salida objetivo.
+
+El objetivo de este circuito es aplicar una protección tipo \textit{foldback}. Esto quiere decir que una vez se alcanza la máxima corriente otorgable por la fuente, $I_{max} \SI{1.5}{A}$, si se sigue reduciendo la carga, entonces la corriente otorgada seguirá disminuyendo. Esto proteje tanto al regulador como a la carga.
+
+Para la implementación de este tipo de fuente, sin embargo, hace falta algo más que una simple referencia, pues la corriente objetivo varía con la salida de tensión, creando una relación I-V lineal.
+
+La elección de resistores se hace en función al compromiso $V_{DO}$-Efectividad del lazo. En este caso, se asigna $R_{s} = \SI{0.2}{\ohm}$. Para una corriente máxima, generará una caída de tensión de $V_{Rs} = \SI{0.3}{V}$, es decir, $V_{DOmax}=\SI{0.3}{V}$.
+
+Antes de continuar, es importante observar que, si bien el diferencial de tensión generado por $R_s$ es muy pequeño, ambos terminales se encuentran muy cercados a $V=V_{o}$. Al alimentar al amplificador, se estará muy cerca de exceder el rango de tensión de modo común RTMC.
+Para solucionar este problema, se agrega un nuevo divisor resistivo a la entrada del amplificador. 
+
+Como se quiere tener control sobre el valor final de $V_{Rs}$, se realimenta para obtener 
+
+\begin{equation}
+	v_f = (I_o \cdot R_s) \cdot \frac{R_2}{R_1}
+\end{equation}
+
+Se busca una tensión $v_f$ para corriente máxima $v_{fmax} < V_{reg}$. A tal efecto se asignan $(R_2 = \SI{6.8}{k\ohm},R_1 = \SI{1}{k\ohm}) \rightarrow v_{fmax} = \SI{2.04}{V}$. Es importante que este valor sea bajo para que el par diferencial no sature en tensiones de alimentación $V_{cc} \approx \SI{5}{V}$, del mismo modo que se hace con $v_{ref-t}$.
+
+Finalmente, el amplificador de control se encargará de asegurar $a_o\cdot f \gg 1$. Notar que, si $I_o ^\uparrow \rightarrow v_{f} ^\uparrow \rightarrow v_g ^\uparrow \rightarrow I_o ^\downarrow$, cerrando el lazo de realimentación negativa. El valor de $I_o$ se estabilizará cuando $V_{ref-c} = v_f$.
+
+Adicionalmente, se debe elegir el modelo de amplificador a utilizar. En este caso se emplea el \textbf{LM358} (o \textbf{LM348}) por su alimentación simple y operación con bajas tensiones de alimentación.
+
+Para el diseño amplificador diferencial final, se utiliza la misma topología del lazo de tensión, de la figura \ref{fig:lazo_tension2}, con carga activa y fuente espejo.
+\FloatBarrier
+\subsubsection{Tensión de referencia $V_{Ref-c}$}
+\FloatBarrier
+Este circuito genera una referencia modificada que se usa para implementar limitación de corriente tipo foldback. La idea es que el límite de corriente dependa de la tensión de salida $V_o$
+
+Cuando la salida cae (por ejemplo en un cortocircuito), el circuito reduce aún más la corriente permitida, protegiendo al transistor de paso y la carga.
+
+Para conseguir este tipo de comportamiento, es necesaria una referencia variable, de la siguiente forma:
+
+\begin{equation}
+	v_{ref-c} = \alpha v_{ref} + \beta v_o.
+\end{equation}
+Comportamiento que puede obtenerse fácilmente con un circuito amplificador sumador, como el de la figura \ref{fig:vref_c}. Es necesario agregar circuitos seguidores ya que las fuentes de referencia no son de baja impedancia.
+
+Esto dota al lazo de una parte fija, que determina la corriente mínima absoluta, y una parte variable, que determinará cómo excursiona la referencia a partir de este punto.
+
+En nuestro caso, se esperará una corriente mínima $I_{FBCK} = \SI{400}{mA}$ y una máxima de $I_{max} = \SI{1.5}{A}$.
+
+Para la corriente mínima, se espera una salida de tensión nula,
+$$v_{ref-c} = \alpha v_{ref} = v_{fmin} = I_{FBCK} \cdot R_s \cdot \frac{R2}{R1} \rightarrow \SI{544}{mV},$$
+entonces, 
+
+\begin{equation}
+\alpha = 0.218 = \frac{R_{\alpha2}}{R_{\alpha1} + R_{\alpha2}}.
+\end{equation}
+
+Del mismo modo, para la corriente máxima, se esperará que $v_o = V_{reg}$. Como tal
+
+$$v_{ref-c} = \alpha v_{ref} + \beta v_o = v_{fmax} = I_{max} \cdot R_s \cdot \frac{R2}{R1} \rightarrow \SI{2.04}{V},$$
+que define
+\begin{equation}
+\beta = 0.3 = \frac{R_{\beta2}}{R_{\beta1} + R_{\beta2}}.
+\end{equation}
+
+\begin{figure}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+%		\begin{tikzpicture}[transform shape]
+%			% Paths, nodes and wires:
+%			\node[op amp, yscale=-1] at (12.69, 15.47){};
+%			\draw (11.5, 14.98) -| (10.857, 14.931) -| (10.857, 13.931) -| (14.357, 15.431) |- (13.88, 15.47);
+%			\node[op amp, yscale=-1] at (12.44, 8.74){};
+%			\draw (11.25, 8.25) -| (10.607, 8.201) -| (10.607, 7.201) -| (14.107, 8.701) |- (13.63, 8.74);
+%			\draw (14.357, 15.47) to[american resistor] (17.75, 15.48);
+%			\draw (14.107, 8.74) to[american resistor] (17.5, 8.75);
+%			\draw (17.5, 8.75) -| (17.75, 15.48);
+%			\node[op amp, yscale=-1] at (22.19, 14.99){};
+%			\draw (21, 15.48) |- (17.75, 15.48);
+%			\draw (20.357, 12.97) to[american resistor] (23.75, 12.98);
+%			\draw (20.367, 9.577) to[american resistor] (20.357, 12.97);
+%			\draw (20.357, 12.97) |- (21, 14.5);
+%			\draw (23.38, 14.99) -| (23.75, 12.98);
+%			\node[ground] at (20.367, 9.577){};
+%			\draw (4.607, 9.22) to[american resistor] (8, 9.23);
+%			\draw (4.607, 15.95) to[american resistor] (8, 15.96);
+%			\draw (8.143, 6.49) to[american resistor] (8.143, 9.24);
+%			\draw (8, 13.21) to[american resistor] (8, 15.96);
+%			\draw (11.5, 15.94) |- (8, 15.96);
+%			\draw (11.25, 9.23) |- (8, 9.23);
+%			\node[ground] at (8, 13.21){};
+%			\node[ground] at (8.143, 6.49){};
+%			\node[shape=rectangle, minimum width=-0.035cm, minimum height=-0.035cm] at (16.75, 18.75){};
+%			\node[shape=rectangle, minimum width=1.715cm, minimum height=1.215cm] at (4.125, 15.73){} node[anchor=north west, align=left, text width=1.327cm, inner sep=6pt] at (3.25, 16.355){$V_{Ref-t}$};
+%			\node[shape=rectangle, minimum width=1.715cm, minimum height=1.215cm] at (4.75, 9.125){} node[anchor=north west, align=left, text width=1.327cm, inner sep=6pt] at (3.875, 9.75){$V_{o}$};
+%			\node[shape=rectangle, minimum width=1.715cm, minimum height=1.215cm] at (25.25, 15){} node[anchor=north west, align=left, text width=1.327cm, inner sep=6pt] at (24.375, 15.625){$V_{Ref-c}$};
+%			\draw (23.75, 15) -- (24.5, 15);
+%			\node[circ] at (24.5, 15){};
+%		\end{tikzpicture}
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\node[op amp] at (11.19, 12.51){};
+	\node[op amp] at (11.19, 8.49){};
+	\node[op amp, yscale=-1] at (18.19, 9.51){};
+	\draw (16.25, 7.5) to[american resistor, l={$R$}] (20.25, 7.5);
+	\draw (15, 12.5) to[american resistor, l={$R$}] (12.38, 12.51);
+	\draw (15, 8.5) to[american resistor, l={$R$}] (12.38, 8.49);
+	\draw (17, 10) -- (15, 10) -- (15, 12.5);
+	\draw (15, 8.5) -| (15, 10);
+	\draw (12.38, 8.49) |- (9.5, 10) -- (9.5, 9) |- (10, 8.98);
+	\draw (10, 13) -- (9.5, 13) -| (9.5, 14) -| (12.38, 12.51);
+	\draw (16.25, 7.5) to[american resistor, l={$R$}] (16.25, 5);
+	\draw (17, 9.02) -| (16.25, 7.5);
+	\node[tlground] at (16.25, 5){};
+	\draw (20.25, 7.5) |- (19.38, 9.51);
+	\draw (20.25, 9.51) -| (21, 9.5);
+	\draw (8, 8) to[american resistor, l={$R_{\beta1}$}] (5.38, 7.99);
+	\draw (8, 5) to[american resistor, l={$R_{\beta2}$}] (8, 8);
+	\draw (8, 12.02) to[american resistor, l={$R_{\alpha1}$}] (5.38, 12.01);
+	\draw (8, 9.02) to[american resistor, l={$R_{\alpha2}$}] (8, 12.02);
+	\node[tlground] at (8, 5){};
+	\node[tlground] at (8, 9.02){};
+	\draw (8, 8) -- (10, 8);
+	\node[circ](N1) at (5.38, 12.01){} node[anchor=east] at (N1.text){$v_{ref}$};
+	\node[circ](N2) at (5.38, 7.99){} node[anchor=east] at (N2.text){$v_{o}$};
+	\node[circ] at (8, 8){};
+	\node[circ] at (8, 12.02){};
+	\node[circ] at (15, 10){};
+	\node[circ](N3) at (21, 9.5){} node[anchor=west] at (N3.text){$v_{ref-c}$};
+	\node[circ] at (20.25, 9.5){};
+	\node[circ] at (16.25, 7.5){};
+	\node[circ] at (12.38, 12.51){};
+	\node[circ] at (12.38, 8.49){};
+	\draw (8, 12.02) -- (10, 12.02);
+\end{tikzpicture}
+	}
+	\caption{Diagrama simplificado del circuito de tensión de referencia para regular corriente.}
+	\label{fig:vref_c}
+\end{figure}
+
+
+	\FloatBarrier
+\subsubsection{Llave electrónica}
+	\FloatBarrier
+Sin embargo estas dos implementaciones no podrían actuar en simultáneo, es por eso que se debe implementar un conmutador que establezca el accionamiento de uno de los reguladores según las condiciones lo requieran. Esta idea se presenta de forma simplificada en el diagrama \ref{fig:reg_t_reg_c_conmutador}.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[pigfete, rotate=90](N1) at (-12.02, 12.25){} node[anchor=south] at (N1.text){$T_{Paso}$};
+		\node[op amp, yscale=1](N2) at (-18.79, 10.05){} node[anchor=center] at (N2.text){$a_t$};
+		\draw (-7.5, 11.75) to[generic, l={$Z_L$}] (-7.5, 8.75);
+		\node[ground] at (-7.5, 8.75){};
+		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-14.365, 12.25){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-15, 12.75){Vcc};
+		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.5, 10.5){} node[anchor= south west, align=left, text width=0.917cm, inner sep=5pt] at (-21.3, 10.3){$V_{ref-t}$};
+		\node[op amp, yscale=1](N3) at (-18.81, 7.24){} node[anchor=center] at (N3.text){$a_c$};
+		\node[spdt, xscale=-1, yscale=-1] at (-15.595, 8.75){};
+		\draw (-16.19, 9.065) |- (-17.6, 10.05);
+		\draw (-16.19, 8.435) |- (-17.62, 7.24);
+		\draw (-15, 8.75) -| (-12.289, 11.27);
+		\node[shape=rectangle, draw, line width=1pt, minimum width=1.715cm, minimum height=1.465cm](N4) at (-19.125, 4.25){} node[anchor=center] at (N4.text){$f_A$};
+		\node[shape=rectangle, draw, line width=1pt, minimum width=1.715cm, minimum height=1.465cm](N5) at (-19.125, 2.25){} node[anchor=center] at (N5.text){$f_V$};
+		\draw (-18.25, 4.75) -| (-11.25, 12.25);
+		\draw (-7.5, 11.75) |- (-9.75, 12.25) |- (-18.25, 4);
+		\node[shape=rectangle, minimum width=1.27cm, minimum height=1cm] at (-20.385, 7.75){} node[anchor= south west, align=left, text width=0.917cm, inner sep=5pt] at (-21.3, 7.55){$V_{ref-c}$};
+		\draw (-19.98, 9.56) -| (-23.25, 9.5) |- (-20, 2.5);
+		\draw (-20, 6.75) -- (-21.25, 6.75);
+		\draw (-21.25, 6.75) |- (-20, 4.75);
+		\node[ground] at (-20.75, 4){};
+		\node[ground] at (-20.75, 2){};
+		\draw (-20, 4) -- (-20.75, 4);
+		\draw (-20, 2) -- (-20.75, 2);
+		\node[circ] at (-9.75, 4){};
+		\draw (-18.25, 2.5) -| (-9.75, 4.25);
+		\node[shape=rectangle, minimum width=1.235cm, minimum height=0.964cm] at (-7, 11.75){} node[anchor=north west, align=left, text width=0.847cm, inner sep=6pt] at (-7.635, 12.25){Vo};
+		\draw (-17.5, 2) -- (-18.25, 2);
+		\node[ground] at (-17.5, 2){};
+		\node[shape=rectangle, draw, line width=1pt, minimum width=1.715cm, minimum height=1.465cm] at (-15.75, 8.75){};
+		\draw (-12.79, 12.25) |- (-14, 12.25);
+	\end{tikzpicture}
+	
+	\caption{Diagrama simplificado del circuito regulador de corriente y tensión con conmutador.}
+	\label{fig:reg_t_reg_c_conmutador}
+\end{figure}
+	
+	Deben combinarse ambas señales de control, pero solo la más dominante, es decir, la que más limite al transistor de paso, será la que controle.
+	
+	En este caso, ya que el transistor P-MOS reduce su corriente al aumentar $v_g$, se esperará que el lazo dominante sea aquél con mayor tensión a la salida.
+	
+	Una forma de obtener este resultado es utilizando el circuito de la figura \ref{fig:llave}.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\draw (11, 11.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (11, 13.25);
+			\node[npn](N1) at (10.34, 10.75){} node[anchor=west] at (N1.text){$T_2$};
+			\node[rground, xscale=-1, yscale=-1](N2) at (11, 13.25){} node[anchor=south] at ([yshift=0.35cm]N2.text){$V_{cc}$};
+			\node[circ] at (11, 13.25){};
+			\node[npn, xscale=-1](N3) at (11.66, 10.75){} node[anchor=east] at (N3.text){$T_3$};
+			\draw (11.66, 11.52) |- (10.34, 11.52);
+			\node[pnp](N4) at (9, 9.98){} node[anchor=west] at (N4.text){$T_1$};
+			\node[pnp, xscale=-1](N5) at (13, 9.98){} node[anchor=east] at (N5.text){$T_4$};
+			\draw (9, 11.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_1$}] (9, 13.25);
+			\draw (13, 11.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (13, 13.25);
+			\draw (9, 13.25) -- (13, 13.25);
+			\draw (9, 10.75) -- (9, 11.75);
+			\draw (9.5, 10.75) -- (9, 10.75);
+			\draw (12.5, 10.75) -- (13, 10.75);
+			\draw (13, 11.75) -| (13, 10.75);
+			\draw (11, 11.75) -| (11, 11.5);
+			\draw (11.66, 9.98) |- (10.34, 9.98);
+			\draw (11, 8.25) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (11, 9.75);
+			\draw (9, 9.21) -| (9, 8) -- (13, 8) -| (13, 9.21);
+			\draw (11, 9.75) -| (11, 10);
+			\draw (11, 8.25) -| (11, 8);
+			\node[tlground] at (11, 7.75){};
+			\draw (11, 7.75) -| (11, 8);
+			\node[circ] at (11, 8){};
+			\node[circ] at (9, 10.75){};
+			\node[circ] at (13, 10.75){};
+			\node[circ] at (11, 11.5){};
+			\node[circ] at (11, 10){};
+			\draw (11, 9.75) -| (12, 8.75) -- (14, 8.75);
+			\draw (13.84, 9.98) -| (14, 10);
+			\draw (8.16, 9.98) -| (8, 10);
+			\node[circ](N6) at (14, 9.98){} node[anchor=west] at (N6.text){$v_{in2}$};
+			\node[circ](N7) at (14, 8.75){} node[anchor=west] at (N7.text){$v_{control}$};
+			\node[circ](N8) at (8, 9.98){} node[anchor=east] at (N8.text){$v_{in1}$};
+			\node[circ] at (11, 9.75){};
+		\end{tikzpicture}
+		\caption{Circuito llave electrónica implementado}
+		\label{fig:llave}
+	\end{figure}
+	
+	Su función es la misma que la de dos diodos con cátodo común, pero con una caída de tensión mínima, al poner dos junturas en serie, es decir,
+	
+	\begin{equation}
+		v_{control} = max\left\{ v_{in1} , v_{in2} \right\}.
+	\end{equation}
+	
+	La polarización de este circuito es sencilla. Se espera a la entrada una tensión nominal de $V_{cc} = \SI{9.5}{V}$, por ende 
+	
+	\begin{equation}
+		I{c1/4 max} \approx \frac{V_{cc}-vbe_{on}}{R_{1/3}} \quad,\quad I{c1/4} = \frac{V_{cc}-(v_{ctrl}+vbe_{on})}{R_{1/3}},
+	\end{equation}
+	
+	y para valores de lazo de control esperables de $ V_{cc}-V{th} \sim \SI{5}{V}$, se puede obtener una corriente de polarización 
+	
+	\begin{equation}
+	I_{c1/4} \approx \SI{1}{mA} \rightarrow R_{1/3} = \SI{10}{k\ohm}.
+	\end{equation}
+	
+	Para los resistores $R_{2/4}$, se buscará polarizar fuertemente el transistor que conduce, para ello, se busca una corriente alta $I_{R4}$. Nuevamente, para valores de control $v_{control} \approx \SI{5}{V}$, se obtiene 
+	\begin{equation}
+	I_{R4} \approx \SI{2}{mA} \rightarrow R_4 = \SI{10}{k\ohm},
+	\end{equation}
+	pero la caída sobre $R_2$ no debe ser tan alta, para admitir mayor excursión de $V_{cc}$, por ello se elije un resistor más chico $R_2 = \SI{1}{\kilo\ohm}$.
+
+\FloatBarrier
+	\subsubsection{Limitador de corriente shunt}
+	\FloatBarrier
+	El último módulo por analizar es el limitador de corriente shunt. La función que cumple es actuar rápidamente ante variaciones rápidas en la carga, y es especialmente importante para esta implementación, pues el regulador foldback es lento.
+	
+	La implementación se ve en la figura \ref{fig:shunt}, y su funcionamiento es muy sencillo. Cuando $I_o \cdot R_s \approx vbe_{on}$, el transistor $T_2$ comienza a conducir y eventualmente satura, lo que toma corriente de la base de $T_1$, que a su vez comienza a conducir, y esto acerca $v_{ctrl}$ a $v_{cc}$.
+	
+	El resultado final es que, para $I_o \cdot R_s \approx \SI{0.7}{V}$, $v_{gs}$ tiende a reducirse, limitando la corriente de salida.
+	
+	Para nuestro valor de $R_s$, $I_{omax} \approx \SI{3.3}{A}$, aunque en las simulaciones se verá un valor menor, lo cuál es aun mejor (figura \ref{fig:ldoregulacioncarga}).
+	
+	Es importante tener en cuenta que el transistor de paso deberá poder soportar, como máximo, $P_{max} = (\SI{9.5}{V}) \cdot \SI{3.3}{A} = \SI{31.35}{W}$, durante cortos períodos de tiempo. El modelo elegido puede hacerlo.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\node[pigfete, rotate=90](N1) at (10.23, 9){} node[anchor=south] at (N1.text){$T_p$};
+			\draw (14, 8) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_s$}] (14, 6.25);
+			\node[pnp](N2) at (9, 7.98){} node[anchor=west] at (N2.text){$T_1$};
+			\node[npn, rotate=-90, yscale=-1](N3) at (12, 6.25){} node[anchor=north] at (N3.text){$T_2$};
+			\draw (12, 7.34) |- (14, 8);
+			\draw (12.75, 6.25) -- (14, 6.25);
+			\draw (14, 6.25) -- (14, 5);
+			\draw (12, 7.09) -| (12, 7.34);
+			\draw (11, 9) -| (14, 8);
+			\draw (9, 9) -- (8, 9);
+			\draw (9.96, 8.02) |- (9, 7.21);
+			\draw (9.96, 8.02) -| (11, 8);
+			\draw (8.16, 7.98) |- (11.23, 6.25);
+			\draw (9, 8.75) -| (9, 9);
+			\draw (9, 9) -- (9.46, 9);
+			\draw (8, 9) -- (7.5, 9);
+			\node[circ] at (9.96, 8.02){};
+			\node[circ](N4) at (11, 8.02){} node[anchor=west] at (N4.text){$v_{ctrl}$};
+			\node[circ] at (14, 6.25){};
+			\node[circ] at (14, 8){};
+			\node[circ] at (9, 9){};
+			\node[shape=rectangle, minimum width=0.215cm, minimum height=0.215cm] at (7, 9.125){} node[anchor=north west, align=left, text width=-0.173cm, inner sep=6pt] at (6.875, 9.25){$v_{cc}$};
+		\end{tikzpicture}
+		
+		\caption{Implementación final del regulador shunt.}
+		\label{fig:shunt}
+	\end{figure}
+	
+	\checkpointend{1}
+	
+	\checkpointstart{2}
+	
+\FloatBarrier
+	\subsubsection{Compensación de lazos}
+	\label{sec:compensacion}
+	\FloatBarrier
+	Para finalizar el anállisis de diseño circuital de esta etapa, se debe evaluar su comportamiento en frecuencia. Para ello, se debe evaluar el peso de los nodos al circular por cada lazo de realimentación, procurando que 
+	se cumplan dos condiciones de diseño fundamentales:
+	
+	\begin{equation}
+		|T(j\omega)| < 1 \qquad \angle T(j\omega) > 30^\circ
+	\end{equation}
+	
+	Estos dos parámetros, \textit{el margen de ganancia} y el \textit{el margen de fase}, respectivamente, garantizan que para una señal de frecuencia $f_h \Big/ |T(j\omega)| = 1$, la ganancia de lazo nunca se invertirá, provocando una realimentación negativa.
+	
+	Debido a que la ganancia de lazo se puede aproximar a un sistema de primer orden, si existe un \textit{polo dominante}, entonces se puede asegurar que no habrá ningun caso en que el circuito oscile.
+	
+	Nuestro análisis, entonces, se dividirá en dos partes: la compensación del lazo de tensión, con ganancia $T_v$, y la compensación del lazo de corriente, con ganancia $T_A$, partiendo de los gráficos obtenidos en la sección \ref{sec:simulaciones} (Ganancias de Lazo sin compensación), las figuras \ref{fig:bode_corte_tension} y \ref{fig:bode_corte_corriente}.
+	
+	\textbf{Lazo de tensión:}\\
+	
+	El circuito de lazo de tensión completo incluye el divisor resistivo de ajuste, el amplificador diferencial y la llave electrónica. Teniendo en cuenta el modelo pi para pequeña señal, y la reflexión de Miller, se identifican los nodos potencialmente dominantes de la figura \ref{fig:nodos_lazo_tension}. Notar que la llave electrónica se transforma en dos colectores comunes en serie, con ganancia $|Av| \approx 1$.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\node[npn, xscale=0.98, yscale=0.98](N1) at (10, 6.755){} node[anchor=west] at (N1.text){$T_3$};
+			\node[npn, xscale=-0.98, yscale=0.98](N2) at (12, 6.745){} node[anchor=east] at (N2.text){$T_4$};
+			\node[npn, xscale=0.98, yscale=0.98](N3) at (11, 4.755){} node[anchor=west] at (N3.text){$T_5$};
+			\draw (11, 5.509) -| (11, 5.75) -- (10, 5.75) -| (10, 6);
+			\draw (11, 5.75) -- (12, 5.75) -| (12, 6);
+			\node[pnp, xscale=-0.98, yscale=0.98](N4) at (10, 8.495){} node[anchor=east] at (N4.text){$T_1$};
+			\node[pnp, xscale=0.98, yscale=0.98](N5) at (12, 8.495){} node[anchor=west] at (N5.text){$T_2$};
+			\draw (10, 7.509) -- (10, 7.75);
+			\draw (12, 7.5) -| (12, 7.75);
+			\draw (11.177, 8.505) |- (10.823, 8.495);
+			\draw (11.177, 8.5) |- (12, 7.75);
+			\node[pigfetebulk, rotate=90](N6) at (15.23, 9.25){} node[anchor=south] at (N6.text){$T_p$};
+			\draw (13.573, 6.745) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (15.75, 6.75);
+			\draw (13.25, 6.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_5$}] (13.255, 4.323);
+			\draw (13.25, 6.5) -| (13.25, 6.75);
+			\draw (13.255, 4.323) |- (13.25, 4);
+			\draw (16, 6.75) to[american potentiometer, mirror, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_6$}] (16, 4);
+			\draw (15.664, 5.375) -- (15, 5.375);
+			\draw (13.25, 6.75) -- (15, 5.375);
+			\draw (16, 6.75) -- (17, 6.75);
+			\draw (17, 6.75) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_L$}] (17, 4);
+			\draw (17, 6.75) |- (16, 9.25);
+			\draw (12, 9.25) -- (14.46, 9.25);
+			\draw (15.23, 9.25) -- (14.5, 9.25);
+			\draw (12.823, 6.745) -- (13.573, 6.745);
+			\draw (15.75, 6.75) -- (16, 6.75);
+			\node[circ](N7) at (9, 6.75){} node[anchor=south] at (N7.text){$v_{ref-t}$};
+			\node[circ] at (11, 5.75){};
+			\node[circ] at (10, 7.509){};
+			\node[circ] at (11.177, 8.505){};
+			\node[circ] at (10, 9.25){};
+			\node[circ] at (12, 9.25){};
+			\node[circ] at (12, 7.741){};
+			\node[circ](N8) at (13.25, 6.75){} node[anchor=south] at (N8.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$1$}};
+			\node[circ] at (16, 6.75){};
+			\node[circ] at (17, 6.75){};
+			\draw (12, 9.25) -- (10, 9.25) -- (7, 9.25);
+			\draw (9.177, 6.755) |- (9, 6.75);
+			\node[rground] at (7, 9.25){};
+			\node[rground] at (11, 4){};
+			\node[rground] at (13.25, 4){};
+			\node[rground] at (16, 4){};
+			\node[rground] at (17, 4){};
+			\draw (4, 7.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (4, 9.25);
+			\node[npn, xscale=-1](N9) at (4.66, 6.75){} node[anchor=east] at (N9.text){$T_6$};
+			\node[pnp, xscale=-1](N10) at (6, 5.98){} node[anchor=east] at (N10.text){$T_5$};
+			\draw (6, 7.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (6, 9.25);
+			\draw (5.5, 6.75) -- (6, 6.75);
+			\draw (6, 7.75) -| (6, 6.75);
+			\draw (4, 7.75) -- (4, 7.52);
+			\draw (4, 4.25) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (4, 5.75);
+			\draw (4, 4.25) -| (4, 4);
+			\node[circ](N11) at (6, 6.75){} node[anchor=west] at (N11.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$3$}};
+			\draw (6.84, 5.98) -| (7, 6);
+			\node[circ](N12) at (3.25, 5.75){} node[anchor=east] at (N12.text){$v_{control}$};
+			\node[circ](N13) at (4, 5.75){} node[anchor=west] at (N13.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$4$}};
+			\draw (10, 7.5) |- (7, 7.5) |- (6.84, 5.98);
+			\node[rground] at (4, 4){};
+			\draw (6, 9.25) -- (7, 9.25);
+			\node[circ] at (6, 9.25){};
+			\draw (4.66, 7.52) -- (4, 7.52);
+			\draw (4, 9.25) -- (6, 9.25);
+			\draw (14.96, 8.27) |- (14.25, 7.75);
+			\draw (3.25, 5.75) -- (4, 5.75);
+			\draw (6, 5.21) -- (6, 4);
+			\node[rground] at (6, 4){};
+			\node[circ](N14) at (14.25, 7.75){} node[anchor=east] at (N14.text){$v_{control}$};
+			\node[circ](N15) at (8, 7.5){} node[anchor=south] at (N15.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$2$}};
+			\node[npn](N16) at (3.34, 6.75){} node[anchor=west] at (N16.text){$T_7$};
+			\draw (3.34, 7.52) -| (4, 7.52);
+			\draw (3.34, 5.98) -| (4, 5.75);
+			\draw (4.66, 5.98) -| (4, 5.75);
+		\end{tikzpicture}
+		\caption{Nodos potencialmente dominantes del lazo de tensión.}
+		\label{fig:nodos_lazo_tension}
+	\end{figure}
+	
+	Dadas las capacidades $C_\pi \approx \SI{10}{pF}$ y $C_\mu \approx \SI{1.7}{pF}$, extraídas de las hojas de datos, se analizan los nodos cualitativamente para buscar, de haber, un nodo dominante:
+	
+	\textbf{1:}\\
+	Sobre el nodo 1 hay dos capacidades parásitas, $C_{\pi}^*$ y $C_\mu^*$, ambas reflejadas según Miller:
+	
+	\begin{equation}
+		C^* = C_{A-B} \cdot (1 - \frac{vb}{va})
+	\end{equation}
+	
+	Al tratarse $T_4$ de un emisor común fuertemente realimentado por $T_5$, con una resistencia de colector equivalente muy chica $\approx 1/gm$, se espera que la tensión de colector sea menor que la de base, conservando $C_\mu^* \approx C_\mu$.
+	Para $C_\pi^*$, se observa una configuración colector común, con ganancia $0 <|A_v| < 1$. Esto resulta en la casi anulación de la misma $C_\pi^* \rightarrow 0$.
+	
+	Como resultado, se espera una frecuencia de corte muy alta, despreciable para el análisis.
+	
+	\textbf{2:}\\
+	En el nodo 2 participan cuatro capacidades, $C_{\pi5}^*$, $C_{\mu5}$, $C_{\mu3}^*$ y $C_{\mu1}^*$.
+	
+	$C_{\pi5}^*$ se encuentra entre los nodos b y c de un seguidor, por lo tanto $C_{\pi5}^* \rightarrow 0$. $C_{\mu3}^*$ y $C_{\mu1}^*$ se encuentran en configuración emisor común invertido, por ende, $|A_v| = 0 \rightarrow C_{\mu}^* = C_{\mu}$. 
+	
+	Es necesario analizar la resistencia asociada al circuito RC equivalente del nodo 2. 
+	Hay tres en paralelo: 
+	$ r_{b3} \approx (r_{\pi 3} + \beta R_3)$, 
+	$ r_{oc3} \to \infty$ 
+	y $ r_{oc1} \approx r_{o1}$, 
+	con un valor máximo de \SI{100}{\kilo\ohm} para la corriente de polarización calculada.
+	
+	El resultado es una constante de tiempo asociada de
+	
+	\begin{equation}
+		\tau_2 \approx (3\cdot \SI{1.7}{pF}) \cdot (\SI{100}{\kilo\ohm} // \SI{200}{\kilo\ohm}) = \SI{340}{\nano s} \to f_2 \approx \SI{468}{\kilo\hertz}
+		\label{eq:tau2}
+	\end{equation}
+	
+	\textbf{3:}\\
+	En el nodo 3 participan tres capacidades, $C_{\pi6}^*$, $C_{\mu6}^*$ y $C_{\pi5}^*$.
+	
+	$C_{\pi5}^*$ se encuentra en configuración seguidor inveritido, por ello $|A_v| \to 1$ y $C_{\pi5}^* \to 0$. $C_{\pi6}^*$ se encuentra en configuración seguidor realimentado, se espera que la capacidad $C_{\pi3}^* \to 0$. Finalmente, $C_{\mu6}^*$ se encuentra en configuración emisor común realimentado, con ganancia $|A_v| \approx \frac{gm_3 \cdot R2}{1+gm_3\cdot R4} \approx 0.01$.
+	
+	La resistencia sociada al nodo será $R_3$, por ser ambas resistencias $rb_3$ y $rb_4$ muy superiores.
+	
+	El resultado es una constante de tiempo asociada de
+
+	\begin{equation}
+		\tau_3 \approx (\SI{1.7}{pF}) \cdot (\SI{10}{\kilo\ohm}) = \SI{17}{\nano s} \to f_2 \approx \SI{9}{\mega\hertz}
+	\end{equation}
+	
+	\textbf{4:}\\
+	Finalmente, el nodo 4 tiene cuatro capacidades parásitas asociadas: $C_{\pi6}^*$, $C_{\pi7}^*$ , $C_{\pi tp}$ y $C_{\mu tp}^*$.
+	
+	$C_{\pi6}^* = C_{\pi7}^*$ por simetría de circuito, y se encuentran en configuración seguidor invertido, por lo que tienden a ser nulas.
+	
+	$C_{\pi tp} = \SI{3400}{pF}$ y $C_{\mu tp} = \SI{1400}{pF}$  se obtienen de la datasheet del transistor de paso. Para reflejar $C_{\mu tp}$, se tiene en cuenta que la configuración es source común \textit{sin realimentación}, y por ende la ganancia dependerá de $R_L$, y será alta.
+	
+	La resistencia asociada al nodo será $R_4 // (r_{\pi6} + R_3) / \beta // (r_{\pi7} + R_3) / \beta$, y la estimaremos (de forma muy aproximada) como $R_4//R_3/2 = \SI{3.3}{k\ohm}$.
+	
+	La constante temporal mínima será, entonces:
+	
+	\begin{equation}
+		\tau_4 = (\SI{3.4}{\nano F} + \SI{1.4}{\nano F}) \cdot (\SI{3.3}{k\ohm}) = \SI{16}{\micro s} \to f_{4 máx} = \SI{10}{\kilo\hertz}.
+	\end{equation}
+	
+	Este resultado es congruente con lo simulado en la imagen \ref{fig:bode_corte_tension}. Se concluye que el nodo 4 es dominante, pues se encontrará al menos una década por encima del siguiente polo.
+	
+	Para atacar el problema y compensar el lazo, se observa la figura \ref{fig:bode_corte_tension2} y se analiza el peor caso posible, es decir, cuando $R_L \to \infty$. Se corre el polo ubicado en $f\approx \SI{450}{\hertz}$ (asociado al nodo 2) y se lo vuelve dominante. De este modo, aumenta drásticamente la zona en la cuál $\angle T_v \approx 0$, y al mismo tiempo se corre la curva de caída de $|T_v|$, ubicándola en esta zona. Para asegurar estabilidad, se agrega una red de adelanto de fase.
+	
+	Para correr el polo correctamente, se observa el punto en el que se encuentra el polo dominante $f \approx \SI{10}{\kilo\hertz}$. Se buscará entonces acercar el polo a una frecuencia tal que el margen de fase sea próximo a nulo. Esto se puede conseguir, dado que la ganancia es próxima a 96dB, y que la caída es de -40dB/dec, colocando el polo, aproximádamente, en $f_h \approx \SI{1}{\kilo\hertz}$.
+	
+	El capacitor de compensación tendrá valor
+	
+	$$\frac{1}{(\SI{5.1}{pF} + C_{comp}) \cdot (\SI{66}{\kilo\ohm}) \cdot 2\pi} = \SI{1}{\kilo\hertz} \to C_{comp} \approx \SI{2.2}{nF}.$$
+	
+	A continuación, se aprovecha la estructura divisor resistivo ($R_4$,$R_5$) como red de adelanto de fase, al agregar un capacitor de compensación en paralelo a $R_4$. Esta red tendrá los siguientes parámetros característicos:
+	
+	$$\tau = R_4 \cdot C_{comp} \qquad \alpha = \frac{R_4 + R_5}{R_5} = 0,25$$
+	
+	y sumará, en la frecuencia calculada,
+	
+	$$\Theta = arcsin\left(\frac{1-\alpha}{1+\alpha}\right) = \SI{36}{\deg}.$$
+	
+	La frecuencia de suma se calcula como
+	
+	$$f_\theta = \frac{1}{2\pi\cdot \tau \sqrt{\alpha}} = \frac{1}{2\pi \cdot R_4 \cdot C_{comp} \sqrt{\alpha}} = \SI{e6}{\hertz} \to C_{comp} \approx \SI{100}{pF}.$$
+	
+	El lazo de tensión compensado final tiene la forma de la figura \ref{fig:lazo_tension_compensado}.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\node[npn, xscale=0.98, yscale=0.98](N1) at (10, 6.755){} node[anchor=west] at (N1.text){$T_3$};
+			\node[npn, xscale=-0.98, yscale=0.98](N2) at (12, 6.745){} node[anchor=east] at (N2.text){$T_4$};
+			\node[npn, xscale=0.98, yscale=0.98](N3) at (11, 4.755){} node[anchor=west] at (N3.text){$T_5$};
+			\draw (11, 5.509) -| (11, 5.75) -- (10, 5.75) -| (10, 6);
+			\draw (11, 5.75) -- (12, 5.75) -| (12, 6);
+			\node[pnp, xscale=-0.98, yscale=0.98](N4) at (10, 8.495){} node[anchor=east] at (N4.text){$T_1$};
+			\node[pnp, xscale=0.98, yscale=0.98](N5) at (12, 8.495){} node[anchor=west] at (N5.text){$T_2$};
+			\draw (10, 7.509) -- (10, 7.75);
+			\draw (12, 7.5) -| (12, 7.75);
+			\draw (11.177, 8.505) |- (10.823, 8.495);
+			\draw (11.177, 8.5) |- (12, 7.75);
+			\node[pigfetebulk, rotate=90](N6) at (15.23, 9.25){} node[anchor=south] at (N6.text){$T_p$};
+			\draw (13.573, 6.745) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l_={$R_4$}] (15.75, 6.75);
+			\draw (13.25, 6.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_5$}] (13.255, 4.323);
+			\draw (13.25, 6.5) -| (13.25, 6.75);
+			\draw (13.255, 4.323) |- (13.25, 4);
+			\draw (16, 6.75) to[american potentiometer, mirror, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_6$}] (16, 4);
+			\draw (15.664, 5.375) -- (15, 5.375);
+			\draw (13.25, 6.75) -- (15, 5.375);
+			\draw (16, 6.75) -- (17, 6.75);
+			\draw (17, 6.75) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_L$}] (17, 4);
+			\draw (17, 6.75) |- (16, 9.25);
+			\draw (12, 9.25) -- (14.46, 9.25);
+			\draw (15.23, 9.25) -- (14.5, 9.25);
+			\draw (12.823, 6.745) -- (13.573, 6.745);
+			\draw (15.75, 6.75) -- (16, 6.75);
+			\node[circ](N7) at (9, 6.75){} node[anchor=south] at (N7.text){$v_{ref-t}$};
+			\node[circ] at (11, 5.75){};
+			\node[circ] at (10, 7.509){};
+			\node[circ] at (11.177, 8.505){};
+			\node[circ] at (10, 9.25){};
+			\node[circ] at (12, 9.25){};
+			\node[circ] at (12, 7.741){};
+			\node[circ](N8) at (13.25, 6.75){} node[anchor=south east] at (N8.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$1$}};
+			\node[circ] at (16, 6.75){};
+			\node[circ] at (17, 6.75){};
+			\draw (12, 9.25) -- (10, 9.25) -- (7, 9.25);
+			\draw (9.177, 6.755) |- (9, 6.75);
+			\node[rground] at (7.75, 9.25){};
+			\node[rground] at (11, 4){};
+			\node[rground] at (13.25, 4){};
+			\node[rground] at (16, 4){};
+			\node[rground] at (17, 4){};
+			\draw (4, 7.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (4, 9.25);
+			\node[npn, xscale=-1](N9) at (4.66, 6.75){} node[anchor=east] at (N9.text){$T_6$};
+			\node[pnp, xscale=-1](N10) at (6, 5.98){} node[anchor=east] at (N10.text){$T_5$};
+			\draw (6, 7.75) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (6, 9.25);
+			\draw (5.5, 6.75) -- (6, 6.75);
+			\draw (6, 7.75) -| (6, 6.75);
+			\draw (4, 7.75) -- (4, 7.52);
+			\draw (4, 4.25) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (4, 5.75);
+			\draw (4, 4.25) -| (4, 4);
+			\node[circ](N11) at (6, 6.75){} node[anchor=west] at (N11.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$3$}};
+			\draw (6.84, 5.98) -| (7, 6);
+			\node[circ](N12) at (3.25, 5.75){} node[anchor=east] at (N12.text){$v_{control}$};
+			\node[circ](N13) at (4, 5.75){} node[anchor=north west] at (N13.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$4$}};
+			\draw (10, 7.5) |- (7, 7.5) |- (6.84, 5.98);
+			\node[rground] at (4, 4){};
+			\draw (6, 9.25) -- (7, 9.25);
+			\node[circ] at (6, 9.25){};
+			\draw (4.66, 7.52) -- (4, 7.52);
+			\draw (4, 9.25) -- (6, 9.25);
+			\draw (3.25, 5.75) -- (4, 5.75);
+			\draw (6, 5.21) -- (6, 4);
+			\node[rground] at (6, 4){};
+			\node[circ](N14) at (14.25, 8.25){} node[anchor=east] at (N14.text){$v_{control}$};
+			\node[circ](N15) at (8, 7.5){} node[anchor=south] at (N15.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$2$}};
+			\node[npn](N16) at (3.34, 6.75){} node[anchor=west] at (N16.text){$T_7$};
+			\draw (3.34, 7.52) -| (4, 7.52);
+			\draw (3.34, 5.98) -| (4, 5.75);
+			\draw (4.66, 5.98) -| (4, 5.75);
+			\node[circ] at (7.75, 9.25){};
+			\draw (8, 7.5) to[capacitor, /tikz/circuitikz/bipoles/length=0.980cm, l_={$C_1$}] (8, 4);
+			\draw (14.96, 8.27) |- (14.25, 8.25);
+			\draw (15.25, 7.75) to[capacitor, /tikz/circuitikz/bipoles/length=0.980cm, l={$C_2$}] (14, 7.75);
+			\draw (15.25, 7.75) -| (16, 6.75);
+			\draw (14, 7.75) |- (13.25, 7.75) -| (13.25, 6.75);
+			\node[rground] at (8, 4){};
+		\end{tikzpicture}
+		\caption{Lazo de tensión final compensado}
+		\label{fig:lazo_tension_compensado}
+	\end{figure}
+	
+	\textbf{Lazo de corriente:}\\
+	La respuesta en frecuencia del lazo de corriente puede observarse en la simulación de la figura \ref{fig:bode_corte_corriente}. El análisis de nodos dominantes se vuelve engorroso por la presencia de polos asociados a los amplificadores LM358.
+	
+	Se propone, en este caso, tomar un nodo y volverlo dominante, igual que se hizo con el lazo de tensión. En la figura \ref{fig:nodos_lazo_corriente} pueden verse los posibles nodos a compensar.
+	
+	
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[npn, xscale=0.98, yscale=0.98](N1) at (10.529, 6.225){} node[anchor=west] at (N1.text){$T_3$};
+		\node[npn, xscale=-0.98, yscale=0.98](N2) at (12.529, 6.216){} node[anchor=east] at (N2.text){$T_4$};
+		\node[npn, xscale=0.98, yscale=0.98](N3) at (11.529, 4.225){} node[anchor=west] at (N3.text){$T_5$};
+		\draw (11.529, 4.98) -| (11.529, 5.221) -- (10.529, 5.221) -| (10.529, 5.471);
+		\draw (11.529, 5.221) -- (12.529, 5.221) -| (12.529, 5.471);
+		\node[pnp, xscale=-0.98, yscale=0.98](N4) at (10.529, 7.966){} node[anchor=east] at (N4.text){$T_1$};
+		\node[pnp, xscale=0.98, yscale=0.98](N5) at (12.529, 7.966){} node[anchor=west] at (N5.text){$T_2$};
+		\draw (10.529, 6.98) -- (10.529, 7.221);
+		\draw (12.529, 6.971) -| (12.529, 7.221);
+		\draw (11.706, 7.975) |- (11.352, 7.966);
+		\draw (11.706, 7.971) |- (12.529, 7.221);
+		\node[pigfetebulk, rotate=90](N6) at (15.759, 8.721){} node[anchor=south] at (N6.text){$T_p$};
+		\draw (17.5, 5.819) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_L$}] (17.5, 3.5);
+		\draw (12.529, 8.721) -- (14.989, 8.721);
+		\draw (15.759, 8.721) -- (15.029, 8.721);
+		\node[circ](N7) at (9.529, 6.221){} node[anchor=south] at (N7.text){$v_{ref-c}$};
+		\node[circ] at (11.529, 5.221){};
+		\node[circ] at (10.529, 6.98){};
+		\node[circ] at (11.706, 7.975){};
+		\node[circ] at (10.529, 8.721){};
+		\node[circ] at (12.529, 8.721){};
+		\node[circ] at (12.529, 7.212){};
+		\draw (12.529, 8.721) -- (10.529, 8.721) -- (7.529, 8.721);
+		\node[rground] at (8.279, 8.721){};
+		\node[rground] at (11.529, 3.471){};
+		\node[rground] at (17.5, 3.5){};
+		\draw (4.529, 7.221) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (4.529, 8.721);
+		\node[npn, xscale=-1](N8) at (5.189, 6.221){} node[anchor=east] at (N8.text){$T_6$};
+		\node[pnp, xscale=-1](N9) at (6.529, 5.451){} node[anchor=east] at (N9.text){$T_5$};
+		\draw (6.529, 7.221) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (6.529, 8.721);
+		\draw (6.029, 6.221) -- (6.529, 6.221);
+		\draw (6.529, 7.221) -| (6.529, 6.221);
+		\draw (4.529, 7.221) -- (4.529, 6.991);
+		\draw (4.529, 3.721) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (4.529, 5.221);
+		\draw (4.529, 3.721) -| (4.529, 3.471);
+		\node[circ](N10) at (6.529, 6.221){} node[anchor=west] at (N10.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$2$}};
+		\draw (7.369, 5.451) -| (7.529, 5.471);
+		\node[circ](N11) at (3.779, 5.221){} node[anchor=east] at (N11.text){$v_{control}$};
+		\node[circ] at (4.529, 5.221){};
+		\draw (10.529, 6.971) |- (7.529, 6.971) |- (7.369, 5.451);
+		\node[rground] at (4.529, 3.471){};
+		\draw (6.529, 8.721) -- (7.529, 8.721);
+		\node[circ] at (6.529, 8.721){};
+		\draw (5.189, 6.991) -- (4.529, 6.991);
+		\draw (4.529, 8.721) -- (6.529, 8.721);
+		\draw (3.779, 5.221) -- (4.529, 5.221);
+		\draw (6.529, 4.681) -- (6.529, 3.471);
+		\node[rground] at (6.529, 3.471){};
+		\node[circ](N12) at (14.779, 7.721){} node[anchor=east] at (N12.text){$v_{control}$};
+		\node[circ](N13) at (8.529, 6.971){} node[anchor=south] at (N13.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$1$}};
+		\node[npn](N14) at (3.869, 6.221){} node[anchor=west] at (N14.text){$T_7$};
+		\draw (3.869, 6.991) -| (4.529, 6.991);
+		\draw (3.869, 5.451) -| (4.529, 5.221);
+		\draw (5.189, 5.451) -| (4.529, 5.221);
+		\node[circ] at (8.279, 8.721){};
+		\draw (15.49, 7.741) |- (14.779, 7.721);
+		\draw (17.5, 5.819) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_s$}] (17.5, 8);
+		\draw (16.529, 8.721) -| (17.5, 8);
+		\draw (9.706, 6.225) -| (9.5, 6.25);
+		\node[op amp, xscale=-0.8, yscale=-0.8] at (14.917, 6.211){};
+		\draw (13.965, 6.211) |- (13.352, 6.216);
+		\draw (15.869, 6.603) -| (16.5, 8) -- (17.5, 8);
+		\draw (15.869, 5.819) -| (17.5, 5.75);
+		\node[circ] at (17.5, 8){};
+		\node[circ] at (17.5, 5.819){};
+		\node[circ] at (4.529, 6.991){};
+	\end{tikzpicture}
+	\caption{Nodos de compensación del lazo de corriente.}
+	\label{fig:nodos_lazo_corriente}
+\end{figure}
+	
+	Dado que el circuito es muy similar al lazo de tensión, se puede hacer una relación directa entre el nodo 1 y el nodo 3 del lazo de tensión, y el nodo 2 y 3 del lazo de tensión. De esta comparación, se deduce que el de mayor constante de tiempo es el nodo 1, y será el que se compensará. Notar que el nodo dominante ya no será el asociado al terminal gate del transistor de paso, por haber una resistencia de salida $R_L < \SI{3.3}{\ohm}$ cuando el lazo de corriente se encuentra activo.
+	
+	El objetivo es desplazar este polo, de tal modo que, para $|T_A| = \SI{0}{dB}$, haya un margen de fase de entre \SI{20}{\deg} y \SI{30}{deg}. El gráfico de la figura \ref{fig:bode_corte_corriente} pone de manifiesto que $\angle T_A \approx \SI{30}{deg}$ para $f \approx \SI{200}{\kilo\hertz}$. Para una ganancia en frecuencias medias de $|T_A| = \SI{67}{dB}$, y con una caída de -20db/dec, el polo deberá ubicarse en $f \approx \SI{2}{\hertz}$.
+	
+	Se analiza entonces la constante de tiempo del nodo 1 (ecuación \ref{eq:tau2}):
+	
+	\begin{equation}
+		\frac{1}{(\SI{5.1}{pF} + C_{comp}) \cdot (\SI{66}{\kilo\ohm}) \cdot 2\pi} = \SI{2}{\hertz} \to C_{comp} \approx \SI{220}{\nano F}
+	\end{equation}
+	
+	El lazo de corriente compensado tiene la forma de la figura \ref{fig:lazo_corriente_compensado}. 
+	
+	\begin{figure}[h]
+		\centering
+			\begin{tikzpicture}[transform shape]
+				% Paths, nodes and wires:
+				\node[npn, xscale=0.98, yscale=0.98](N1) at (10.529, 6.225){} node[anchor=west] at (N1.text){$T_3$};
+				\node[npn, xscale=-0.98, yscale=0.98](N2) at (12.529, 6.216){} node[anchor=east] at (N2.text){$T_4$};
+				\node[npn, xscale=0.98, yscale=0.98](N3) at (11.529, 4.225){} node[anchor=west] at (N3.text){$T_5$};
+				\draw (11.529, 4.98) -| (11.529, 5.221) -- (10.529, 5.221) -| (10.529, 5.471);
+				\draw (11.529, 5.221) -- (12.529, 5.221) -| (12.529, 5.471);
+				\node[pnp, xscale=-0.98, yscale=0.98](N4) at (10.529, 7.966){} node[anchor=east] at (N4.text){$T_1$};
+				\node[pnp, xscale=0.98, yscale=0.98](N5) at (12.529, 7.966){} node[anchor=west] at (N5.text){$T_2$};
+				\draw (10.529, 6.98) -- (10.529, 7.221);
+				\draw (12.529, 6.971) -| (12.529, 7.221);
+				\draw (11.706, 7.975) |- (11.352, 7.966);
+				\draw (11.706, 7.971) |- (12.529, 7.221);
+				\node[pigfetebulk, rotate=90](N6) at (15.759, 8.721){} node[anchor=south] at (N6.text){$T_p$};
+				\draw (17.5, 5.819) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_L$}] (17.5, 3.5);
+				\draw (12.529, 8.721) -- (14.989, 8.721);
+				\draw (15.759, 8.721) -- (15.029, 8.721);
+				\node[circ](N7) at (9.529, 6.221){} node[anchor=south] at (N7.text){$v_{ref-c}$};
+				\node[circ] at (11.529, 5.221){};
+				\node[circ] at (10.529, 6.98){};
+				\node[circ] at (11.706, 7.975){};
+				\node[circ] at (10.529, 8.721){};
+				\node[circ] at (12.529, 8.721){};
+				\node[circ] at (12.529, 7.212){};
+				\draw (12.529, 8.721) -- (10.529, 8.721) -- (7.529, 8.721);
+				\node[rground] at (8.279, 8.721){};
+				\node[rground] at (11.529, 3.471){};
+				\node[rground] at (17.5, 3.5){};
+				\draw (4.529, 7.221) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (4.529, 8.721);
+				\node[npn, xscale=-1](N8) at (5.189, 6.221){} node[anchor=east] at (N8.text){$T_6$};
+				\node[pnp, xscale=-1](N9) at (6.529, 5.451){} node[anchor=east] at (N9.text){$T_5$};
+				\draw (6.529, 7.221) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (6.529, 8.721);
+				\draw (6.029, 6.221) -- (6.529, 6.221);
+				\draw (6.529, 7.221) -| (6.529, 6.221);
+				\draw (4.529, 7.221) -- (4.529, 6.991);
+				\draw (4.529, 3.721) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (4.529, 5.221);
+				\draw (4.529, 3.721) -| (4.529, 3.471);
+				\node[circ](N10) at (6.529, 6.221){} node[anchor=west] at (N10.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$2$}};
+				\draw (7.369, 5.451) -| (7.529, 5.471);
+				\node[circ](N11) at (3.779, 5.221){} node[anchor=east] at (N11.text){$v_{control}$};
+				\node[circ] at (4.529, 5.221){};
+				\draw (10.529, 6.971) |- (7.529, 6.971) |- (7.369, 5.451);
+				\node[rground] at (4.529, 3.471){};
+				\draw (6.529, 8.721) -- (7.529, 8.721);
+				\node[circ] at (6.529, 8.721){};
+				\draw (5.189, 6.991) -- (4.529, 6.991);
+				\draw (4.529, 8.721) -- (6.529, 8.721);
+				\draw (3.779, 5.221) -- (4.529, 5.221);
+				\draw (6.529, 4.681) -- (6.529, 3.471);
+				\node[rground] at (6.529, 3.471){};
+				\node[circ](N12) at (14.779, 7.721){} node[anchor=east] at (N12.text){$v_{control}$};
+				\node[circ](N13) at (8.5, 7){} node[anchor=south] at (N13.text){\textcolor{rgb,255:red,255;green,0;blue,0}{$1$}};
+				\node[npn](N14) at (3.869, 6.221){} node[anchor=west] at (N14.text){$T_7$};
+				\draw (3.869, 6.991) -| (4.529, 6.991);
+				\draw (3.869, 5.451) -| (4.529, 5.221);
+				\draw (5.189, 5.451) -| (4.529, 5.221);
+				\node[circ] at (8.279, 8.721){};
+				\draw (15.49, 7.741) |- (14.779, 7.721);
+				\draw (17.5, 5.819) to[american resistor, /tikz/circuitikz/bipoles/length=1.12cm, l={$R_s$}] (17.5, 8);
+				\draw (16.529, 8.721) -| (17.5, 8);
+				\draw (9.706, 6.225) -| (9.5, 6.25);
+				\node[op amp, xscale=-0.8, yscale=-0.8] at (14.917, 6.211){};
+				\draw (13.965, 6.211) |- (13.352, 6.216);
+				\draw (15.869, 6.603) -| (16.5, 8) -- (17.5, 8);
+				\draw (15.869, 5.819) -| (17.5, 5.75);
+				\node[circ] at (17.5, 8){};
+				\node[circ] at (17.5, 5.819){};
+				\node[circ] at (4.529, 6.991){};
+				\draw (8.5, 7) to[capacitor, /tikz/circuitikz/bipoles/length=1.12cm, l={$C_{comp}$}] (8.5, 3.5);
+				\node[rground] at (8.5, 3.5){};
+			\end{tikzpicture}
+		\caption{Lazo de corriente compensado.}
+		\label{fig:lazo_corriente_compensado}
+	\end{figure}
+	
+	
+	\input{analisis_termico}
+	\newpage
+
+\FloatBarrier
+	\subsubsection{Consideraciones de fabricación PCB}
+	\FloatBarrier
+	Todo diseño presenta desafíos; en este caso, al desarrollar el circuito impreso, el objetivo principal es maximizar el rendimiento, garantizar la robustez y lograr una implementación compacta en una placa adecuada.
+	
+	Debe poseer un tamaño óptimo para su integración en el sistema completo y contemplar tecnologías que ofrezcan la mejor relación entre rendimiento y costo. El uso de estándares y normas, como la IPC-2222 para placas rígidas, sirve como guía durante el proceso de diseño. Tanto el esquemático como las huellas de los componentes, los modelos 3D y el diseño de la PCB fueron desarrollados utilizando el software KiCad, iniciando con el esquemático presentado en la sección \ref{sec:apendice_esquematicos} y utilizando las distintas herramientas del software.
+	
+	 
+
+	 
+	\paragraph{Arquitectura general}
+	
+	Se diseñará una placa rígida de dos capas, en la cual las pistas conductoras estarán implementadas en la capa superior (F.Cu) y en la capa inferior (B.Cu). Los componentes se conectarán y fijarán mediante tecnología de orificio pasante (THT: through-hole-Technology), utilizando pines que atraviesan la placa. Además, se contemplan serigrafías en la cara superior (F.SilkS) destinadas a la identificación de componentes y bloques funcionales del circuito.
+	
+	
+	\paragraph{Selección de materiales y encapsulados}
+	
+	Para la placa se utilizó material FR-4 como sustrato de espesor 1,6mm, debido a su disponibilidad, bajo costo y adecuadas propiedades dieléctricas para aplicaciones de baja y media frecuencia. Es un compuesto laminado de tela de fibra de vidrio tejida con un aglutinante de resina epoxi, reconocido por ser ignífugo (cumple con la norma UL94V-0), mecánicamente resistente, con excelente aislamiento eléctrico y alta estabilidad dimensional. Dicho sustrato tendrá sobre sus superficies las pistas mediante un laminado de cobre. La mayoría de los proveedores de laminados ofrecen resinas epoxi con una Tg (temperatura de transición vítrea) de 110 a 120 °C hasta 180 a 190 °C, y algunas de las más utilizadas se encuentran en el rango de 135 a 145 °C. En la tabla \ref{tab:limites_espesor} se especifican los limites de separación entre capas de la PCB, a medida que aumenta el grosor el rango de temperatura soportada aumenta.
+	
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Límites máximos de temperatura de operación según clase (estandar IPC-2222).}
+		\label{tab:limites_espesor}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{NEMA} & \textbf{IPC-4101} & \textbf{Espesor dieléctrico (mín)} & \textbf{Temperatura (máx)} \\
+			\hline
+				FR-4 & 21/24/25/27 & 0.1 mm & $120\,^\circ\mathrm{C}$ \\
+			\hline
+				FR-4 & 21/24/25/27 & 0.4 mm & $130\,^\circ\mathrm{C}$\\
+			\hline
+				FR-4 & 21/24/25/27 & 1.6mm & $170\,^\circ\mathrm{C}$\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	Se seleccionaron los siguientes encapsulados para cada tipo de componente:
+	
+ \begin{center}
+ 	
+	\begin{tabular}{ c c c c c c c }
+		
+		\textbf{TO-92} & \textbf{TO-220} & \textbf{DIP-8} & \textbf{Axial 1/4 W} & \textbf{Serie 3296} & \textbf{Cerámico} & \textbf{Bornera} \\
+		
+		\includegraphics[width=2cm]{img/Encapsulados/to92_fixed.png} &
+		\includegraphics[width=2cm]{img/Encapsulados/to220_fixed.png} &
+		\includegraphics[width=2cm]{img/Encapsulados/dip8_fixed.png} &
+		\includegraphics[width=2cm]{img/Encapsulados/R_axial_fixed.png}&
+		\includegraphics[width=2cm]{img/Encapsulados/preset_fixed.png}&
+		\includegraphics[width=2cm]{img/Encapsulados/ceramicos.png}&
+		\includegraphics[width=2cm]{img/Encapsulados/bornera.png}\\
+		
+		BJT / TL431 & IRF4905 & LM324 & Resistor & Preset & Capacitor & Salida y entrada \\
+	\end{tabular}
+\end{center}
+
+	Cabe resaltar que el uso de componentes integrados, como el LM324 que incorpora cuatro amplificadores operacionales en un mismo encapsulado, permite reducir el área de la placa. Asimismo se evitara la selección de encapsulados con pines no conectados (NC, \textit{No Internal Connection}), como en el caso del TL431, lo cual contribuye a un diseño más eficiente. Se utilizan capacitores de tecnología cerámica en su material dieléctrico debido a su respuesta en frecuencia y valores de capacitancia´.
+	
+		
+	\paragraph{Selección de huellas y modelos 3D}
+	
+	Cada componente debe integrarse correctamente en la placa de circuito impreso (PCB). Para ello, el software utiliza un sistema de huellas (footprints), generalmente provistas por los fabricantes o desarrolladas por la comunidad, que definen las dimensiones físicas, la disposición de pines y los orificios necesarios para el montaje de cada componente. Asimismo, el software permite la visualización y edición de estas huellas.
+	
+	Adicionalmente, el entorno de desarrollo ofrece una representación tridimensional de la placa, incorporando modelos 3D de los componentes. Estos modelos pueden organizarse en librerías, escalarse, rotarse y visualizarse dentro del diseño. Sin embargo, la modificación de su geometría no está soportada directamente por el software, por lo que es necesario recurrir a herramientas externas de diseño 3D, tales como FreeCad y SolidWorks entre otras.
+	
+	\paragraph{Ancho de pistas}
+	
+	
+	El dimensionamiento de las pistas se realizó en función de la corriente máxima esperada (1.5 A) y del incremento de temperatura admisible en el conductor. Para el presente diseño, las interconexiones se clasificaron en tres categorías: red de señal, red de alimentación y red de potencia.
+	
+	La red de señal corresponde a las conexiones encargadas de transportar niveles de referencia y señales de baja corriente entre etapas de amplificación y comparación, por lo que se priorizó la compacidad del ruteo utilizando anchos de pista reducidos.
+	
+	La red de alimentación incluye las pistas que distribuyen energía a los distintos bloques del circuito. En este caso, se adoptaron anchos de pista mayores con el objetivo de reducir la caída de tensión y mejorar la disipación térmica.
+	
+	Por último, la red de potencia comprende las conexiones asociadas a la entrega de corriente hacia la carga, particularmente en la etapa del transistor de paso del regulador LDO. Estas pistas fueron dimensionadas con el mayor ancho disponible dentro de las restricciones del diseño, a fin de minimizar pérdidas resistivas y evitar sobrecalentamientos.
+	
+	El diseño se realizó siguiendo criterios empíricos basados en buenas prácticas de diseño de PCB, asegurando un compromiso adecuado entre capacidad de conducción de corriente, integridad de señal y densidad de ruteo.
+	
+	
+	\paragraph{Dimensionamiento de pistas}
+	
+	El dimensionamiento de las pistas se realizó en función de la corriente máxima esperada del circuito (1.5 A) y del incremento de temperatura admisible, siguiendo recomendaciones de estándares de diseño como IPC-2221 e IPC-2152.
+	
+	De acuerdo con dichos estándares, la corriente máxima que puede conducir una pista de cobre se relaciona empíricamente con su sección transversal y el aumento de temperatura mediante:
+	
+	\[
+	I = k \cdot (\Delta T)^{0.44} \cdot A^{0.725}
+	\]
+	
+	donde \( I \) es la corriente, \( \Delta T \) el incremento de temperatura permitido y \( A \) el área de la sección transversal de la pista. Para capas externas, se considera \( k \approx 0.048 \).
+	
+	Desde el punto de vista físico, este criterio se fundamenta en el calentamiento resistivo del conductor, descrito por la ley de Joule:
+	
+	\[
+	P = I^2 R
+	\]
+	
+	y la resistencia eléctrica de la pista:
+	
+	\[
+	R = \rho \frac{L}{A}
+	\]
+	
+	De estas expresiones se desprende que un aumento en el área de la sección transversal (mayor ancho de pista) reduce la resistencia eléctrica y, en consecuencia, la potencia disipada en forma de calor, limitando el incremento de temperatura.
+	
+	Considerando una PCB con cobre estándar de 1 oz/ft\(^2\) (espesor aproximado de 35 $\mu$m), una corriente de 1.5 A y un incremento de temperatura de aproximadamente 10 °C, se obtiene un ancho de pista recomendado del orden de 0.8 mm a 1.2 mm para capas externas.
+	
+	En base a este análisis, se adoptaron los siguientes criterios de diseño:
+	
+	\begin{itemize}
+		\item Pistas de señal: 0.25 mm a 0.4 mm.
+		\item Pistas de alimentación y potencia: 0.6 mm a 1 mm.
+	\end{itemize}
+	
+	Estos valores garantizan un compromiso adecuado entre capacidad de conducción de corriente, disipación térmica y densidad de ruteo, asegurando el correcto funcionamiento del circuito sin sobrecalentamiento de las pistas.
+	
+	
+	
+	\paragraph{Disposición de componentes}
+	Para este sistema de regulación de tensión con fines académicos se propuso como desafío una placa con una disposición de componentes que respete la modularización del circuito y priorice la identificación de los bloques.
+	
+	
+	\paragraph{Consideraciones térmicas}
+	Se contempló la disipación de potencia del regulador:
+	\begin{itemize}
+		\item Se aumentó el área de cobre asociada al encapsulado para mejorar la disipación térmica.
+	\end{itemize}
+	
+	\paragraph{Fijación mecánica }
+	
+	Para la posterior implementación de la placa en el sistema completo, se debe considerar un margen con los orificios para la sujeción mediante tornillos pasantes, otra opción que podría considerarse es una fijación por sistema de encastre respecto a un gabinete final. En nuestro caso consideramos unos orificios de sujeción de 2.05 mm en bordes de 5 mm.
+
+	
+	\paragraph{Separación y reglas de diseño}
+	Se respetaron distancias mínimas entre pistas según el nivel de tensión del circuito, evitando riesgos de cortocircuito o corrientes parásitas. Asimismo, se definieron reglas de diseño (DRC) acordes al proceso de fabricación.
+	
+	\paragraph{Análisis de requerimientos eléctricos (seguridad eléctrica y EMC)}
+	
+	El propio kit de desarrollo, cuenta con la ejecución de un control de normas eléctricas de conexionado conocido como Electrical Rules Check (ERC), analiza el esquemático y verifica que las conexiones tengan sentido desde el punto de vista eléctrico y lógico detectando inconsistencias. Luego de establecer el esquemático se realiza este control eliminando errores y contemplando las advertencias del mismo.
+	
+	\paragraph{Auto-ruteo}
+	
+	El software Kicad permite añadir diferentes aplicaciones externas que actúan como \textit{plugins} o añadidos dentro del mismo kit de desarrollo, se utilizo uno de ellos para realizar un autoruteo inicial de pistas para acelerar el tiempo de diseño. \textit{Freerouting} es un \textit{autorouter} externo que utiliza algoritmos tipo \textit{maze routing} (búsqueda de caminos) y optimización iterativa (intenta mejorar rutas), el cual se ejecuta de acuerdo a diferentes especificaciones impuestas por el diseñador. Sin embargo luego de ejecutar dicho ruteo de pistas, es necesario corregir o modificar con criterio ya que los algoritmos no contemplan condiciónes de fabricación o el funcionamiento óptimo de la placa.
+	
+	
+	\paragraph{Características del diseño de la placa impresa del LDO}
+	
+	A continuación en la tabla \ref{tab:parametros_pcb_LDO} se detallan los parámetros y características definidas para el diseño final mientras que en la tabla \ref{tab:nodos_pistas} se detalla las redes establecidas para el diseño, el cual se aprecia en las figuras \ref{fig:pcb_vistas}y en el apéndice \ref{sec:apendice_PCB}.
+	
+\begin{table}[h]
+	\centering
+	
+	\begin{subtable}[t]{0.48\textwidth}
+		\centering
+		\caption{Parámetros principales de la PCB}
+		\label{tab:parametros_pcb_LDO}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{|l|c|}
+			\hline
+			\textbf{Parámetro} & \textbf{Valor} \\
+			\hline
+			Dimensiones de la PCB & 98.5 mm $\times$ 100.5 mm \\
+			Espesor de la PCB & 1.6 mm \\
+			Cantidad de capas & 2 (doble faz) \\
+			Material del sustrato & FR-4 \\
+			\hline
+			Cantidad de componentes THT & 55 \\
+			Cantidad de componentes SMD & 0 \\
+			Cantidad total de agujeros & 137 \\
+			Diámetro mínimo de taladro & 0.7 mm \\
+			\hline
+			Ancho de pista (señal) & 0.4 mm \\
+			Ancho de pista (alimentación) & 0.8 mm \\
+			Ancho de pista (potencia) & 0.8 mm \\
+			\hline
+			Plano de masa & Sí (capa inferior) \\
+			Separación mínima de pistas & 0.2 mm \\
+			\hline
+			Tipo de montaje & THT \\
+			Aplicación principal & Regulador LDO \\
+			\hline
+		\end{tabular}
+	\end{subtable}
+	\hfill
+	\begin{subtable}[t]{0.48\textwidth}
+		\centering
+		\caption{Clasificación de nodos y dimensionamiento}
+		\label{tab:nodos_pistas}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{|l|c|c|}
+			\hline
+			\textbf{Nodo} & \textbf{Red} & \textbf{Ancho [mm]} \\
+			\hline
+			Vin & Alimentación & 0.8 \\
+			Vref & Señal & 0.4 \\
+			Vref\_t & Señal & 0.4 \\
+			Vref\_c & Señal & 0.4 \\
+			V\_voltage & Señal & 0.4 \\
+			V\_current & Señal & 0.4 \\
+			V\_Rs & Señal & 0.4 \\
+			Salida (Vo) & Potencia & 0.8 \\
+			GND & Alimentación & Plano / 0.8 \\
+			\hline
+		\end{tabular}
+	\end{subtable}
+	
+\end{table}
+
+	
+	\begin{figure}[h]
+		\centering
+		
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/LDO/PCB_Diseño/pistas_F.png}
+			\caption{Pistas superiores}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.5\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/LDO/PCB_Diseño/render_superior.png}
+			\caption{Vista superior}
+		\end{subfigure}
+		
+		\caption{Vista general de la PCB diseñada}
+		\label{fig:pcb_vistas}
+		
+	\end{figure}
+	
+	
+	
+	% SL : voy a seguir la seccion del diseño de pcb a parte y dsp lo añado
+	
+	
+	\checkpointend{2}
+	
+	\subsubsection{Mejoras:}
+	Aunque el regulador lineal satisface las especificaciones de la tabla \ref{tabla:especificaciones_ldo}, hay algunas mejoras que pueden realizarse al circuito para mejorar aun más su desempeño:
+	
+	\begin{itemize}
+		\item \textbf{Mejora de rechazo al ruido:} Se observó que el rechazo al ripple de altas frecuencias (\SI{100}{\kilo\hertz}) no es bueno (ver figura \ref{fig:ldovccvo}). Algunos elementos que favorecen este comportamiento es la alimentación de varios módulos pertenecientes a lazos de realimentación con la fuente de entrada $V_{cc}$. Si se hiciera una relación de compromiso y se limitara $V_{cc max}$, podría alimentarse los lazos con fuentes controladas estables.
+		
+		Adicionalmente, la tensión de control $V_{gs}$ se ve referida a la fuente de tensión, por lo que, por muy estable que sea $v_g$, seguirá habiendo fluctuaciones. Esta es una limitación importante del transistor de paso canal P. Una forma de contrarestarlo sería hacer la respuesta de los lazos más rápida.
+		
+		\item \textbf{Lazo de corriente:} El lazo de corriente contiene un máximo de tres etapas amplificadoras, y 5 en total. La implementación más rudimentaria de regulación foldback utiliza tan solo un transistor y tres resistencias. Buscar un modo de reducir la circuitería haría el circuito más rápido, eficiente y simple. Una ventaja de mantener la configuración actual es la precisión de regulación estacionaria.
+		
+		\item \textbf{Par darlington:} Utilizar un par darlington en los pares diferenciales aumenta enormemente la resistencia $R_{diff}$, así como la ganancia $A_{d}$, por mejorar el valor de $gm$.
+	\end{itemize}
+	
+	\section{Simulaciones}
+	\label{sec:simulaciones}
+	
+	\subsection{Simulaciones del regulador lineal LDO}
+	\FloatBarrier
+	\FloatBarrier
+	\subsubsection{Modo estático}
+	\FloatBarrier
+	
+	Para verificar el diseño se realizan simulación en el software LtSpice utilizando los modelos necesarios y las conexiones detalladas en el apéndice \ref{sec:apendice_simulaciónes} en la captura de la figura \ref{fig:ldoregulacionlinea}.
+	
+	En particular, se evaluaron distintos aspectos fundamentales del desempeño del regulador LDO. En primer lugar, se evaluó la hipótesis $a_o.f \gg 1$ para ambos lazos. Luego se analizó la estabilización de la tensión de salida frente a variaciones temporales de la tensión de entrada y la regulación de línea, que caracteriza la capacidad del regulador para mantener constante la tensión de salida ante cambios en la tensión de entrada. Asimismo, se evaluó la regulación de carga, analizando la variación de la tensión de salida frente a cambios en la corriente demandada por la carga.
+	
+	Adicionalmente, se calculó la eficiencia del regulador, definida como la relación entre la potencia entregada a la carga y la potencia suministrada por la fuente de entrada. Este análisis permite estimar el rendimiento energético del circuito y las pérdidas asociadas al elemento de paso del regulador.
+	
+	Se presentan los resultados obtenidos para cada uno de estos casos.
+	
+	\checkpointstart{2}
+	\FloatBarrier
+	\paragraph{Ganancias de lazo: }
+	\FloatBarrier
+	Se observó para ambos lazos que el componente $a_o$ es, escencialmente, el amplificador diferencial al final de cada uno sumado al circuito source común generado por el PMOS. A continuación, se rompe el lazo y se simula la amplitud de salida, del otro lado del lazo, para obtener valor numérico de $|T_t|$ y $|T_c|$.
+	
+	Para tal efecto, se utiliza una estructura como la de la figura \ref{fig:rompelazo} para conservar el circuito de contínua, pero romper el lazo en señal.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\draw (3, 2.75) to[american voltage source, l={$v_p$}] (3, 0.75);
+			\draw (5, 4) to[american inductor, mirror, l={$L$}] (3, 4);
+			\draw (3, 2.75) to[capacitor, l={$C$}] (3, 4);
+			\draw (3, 4) -- (1, 4);
+			\node[tlground] at (3, 0.75){};
+			\node[circ] at (3, 4){};
+			\node[inputarrow, xscale=-1, yscale=-1] at (1, 4){};
+			\node[circ](N1) at (5, 4){} node[anchor=west] at (N1.text){$v_o$};
+		\end{tikzpicture}
+		\caption{Circuito de prueba para cortar lazo.}
+		\label{fig:rompelazo}
+	\end{figure}
+	
+	\textbf{Lazo de tensión:}\\
+	Se anulan ambos lazos de corriente (shunt y foldback), aunque no se encuentren operativos para la resistencia de carga $R_L = \SI{100}{\ohm}$ elegida, y se coloca la estructura de la figura \ref{fig:rompelazo}. La figura \ref{fig:corte_lazo_tension} muestra el circuito de medición completo.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{img/LDO/Corte_lazo_tension}
+		\caption{Circuito utilizado para la medición de $T_v$.}
+		\label{fig:corte_lazo_tension}
+	\end{figure}
+	
+	El resultado es un gráfico de Bode como el de la figura \ref{fig:bode_corte_tension}. Que da una ganancia para bajas frecuencias $T_v = \SI{86}{dB}$. Esto es suficiente para asegurar $a_o.f_v \gg 1$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_tension"}
+		\caption{Bode resultante de la medición de $T_v$. Notar el polo en $f \sim \SI{10}{k\ohm}$.}
+		\label{fig:bode_corte_tension}
+	\end{figure}
+	
+	En este gráfico queda en evidencia el por qué de la oscilación para la regulación de línea (\ref{fig:ldovccvo}), pues la frecuencia de ruido $\sim \SI{100}{k\hertz}$ seguramente se encuentre en un punto con ganancia $|T| > 1$ y fase negativa, produciendo realimentación positiva y oscilaciones.
+	
+	A continuación se varía la resistencia de carga para buscar el caso más descompensado. Dadas las resistencias $R_3$ y $R_4$, se espera que el peor caso se encuentre en resistencias de carga $R_L \gg R_3 // R_4$. La figura \ref{fig:bode_corte_tension2} muestra el resultado de la simulación.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_tension_comparacion"}
+		\caption{Bode resultante de la medición de $T_v$ para diferentes valores de $R_L$.}
+		\label{fig:bode_corte_tension2}
+	\end{figure}
+	
+	Una vez compensado el lazo, según se analiza en la sección \ref{sec:compensacion}:Lazo de tensión, el gráfico de bode tendrá la forma de la figura \ref{fig:bode_tension_compensado}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_tension_compensado"}
+		\caption{Bode resultante de la medición de $T_v$ para un lazo de tensión compensado con diferentes cargas.}
+		\label{fig:bode_tension_compensado}
+	\end{figure}
+	
+	\textbf{Lazo de corriente:}\\
+	En este caso, se realiza el procedimiento inverso. Se anula el lazo de tensión y shunt, y se corta el lazo de corriente en un punto de alta impedancia, como la base del transistor de paso. En la figura \ref{fig:corte_lazo_corriente} puede verse el circuito de medición completo.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{img/LDO/Corte_lazo_corriente}
+		\caption{Circuito utilizado para la medición de $T_A$.}
+		\label{fig:corte_lazo_corriente}
+	\end{figure}
+	
+	El resultado es un gráfico de Bode como el de la figura \ref{fig:bode_corte_corriente}. Que da una ganancia para bajas frecuencias $T_A = \SI{67}{dB}$. Esto es suficiente para asegurar $a_o.f_A \gg 1$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_comparacion"}
+		\caption{Bode resultante de la medición de $T_A$ para diferentes valores de $R_L$.}
+		\label{fig:bode_corte_corriente}
+	\end{figure}
+	
+	Finalmente, se simula simula bajo las mismas condiciones el lazo de corriente compensado. El resultado puede verse en la figura \ref{fig:bode_corriente_compensado}.
+	
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_compensado"}
+		\caption{Bode resultante de la medición de $T_A$ para el lazo de corriente compensado.}
+		\label{fig:bode_corriente_compensado}
+	\end{figure}
+	\checkpointend{2}
+	\FloatBarrier
+	\paragraph{Estabilización de tensión: }
+	\FloatBarrier
+	En la simulación temporal se verifica la estabilización de tensión con respecto a la $Vcc$ prevista, utilizando un valor de carga dentro de la zona de regulación estimada, logrando así constatar cómo se reduce el ripple. Se simula tomando un valor de carga dentro del rango de regulación, y se toman los valores de tensión en función del tiempo, para el análisis se comparan las componentes alternas de cada señal eliminando el valor medio de ambas, tal como se observa en los gráficos de la figura \ref{fig:ldovccvo}.
+	
+	Notar que la compensación favorece el rechazo al ruido de entrada, al mismo tiempo que evita la oscilación del ciruito.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[b]{0.55\linewidth}
+		\includegraphics[width =\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Vcc_Vo"}
+		\caption{Caso descompensado.}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.55\linewidth}
+		\includegraphics[width = \linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_Vcc_Vo_compensado"}
+		\caption{Caso compensado.}
+	\end{subfigure}
+		\caption{Gráfico de la simulación temporal con ruido a la entrada $V_{pp} = \SI{0.4}{V} , f = \SI{100}{\kilo H}$.}
+		\label{fig:ldovccvo}
+	\end{figure}
+	
+	
+	\FloatBarrier
+	\paragraph{Regulación de Linea:}
+	\FloatBarrier
+	
+	La regulación de línea describe la capacidad del regulador para mantener constante la tensión de salida frente a variaciones en la tensión de entrada \(V_{CC}\).
+	
+	Para caracterizar este comportamiento, se realiza un barrido de la tensión de entrada y se gráfica la tensión de salida \(V_O\) en función de \(V_{CC}\), para una carga fija de $R_L = \SI{10}{\kilo\ohm}$.
+	
+	\begin{itemize}
+		\item \textbf{Zona de regulación:}  
+		Para valores suficientemente altos de \(V_{CC}\), el regulador opera en condiciones normales y la tensión de salida permanece aproximadamente constante e igual al valor nominal. En esta región, el lazo de realimentación compensa las variaciones de entrada.
+		
+		\item \textbf{Zona de dropout:}  
+		A medida que \(V_{CC}\) disminuye, se alcanza un punto en el cual el regulador no puede mantener la tensión de salida constante. Esto ocurre cuando el transistor de paso entra en saturación (o pierde margen de control), y la salida comienza a seguir a la entrada.
+		
+		\item \textbf{Transición:}  
+		El punto de transición entre ambas regiones indica el inicio de la condición de dropout.
+	\end{itemize}
+	
+	A partir de esta curva, es posible estimar la tensión de dropout como la diferencia entre la tensión de entrada y la tensión de salida en el punto donde el regulador deja de mantener la regulación:
+	
+	\[
+	V_{dropout} = V_{{CC}_{min}} - V_O \approx \SI{320}{mV}
+	\]
+	
+	En consecuencia, la curva de regulación de línea no sólo permite evaluar la estabilidad de la salida frente a perturbaciones en la entrada, sino también identificar el margen mínimo de operación del regulador.
+	
+	En la figura \ref{fig:ldoregulacionlinea} puede verse la curva de salida en función de la entrada para $\SI{0}{V} < V_{cc} < \SI{24}{V}$ y en mayor precisión la zona de Dropout. De la simulación se obtiene
+	
+	\begin{equation}
+		Regulacion \ de \ Linea = \num{447.68} \frac{\si{\micro V}}{\si{V}},
+	\end{equation}
+	
+	con un pequeño offset $V_{offset} = \SI{90}{mV}$, resultante de $V_ref-t = \SI{1.242}{V} \ne \SI{1.25}{V}$, fácilmente corregible mediante el preset implementado.
+	
+	Además, se ve que la tensión de dropout tiene valor $\SI{100}{mV} < V_{DO} < \SI{320}{mV}$, con su valor máximo alcanzado cuando $V_{cc} = \SI{5.27}{V}$. (Esto ocurre porque, debido al offset de $v_{ref-t}$, el valor de regulación no es \SI{5}{V} exactamente).
+	
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.45\linewidth}
+			\includegraphics[width=\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_regulacion_linea"}
+			\caption{Regulación de línea para $\SI{0}{V} < V_{cc} < \SI{24}{V}$.}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.45\linewidth}
+			\includegraphics[width=\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_regulacion_linea_zoom"}
+			\caption{Zoom para $\SI{3.5}{V} < V_{cc} < \SI{5.5}{V}$.}
+		\end{subfigure}
+		
+		\caption{Gráfico de los datos de simulación de línea.}
+		\label{fig:ldoregulacionlinea}
+	\end{figure}
+	
+	
+	\FloatBarrier
+	\paragraph{Regulación de carga:}
+	\FloatBarrier
+	La regulación de carga puede analizarse evaluando la variación de la tensión de salida \(V_O\) frente a cambios en la resistencia de carga \(R_L\). Esto se analiza insertando una fuente de corriente a la salida, para una $V_{cc} = \SI{9.5}{V}$ constante, y desconectando el lazo de corriente.
+	
+	Para ello, se realiza un barrido del valor de \(R_L\) y se observa la respuesta del regulador.
+	
+	\begin{itemize}
+		\item \textbf{Altos valores de \(R_L\):}  
+		Corresponden a condiciones de baja corriente de carga. En esta región, el regulador mantiene la tensión de salida cercana a su valor nominal.
+		
+		\item \textbf{Disminución de \(R_L\):}  
+		A medida que la resistencia de carga disminuye, la corriente demandada aumenta. Idealmente, el regulador debería mantener \(V_O\) constante.
+		
+		\item \textbf{Comportamiento real:}  
+		En la práctica, se observa una leve caída de la tensión de salida debido a la resistencia de salida finita del regulador y a las limitaciones del transistor de paso.
+	\end{itemize}
+	
+	Este análisis permite evaluar la capacidad del regulador para sostener la tensión de salida frente a variaciones en la carga, aunque resulta menos directo que el análisis en función de la corriente.
+	
+	En la figura \ref{fig:ldoregulacioncarga} puede verse la gráfica resultante. Notar que, al poseer un lazo de corriente shunt aún activo, modificar la corriente de entrada directamente provoca una abrupta caída de tensión para $I_o > \SI{2.25}{A}$. Aun así, para la zona de control propia del lazo de tensión, pueden obtenerse resultados:
+	
+	\begin{equation}
+		\frac{\Delta V}{\Delta I} = -1,36 \frac{\si{mV}}{\si{A}} = R_T
+	\end{equation}
+	
+	Notar que $R_T$ es negativa por disminuir $V_o$ al aumentar $I_o$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.60\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_regulacion_carga"}
+		\caption{Regulación de carga del regulador lineal.}
+		\label{fig:ldoregulacioncarga}
+	\end{figure}
+	
+	\FloatBarrier
+	\paragraph{$V_o$ en función de $I_L$:}
+	\FloatBarrier
+	Este gráfico muestra de forma cualitativa la curva característica de la fuente de tensión resultante, es decir, la gráfica $V_o/I_L$ (figura \ref{fig:VvsI}), mediante la variación del valor resistivo de la carga $R_L$.
+	
+	Se observa que la tensión es constante para valores $R_L > \SI{3.3}{\ohm}$, y al cortocircuitar más la carga comienza a caer hacia $V_o = \SI{0}{V}$, siguiendo la curva de corriente $I_o = 400mA + \frac{\SI{1.1}{A}}{\SI{5}{V}} \cdot V_o$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/V vs I"}
+		\caption{Curva de salida característica estática regulador LDO.}
+		\label{fig:VvsI}
+	\end{figure}
+	
+	\FloatBarrier
+	\paragraph{Eficiencia:}
+	\FloatBarrier
+	Para medir la eficiencia del circuito, se ingresan diferentes valores de tensión de entrada $V_{cc}$ y se evalúa la potencia de entregada y la potencia sobre la carga, para una $R_L = \SI{100}{\ohm}$. El resultado se observa en la figuar \ref{fig:ldoeficiencia}.
+	
+	Como es de esperar para un regulador lineal, la eficiencia no es buena, y es fuertemente dependiente de la tensión de entrada. Esto se debe a que el transistor de paso disipa la potencia no útil:
+	
+	\begin{equation}
+		P_{Tpaso} = (V_{cc} - V_{reg}) * (V_{reg}/R_L)
+	\end{equation}
+	
+	Como tal, se espera una eficiencia máxima para valores $V_{cc}$ cercanos a $V_{reg}$ y resistencias de carga $R_L$ bajas. Al aumentar $R_L$, la eficiencia aumenta hasta el punto donde la corriente que circula por el circuito de control se hace comparable con la que circula por $R_L$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_eficiencia"}
+		\caption{Eficiencia del regulador para $\SI{0}{V} < V_{cc} < \SI{24}{V}$.}
+		\label{fig:ldoeficiencia}
+	\end{figure}
+	
+	\checkpointstart{2}
+	\FloatBarrier
+	\subsubsection{Modo Dinámico}
+	\FloatBarrier
+	Se evalúa el comportamiento en modo dinámico de ambos lazos de realimentación. El objetivo es corroborar la compensación y observar el tiempo de respuesta de cada uno. Para ello, se debe variar la carga de forma abrupta, provocando una respuesta al escalón.
+	
+	Dicho comportamiento se logra con el componente Switch, controlado por una fuente de tensión(figura \ref{fig:carga_activa}). Luego se observa tensión resultante a la salida.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{img/LDO/Carga_activa}
+		\caption{Circuito de testeo dinámico utilizado como carga activa.}
+		\label{fig:carga_activa}
+	\end{figure}
+	
+	Para el lazo de tensión, se utiliza 
+	
+	$$(R_{20} = \SI{100}{\kilo\ohm},R_{21} = \SI{1}{\kilo\ohm})\to R_{L1} = \SI{100}{\kilo\ohm},R_{L2} = \SI{1}{\kilo\ohm}$$
+	
+	Para el lazo de corriente, se buscará un valor de $0 < R_L < \SI{3.3}{\ohm}$ tal que el lazo de corriente se encuentre activo. En este caso
+	
+	$$(R_{20} = \SI{2.5}{\ohm},R_{21} = \SI{1.5}{\ohm}) \to R_{L1} = \SI{2.5}{\ohm},R_{L2} = \SI{1}{\ohm}$$
+	
+	Los resultados se ven en la figura \ref{fig:simulacion_dinamica}. Notar que la respuesta para el lazo de corriente no tiende al mismo valor de tensión ni corriente, por tratarse de regulación tipo foldback.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.85\linewidth]{"../../Simulación/LDO/Graficos en Python/Capturas/LDO_lazos_dinamicos"}
+		\caption{Respuesta dinámica del regulador LDO.}
+		\label{fig:simulacion_dinamica}
+	\end{figure}
+	
+	El lazo de tensión exhibe una respuesta de duración aproximada \SI{5}{\micro s}, con una excursión mínima. El lazo de corriente, sin embargo, es más lento, con una duración de respuesta dinámica de \SI{25}{\micro s}, con tiempos de asentamiento variables.
+	
+	 De la observación de la figura \ref{fig:bode_corriente_compensado}, se observa que el desplazamiento del polo asociado al nodo gate ocasiona un margen de fase dependiente de la resistencia de carga, volviendo el lazo progresivamente inestable hacia $R_L \to \infty$. En nuestro caso, y debido al acotado rango de operación del lazo de corriente, no será necesario tener en cuenta este fenómeno. En la práctica, si el margen de fase se achicara demasiado, bastará con incrementar el capacitor de compensación, a costa de la velocidad de respuesta.
+	
+	Es de especial importancia el sobrepico de corriente ocasionado por el abrupto cambio de carga. Notar que, si bien será limitado por el regulador de tipo shunt, deberá ser tenido en cuenta a la hora de conectar una carga. La duración del mismo es de \SI{2.5}{\micro\second}.
+
+	
+	\checkpointend{2}
+	\FloatBarrier
+	\subsection{Simulaciones de fuente switching}
+	\FloatBarrier
+	Por agregar en futuras entregas.
+	
+	\input{conclusiones}
+
+	{\footnotesize
+		\printbibliography
+	}
+	
+	
+	\appendix
+	\begin{landscape}
+	\section{Apéndice I: Simulaciones}
+	\label{sec:apendice_simulaciónes}
+	
+	\subsection{LDO}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/LDO/Esquematico_LDO_LTSPICE2}
+		\caption{Captura de simulación en LtSpice.}
+		\label{fig:esquematicoldoltspice}
+	\end{figure}
+
+	\section{Apéndice II: Esquemáticos}
+	\label{sec:apendice_esquematicos}
+		
+	\subsection{LDO}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/LDO/esquematico_kicad_LDO}
+		\caption{Esquemático de la implementación del regulador lineal LDO.}
+		\label{fig:esquematicokicadldo}
+	\end{figure}
+	\end{landscape}
+\section{Apéndice III: PCB}
+\label{sec:apendice_PCB}
+
+\includepdf[
+pages=1,
+pagecommand={
+	\subsection{LDO capa superior}
+}
+]{img/LDO/pistas_LDO.pdf}
+
+\includepdf[
+pages=1,
+pagecommand={
+	\subsection{LDO capa inferior}
+}
+]{img/LDO/pistas_LDO_inferior.pdf}
+
+	
+\end{document}

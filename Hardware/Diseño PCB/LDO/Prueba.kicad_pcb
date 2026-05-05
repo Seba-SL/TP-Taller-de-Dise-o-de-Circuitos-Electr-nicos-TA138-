@@ -716,7 +716,7 @@
 				)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 1.27 2.79 0)
 			(layer "F.Fab")
 			(uuid "9936564a-1211-4588-82aa-6ee933e52ed0")
@@ -2056,7 +2056,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 0)
 			(layer "F.Fab")
 			(uuid "5437a6e9-2d24-40df-b2ef-6841b757406d")
@@ -2475,7 +2475,7 @@
 			(drill 0.75)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(Q1-B)")
+			(net "Net-(Q20-B)")
 			(pinfunction "K_3")
 			(pintype "passive")
 			(uuid "0a544d7c-5c4c-4fe4-89ab-b15e59d6a135")
@@ -3138,7 +3138,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "b8d999c1-4a99-4eae-a7a0-b03e425ae8ae")
@@ -3365,7 +3365,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "d2045dfe-45d3-4308-9619-6c28a411f53a")
@@ -4486,7 +4486,7 @@
 				)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "30157cfa-0759-49e3-87bb-df43aef162e7")
@@ -5990,7 +5990,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 0)
 			(layer "F.Fab")
 			(uuid "f0034d99-2f0d-47e6-8e91-072e21d36dd8")
@@ -6374,7 +6374,7 @@
 			(drill 0.7)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(Q1-B)")
+			(net "Net-(Q20-B)")
 			(pintype "passive")
 			(uuid "40d3e879-7036-4f67-bae4-33ebc3110bce")
 		)
@@ -6790,7 +6790,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "f3391678-f1bd-4385-a3f0-03d278391105")
@@ -7208,7 +7208,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 0)
 			(layer "F.Fab")
 			(uuid "4f526573-7380-45f5-913e-b50e5b3f468b")
@@ -7435,7 +7435,7 @@
 				)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "6472b0b8-7126-447f-958d-6a322ff799f1")
@@ -8273,7 +8273,6 @@
 			)
 		)
 		(property ki_fp_filters "TO?92*")
-		(path "/66c06d54-acbd-4b6a-a923-bbb34b99aa00")
 		(sheetname "/")
 		(sheetfile "Prueba.kicad_sch")
 		(units
@@ -8689,7 +8688,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 0)
 			(layer "F.Fab")
 			(uuid "730cc863-081b-4abc-b124-4165af59287f")
@@ -9307,7 +9306,7 @@
 				)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "3e84e243-e7fc-4db4-89e0-0425f31ace59")
@@ -11773,7 +11772,7 @@
 		(at 127.3577 227.1225 180)
 		(descr "Through hole straight pin header, 1x02, 2.00mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.00mm single row")
-		(property "Reference" "V_Rs"
+		(property "Reference" "V_Rs_test1"
 			(at 0 -3 0)
 			(layer "F.SilkS")
 			(uuid "a2030163-5ea2-4e4c-a5dd-e72ca9e3161e")
@@ -12244,7 +12243,7 @@
 		(property "Reference" "Q4"
 			(at 1.27 -3.56 90)
 			(layer "F.SilkS")
-			(uuid "a35f100b-7120-4f32-b48b-ad4565a654bf")
+			(uuid "6c3f97dd-f9b0-4248-b54f-4a24b97bf7f9")
 			(effects
 				(font
 					(size 1 1)
@@ -12252,10 +12251,10 @@
 				)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
-			(uuid "2ef9ca3f-e8c5-4bc1-896f-7612e8cbea78")
+			(uuid "0d589152-9045-4e99-9e75-3d6a65aa84f6")
 			(effects
 				(font
 					(size 1 1)
@@ -12268,7 +12267,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0d51579c-3083-43ee-9631-d15e87b89464")
+			(uuid "1adfd600-af29-4bcb-81c1-735f08aa2f8e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12281,7 +12280,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a47da117-4ff6-488c-abfc-d6794eb39eff")
+			(uuid "ce94c2e6-1900-41b0-9598-488d6a3acbeb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12861,7 +12860,7 @@
 				)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 1.27 2.79 90)
 			(layer "F.Fab")
 			(uuid "0b71c646-edfc-4103-a1b7-86c5e68ac4fa")
