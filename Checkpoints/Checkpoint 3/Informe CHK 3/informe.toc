@@ -15,5 +15,7 @@
 \contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{4}{}%
 \contentsline {subsection}{\numberline {B.1}LDO}{4}{}%
 \contentsline {section}{\numberline {C}Apéndice III: PCB}{5}{}%
-\contentsline {subsection}{\numberline {C.1}LDO capa superior}{6}{}%
-\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{7}{}%
+\contentsline {subsection}{\numberline {C.1}LDO capa superior}{5}{}%
+\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{6}{}%
+\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{7}{}%
+\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{8}{}%

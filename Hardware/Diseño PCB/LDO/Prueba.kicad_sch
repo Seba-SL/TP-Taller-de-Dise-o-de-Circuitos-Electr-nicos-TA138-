@@ -7030,7 +7030,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 96.52 72.3901 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7200,7 +7200,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 101.6 48.2601 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7288,7 +7288,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 106.934 25.654 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7976,9 +7976,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 165.354 25.654 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8497,7 +8496,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 204.47 63.5001 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8585,7 +8584,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 160.02 48.2601 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8751,7 +8750,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 149.86 62.2301 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9397,7 +9396,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 85.09 48.2601 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11816,7 +11815,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 195.58 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11903,7 +11902,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 80.01 27.9401 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12189,7 +12188,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 143.51 48.2601 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12358,7 +12357,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC547"
+		(property "Value" "2N3904"
 			(at 54.61 72.3901 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13491,7 +13490,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC557"
+		(property "Value" "2N3906"
 			(at 138.43 27.9401 0)
 			(show_name no)
 			(do_not_autoplace no)

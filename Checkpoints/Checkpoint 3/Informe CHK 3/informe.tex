@@ -144,7 +144,13 @@ citestyle=apa
 	
 	\section{Desarrollo}
 	
+	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apendice \ref{sec:apendice_presupuesto}.
+	
+
+	
 	\subsection{Fabricación de la PCB}
+	
+	Tomando el diseño del circuito impreso presentado en el \textit{checkpoint 2} el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, se da paso a el proceso de fabricación del prototipo del PCB.
 	
 	
 	\subsection{Mediciones} 
@@ -188,27 +194,46 @@ citestyle=apa
 	\subsection{LDO}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.85\linewidth]{img/LDO/esquematico_kicad_LDO}
+		\includegraphics[width=0.85\linewidth]{img/LDO/esquematico_LDO_Kicad.pdf}
 		\caption{Esquemático de la implementación del regulador lineal LDO.}
 		\label{fig:esquematicokicadldo}
 	\end{figure}
 	\end{landscape}
-\section{Apéndice III: PCB}
-\label{sec:apendice_PCB}
+
+
+\begingroup
+
+
+\let\clearpage\relax
 
 \includepdf[
 pages=1,
-pagecommand={
-	\subsection{LDO capa superior}
-}
+pagecommand={\section{Apéndice III: PCB}
+	\label{sec:apendice_PCB} \subsection{LDO capa superior}}
 ]{img/LDO/pistas_LDO.pdf}
 
 \includepdf[
 pages=1,
-pagecommand={
-	\subsection{LDO capa inferior}
-}
+pagecommand={\subsection{LDO capa inferior}}
 ]{img/LDO/pistas_LDO_inferior.pdf}
 
-	
+\includepdf[
+pages=1,
+pagecommand={\subsection{LDO Serigrafía superior}}
+]{img/LDO/Serigrafia_LDO_superior.pdf}
+
+
+\endgroup
+
+
+
+\includepdf[
+pages=1,
+pagecommand={\section{Apéndice IV: Presupuesto}
+	\label{sec:apendice_presupuesto}
+}
+]{img/LDO/Presupuesto.pdf}
+
+
+
 \end{document}
