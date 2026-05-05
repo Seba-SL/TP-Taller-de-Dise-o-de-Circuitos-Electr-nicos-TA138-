@@ -162,13 +162,83 @@ citestyle=apa
 	\end{figure}
 	
 	
+	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:pistasplanchadas}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes.
 	
-	Luego se aplico la serigrafía superior con el mismo método figura \ref{fig:pistasplanchadas} y se dio paso a las perforaciones , se limpio la placa con alcohol isopropílico y se dio comienzo al armado del circuito colocando los componentes.
+	
+	%Colocar imagen final con la PCB montada
+	
+	
 	
 
 	
-	\subsection{Mediciones} 
+
+	\subsection{Mediciones}
+	  
+	  Con el objetivo de validar experimentalmente el desempeño del regulador implementado, se llevaron a cabo una serie de mediciones sobre el prototipo construido. Estas pruebas permiten contrastar los resultados obtenidos en la etapa de diseño y simulación con el comportamiento real del circuito, evaluando parámetros clave como la regulación de carga, la regulación de línea, la capacidad de limitación de corriente y la eficiencia del sistema. A continuación, se describe el banco de pruebas utilizado y la metodología empleada en cada caso.
+	
 	\subsubsection{Banco de Pruebas}
+	
+	Para realizar las mediciones se llevo la placa a el laboratorio y se la dispuso frente a un banco de pruebas compuesto por los siguientes instrumentos de medición.
+	
+	%completar al medir
+	\begin{itemize}
+		\item Fuente 
+		\item Generador
+		\item Osciloscopio
+		\item Multimetro
+	\end{itemize}
+
+	\subsubsection{Análisis de confiabilidad de los componentes}
+	
+	Se debe tener en cuenta que los fabricantes disponen de un rango para los parámetros característicos de cada componente, los cuales pueden variar de acuerdo a sus condiciones ambientales, de funcionamiento y de fabricación, pudiendo un lote variar respecto a otro y, a su vez, cada componente individualmente.
+	
+	En este sentido, el análisis de confiabilidad del circuito requiere contemplar dichas dispersiones mediante técnicas de verificación y modelización que permitan estimar su impacto en el desempeño global. Una de las metodologías empleadas consiste en la evaluación de condiciones de peor caso (worst-case), considerando los valores extremos especificados en las hojas de datos para parámetros críticos como ganancia en corriente ($\beta$) en transistores bipolares, tensión umbral en MOSFETs, tensión de referencia en dispositivos como el TL431, offset y ganancia en lazo abierto en amplificadores operacionales, y tolerancias en resistencias.
+	
+	
+	\begin{table}[H]
+		\centering
+		\caption{Comparación de parámetros teóricos y medidos experimentalmente}
+		\label{tab:comparacion_componentes}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Componente} & \textbf{Parámetro} & \textbf{Valor teórico} & \textbf{Valor medido} \\
+			\hline
+			
+			\multirow{2}{*}{TL431} 
+			& $V_{ref}$ (V) & 2.495 & --- \\
+			& $I_{ref}$ (µA) & 2 -- 4 & --- \\
+			\hline
+			
+			\multirow{3}{*}{LM324} 
+			& $V_{os}$ (mV) & 2 (típ.) & --- \\
+			& $A_{OL}$ (dB) & 100 (típ.) & --- \\
+			& $I_{bias}$ (nA) & 20 (típ.) & --- \\
+			\hline
+			
+			\multirow{2}{*}{2N3904} 
+			& $\beta$ (hFE) & 100 -- 300 & --- \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			\hline
+			
+			\multirow{2}{*}{2N3906} 
+			& $\beta$ (hFE) & 100 -- 300 & --- \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			\hline
+			
+			\multirow{2}{*}{BC547} 
+			& $\beta$ (hFE) & 300 -- 500 & --- \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			\hline
+			
+			\multirow{2}{*}{BC557} 
+			& $\beta$ (hFE) & 300 -- 500 & --- \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			\hline
+			
+		\end{tabular}
+	\end{table}
+	%Completar luego de medir
+	Con los resultados obtenidos se puede esperar un desvío en los resultados hacia... 
 	
 	\subsubsection{Regulación de carga estática y dinámica}
 	
@@ -178,9 +248,7 @@ citestyle=apa
 	
 	\subsubsection{Eficiencia}
 
-	\section{Simulaciones}
-	\label{sec:simulaciones}
-	
+
 	\input{conclusiones}
 
 	{\footnotesize
