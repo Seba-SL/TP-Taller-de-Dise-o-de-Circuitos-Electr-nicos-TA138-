@@ -144,17 +144,17 @@ citestyle=apa
 	
 	\section{Desarrollo}
 	
-	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apendice \ref{sec:apendice_presupuesto}.
+	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apéndice \ref{sec:apendice_presupuesto}.
 	
 
 	
 	\subsection{Fabricación de la PCB}
 	
-	Tomando el diseño del circuito impreso presentado en el \textit{checkpoint 2} y  el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, se da paso a el proceso de fabricación del prototipo del PCB.
+	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño fabricado, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB.
 	
 	Se utilizo el método de "planchado" a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
 		
-	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes.
+	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes y soldado adecuado.
 	
 	\begin{figure}[H]
 		\centering
@@ -175,17 +175,60 @@ citestyle=apa
 	
 	%completar al medir
 	\begin{itemize}
-		\item Fuente 
+		\item Fuente : UNI-T, UTP33115TFL-II
 		\item Generador
-		\item Osciloscopio
-		\item Multimetro
+		\item Osciloscopio : UNI-T, UTD2102CEX+
+		\item Multimetro: VT-POWER, M890G
 	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/banco_medicion}
+		\caption{banco de medición en laboratorio.}
+		\label{fig:bancomedicion}
+	\end{figure}
+	
 
 	\subsubsection{Análisis de confiabilidad de los componentes}
 	
 	Se debe tener en cuenta que los fabricantes disponen de un rango para los parámetros característicos de cada componente, los cuales pueden variar de acuerdo a sus condiciones ambientales, de funcionamiento y de fabricación, pudiendo un lote variar respecto a otro y, a su vez, cada componente individualmente.
 	
 	En este sentido, el análisis de confiabilidad del circuito requiere contemplar dichas dispersiones mediante técnicas de verificación y modelización que permitan estimar su impacto en el desempeño global. Una de las metodologías empleadas consiste en la evaluación de condiciones de peor caso (worst-case), considerando los valores extremos especificados en las hojas de datos para parámetros críticos como ganancia en corriente ($\beta$) en transistores bipolares, tensión umbral en MOSFETs, tensión de referencia en dispositivos como el TL431, offset y ganancia en lazo abierto en amplificadores operacionales, y tolerancias en resistencias.
+	
+	
+	Se realizaron mediciones del parámetro de ganancia de corriente continua \(h_{FE}\) en doce transistores BC547 utilizando un multímetro VT-POWER M890G. Los valores obtenidos fueron:
+	
+	\[
+	328,\ 342,\ 325,\ 337,\ 332,\ 322,\ 334,\ 328,\ 320,\ 320,\ 318,\ 318
+	\]
+	
+	El valor promedio medido resulta:
+	
+	\[
+	\overline{\beta}=
+	\frac{1}{12}\sum_{i=1}^{12}\beta_i
+	\approx 327
+	\]
+	
+	Asimismo, se obtuvo una desviación estándar aproximada de:
+	
+	\[
+	\sigma \approx 7.7
+	\]
+	
+	Los valores medidos se encuentran dentro del siguiente rango experimental:
+	
+	\[
+	318 \leq \beta \leq 342
+	\]
+	
+	La dispersión observada es reducida, con variaciones menores al \(5\%\) respecto del valor medio. Esto indica una buena uniformidad paramétrica entre los dispositivos analizados, permitiendo estimar un valor típico de diseño de:
+	
+	\[
+	\beta \approx 330
+	\]
+	
+	A partir de los resultados obtenidos, puede concluirse que los transistores presentan un comportamiento consistente y repetible dentro del lote analizado, resultando adecuados para aplicaciones analógicas de pequeña señal donde la estabilidad de ganancia y la confiabilidad de los componentes son relevantes.
 	
 	
 	\begin{table}[H]
@@ -219,7 +262,7 @@ citestyle=apa
 			\hline
 			
 			\multirow{2}{*}{BC547} 
-			& $\beta$ (hFE) & 300 -- 500 & 312 \\
+			& $\beta$ (hFE) & 300 -- 500 & 330 \\
 			& $V_{BE}$ (V) & 0.65 -- 0.7 & 0,67 \\
 			\hline
 			
