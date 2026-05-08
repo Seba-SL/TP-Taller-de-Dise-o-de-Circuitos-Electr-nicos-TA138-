@@ -6,16 +6,18 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Banco de Pruebas}{3}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Análisis de confiabilidad de los componentes}{3}{}%
 \contentsline {subsubsection}{\numberline {2.2.3}Regulación de carga estática y dinámica}{4}{}%
-\contentsline {subsubsection}{\numberline {2.2.4}Regulación de línea}{4}{}%
-\contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{4}{}%
-\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{4}{}%
-\contentsline {section}{\numberline {3}Conclusiones}{4}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{5}{}%
-\contentsline {subsection}{\numberline {A.1}LDO}{5}{}%
-\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{6}{}%
-\contentsline {subsection}{\numberline {B.1}LDO}{6}{}%
-\contentsline {section}{\numberline {C}Apéndice III: PCB}{7}{}%
-\contentsline {subsection}{\numberline {C.1}LDO capa superior}{7}{}%
-\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{8}{}%
-\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{9}{}%
-\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{10}{}%
+\contentsline {paragraph}{Regulación de carga estática }{4}{}%
+\contentsline {paragraph}{Regulación de carga dinámica}{5}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Regulación de línea}{5}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{5}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{5}{}%
+\contentsline {section}{\numberline {3}Conclusiones}{5}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{6}{}%
+\contentsline {subsection}{\numberline {A.1}LDO}{6}{}%
+\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{7}{}%
+\contentsline {subsection}{\numberline {B.1}LDO}{7}{}%
+\contentsline {section}{\numberline {C}Apéndice III: PCB}{8}{}%
+\contentsline {subsection}{\numberline {C.1}LDO capa superior}{8}{}%
+\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{9}{}%
+\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{10}{}%
+\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{11}{}%
