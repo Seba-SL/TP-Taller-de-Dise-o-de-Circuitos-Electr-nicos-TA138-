@@ -325,7 +325,7 @@ citestyle=apa
 			\left(
 			\dfrac{V_1}{V_2}\cdot\dfrac{R_2}{R_1}
 			\right)-1
-		}
+		} = 0,1 \, \Omega
 		\label{eq:rt_general}
 	\end{equation}
 	
@@ -340,7 +340,10 @@ citestyle=apa
 	
 	Midiendo las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
 	
+	Se caracteriza la regulación de linea tomando la variación de la salida respecto a la variación de la fuente para dos puntos. En este caso se utilizaron los puntos en donde la tensión de alimentación es de $5,26 \, V$ y  $16,46 \, V$. Obteniendo los valores de $0,00089 \, \frac{V}{V}$ para las mediciones en multimetro y $ 0,00179\, \frac{V}{V}$.
 	
+	
+	% Agregar para comparar con la simulación
 	
 	\begin{figure}[H]
 		\centering
@@ -352,7 +355,7 @@ citestyle=apa
 	
 	\subsubsection{Limitación de corriente}
 	
-	El circuito cuenta con una limitación de corriente por medio de un circuito qye 
+	El circuito cuenta con una limitación de corriente que se acciona al alcanzar un valor de corriente estimado y comienza el mecanismo de \textit{foldback} en donde la tensión se ajusta dejando de regular.
 	
 	\subsubsection{Eficiencia}
 
