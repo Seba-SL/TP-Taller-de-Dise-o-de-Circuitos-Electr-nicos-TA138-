@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  8 MAY 2026 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  8 MAY 2026 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1316,12 +1316,7 @@ Package pdftex.def Info: ../Graficos/regulacion_carga.png  used on input line 3
 11.
 (pdftex.def)             Requested size: 512.14963pt x 241.82594pt.
 
-[4]
-
-LaTeX Warning: Reference `ec:rt_general' on page 5 undefined on input line 316.
-
-
-(./conclusiones.tex)
+[4] (./conclusiones.tex)
 
 LaTeX Warning: Empty bibliography on input line 353.
 
@@ -1577,10 +1572,10 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48958 strings out of 476091
- 1183224 string characters out of 5794082
+ 48957 strings out of 476091
+ 1183209 string characters out of 5794082
  2209505 words of memory out of 5000000
- 68803 multiletter control sequences out of 15000+600000
+ 68802 multiletter control sequences out of 15000+600000
  523629 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,17n,89p,1196b,2812s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1597,7 +1592,7 @@ onts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfcc2488.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on informe.pdf (12 pages, 2976244 bytes).
+Output written on informe.pdf (12 pages, 2975956 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream
