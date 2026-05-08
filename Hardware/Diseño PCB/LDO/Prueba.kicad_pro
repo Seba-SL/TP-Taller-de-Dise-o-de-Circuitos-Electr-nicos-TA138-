@@ -660,7 +660,7 @@
         "uuid": "70bda0a3-0c17-43ce-af47-54d014630cec"
       }
     ],
-    "used_designators": "Q1,Q20",
+    "used_designators": "Jc1,V_voltage_test1,V_ref_t_test1,V_ref_c_test1,V_current_ref_test1,V_ctrl1,Jv1-2,GND2,#PWR17-18,#PWR25,J1,Vo2",
     "variants": []
   },
   "sheets": [
