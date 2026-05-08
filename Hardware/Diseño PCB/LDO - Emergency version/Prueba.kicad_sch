@@ -8035,6 +8035,7 @@
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
 		(at 260.35 57.15 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8044,7 +8045,7 @@
 		(dnp no)
 		(uuid "257db720-c2bf-46b4-9586-711daaa5335a")
 		(property "Reference" "U1"
-			(at 260.604 61.722 0)
+			(at 260.604 52.578 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8054,7 +8055,7 @@
 			)
 		)
 		(property "Value" "LM324"
-			(at 261.874 63.5 0)
+			(at 261.874 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8064,7 +8065,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
-			(at 259.08 54.61 0)
+			(at 259.08 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8075,7 +8076,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 261.62 52.07 0)
+			(at 261.62 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
