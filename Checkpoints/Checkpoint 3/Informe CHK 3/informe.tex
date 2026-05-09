@@ -30,6 +30,7 @@
 \usepackage{pdfpages}
 \usepackage{placeins}
 
+
 \newif\ifcheckpoint
 \checkpointfalse
 
@@ -291,33 +292,49 @@ citestyle=apa
 	
 	\paragraph{Regulación de carga estática }
 	
-	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y las curvas conseguidas tras interpolar los puntos medidos tanto para la medición en multimetro como en osciloscopio en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
+	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y la curva obtenida tras interpolar los puntos medidos en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
 	
-
-	\begin{table}[H]
+	En búsqueda de una mayor sensibilidad de medición se midió la diferencia de la tensión de salida con respecto una fuente fija de tensión de $5,22 \,V$ tal como se detalla en el diagrama de la figura \ref{fig:medicionregcargabanco}, luego dicha diferencia ,en el orden de los mV, fue la variación que afecto cada punto de medición.
+\begin{figure}[H]
+	\centering
+	
+	% =========================
+	% IZQUIERDA: IMAGEN
+	% =========================
+	\begin{minipage}{0.55\textwidth}
 		\centering
-		\caption{Mediciones de regulación de carga estática del LDO}
+		\includegraphics[width=\linewidth]{/home/sebastian/FIUBA-2do Cuatrimestre/Taller de Diseño Electrónico TA138/TP_Taller_de_Diseño_ TA138_G7/Checkpoints/Checkpoint 3/Informe CHK 3/img/LDO/Diagramas medicion/medicion_reg_carga_banco.png}
+		\caption{Banco de pruebas para medición de regulación de carga}
+		\label{fig:medicionregcargabanco}
+	\end{minipage}
+	\hfill
+	% =========================
+	% DERECHA: TABLA
+	% =========================
+	\begin{minipage}{0.42\textwidth}
+		\centering
+		\captionof{table}{Mediciones de regulación de carga estática del LDO}
+		\label{tab:reg_carga_ldo}
 		\begin{tabular}{|c|c|}
 			\hline
-			\textbf{Resistencia de carga $R_L$ [$\Omega$]} &
-			\textbf{$V_O$ Multímetro [V]} \\
+			\textbf{$R_L$ [$\Omega$]} &
+			\textbf{$V_O$ [V]} \\
 			\hline
-			
 			100k & 4.8186 \\
 			10k  & 4.8079 \\
-			4k7   & 4.8071 \\
+			4k7  & 4.8071 \\
 			1k   & 4.8038 \\
-			560    & 4.8025 \\
-			220    & 4.7950 \\
-			100    & 4.7830 \\
-			47     & 4.7630 \\
-			23.5   & 4.7650 \\
-			10     & 4.6270 \\
-			
+			560  & 4.8025 \\
+			220  & 4.7950 \\
+			100  & 4.7830 \\
+			47   & 4.7630 \\
+			23.5 & 4.7650 \\
+			10   & 4.6270 \\
 			\hline
 		\end{tabular}
-		\label{tab:reg_carga_ldo}
-	\end{table}
+	\end{minipage}
+	
+\end{figure}
 	
 	\begin{figure}[H]
 		\centering
@@ -326,7 +343,7 @@ citestyle=apa
 		\label{fig:regulacioncarga}
 	\end{figure}
 	
-	Tomando dos puntos en cada curva correspondientes a la resistencia de $1 k\Omega$  y de $47 \Omega$ y utilizando la expresión \ref{eq:rt_general} se llega a el valor de resistencia de salida de $0,1 \Omega$.
+	Tomando dos puntos de la curva correspondientes a la resistencia de $1 \, k\Omega$  y de $220 \, \Omega$ y utilizando la expresión \ref{eq:rt_general} se llega a el valor de resistencia de salida de $0,52 \Omega$.
 	
 	\begin{equation} 
 		R_T =
@@ -338,7 +355,7 @@ citestyle=apa
 			\left(
 			\dfrac{V_1}{V_2}\cdot\dfrac{R_2}{R_1}
 			\right)-1
-		} = 0,1 \, \Omega
+		} = 0,52 \, \Omega
 		\label{eq:rt_general}
 	\end{equation}
 	
