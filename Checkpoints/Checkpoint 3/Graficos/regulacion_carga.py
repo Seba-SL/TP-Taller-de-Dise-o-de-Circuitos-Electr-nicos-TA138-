@@ -7,12 +7,12 @@ from scipy.interpolate import interp1d
 # =========================================
 
 # Resistencias de carga [ohm]
-R = np.array([1000, 470, 100, 47, 23.5, 8])
+R = np.array([100000,10000,4700,1000, 560, 220,100, 47, 23.5, 10])
 
+Vo_ideal = 5
 # Mediciones de Vo
-Vo_mult = np.array([5, 4.99, 4.99, 4.99, 4.98, 3.88])
+Vo_mult = np.array([Vo_ideal- 0.1814 ,Vo_ideal-0.1921,Vo_ideal-0.1929,Vo_ideal- 0.1962,Vo_ideal - 0.1975,Vo_ideal -0.205,Vo_ideal - 0.217 , Vo_ideal-0.237,Vo_ideal-0.235,Vo_ideal - 0.373])
 
-Vo_osc = np.array([4.82, 4.83, 4.82, 4.81, 4.8, 4.78])
 
 # =========================================
 # INTERPOLACION
@@ -21,7 +21,7 @@ Vo_osc = np.array([4.82, 4.83, 4.82, 4.81, 4.8, 4.78])
 R_interp = np.linspace(R.min(), R.max(), 400)
 
 f_mult = interp1d(R, Vo_mult, kind='linear')
-f_osc = interp1d(R, Vo_osc, kind='linear')
+
 
 # =========================================
 # DATOS LTSPICE
@@ -63,14 +63,12 @@ plt.figure(figsize=(9,5))
 # Curvas interpoladas medidas
 plt.plot(   R_interp,f_mult(R_interp),label='Vo Multimetro',linewidth=3)
 
-plt.plot( R_interp, f_osc(R_interp), label='Vo Osciloscopio', linewidth=3)
 
 # Puntos medidos
 plt.scatter(R, Vo_mult)
-plt.scatter(R, Vo_osc)
 
 # Curva LTspice
-plt.plot(RL_lt,Vo_lt,'--',linewidth=3,label='Simulación LTspice')
+#plt.plot(RL_lt,Vo_lt,'--',linewidth=3,label='Simulación LTspice')
 
 # =========================================
 # TEXTOS
@@ -101,13 +99,8 @@ RT_mult = (
     (((V1_mult/V2_mult)*(R2_mult/R1_mult)) - 1)
 )
 
-RT_osc = (
-    ((1 - (V1_mult/V2_mult))*R2_mult) /
-    (((V1_mult/V2_mult)*(R2_mult/R1_mult)) - 1)
-)
 
 texto = (
-    f'Rt_osc = {RT_osc:.2f} Ω\n'
     f'Rt_mult = {RT_mult:.2f} Ω'
 )
 
@@ -125,12 +118,12 @@ plt.text(
 
 texto = (
     'Valores medidos:\n\n'
-    f'RL = {R[0]:.1f} Ω  |  Vo_mult = {Vo_mult[0]:.2f} V  |  Vo_osc = {Vo_osc[0]:.2f} V\n'
-    f'RL = {R[1]:.1f} Ω  |  Vo_mult = {Vo_mult[1]:.2f} V  |  Vo_osc = {Vo_osc[1]:.2f} V\n'
-    f'RL = {R[2]:.1f} Ω  |  Vo_mult = {Vo_mult[2]:.2f} V  |  Vo_osc = {Vo_osc[2]:.2f} V\n'
-    f'RL = {R[3]:.1f} Ω  |  Vo_mult = {Vo_mult[3]:.2f} V  |  Vo_osc = {Vo_osc[3]:.2f} V\n'
-    f'RL = {R[4]:.1f} Ω  |  Vo_mult = {Vo_mult[4]:.2f} V  |  Vo_osc = {Vo_osc[4]:.2f} V\n'
-    f'RL = {R[5]:.1f} Ω  |  Vo_mult = {Vo_mult[5]:.2f} V  |  Vo_osc = {Vo_osc[5]:.2f} V'
+    f'RL = {R[0]:.1f} Ω  |  Vo_mult = {Vo_mult[0]:.2f} V   \n'
+    f'RL = {R[1]:.1f} Ω  |  Vo_mult = {Vo_mult[1]:.2f} V  \n'
+    f'RL = {R[2]:.1f} Ω  |  Vo_mult = {Vo_mult[2]:.2f} V   \n'
+    f'RL = {R[3]:.1f} Ω  |  Vo_mult = {Vo_mult[3]:.2f} V  \n'
+    f'RL = {R[4]:.1f} Ω  |  Vo_mult = {Vo_mult[4]:.2f} V \n'
+    f'RL = {R[5]:.1f} Ω  |  Vo_mult = {Vo_mult[5]:.2f} V'
 )
 
 plt.text(

@@ -142,9 +142,18 @@ citestyle=apa
 
 	Continuando con el diseño de un regulador lineal que cumpla con las especificaciones definidas en informes previos, en este \textit{checkpoint} se avanza hacia su implementación en un prototipo de circuito impreso (PCB), con el fin de caracterizar y validar experimentalmente las prestaciones obtenidas en la etapa de diseño.
 	
+		
+	\subsubsection{Corrección de errores}
+	
+	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa.
+	
+	
+	
 	\section{Desarrollo}
 	
 	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apéndice \ref{sec:apendice_presupuesto}.
+	
+
 	
 
 	
@@ -284,22 +293,26 @@ citestyle=apa
 	
 	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y las curvas conseguidas tras interpolar los puntos medidos tanto para la medición en multimetro como en osciloscopio en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
 	
+
 	\begin{table}[H]
 		\centering
 		\caption{Mediciones de regulación de carga estática del LDO}
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|c|c|}
 			\hline
 			\textbf{Resistencia de carga $R_L$ [$\Omega$]} &
-			\textbf{$V_O$ Multímetro [V]} &
-			\textbf{$V_O$ Osciloscopio [V]} \\
+			\textbf{$V_O$ Multímetro [V]} \\
 			\hline
 			
-			1000  & 5.00 & 4.82 \\
-			470   & 4.99 & 4.83 \\
-			100   & 4.99 & 4.82 \\
-			47    & 4.99 & 4.81 \\
-			23.5  & 4.98 & 4.80 \\
-			8     & 3.88 & 4.78 \\
+			100k & 4.8186 \\
+			10k  & 4.8079 \\
+			4k7   & 4.8071 \\
+			1k   & 4.8038 \\
+			560    & 4.8025 \\
+			220    & 4.7950 \\
+			100    & 4.7830 \\
+			47     & 4.7630 \\
+			23.5   & 4.7650 \\
+			10     & 4.6270 \\
 			
 			\hline
 		\end{tabular}
