@@ -142,33 +142,35 @@ citestyle=apa
 
 	Continuando con el diseño de un regulador lineal que cumpla con las especificaciones definidas en informes previos, en este \textit{checkpoint} se avanza hacia su implementación en un prototipo de circuito impreso (PCB), con el fin de caracterizar y validar experimentalmente las prestaciones obtenidas en la etapa de diseño.
 	
+		
+	\subsubsection{Corrección de errores}
+	
+	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa.
+	
+	
+	
 	\section{Desarrollo}
 	
-	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apendice \ref{sec:apendice_presupuesto}.
+	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apéndice \ref{sec:apendice_presupuesto}.
+	
+
 	
 
 	
 	\subsection{Fabricación de la PCB}
 	
-	Tomando el diseño del circuito impreso presentado en el \textit{checkpoint 2} el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, se da paso a el proceso de fabricación del prototipo del PCB.
+	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño fabricado, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB.
 	
-	Se utilizo el método de "planchado" a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor, como se aprecia en la figura \ref{fig:pistasplanchadas}. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
+	Se utilizo el método de "planchado" a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
+		
+	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes y soldado adecuado.
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=1\linewidth]{img/LDO/pistas_planchadas}
-		\caption{Pistas sobre placa FR4 virgen.}
-		\label{fig:pistasplanchadas}
+		\includegraphics[width=0.8\linewidth]{img/LDO/Placa_montada_1}
+		\caption{Placa montada.}
+		\label{fig:placamontada1}
 	\end{figure}
-	
-	
-	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:pistasplanchadas}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes.
-	
-	
-	%Colocar imagen final con la PCB montada
-	
-	
-	
 
 	
 
@@ -182,17 +184,60 @@ citestyle=apa
 	
 	%completar al medir
 	\begin{itemize}
-		\item Fuente 
+		\item Fuente : UNI-T, UTP33115TFL-II
 		\item Generador
-		\item Osciloscopio
-		\item Multimetro
+		\item Osciloscopio : UNI-T, UTD2102CEX+
+		\item Multimetro: VT-POWER, M890G
 	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/banco_medicion}
+		\caption{banco de medición en laboratorio.}
+		\label{fig:bancomedicion}
+	\end{figure}
+	
 
 	\subsubsection{Análisis de confiabilidad de los componentes}
 	
 	Se debe tener en cuenta que los fabricantes disponen de un rango para los parámetros característicos de cada componente, los cuales pueden variar de acuerdo a sus condiciones ambientales, de funcionamiento y de fabricación, pudiendo un lote variar respecto a otro y, a su vez, cada componente individualmente.
 	
 	En este sentido, el análisis de confiabilidad del circuito requiere contemplar dichas dispersiones mediante técnicas de verificación y modelización que permitan estimar su impacto en el desempeño global. Una de las metodologías empleadas consiste en la evaluación de condiciones de peor caso (worst-case), considerando los valores extremos especificados en las hojas de datos para parámetros críticos como ganancia en corriente ($\beta$) en transistores bipolares, tensión umbral en MOSFETs, tensión de referencia en dispositivos como el TL431, offset y ganancia en lazo abierto en amplificadores operacionales, y tolerancias en resistencias.
+	
+	
+	Se realizaron mediciones del parámetro de ganancia de corriente continua \(h_{FE}\) en doce transistores BC547 utilizando un multímetro VT-POWER M890G. Los valores obtenidos fueron:
+	
+	\[
+	328,\ 342,\ 325,\ 337,\ 332,\ 322,\ 334,\ 328,\ 320,\ 320,\ 318,\ 318
+	\]
+	
+	El valor promedio medido resulta:
+	
+	\[
+	\overline{\beta}=
+	\frac{1}{12}\sum_{i=1}^{12}\beta_i
+	\approx 327
+	\]
+	
+	Asimismo, se obtuvo una desviación estándar aproximada de:
+	
+	\[
+	\sigma \approx 7.7
+	\]
+	
+	Los valores medidos se encuentran dentro del siguiente rango experimental:
+	
+	\[
+	318 \leq \beta \leq 342
+	\]
+	
+	La dispersión observada es reducida, con variaciones menores al \(5\%\) respecto del valor medio. Esto indica una buena uniformidad paramétrica entre los dispositivos analizados, permitiendo estimar un valor típico de diseño de:
+	
+	\[
+	\beta \approx 330
+	\]
+	
+	A partir de los resultados obtenidos, puede concluirse que los transistores presentan un comportamiento consistente y repetible dentro del lote analizado, resultando adecuados para aplicaciones analógicas de pequeña señal donde la estabilidad de ganancia y la confiabílidad de los componentes son relevantes.
 	
 	
 	\begin{table}[H]
@@ -204,35 +249,35 @@ citestyle=apa
 			\textbf{Componente} & \textbf{Parámetro} & \textbf{Valor teórico} & \textbf{Valor medido} \\
 			\hline
 			
-			\multirow{2}{*}{TL431} 
-			& $V_{ref}$ (V) & 2.495 & --- \\
-			& $I_{ref}$ (µA) & 2 -- 4 & --- \\
-			\hline
+			\multirow{1}{*}{TL431} 
+			& $V_{ref}$ (V) & 2.495 & 2,45 \\
+			%& $I_{ref}$ (µA) & 2 -- 4 & --- \\
+			\hline 
 			
-			\multirow{3}{*}{LM324} 
-			& $V_{os}$ (mV) & 2 (típ.) & --- \\
-			& $A_{OL}$ (dB) & 100 (típ.) & --- \\
-			& $I_{bias}$ (nA) & 20 (típ.) & --- \\
-			\hline
+			%\multirow{3}{*}{LM324} 
+			%& $V_{os}$ (mV) & 2 (típ.) & --- \\
+			%& $A_{OL}$ (dB) & 100 (típ.) & --- \\
+			%& $I_{bias}$ (nA) & 20 (típ.) & --- \\
+			
 			
 			\multirow{2}{*}{2N3904} 
-			& $\beta$ (hFE) & 100 -- 300 & --- \\
-			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			& $\beta$ (hFE) & 100 -- 300 & 271 \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & 0,66 \\
 			\hline
 			
 			\multirow{2}{*}{2N3906} 
-			& $\beta$ (hFE) & 100 -- 300 & --- \\
-			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			& $\beta$ (hFE) & 100 -- 300 & 273 \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & 0,67 \\
 			\hline
 			
 			\multirow{2}{*}{BC547} 
-			& $\beta$ (hFE) & 300 -- 500 & --- \\
-			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			& $\beta$ (hFE) & 300 -- 500 & 330 \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & 0,67 \\
 			\hline
 			
 			\multirow{2}{*}{BC557} 
-			& $\beta$ (hFE) & 300 -- 500 & --- \\
-			& $V_{BE}$ (V) & 0.65 -- 0.7 & --- \\
+			& $\beta$ (hFE) & 300 -- 500 & 304 \\
+			& $V_{BE}$ (V) & 0.65 -- 0.7 & 0,67 \\
 			\hline
 			
 		\end{tabular}
@@ -242,9 +287,88 @@ citestyle=apa
 	
 	\subsubsection{Regulación de carga estática y dinámica}
 	
+	La regulación idealmente no debe depender del tipo de carga, sin embargo una carga de poca resistencia consume mucha corriente que la fuente debe ser capaz de entregar y una carga que varié su resistencia infiere que la fuente debe cambiar su estado de equilibrio rápidamente a uno nuevo, esto previamente se a simulado, y en las próximas mediciones se verificara y se caracterizara el circuito de forma practica con componentes reales.
+	
+	\paragraph{Regulación de carga estática }
+	
+	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y las curvas conseguidas tras interpolar los puntos medidos tanto para la medición en multimetro como en osciloscopio en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
+	
+
+	\begin{table}[H]
+		\centering
+		\caption{Mediciones de regulación de carga estática del LDO}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Resistencia de carga $R_L$ [$\Omega$]} &
+			\textbf{$V_O$ Multímetro [V]} \\
+			\hline
+			
+			100k & 4.8186 \\
+			10k  & 4.8079 \\
+			4k7   & 4.8071 \\
+			1k   & 4.8038 \\
+			560    & 4.8025 \\
+			220    & 4.7950 \\
+			100    & 4.7830 \\
+			47     & 4.7630 \\
+			23.5   & 4.7650 \\
+			10     & 4.6270 \\
+			
+			\hline
+		\end{tabular}
+		\label{tab:reg_carga_ldo}
+	\end{table}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../Graficos/regulacion_carga}
+		\caption{Interpolación de los puntos medidos en regulación de carga estática.}
+		\label{fig:regulacioncarga}
+	\end{figure}
+	
+	Tomando dos puntos en cada curva correspondientes a la resistencia de $1 k\Omega$  y de $47 \Omega$ y utilizando la expresión \ref{eq:rt_general} se llega a el valor de resistencia de salida de $0,1 \Omega$.
+	
+	\begin{equation} 
+		R_T =
+		\frac{
+			\left(
+			1-\dfrac{V_1}{V_2}
+			\right)R_2
+		}{
+			\left(
+			\dfrac{V_1}{V_2}\cdot\dfrac{R_2}{R_1}
+			\right)-1
+		} = 0,1 \, \Omega
+		\label{eq:rt_general}
+	\end{equation}
+	
+	
+	\paragraph{Regulación de carga dinámica}
+	
+	Para una carga dinámica se debe considerar una carga activa que varié su corriente, se medirá utilizando como carga una fuente de corriente con un transistor. El regulador deberá mantener la tensión de salida con una variación acotada en
+	función de la variación de la corriente en la carga.
+	
+	
 	\subsubsection{Regulación de línea}
 	
+	Midiendo las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
+	
+	Se caracteriza la regulación de linea tomando la variación de la salida respecto a la variación de la fuente para dos puntos. En este caso se utilizaron los puntos en donde la tensión de alimentación es de $5,26 \, V$ y  $16,46 \, V$. Obteniendo los valores de $0,00089 \, \frac{V}{V}$ para las mediciones en multimetro y $ 0,00179\, \frac{V}{V}$.
+	
+	
+	% Agregar para comparar con la simulación
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../Graficos/regulacion_de_linea}
+		\caption{Interpolación de los puntos medidos en regulación de linea.}
+		\label{fig:regulaciondelinea}
+	\end{figure}
+		
+	
 	\subsubsection{Limitación de corriente}
+	
+	El circuito cuenta con una limitación de corriente que se acciona al alcanzar un valor de corriente estimado y comienza el mecanismo de \textit{foldback} en donde la tensión se ajusta dejando de regular.
 	
 	\subsubsection{Eficiencia}
 

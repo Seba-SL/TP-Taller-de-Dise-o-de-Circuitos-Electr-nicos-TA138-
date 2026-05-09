@@ -417,6 +417,492 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "BC547_1"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "BC547"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "NPN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=C 2=B 3=E"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "NPN Transistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO?92*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BC547_1_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BC547_1_1_1"
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "BC557_1"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "BC557"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "PNP"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=C 2=B 3=E"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "PNP Transistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO?92*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BC557_1_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -1.778) (xy 1.778 -2.286) (xy 1.27 -1.27) (xy 2.286 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "BC557_1_1_1"
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x01_Pin"
 			(pin_names
 				(offset 1.016)
@@ -728,6 +1214,228 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector:Conn_01x03_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03_Pin"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_Pin_1_1"
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1414,424 +2122,6 @@
 					(at 2.54 0 180)
 					(length 2.54)
 					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Transistor_BJT:2N3904"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "2N3904"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "NPN Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "2N3904_0_1"
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "2N3904_1_1"
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 5.715)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Transistor_BJT:2N3906"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "2N3906"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "PNP Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "2N3906_0_1"
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 -1.778) (xy 1.778 -2.286) (xy 1.27 -1.27) (xy 2.286 -1.778) (xy 2.286 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "2N3906_1_1"
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 5.715)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2758,8 +3048,8 @@
 		(uuid "4fd66fe9-eab8-46d7-94e7-5cfff8f6ed65")
 	)
 	(rectangle
-		(start 132.08 121.92)
-		(end 171.45 181.61)
+		(start 113.03 120.65)
+		(end 152.4 180.34)
 		(stroke
 			(width 0)
 			(type default)
@@ -2770,7 +3060,7 @@
 		(uuid "5944a9c2-f643-48d1-8998-9a9449cbbf2a")
 	)
 	(rectangle
-		(start 177.8 97.79)
+		(start 163.83 97.79)
 		(end 241.3 163.83)
 		(stroke
 			(width 0)
@@ -2783,7 +3073,7 @@
 	)
 	(rectangle
 		(start 13.97 15.24)
-		(end 38.1 100.33)
+		(end 38.1 107.95)
 		(stroke
 			(width 0)
 			(type default)
@@ -2842,8 +3132,8 @@
 		(uuid "c78ba1f4-a78f-41e2-9706-c9e31ba27577")
 	)
 	(rectangle
-		(start 38.1 120.65)
-		(end 129.54 193.04)
+		(start 19.05 119.38)
+		(end 110.49 191.77)
 		(stroke
 			(width 0)
 			(type default)
@@ -2891,7 +3181,7 @@
 	)
 	(text "Tensión de referencia para lazo de corriente"
 		(exclude_from_sim no)
-		(at 92.71 190.246 0)
+		(at 73.66 188.976 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2927,7 +3217,7 @@
 	)
 	(text "Conmutador analógico\n"
 		(exclude_from_sim no)
-		(at 220.726 160.782 0)
+		(at 183.642 162.052 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2951,7 +3241,7 @@
 	)
 	(text "Tensión de referencia \npara lazo de tensión\n"
 		(exclude_from_sim no)
-		(at 151.638 174.498 0)
+		(at 132.588 173.228 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2975,7 +3265,7 @@
 	)
 	(text "Tensiónes de Referencia"
 		(exclude_from_sim no)
-		(at 104.902 114.046 0)
+		(at 85.852 112.776 0)
 		(effects
 			(font
 				(size 2 2)
@@ -3067,7 +3357,7 @@
 	)
 	(text_box ""
 		(exclude_from_sim no)
-		(at 33.02 110.49 0)
+		(at 13.97 109.22 0)
 		(size 140.97 86.36)
 		(margins 2 2 2 2)
 		(stroke
@@ -3088,7 +3378,7 @@
 		(uuid "fb7c8b40-1a69-4d6b-98a0-924fceb37c86")
 	)
 	(junction
-		(at 210.82 101.6)
+		(at 205.74 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "006c1028-b964-410e-a067-2497279fdbbb")
@@ -3100,7 +3390,7 @@
 		(uuid "079b6b78-10fe-4f40-8bfa-628738268005")
 	)
 	(junction
-		(at 210.82 119.38)
+		(at 205.74 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0ae90886-c4f1-44e8-a7c8-2a9a464a9b9f")
@@ -3112,7 +3402,7 @@
 		(uuid "191165e5-0f07-4c00-8a67-05401c038135")
 	)
 	(junction
-		(at 153.67 144.78)
+		(at 134.62 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "19ff2b4f-d52c-487a-832c-14baace3fa8d")
@@ -3124,25 +3414,31 @@
 		(uuid "1c475ff5-1f24-4c45-a29b-d0d10b589117")
 	)
 	(junction
-		(at 109.22 175.26)
+		(at 90.17 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1c733f1c-3ac2-41ea-b3ae-3ecb4ee23af1")
 	)
 	(junction
-		(at 210.82 137.16)
+		(at 205.74 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1f475426-be27-4295-9f91-521ee38283c6")
 	)
 	(junction
-		(at 190.5 128.27)
+		(at 224.79 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20ea2d58-bcd9-4742-be83-c6ef58333d18")
+	)
+	(junction
+		(at 185.42 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "227af289-9a5e-4441-b38b-20d509f87d04")
 	)
 	(junction
-		(at 41.91 146.05)
+		(at 22.86 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "22dca605-70da-460d-acbf-f5c43bce8543")
@@ -3166,12 +3462,6 @@
 		(uuid "2d7d3a28-3f89-44ef-a995-61871471c318")
 	)
 	(junction
-		(at 57.15 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f579981-795c-44aa-b1ce-c99dd01479d0")
-	)
-	(junction
 		(at 200.66 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3184,13 +3474,13 @@
 		(uuid "3e019ef8-668f-41f4-8c7f-c453514447b4")
 	)
 	(junction
-		(at 82.55 161.29)
+		(at 64.77 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3ee67be1-0a9b-45d0-9e6d-5ed24fd0cae4")
+		(uuid "4418b299-f903-4976-8b8c-e113057b1e2e")
 	)
 	(junction
-		(at 190.5 101.6)
+		(at 185.42 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "53f4039b-3cc1-49d8-984d-cad4761dae43")
@@ -3202,13 +3492,19 @@
 		(uuid "6996a169-6e6a-476d-be86-6c296056e545")
 	)
 	(junction
+		(at 57.15 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6dd9e231-fb3a-4135-b4ca-4ef6a1c8bd41")
+	)
+	(junction
 		(at 82.55 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "714e2bf3-d574-4370-93cf-b9f033513123")
 	)
 	(junction
-		(at 153.67 124.46)
+		(at 134.62 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75275a51-6612-4dd8-9f2a-1753d2f734c4")
@@ -3220,7 +3516,7 @@
 		(uuid "783f0e5f-f421-4cc8-a203-f1b783bc5baf")
 	)
 	(junction
-		(at 62.23 132.08)
+		(at 43.18 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "865f92ca-c7a3-4aa1-ada0-7bb783c4a4c7")
@@ -3229,7 +3525,7 @@
 		(at 133.35 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "872cdbcf-fb24-4d2f-85ad-d63f0fba91c5")
+		(uuid "88d59137-4ef2-4792-b1f0-3750e10d368e")
 	)
 	(junction
 		(at 212.09 22.86)
@@ -3250,7 +3546,19 @@
 		(uuid "9a8524a8-ffdb-4e7b-8533-6a67329a84fd")
 	)
 	(junction
-		(at 210.82 142.24)
+		(at 62.23 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9bb617a7-0b66-4e97-80c1-d41e4e6d1b8b")
+	)
+	(junction
+		(at 222.25 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ef888a1-4b72-404c-a7cb-03ae946924d3")
+	)
+	(junction
+		(at 205.74 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a1e3e779-82f3-4549-9fb9-8bbd69c9793e")
@@ -3262,13 +3570,19 @@
 		(uuid "a3d4ae0b-eab6-4c29-9d82-17502047f97f")
 	)
 	(junction
+		(at 55.88 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a83c07b1-1482-43aa-bebc-e761a1800845")
+	)
+	(junction
 		(at 104.14 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "acbb51b3-8720-4955-b691-5d3a63f54fd2")
 	)
 	(junction
-		(at 62.23 152.4)
+		(at 43.18 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b4a416c1-4e3d-4d85-8657-6657d3401b60")
@@ -3292,22 +3606,10 @@
 		(uuid "c574c248-ee49-4df9-b983-ce95b155aa6c")
 	)
 	(junction
-		(at 104.14 175.26)
+		(at 85.09 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c5a9f852-790a-42bc-9fd0-f2c8c8007acb")
-	)
-	(junction
-		(at 64.77 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cb5a86f5-078a-4d63-9e9c-5a834af6d5f4")
-	)
-	(junction
-		(at 229.87 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cbedbc56-caa7-431d-95ae-06dfc49eeee5")
 	)
 	(junction
 		(at 270.51 57.15)
@@ -3334,13 +3636,13 @@
 		(uuid "de648668-41bc-427a-8e86-a48cc13c6504")
 	)
 	(junction
-		(at 138.43 137.16)
+		(at 119.38 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4c52f5f-180e-499f-9f38-1c98b789c017")
 	)
 	(junction
-		(at 85.09 138.43)
+		(at 66.04 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4f7d7d3-481f-42eb-9174-39bf08db232f")
@@ -3352,37 +3654,31 @@
 		(uuid "e901bf97-eea9-4ae0-8910-a83cbafa0f8e")
 	)
 	(junction
-		(at 58.42 143.51)
+		(at 39.37 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f1e4af87-a24f-4661-9ec8-8af145046971")
 	)
 	(junction
-		(at 153.67 154.94)
+		(at 134.62 153.67)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f71cb831-d0ea-4bc2-aa6c-cb3ea8c1fa7f")
 	)
 	(junction
-		(at 120.65 175.26)
+		(at 101.6 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f90127b5-5c53-4fb1-8b63-48fb2168e6f4")
 	)
 	(junction
-		(at 227.33 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fb07f896-27e7-4967-9bcb-9c37c746aff2")
-	)
-	(junction
-		(at 107.95 140.97)
+		(at 88.9 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb43a300-fc9c-45c4-8f37-0bd0a61ce92a")
 	)
 	(junction
-		(at 58.42 148.59)
+		(at 39.37 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff27d44e-5229-45d7-b143-5f7158900a2a")
@@ -3399,7 +3695,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 135.89) (xy 109.22 135.89)
+			(xy 81.28 134.62) (xy 90.17 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3419,7 +3715,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 142.24) (xy 210.82 144.78)
+			(xy 205.74 142.24) (xy 205.74 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3429,7 +3725,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 132.08) (xy 41.91 146.05)
+			(xy 22.86 130.81) (xy 22.86 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3439,7 +3735,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 142.24) (xy 153.67 144.78)
+			(xy 134.62 140.97) (xy 134.62 143.51)
 		)
 		(stroke
 			(width 0)
@@ -3459,7 +3755,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 148.59) (xy 62.23 152.4)
+			(xy 43.18 147.32) (xy 43.18 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3479,7 +3775,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 124.46) (xy 162.56 124.46)
+			(xy 134.62 123.19) (xy 143.51 123.19)
 		)
 		(stroke
 			(width 0)
@@ -3489,7 +3785,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 146.05) (xy 41.91 165.1)
+			(xy 22.86 144.78) (xy 22.86 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3499,7 +3795,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 165.1) (xy 44.45 165.1)
+			(xy 22.86 163.83) (xy 25.4 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3509,7 +3805,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 101.6) (xy 190.5 101.6)
+			(xy 182.88 101.6) (xy 185.42 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3539,16 +3835,6 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 160.02) (xy 82.55 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12dd7a59-98f9-473d-91e8-e04458d559e5")
-	)
-	(wire
-		(pts
 			(xy 200.66 29.21) (xy 200.66 22.86)
 		)
 		(stroke
@@ -3559,7 +3845,17 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 128.27) (xy 193.04 128.27)
+			(xy 31.75 91.44) (xy 31.75 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15c6cbe4-3af8-44d0-ae34-1d707dec3003")
+	)
+	(wire
+		(pts
+			(xy 185.42 128.27) (xy 187.96 128.27)
 		)
 		(stroke
 			(width 0)
@@ -3649,7 +3945,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 152.4) (xy 85.09 152.4)
+			(xy 55.88 151.13) (xy 66.04 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3659,7 +3955,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 140.97) (xy 107.95 140.97)
+			(xy 81.28 139.7) (xy 88.9 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3679,7 +3975,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 128.27) (xy 227.33 128.27)
+			(xy 217.17 128.27) (xy 222.25 128.27)
 		)
 		(stroke
 			(width 0)
@@ -3689,17 +3985,17 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 30.48) (xy 57.15 34.29)
+			(xy 31.75 90.17) (xy 22.86 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "25637286-ecfe-47f8-8956-5508b7f6a083")
+		(uuid "20a58717-bff6-40c8-a471-32465be7d5b1")
 	)
 	(wire
 		(pts
-			(xy 210.82 119.38) (xy 219.71 119.38)
+			(xy 205.74 119.38) (xy 214.63 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3709,7 +4005,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 161.29) (xy 82.55 172.72)
+			(xy 62.23 160.02) (xy 62.23 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3739,7 +4035,17 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 154.94) (xy 153.67 154.94)
+			(xy 224.79 151.13) (xy 229.87 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2950ff5b-3f51-458e-8050-50905cd18735")
+	)
+	(wire
+		(pts
+			(xy 121.92 153.67) (xy 134.62 153.67)
 		)
 		(stroke
 			(width 0)
@@ -3779,7 +4085,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 105.41) (xy 210.82 101.6)
+			(xy 205.74 105.41) (xy 205.74 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3809,7 +4115,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 137.16) (xy 219.71 137.16)
+			(xy 205.74 137.16) (xy 214.63 137.16)
 		)
 		(stroke
 			(width 0)
@@ -3829,7 +4135,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 92.71) (xy 24.13 92.71)
+			(xy 31.75 100.33) (xy 22.86 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3849,7 +4155,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 132.08) (xy 45.72 132.08)
+			(xy 22.86 130.81) (xy 26.67 130.81)
 		)
 		(stroke
 			(width 0)
@@ -3859,7 +4165,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 138.43) (xy 85.09 152.4)
+			(xy 66.04 137.16) (xy 66.04 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3909,7 +4215,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 113.03) (xy 190.5 128.27)
+			(xy 185.42 113.03) (xy 185.42 128.27)
 		)
 		(stroke
 			(width 0)
@@ -3929,7 +4235,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 137.16) (xy 138.43 137.16)
+			(xy 127 135.89) (xy 119.38 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3939,7 +4245,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 170.18) (xy 96.52 170.18)
+			(xy 82.55 168.91) (xy 77.47 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3949,23 +4255,13 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 101.6) (xy 229.87 101.6)
+			(xy 205.74 101.6) (xy 224.79 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "3b948bc4-782d-4c05-bd84-47f6babc9cca")
-	)
-	(wire
-		(pts
-			(xy 82.55 172.72) (xy 81.28 172.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c2fcf39-6e89-4f6f-82c3-e7d1dc6de152")
 	)
 	(wire
 		(pts
@@ -3979,7 +4275,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 152.4) (xy 62.23 161.29)
+			(xy 43.18 151.13) (xy 43.18 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4009,17 +4305,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 152.4) (xy 237.49 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "442d8050-66c4-45c3-84a5-90fe7bcf1176")
-	)
-	(wire
-		(pts
-			(xy 210.82 113.03) (xy 210.82 119.38)
+			(xy 205.74 113.03) (xy 205.74 119.38)
 		)
 		(stroke
 			(width 0)
@@ -4046,6 +4332,16 @@
 			(type default)
 		)
 		(uuid "4534b92b-288f-41fd-971c-db1958f4e432")
+	)
+	(wire
+		(pts
+			(xy 177.8 135.89) (xy 170.18 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "455656fb-8675-4fab-8ac6-4dcb508e0565")
 	)
 	(wire
 		(pts
@@ -4079,16 +4375,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 132.08) (xy 229.87 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c1c1c1b-bd8e-4e59-8201-3b1c354a3fd1")
-	)
-	(wire
-		(pts
 			(xy 104.14 54.61) (xy 104.14 57.15)
 		)
 		(stroke
@@ -4099,7 +4385,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 127) (xy 138.43 124.46)
+			(xy 119.38 125.73) (xy 119.38 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4109,7 +4395,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 101.6) (xy 210.82 101.6)
+			(xy 185.42 101.6) (xy 205.74 101.6)
 		)
 		(stroke
 			(width 0)
@@ -4129,7 +4415,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 148.59) (xy 62.23 148.59)
+			(xy 39.37 147.32) (xy 43.18 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4139,7 +4425,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 101.6) (xy 229.87 105.41)
+			(xy 224.79 101.6) (xy 224.79 105.41)
 		)
 		(stroke
 			(width 0)
@@ -4149,7 +4435,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 142.24) (xy 107.95 140.97)
+			(xy 88.9 140.97) (xy 88.9 139.7)
 		)
 		(stroke
 			(width 0)
@@ -4169,17 +4455,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 160.02) (xy 82.55 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5762c144-dea5-4658-b2fa-1eff1c73ff66")
-	)
-	(wire
-		(pts
-			(xy 85.09 124.46) (xy 85.09 138.43)
+			(xy 66.04 123.19) (xy 66.04 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4209,7 +4485,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 137.16) (xy 210.82 142.24)
+			(xy 205.74 137.16) (xy 205.74 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4229,7 +4505,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 137.16) (xy 210.82 137.16)
+			(xy 195.58 137.16) (xy 205.74 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4269,17 +4545,17 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 41.91) (xy 57.15 57.15)
+			(xy 57.15 57.15) (xy 57.15 49.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6276d8e2-855e-42b4-9690-9d4aefd9f14b")
+		(uuid "6281aacd-9c72-4964-bb17-dd77256f3b1f")
 	)
 	(wire
 		(pts
-			(xy 104.14 185.42) (xy 104.14 184.15)
+			(xy 85.09 184.15) (xy 85.09 182.88)
 		)
 		(stroke
 			(width 0)
@@ -4306,6 +4582,16 @@
 			(type default)
 		)
 		(uuid "6676ca72-fc21-49ee-ae84-94159fa43019")
+	)
+	(wire
+		(pts
+			(xy 55.88 49.53) (xy 57.15 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67bdd86f-68e2-43e2-aac0-b918bdc0541f")
 	)
 	(wire
 		(pts
@@ -4379,7 +4665,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 134.62) (xy 138.43 137.16)
+			(xy 119.38 133.35) (xy 119.38 135.89)
 		)
 		(stroke
 			(width 0)
@@ -4399,17 +4685,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 128.27) (xy 227.33 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71dbe2da-214a-4f3e-b519-b44899364442")
-	)
-	(wire
-		(pts
-			(xy 53.34 132.08) (xy 62.23 132.08)
+			(xy 34.29 130.81) (xy 43.18 130.81)
 		)
 		(stroke
 			(width 0)
@@ -4419,7 +4695,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 124.46) (xy 109.22 124.46)
+			(xy 66.04 123.19) (xy 90.17 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4449,13 +4725,23 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 181.61) (xy 109.22 181.61)
+			(xy 97.79 180.34) (xy 90.17 180.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "75243ebd-9326-4c7e-ab69-95500a7b30b1")
+	)
+	(wire
+		(pts
+			(xy 172.72 149.86) (xy 177.8 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75667004-b24e-4283-bf90-4ec7095a4240")
 	)
 	(wire
 		(pts
@@ -4489,7 +4775,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 135.89) (xy 109.22 124.46)
+			(xy 90.17 134.62) (xy 90.17 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4509,7 +4795,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 93.98) (xy 33.02 92.71)
+			(xy 31.75 101.6) (xy 31.75 100.33)
 		)
 		(stroke
 			(width 0)
@@ -4519,7 +4805,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 175.26) (xy 121.92 175.26)
+			(xy 57.15 49.53) (xy 59.69 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c66632b-1e90-4377-9fb5-d9c51080397a")
+	)
+	(wire
+		(pts
+			(xy 101.6 173.99) (xy 102.87 173.99)
 		)
 		(stroke
 			(width 0)
@@ -4529,7 +4825,17 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 123.19) (xy 200.66 119.38)
+			(xy 29.21 49.53) (xy 35.56 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81d21d2c-b440-4ed4-9d90-2f4115737eec")
+	)
+	(wire
+		(pts
+			(xy 195.58 123.19) (xy 195.58 119.38)
 		)
 		(stroke
 			(width 0)
@@ -4579,13 +4885,23 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 168.91) (xy 101.6 160.02)
+			(xy 82.55 160.02) (xy 82.55 168.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "883d3041-1fb3-48f2-8cd8-86ebf64f8f07")
+	)
+	(wire
+		(pts
+			(xy 222.25 128.27) (xy 224.79 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8af59236-86ea-4f87-afa9-231e5a059546")
 	)
 	(wire
 		(pts
@@ -4599,7 +4915,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 124.46) (xy 153.67 132.08)
+			(xy 134.62 123.19) (xy 134.62 130.81)
 		)
 		(stroke
 			(width 0)
@@ -4639,7 +4955,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 119.38) (xy 210.82 119.38)
+			(xy 195.58 119.38) (xy 205.74 119.38)
 		)
 		(stroke
 			(width 0)
@@ -4649,13 +4965,23 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 161.29) (xy 82.55 161.29)
+			(xy 55.88 160.02) (xy 62.23 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "91fc99bd-3e2f-4e8a-9669-aa1c6ea3bc93")
+	)
+	(wire
+		(pts
+			(xy 237.49 151.13) (xy 234.95 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "937ef35a-41db-4e19-8790-d7b9a2a70f0c")
 	)
 	(wire
 		(pts
@@ -4689,16 +5015,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 168.91) (xy 101.6 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96cf5409-c8d2-4975-9ae2-c7ce39234108")
-	)
-	(wire
-		(pts
 			(xy 134.62 21.59) (xy 140.97 21.59)
 		)
 		(stroke
@@ -4719,7 +5035,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 140.97) (xy 111.76 140.97)
+			(xy 88.9 139.7) (xy 92.71 139.7)
 		)
 		(stroke
 			(width 0)
@@ -4729,7 +5045,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 124.46) (xy 153.67 124.46)
+			(xy 119.38 123.19) (xy 134.62 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4749,7 +5065,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 132.08) (xy 76.2 133.35)
+			(xy 57.15 130.81) (xy 57.15 132.08)
 		)
 		(stroke
 			(width 0)
@@ -4839,17 +5155,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 168.91) (xy 100.33 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7ddd5eb-f630-4f5c-b8bf-a225330b213b")
-	)
-	(wire
-		(pts
-			(xy 58.42 143.51) (xy 62.23 143.51)
+			(xy 39.37 142.24) (xy 43.18 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4859,7 +5165,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 138.43) (xy 86.36 138.43)
+			(xy 66.04 137.16) (xy 67.31 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4889,7 +5195,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 105.41) (xy 190.5 101.6)
+			(xy 185.42 105.41) (xy 185.42 101.6)
 		)
 		(stroke
 			(width 0)
@@ -4909,17 +5215,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 49.53) (xy 59.69 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ada958ff-8894-42ac-aa49-f1030e481156")
-	)
-	(wire
-		(pts
-			(xy 219.71 133.35) (xy 219.71 137.16)
+			(xy 214.63 133.35) (xy 214.63 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4949,16 +5245,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 30.48) (xy 57.15 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b17e5ac4-07a4-4eb7-8d4b-736954df280f")
-	)
-	(wire
-		(pts
 			(xy 207.01 74.93) (xy 199.39 74.93)
 		)
 		(stroke
@@ -4979,7 +5265,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 48.26) (xy 35.56 39.37)
+			(xy 35.56 39.37) (xy 35.56 49.53)
 		)
 		(stroke
 			(width 0)
@@ -4989,7 +5275,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 49.53) (xy 57.15 49.53)
+			(xy 52.07 49.53) (xy 55.88 49.53)
 		)
 		(stroke
 			(width 0)
@@ -4999,7 +5285,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 175.26) (xy 109.22 175.26)
+			(xy 85.09 173.99) (xy 90.17 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5019,13 +5305,33 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 144.78) (xy 153.67 154.94)
+			(xy 134.62 143.51) (xy 134.62 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bc1d0151-9aea-4a1e-9d0e-023bcb51f599")
+	)
+	(wire
+		(pts
+			(xy 62.23 160.02) (xy 82.55 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc35a04d-299a-4b20-977d-fd294fcdceab")
+	)
+	(wire
+		(pts
+			(xy 232.41 151.13) (xy 232.41 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcc7d853-35ad-4e1d-92d0-fa8936c7984b")
 	)
 	(wire
 		(pts
@@ -5039,6 +5345,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 39.37) (xy 71.12 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be22b34e-1d6a-4f68-97dd-373f17632390")
+	)
+	(wire
+		(pts
 			(xy 26.67 72.39) (xy 27.94 72.39)
 		)
 		(stroke
@@ -5049,7 +5365,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 146.05) (xy 43.18 146.05)
+			(xy 22.86 144.78) (xy 24.13 144.78)
 		)
 		(stroke
 			(width 0)
@@ -5066,6 +5382,16 @@
 			(type default)
 		)
 		(uuid "c0d81560-d8a9-44d8-b0ac-b71d27cdcc07")
+	)
+	(wire
+		(pts
+			(xy 224.79 128.27) (xy 224.79 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1585812-680d-47ad-b019-6fc1822082af")
 	)
 	(wire
 		(pts
@@ -5089,7 +5415,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 161.29) (xy 62.23 161.29)
+			(xy 48.26 160.02) (xy 43.18 160.02)
 		)
 		(stroke
 			(width 0)
@@ -5099,7 +5425,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 128.27) (xy 190.5 130.81)
+			(xy 185.42 128.27) (xy 185.42 130.81)
 		)
 		(stroke
 			(width 0)
@@ -5159,7 +5485,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 175.26) (xy 120.65 175.26)
+			(xy 99.06 173.99) (xy 101.6 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5169,7 +5495,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 143.51) (xy 62.23 132.08)
+			(xy 43.18 142.24) (xy 43.18 130.81)
 		)
 		(stroke
 			(width 0)
@@ -5189,17 +5515,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 151.13) (xy 182.88 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd5b9b7a-5f2d-4190-bbae-b9677802b695")
-	)
-	(wire
-		(pts
-			(xy 219.71 119.38) (xy 219.71 123.19)
+			(xy 214.63 119.38) (xy 214.63 123.19)
 		)
 		(stroke
 			(width 0)
@@ -5219,16 +5535,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 151.13) (xy 182.88 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d196313c-da53-4b97-8bec-f4b3410a8a03")
-	)
-	(wire
-		(pts
 			(xy 212.09 27.94) (xy 212.09 22.86)
 		)
 		(stroke
@@ -5239,7 +5545,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 132.08) (xy 76.2 132.08)
+			(xy 53.34 130.81) (xy 57.15 130.81)
 		)
 		(stroke
 			(width 0)
@@ -5259,7 +5565,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 148.59) (xy 58.42 148.59)
+			(xy 38.1 147.32) (xy 39.37 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5269,7 +5575,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 175.26) (xy 110.49 175.26)
+			(xy 90.17 173.99) (xy 91.44 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5289,7 +5595,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 175.26) (xy 104.14 177.8)
+			(xy 85.09 173.99) (xy 85.09 176.53)
 		)
 		(stroke
 			(width 0)
@@ -5319,7 +5625,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 143.51) (xy 58.42 143.51)
+			(xy 38.1 142.24) (xy 39.37 142.24)
 		)
 		(stroke
 			(width 0)
@@ -5339,7 +5645,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 142.24) (xy 210.82 142.24)
+			(xy 201.93 142.24) (xy 205.74 142.24)
 		)
 		(stroke
 			(width 0)
@@ -5349,7 +5655,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 144.78) (xy 153.67 144.78)
+			(xy 143.51 143.51) (xy 134.62 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5369,7 +5675,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 175.26) (xy 104.14 175.26)
+			(xy 77.47 173.99) (xy 85.09 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5389,7 +5695,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 152.4) (xy 67.31 152.4)
+			(xy 43.18 151.13) (xy 48.26 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5409,7 +5715,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 181.61) (xy 109.22 175.26)
+			(xy 90.17 180.34) (xy 90.17 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5419,7 +5725,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 113.03) (xy 229.87 128.27)
+			(xy 224.79 113.03) (xy 224.79 128.27)
 		)
 		(stroke
 			(width 0)
@@ -5439,7 +5745,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 137.16) (xy 138.43 152.4)
+			(xy 119.38 135.89) (xy 119.38 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5449,7 +5755,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 133.35) (xy 200.66 137.16)
+			(xy 195.58 133.35) (xy 195.58 137.16)
 		)
 		(stroke
 			(width 0)
@@ -5479,7 +5785,27 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 177.8) (xy 120.65 175.26)
+			(xy 55.88 39.37) (xy 55.88 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecc9137b-9a48-4cd6-98fe-64ac3b11b290")
+	)
+	(wire
+		(pts
+			(xy 71.12 39.37) (xy 71.12 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eccc34f5-e68e-44c4-8819-3acc5cd0d571")
+	)
+	(wire
+		(pts
+			(xy 101.6 176.53) (xy 101.6 173.99)
 		)
 		(stroke
 			(width 0)
@@ -5529,6 +5855,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 138.43) (xy 167.64 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa7a2796-3cb7-4948-9da8-9401bb016468")
+	)
+	(wire
+		(pts
 			(xy 260.35 46.99) (xy 251.46 46.99)
 		)
 		(stroke
@@ -5539,7 +5875,17 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 132.08) (xy 64.77 132.08)
+			(xy 170.18 135.89) (xy 170.18 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd133626-c321-458c-8b61-bd2b9bf64643")
+	)
+	(wire
+		(pts
+			(xy 43.18 130.81) (xy 45.72 130.81)
 		)
 		(stroke
 			(width 0)
@@ -5669,7 +6015,7 @@
 	)
 	(global_label "V_voltage"
 		(shape input)
-		(at 237.49 152.4 180)
+		(at 224.79 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5679,7 +6025,7 @@
 		)
 		(uuid "26f3731e-7760-4b5e-a222-cfc07ced798e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 225.5545 152.4 0)
+			(at 212.8545 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5813,7 +6159,7 @@
 	)
 	(global_label "Vref"
 		(shape input)
-		(at 162.56 144.78 0)
+		(at 143.51 143.51 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5823,7 +6169,7 @@
 		)
 		(uuid "47ff945b-0fb1-4f07-92e8-ad0380f4fb69")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 169.2343 144.78 0)
+			(at 150.1843 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5885,7 +6231,7 @@
 	)
 	(global_label "Vo"
 		(shape input)
-		(at 119.38 140.97 0)
+		(at 100.33 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5895,7 +6241,7 @@
 		)
 		(uuid "5a8bc77c-8855-46be-adbd-f92de79bef0e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 124.6028 140.97 0)
+			(at 105.5528 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5931,9 +6277,33 @@
 			)
 		)
 	)
+	(global_label "V_current"
+		(shape input)
+		(at 29.21 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6aeaea5b-9cd1-4d08-8f83-33747fea4d09")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.3953 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "Vcc"
 		(shape input)
-		(at 162.56 124.46 0)
+		(at 143.51 123.19 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5943,7 +6313,7 @@
 		)
 		(uuid "6e4404f8-4db1-40bb-a62e-a85de6270804")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 168.811 124.46 0)
+			(at 149.761 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6051,6 +6421,30 @@
 			)
 		)
 	)
+	(global_label "Vctrl"
+		(shape input)
+		(at 31.75 91.44 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "90db87d8-92ee-4e8c-b155-069fb599a508")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 31.75 98.7795 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "Vref_c"
 		(shape input)
 		(at 26.67 82.55 0)
@@ -6149,7 +6543,7 @@
 	)
 	(global_label "Vctrl"
 		(shape input)
-		(at 207.01 142.24 180)
+		(at 201.93 142.24 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6159,7 +6553,7 @@
 		)
 		(uuid "9e97ad16-6941-40cc-9da4-408f168e044b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199.6705 142.24 0)
+			(at 194.5905 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6216,6 +6610,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "V_current"
+		(shape input)
+		(at 167.64 138.43 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a7ca5b1c-8aa7-4f65-9bb8-2046fa4e7927")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.64 126.6153 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6291,33 +6709,9 @@
 			)
 		)
 	)
-	(global_label "V_current_ref"
-		(shape input)
-		(at 35.56 48.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d74b1047-4ae9-44b1-b59e-ad9e1f98ddae")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.1772 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "Vref_c"
 		(shape input)
-		(at 44.45 165.1 0)
+		(at 25.4 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6327,7 +6721,7 @@
 		)
 		(uuid "d7e421fd-1692-4d93-bcd9-6d45f8a6f721")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.1805 165.1 0)
+			(at 34.1305 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6341,7 +6735,7 @@
 	)
 	(global_label "Vcc"
 		(shape input)
-		(at 187.96 101.6 180)
+		(at 182.88 101.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6351,7 +6745,7 @@
 		)
 		(uuid "da8ac613-8fa9-4ac3-a65b-8f034fe65b49")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.709 101.6 0)
+			(at 176.629 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6384,30 +6778,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "V_current_ref"
-		(shape input)
-		(at 186.69 151.13 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "db66f2ed-ed97-4d8d-a5c2-5543052db5ae")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 202.0728 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -6509,7 +6879,7 @@
 	)
 	(global_label "Vref"
 		(shape input)
-		(at 121.92 175.26 0)
+		(at 102.87 173.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6519,7 +6889,7 @@
 		)
 		(uuid "ea8c7e98-62f3-4ee7-b714-ab199571996c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.5943 175.26 0)
+			(at 109.5443 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6611,7 +6981,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 184.15 0)
+		(at 177.8 149.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6620,9 +6990,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0478deca-c0c0-4e13-aa83-b09e8c11ee1f")
-		(property "Reference" "#PWR012"
-			(at 104.14 190.5 0)
+		(uuid "03ba776f-4371-4177-8595-e3d7db18d3d7")
+		(property "Reference" "#PWR018"
+			(at 177.8 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6633,7 +7003,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 189.23 0)
+			(at 177.8 154.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6643,7 +7013,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 184.15 0)
+			(at 177.8 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6654,7 +7024,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 184.15 0)
+			(at 177.8 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6665,7 +7035,85 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 184.15 0)
+			(at 177.8 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b1d39a53-48bc-4342-aa6b-304f5bf23740")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 182.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0478deca-c0c0-4e13-aa83-b09e8c11ee1f")
+		(property "Reference" "#PWR012"
+			(at 85.09 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6689,7 +7137,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 57.15 38.1 0)
+		(at 59.69 39.37 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6699,7 +7147,7 @@
 		(dnp no)
 		(uuid "0518b476-63b8-42d1-89bd-f498d907d0ea")
 		(property "Reference" "C_comp_t1"
-			(at 47.244 34.798 0)
+			(at 63.754 32.258 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6710,7 +7158,7 @@
 			)
 		)
 		(property "Value" "100 pF"
-			(at 48.768 40.64 0)
+			(at 61.468 34.798 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6721,7 +7169,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm"
-			(at 58.1152 41.91 0)
+			(at 63.5 38.4048 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6732,7 +7180,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 38.1 0)
+			(at 59.69 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6743,7 +7191,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 57.15 38.1 0)
+			(at 59.69 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6845,6 +7293,117 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 199.39 81.28 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "06d7cc8f-89a0-4ba5-86dd-e5c8b0965106")
+		(property "Reference" "Q27"
+			(at 198.1199 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 200.6599 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 201.295 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 199.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 199.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 199.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 199.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "58092836-b755-4462-8895-d9a92c0b4ba8")
+		)
+		(pin "2"
+			(uuid "909cd8f1-621d-44f3-8e1f-899df00cd5a8")
+		)
+		(pin "1"
+			(uuid "5a53f857-0fbd-4115-80fb-2661422a0a2a")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q27")
 					(unit 1)
 				)
 			)
@@ -7009,8 +7568,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 91.44 73.66 0)
+		(lib_id "Connector:Conn_01x01_Pin")
+		(at 17.78 90.17 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7018,56 +7577,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "0d33777a-6d00-43fb-b6cc-2bf793222177")
-		(property "Reference" "Q7"
-			(at 96.52 74.9301 0)
+		(uuid "0a8e02e7-92fe-4a4b-bfa2-f2d17337b738")
+		(property "Reference" "V_ctrl1"
+			(at 27.178 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "2N3904"
-			(at 96.52 72.3901 0)
+		(property "Value" "V_Ctrl"
+			(at 19.812 92.202 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 96.52 75.565 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 91.44 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 91.44 73.66 0)
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x01_P2.00mm_Vertical"
+			(at 17.78 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7077,19 +7609,35 @@
 				)
 			)
 		)
-		(pin "3"
-			(uuid "92cb9faa-90e0-4fb5-ab70-aef91d5f06d2")
+		(property "Datasheet" ""
+			(at 17.78 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 17.78 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "1"
-			(uuid "e98807f4-3a6e-4851-a3cf-c20a9d5aec5e")
-		)
-		(pin "2"
-			(uuid "48129844-ed5e-4823-abe6-62b168cc2352")
+			(uuid "4e32a56e-2553-4b6e-a709-d071a7050b75")
 		)
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q7")
+					(reference "V_ctrl1")
 					(unit 1)
 				)
 			)
@@ -7178,184 +7726,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 106.68 49.53 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0fa00d01-82c7-4868-978b-e3dd6720ef8c")
-		(property "Reference" "Q2"
-			(at 101.6 50.8001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 101.6 48.2601 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 101.6 51.435 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 106.68 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 106.68 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "7cfec95c-2918-4078-a5af-627e1bf8e956")
-		)
-		(pin "1"
-			(uuid "9dac47a0-0734-4612-9a1b-b4d0e9dfcf51")
-		)
-		(pin "2"
-			(uuid "0354ecd1-f613-4178-85b9-b3cd86dad627")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3906")
-		(at 101.6 29.21 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "11d1a56e-5f61-4e46-9de9-dab98413bae1")
-		(property "Reference" "Q5"
-			(at 107.2512 27.9399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3906"
-			(at 106.934 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 106.68 27.305 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-			(at 101.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-			(at 101.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "71b24c77-8b05-4359-8a62-b482e3dfde35")
-		)
-		(pin "3"
-			(uuid "517a0e46-2829-4db1-a0f5-a26d3efc04cf")
-		)
-		(pin "2"
-			(uuid "cdd9b11e-3eec-400c-9b58-f31df6b78ae4")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 229.87 109.22 0)
+		(at 224.79 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7366,7 +7738,7 @@
 		(fields_autoplaced yes)
 		(uuid "178bc5c9-a820-41b9-b807-1bfa6e8311b1")
 		(property "Reference" "R28"
-			(at 232.41 107.9499 0)
+			(at 227.33 107.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7377,7 +7749,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 232.41 110.4899 0)
+			(at 227.33 110.4899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7388,7 +7760,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 228.092 109.22 90)
+			(at 223.012 109.22 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7399,7 +7771,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 229.87 109.22 0)
+			(at 224.79 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7410,7 +7782,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 229.87 109.22 0)
+			(at 224.79 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7430,6 +7802,194 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 237.49 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "17da10a5-75c2-4c86-b858-66eb56c4d612")
+		(property "Reference" "#PWR017"
+			(at 237.49 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 237.998 155.956 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 237.49 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f7a38fa-4ae9-40de-8ea4-e6596aade079")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC557_1")
+		(lib_id "Transistor_BJT:BC557")
+		(at 101.6 29.21 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "182bf364-0f7d-4268-808e-a42b102d2e94")
+		(property "Reference" "Q3"
+			(at 106.68 30.4801 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 106.68 27.9401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 106.68 27.305 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 101.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 101.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 101.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 101.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "696c70ea-344d-490a-8560-827ca88d3db2")
+		)
+		(pin "1"
+			(uuid "641913c8-3ed6-4915-a138-a4152bb94408")
+		)
+		(pin "3"
+			(uuid "4182c1f1-8ceb-4a24-bd57-3e92e204afc9")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -7508,6 +8068,116 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 132.08 135.89 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1d52172c-d9f1-48ac-bc9f-bcf588b0a47c")
+		(property "Reference" "Q28"
+			(at 137.16 134.6199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 137.16 137.1599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 137.16 137.795 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 132.08 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 132.08 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 132.08 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 132.08 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "a753a10d-1c27-49a2-b57f-27629fc27edf")
+		)
+		(pin "2"
+			(uuid "17878c9e-bad3-4199-870b-7290ffc7450a")
+		)
+		(pin "1"
+			(uuid "e74640c7-dc8c-4bc5-9837-6b0ea883b85b")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q28")
 					(unit 1)
 				)
 			)
@@ -7674,7 +8344,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 76.2 133.35 0)
+		(at 57.15 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7685,7 +8355,7 @@
 		(fields_autoplaced yes)
 		(uuid "1ecb4d87-714e-4b90-b8c1-9af41c21ef92")
 		(property "Reference" "#PWR010"
-			(at 76.2 139.7 0)
+			(at 57.15 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7696,7 +8366,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 138.43 0)
+			(at 57.15 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7706,7 +8376,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 76.2 133.35 0)
+			(at 57.15 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7717,7 +8387,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 76.2 133.35 0)
+			(at 57.15 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7728,7 +8398,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 76.2 133.35 0)
+			(at 57.15 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7868,7 +8538,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:BC557")
-		(at 232.41 137.16 180)
+		(at 227.33 137.16 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7878,7 +8548,7 @@
 		(dnp no)
 		(uuid "241db36b-a3df-4567-a1f6-49ee02c8d588")
 		(property "Reference" "Q12"
-			(at 227.33 138.4301 0)
+			(at 222.25 138.4301 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7889,7 +8559,7 @@
 			)
 		)
 		(property "Value" "BC557"
-			(at 227.33 135.8901 0)
+			(at 222.25 135.8901 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7899,8 +8569,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 227.33 135.255 0)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 222.25 135.255 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7913,7 +8583,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
-			(at 232.41 137.16 0)
+			(at 227.33 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7925,7 +8595,7 @@
 			)
 		)
 		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
-			(at 232.41 137.16 0)
+			(at 227.33 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7948,94 +8618,6 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "Q12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3906")
-		(at 160.02 29.21 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "250314c1-acaf-4d7d-a1f7-0e66760149a3")
-		(property "Reference" "Q17"
-			(at 165.6712 27.9399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3906"
-			(at 165.354 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 165.1 27.305 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-			(at 160.02 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-			(at 160.02 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c1688867-10a4-4d77-8315-2ed478e522e8")
-		)
-		(pin "3"
-			(uuid "bd2e5bc2-324d-4efc-b74a-38ed84c2a0c6")
-		)
-		(pin "2"
-			(uuid "ef7052a8-2504-4e5d-9d61-56e9bca597cf")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q17")
 					(unit 1)
 				)
 			)
@@ -8152,6 +8734,116 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC557_1")
+		(lib_id "Transistor_BJT:BC557")
+		(at 85.09 29.21 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "28b1c59b-7257-4e07-8b96-b6887d928f02")
+		(property "Reference" "Q2"
+			(at 80.01 30.4801 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 80.01 27.9401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 80.01 27.305 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 85.09 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 85.09 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 85.09 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 85.09 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "60941aef-22fe-45e7-81f7-ada738cbc165")
+		)
+		(pin "1"
+			(uuid "2466ec0a-6177-496b-bdfa-726ccd391d7b")
+		)
+		(pin "3"
+			(uuid "01763aeb-3cba-47fe-8128-27a1c8fe493a")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -8474,9 +9166,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3906")
-		(at 199.39 64.77 0)
-		(mirror x)
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 170.18 154.94 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8484,57 +9175,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "3c8a0c16-0344-436d-b22b-252551964661")
-		(property "Reference" "Q13"
-			(at 204.47 66.0401 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3906"
-			(at 204.47 63.5001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 204.47 62.865 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-			(at 199.39 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-			(at 199.39 64.77 0)
-			(hide yes)
+		(uuid "41a1dbd1-944f-49af-a579-5c5f485a5373")
+		(property "Reference" "Jc1"
+			(at 170.18 157.48 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8543,86 +9186,8 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "6f0d5270-8879-4025-8660-41ade9efe5a7")
-		)
-		(pin "3"
-			(uuid "a8160b11-73a1-46ab-9547-5b2d62c1c0ab")
-		)
-		(pin "2"
-			(uuid "c30413e5-e803-47c0-bf6d-f3e5f0880450")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 165.1 49.53 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3cde0825-1715-4a79-a4a3-3b476fd271ba")
-		(property "Reference" "Q18"
-			(at 160.02 50.8001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 160.02 48.2601 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 160.02 51.435 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 165.1 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 165.1 49.53 0)
-			(hide yes)
+		(property "Value" "JC"
+			(at 170.434 159.258 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8631,59 +9196,8 @@
 				)
 			)
 		)
-		(pin "3"
-			(uuid "39eaa473-7b39-4dd3-b251-3f4895129331")
-		)
-		(pin "1"
-			(uuid "8dd61588-01ea-4e0b-a5fc-d791b4440810")
-		)
-		(pin "2"
-			(uuid "5c1e0e6a-3655-49ff-924d-17937e584bc7")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 107.95 149.86 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4319b752-8fb6-4963-93bc-314b29905948")
-		(property "Reference" "#PWR011"
-			(at 107.95 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 107.95 154.94 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 149.86 0)
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x03_P2.00mm_Vertical"
+			(at 170.18 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8694,7 +9208,202 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 149.86 0)
+			(at 170.18 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 170.18 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "b1d5f505-3246-4181-844c-b2c41681b737")
+		)
+		(pin "2"
+			(uuid "692a1648-1b3a-4551-929f-fcd9f47eca7e")
+		)
+		(pin "1"
+			(uuid "0ffbf6a2-d64d-49df-a80b-f2364c322b2e")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Jc1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 106.68 49.53 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "421f7edf-2c54-4225-9470-133f90233c82")
+		(property "Reference" "Q21"
+			(at 101.6 50.8001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 101.6 48.2601 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 101.6 51.435 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 106.68 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 106.68 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 106.68 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 106.68 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "602f2c08-4f72-441a-a6ea-bb4a541cd16e")
+		)
+		(pin "2"
+			(uuid "76293fba-326d-4ac1-9374-f1ff1e08242b")
+		)
+		(pin "1"
+			(uuid "ce4b4504-9b6a-4779-9aad-fb975f9e515d")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 88.9 148.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4319b752-8fb6-4963-93bc-314b29905948")
+		(property "Reference" "#PWR011"
+			(at 88.9 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8705,7 +9414,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 107.95 149.86 0)
+			(at 88.9 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8728,96 +9437,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 154.94 63.5 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "442592c4-28b9-469e-9abe-ccd841714764")
-		(property "Reference" "Q16"
-			(at 149.86 64.7701 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 149.86 62.2301 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 149.86 65.405 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 154.94 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 154.94 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "57711ffa-8420-4663-9d30-ceb7d8772df3")
-		)
-		(pin "1"
-			(uuid "44e42962-2f07-4f86-b702-4a62b2d91a20")
-		)
-		(pin "2"
-			(uuid "8f95949b-f82f-4222-bfa1-735fd1b8a856")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
-		(at 19.05 92.71 0)
+		(at 17.78 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8827,7 +9448,7 @@
 		(dnp no)
 		(uuid "442b224a-fda4-42b9-8555-c943b84d69e0")
 		(property "Reference" "GND1"
-			(at 28.448 91.44 0)
+			(at 27.178 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8837,7 +9458,7 @@
 			)
 		)
 		(property "Value" "Pin_GND"
-			(at 21.082 94.742 0)
+			(at 19.812 102.362 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8847,7 +9468,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x01_P2.00mm_Vertical"
-			(at 19.05 92.71 0)
+			(at 17.78 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8858,7 +9479,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 19.05 92.71 0)
+			(at 17.78 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8869,7 +9490,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 19.05 92.71 0)
+			(at 17.78 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9051,7 +9672,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 138.43 130.81 0)
+		(at 119.38 129.54 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9062,7 +9683,7 @@
 		(dnp no)
 		(uuid "46446b7d-4657-4e0b-8b9c-6d54f17917af")
 		(property "Reference" "R1"
-			(at 143.764 130.048 0)
+			(at 124.714 128.778 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9073,7 +9694,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 144.018 132.334 0)
+			(at 124.968 131.064 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9084,7 +9705,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 140.208 130.81 90)
+			(at 121.158 129.54 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9095,7 +9716,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 130.81 0)
+			(at 119.38 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9106,7 +9727,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 138.43 130.81 0)
+			(at 119.38 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9133,7 +9754,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 114.3 175.26 270)
+		(at 95.25 173.99 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9144,7 +9765,7 @@
 		(fields_autoplaced yes)
 		(uuid "47acb0d3-ac5d-4623-b5ed-155c45cf5d35")
 		(property "Reference" "R24"
-			(at 114.3 168.91 90)
+			(at 95.25 167.64 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9154,7 +9775,7 @@
 			)
 		)
 		(property "Value" "1.7k"
-			(at 114.3 171.45 90)
+			(at 95.25 170.18 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9164,7 +9785,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 114.3 173.482 90)
+			(at 95.25 172.212 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9175,7 +9796,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 175.26 0)
+			(at 95.25 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9186,7 +9807,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 114.3 175.26 0)
+			(at 95.25 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9212,8 +9833,10 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 210.82 148.59 0)
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 165.1 49.53 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9221,10 +9844,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5125e554-a5d1-464f-88dd-c2417ea5e049")
-		(property "Reference" "R25"
-			(at 213.36 147.3199 0)
+		(uuid "4ed6100a-7e02-4a23-845b-8c97ba6db70f")
+		(property "Reference" "Q25"
+			(at 160.02 50.8001 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9234,8 +9856,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 213.36 149.8599 0)
+		(property "Value" "BC547"
+			(at 160.02 48.2601 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9245,8 +9867,115 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 209.042 148.59 90)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 160.02 51.435 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 165.1 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 165.1 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 165.1 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 165.1 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "24a08510-64db-4a9a-9f43-6a363e01b8a4")
+		)
+		(pin "2"
+			(uuid "52a1d1af-7afe-403c-9791-23a90fc2b3ac")
+		)
+		(pin "1"
+			(uuid "fe9e1b33-4f72-46e2-9f16-1118fbe7b860")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 232.41 156.21 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4f68195d-aa5f-4e5b-b726-0bc074e0a1a8")
+		(property "Reference" "Jv2"
+			(at 232.41 158.75 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JV"
+			(at 232.664 160.528 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x03_P2.00mm_Vertical"
+			(at 232.41 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9257,7 +9986,92 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 148.59 0)
+			(at 232.41 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 232.41 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "5ca6d111-7c02-43d3-9eee-aa28bb2ef0e5")
+		)
+		(pin "2"
+			(uuid "9df4d4f6-9163-4794-94fc-8c158e76767f")
+		)
+		(pin "1"
+			(uuid "ef4e80c1-54ae-4e02-842e-7b04121313dd")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Jv2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 205.74 148.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5125e554-a5d1-464f-88dd-c2417ea5e049")
+		(property "Reference" "R25"
+			(at 208.28 147.3199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 208.28 149.8599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 203.962 148.59 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9268,7 +10082,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 210.82 148.59 0)
+			(at 205.74 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9375,7 +10189,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
 		(at 80.01 49.53 0)
 		(unit 1)
 		(body_style 1)
@@ -9384,9 +10199,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "545b3b96-8575-4d37-8d3e-1182de18aa81")
-		(property "Reference" "Q3"
-			(at 85.09 50.8001 0)
+		(fields_autoplaced yes)
+		(uuid "59e8b5ac-4e03-46f0-90d8-3b6bb7f2e614")
+		(property "Reference" "Q20"
+			(at 85.09 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9396,8 +10212,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2N3904"
-			(at 85.09 48.2601 0)
+		(property "Value" "BC547"
+			(at 85.09 50.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9407,7 +10223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
 			(at 85.09 51.435 0)
 			(hide yes)
 			(show_name no)
@@ -9420,7 +10236,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
 			(at 80.01 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -9432,7 +10248,29 @@
 				(justify left)
 			)
 		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 80.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 80.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
 			(at 80.01 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -9444,18 +10282,18 @@
 			)
 		)
 		(pin "3"
-			(uuid "38787194-f8a0-4847-97a9-5b54058f052c")
-		)
-		(pin "1"
-			(uuid "3e131140-deea-45c5-b9cc-310517c21194")
+			(uuid "ec1bce19-3e06-4636-9930-3d954e626292")
 		)
 		(pin "2"
-			(uuid "6e338916-39d5-4120-932b-255c2dac741c")
+			(uuid "d6969c2b-a132-4fff-87b1-7820aeac6bd0")
+		)
+		(pin "1"
+			(uuid "0142fe45-7dca-4063-af45-832fe4927cda")
 		)
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q3")
+					(reference "Q20")
 					(unit 1)
 				)
 			)
@@ -9541,7 +10379,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 115.57 140.97 270)
+		(at 96.52 139.7 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9552,7 +10390,7 @@
 		(fields_autoplaced yes)
 		(uuid "5ad17db8-7d60-4d57-ac3f-d675d8e9e693")
 		(property "Reference" "R21"
-			(at 115.57 134.62 90)
+			(at 96.52 133.35 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9562,7 +10400,7 @@
 			)
 		)
 		(property "Value" "1.4k"
-			(at 115.57 137.16 90)
+			(at 96.52 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9572,7 +10410,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 115.57 139.192 90)
+			(at 96.52 137.922 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9583,7 +10421,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 140.97 0)
+			(at 96.52 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9594,7 +10432,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 115.57 140.97 0)
+			(at 96.52 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9620,93 +10458,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 151.13 137.16 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "66c06d54-acbd-4b6a-a923-bbb34b99aa00")
-		(property "Reference" "Q1"
-			(at 156.21 138.4301 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 156.21 135.8901 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 156.21 139.065 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 151.13 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 151.13 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "f49fa962-cf97-4f12-9cf6-c368df1db0e9")
-		)
-		(pin "1"
-			(uuid "8cc42951-ac9c-4aa8-ba72-3c8c26b7767a")
-		)
-		(pin "2"
-			(uuid "c74981fc-6bac-404b-9a5c-28f00842b291")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 21.59 54.61 0)
 		(unit 1)
@@ -9717,7 +10468,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6ab72e4c-9a9a-4f35-87fc-474872cfd390")
-		(property "Reference" "GND4"
+		(property "Reference" "V_voltage_test1"
 			(at 26.67 62.992 0)
 			(hide yes)
 			(show_name no)
@@ -9777,7 +10528,7 @@
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "GND4")
+					(reference "V_voltage_test1")
 					(unit 1)
 				)
 			)
@@ -9785,7 +10536,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
-		(at 88.9 172.72 180)
+		(at 69.85 171.45 180)
 		(unit 3)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9796,7 +10547,7 @@
 		(fields_autoplaced yes)
 		(uuid "78612eb8-18a9-4fcb-9d8e-4989f5b49738")
 		(property "Reference" "U4"
-			(at 88.9 162.56 0)
+			(at 69.85 161.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9806,7 +10557,7 @@
 			)
 		)
 		(property "Value" "LM324"
-			(at 88.9 165.1 0)
+			(at 69.85 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9816,7 +10567,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
-			(at 90.17 175.26 0)
+			(at 71.12 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9827,7 +10578,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 87.63 177.8 0)
+			(at 68.58 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9838,7 +10589,7 @@
 			)
 		)
 		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 88.9 172.72 0)
+			(at 69.85 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9901,7 +10652,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 138.43 157.48 0)
+		(at 119.38 156.21 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9913,7 +10664,7 @@
 		(fields_autoplaced yes)
 		(uuid "7abfaf9a-ac97-4fae-962e-e9093d34e7a5")
 		(property "Reference" "#PWR02"
-			(at 138.43 163.83 0)
+			(at 119.38 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9924,7 +10675,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 138.43 162.56 0)
+			(at 119.38 161.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9934,7 +10685,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 157.48 0)
+			(at 119.38 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9945,7 +10696,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 157.48 0)
+			(at 119.38 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9956,7 +10707,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 157.48 0)
+			(at 119.38 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9973,6 +10724,227 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 138.43 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7b78b791-a43b-4a6a-b715-4d998f446d17")
+		(property "Reference" "Q24"
+			(at 143.51 48.2599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 143.51 50.7999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 143.51 51.435 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 138.43 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 138.43 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 138.43 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 138.43 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "9f7ffbec-bfb7-44db-99bf-6a9d02da0f86")
+		)
+		(pin "2"
+			(uuid "ab298e5c-162f-4e93-96ae-6824e346e579")
+		)
+		(pin "1"
+			(uuid "88944a20-cc6f-4ac8-8a11-66fdde7443e1")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC557_1")
+		(lib_id "Transistor_BJT:BC557")
+		(at 143.51 29.21 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "80e4abbb-3daf-4c87-84fe-71c0743828be")
+		(property "Reference" "Q4"
+			(at 138.43 30.4801 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 138.43 27.9401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 138.43 27.305 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 143.51 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 143.51 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 143.51 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 143.51 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fb9a02b2-f0a3-4676-8204-a0437f57d944")
+		)
+		(pin "1"
+			(uuid "3dc2cc69-74bb-4e2c-a836-1e41d275655e")
+		)
+		(pin "3"
+			(uuid "4a513153-9e9b-4b54-b6c9-742da8fcbad8")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -10058,7 +11030,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 33.02 93.98 0)
+		(at 31.75 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10068,7 +11040,7 @@
 		(dnp no)
 		(uuid "879704f9-4fdd-48a7-9f4f-18fdac6c6e40")
 		(property "Reference" "#PWR022"
-			(at 33.02 100.33 0)
+			(at 31.75 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10079,7 +11051,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 34.798 97.536 0)
+			(at 33.528 105.156 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10089,7 +11061,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 33.02 93.98 0)
+			(at 31.75 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10100,7 +11072,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 93.98 0)
+			(at 31.75 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10111,7 +11083,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 33.02 93.98 0)
+			(at 31.75 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10135,7 +11107,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 153.67 162.56 0)
+		(at 134.62 161.29 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10147,7 +11119,7 @@
 		(fields_autoplaced yes)
 		(uuid "8cc3a15e-a76f-4f4b-a3a5-43cb94a6985e")
 		(property "Reference" "#PWR01"
-			(at 153.67 168.91 0)
+			(at 134.62 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10158,7 +11130,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 153.67 167.64 0)
+			(at 134.62 166.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10168,7 +11140,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 162.56 0)
+			(at 134.62 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10179,7 +11151,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 162.56 0)
+			(at 134.62 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10190,7 +11162,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 153.67 162.56 0)
+			(at 134.62 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10213,6 +11185,117 @@
 		)
 	)
 	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 59.69 73.66 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "95556e72-464a-4c89-b424-e2b6dd84dafc")
+		(property "Reference" "Q22"
+			(at 54.61 72.3899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 54.61 74.9299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 54.61 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 59.69 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 59.69 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 59.69 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 59.69 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "7dece6d2-6b24-45be-b112-8b9b04d9b4b3")
+		)
+		(pin "2"
+			(uuid "9558dd25-8cd2-4152-9dd0-c1809b710f93")
+		)
+		(pin "1"
+			(uuid "ce91c5ac-1c43-41ae-8274-8406f5523beb")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 21.59 39.37 0)
 		(unit 1)
@@ -10223,7 +11306,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9779b3df-7851-4c88-aa99-6923b9eab900")
-		(property "Reference" "GND5"
+		(property "Reference" "V_current_ref_test1"
 			(at 26.67 47.752 0)
 			(hide yes)
 			(show_name no)
@@ -10283,7 +11366,7 @@
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "GND5")
+					(reference "V_current_ref_test1")
 					(unit 1)
 				)
 			)
@@ -10291,7 +11374,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 229.87 142.24 0)
+		(at 224.79 142.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10302,7 +11385,7 @@
 		(fields_autoplaced yes)
 		(uuid "977e5179-0292-4f06-90b7-93ac8c11fb27")
 		(property "Reference" "#PWR014"
-			(at 229.87 148.59 0)
+			(at 224.79 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10313,7 +11396,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.87 147.32 0)
+			(at 224.79 147.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10323,7 +11406,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 229.87 142.24 0)
+			(at 224.79 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10334,7 +11417,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 229.87 142.24 0)
+			(at 224.79 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10345,7 +11428,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 229.87 142.24 0)
+			(at 224.79 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10450,7 +11533,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
-		(at 50.8 146.05 180)
+		(at 31.75 144.78 180)
 		(unit 4)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10461,7 +11544,7 @@
 		(fields_autoplaced yes)
 		(uuid "9e6ce04a-4a5f-4ccf-a93b-0618406bbe23")
 		(property "Reference" "U4"
-			(at 50.8 135.89 0)
+			(at 31.75 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10471,7 +11554,7 @@
 			)
 		)
 		(property "Value" "LM324"
-			(at 50.8 138.43 0)
+			(at 31.75 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10481,7 +11564,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
-			(at 52.07 148.59 0)
+			(at 33.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10492,7 +11575,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 49.53 151.13 0)
+			(at 30.48 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10503,7 +11586,7 @@
 			)
 		)
 		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 50.8 146.05 0)
+			(at 31.75 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10566,7 +11649,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer_Trim")
-		(at 120.65 181.61 180)
+		(at 101.6 180.34 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10576,7 +11659,7 @@
 		(dnp no)
 		(uuid "a4fd6f7c-df02-4f75-96ef-10042fbdc0ca")
 		(property "Reference" "RV2"
-			(at 125.984 183.896 90)
+			(at 106.934 182.626 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10587,7 +11670,7 @@
 			)
 		)
 		(property "Value" "Preset"
-			(at 123.698 185.166 90)
+			(at 104.648 183.896 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10597,8 +11680,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3266W_Vertical"
-			(at 120.65 181.61 0)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical_HandSoldering"
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10609,7 +11692,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 181.61 0)
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10620,7 +11703,7 @@
 			)
 		)
 		(property "Description" "Trim-potentiometer"
-			(at 120.65 181.61 0)
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10631,7 +11714,7 @@
 			)
 		)
 		(property "Sim.Device" "R"
-			(at 120.65 181.61 0)
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10642,7 +11725,7 @@
 			)
 		)
 		(property "Sim.Type" "POT"
-			(at 120.65 181.61 0)
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10653,7 +11736,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=r0 2=wiper 3=r1"
-			(at 120.65 181.61 0)
+			(at 101.6 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10683,7 +11766,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
-		(at 92.71 138.43 180)
+		(at 73.66 137.16 180)
 		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10694,7 +11777,7 @@
 		(fields_autoplaced yes)
 		(uuid "a82487e9-7257-4581-a53e-0c2bf9dd8a56")
 		(property "Reference" "U4"
-			(at 92.71 128.27 0)
+			(at 73.66 127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10704,7 +11787,7 @@
 			)
 		)
 		(property "Value" "LM324"
-			(at 92.71 130.81 0)
+			(at 73.66 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10714,7 +11797,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
-			(at 93.98 140.97 0)
+			(at 74.93 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10725,7 +11808,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 91.44 143.51 0)
+			(at 72.39 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10736,7 +11819,7 @@
 			)
 		)
 		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 92.71 138.43 0)
+			(at 73.66 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10799,7 +11882,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:BC547")
-		(at 198.12 128.27 0)
+		(at 193.04 128.27 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10810,7 +11893,7 @@
 		(fields_autoplaced yes)
 		(uuid "a849192e-d5f8-4225-99f6-91c54c4fea13")
 		(property "Reference" "Q9"
-			(at 203.2 126.9999 0)
+			(at 198.12 126.9999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10821,7 +11904,7 @@
 			)
 		)
 		(property "Value" "BC547"
-			(at 203.2 129.5399 0)
+			(at 198.12 129.5399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10831,8 +11914,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 203.2 130.175 0)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 198.12 130.175 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10845,7 +11928,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
-			(at 198.12 128.27 0)
+			(at 193.04 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10857,7 +11940,7 @@
 			)
 		)
 		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
-			(at 198.12 128.27 0)
+			(at 193.04 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10887,7 +11970,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 210.82 109.22 0)
+		(at 205.74 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10897,7 +11980,7 @@
 		(dnp no)
 		(uuid "ab384e6d-923e-4e7e-80cc-964bd01490db")
 		(property "Reference" "R27"
-			(at 213.36 107.9499 0)
+			(at 208.28 107.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10908,7 +11991,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 213.868 110.49 0)
+			(at 208.788 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10919,7 +12002,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 209.042 109.22 90)
+			(at 203.962 109.22 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10930,7 +12013,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 109.22 0)
+			(at 205.74 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10941,7 +12024,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 210.82 109.22 0)
+			(at 205.74 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11044,6 +12127,116 @@
 		)
 	)
 	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 91.44 73.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ae164a61-d980-457f-bd9f-e67b22089665")
+		(property "Reference" "Q23"
+			(at 96.52 72.3899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 96.52 74.9299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 96.52 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 91.44 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 91.44 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 91.44 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 91.44 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "0b99472b-32eb-4f5f-ac9b-20854d66b76b")
+		)
+		(pin "2"
+			(uuid "11eeb27b-02a1-454c-8949-7e768562215f")
+		)
+		(pin "1"
+			(uuid "e3929375-344f-4663-a897-f2b5d7769289")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 236.22 74.93 0)
 		(unit 1)
@@ -11116,6 +12309,117 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC547_1")
+		(lib_id "Transistor_BJT:BC547")
+		(at 154.94 63.5 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b0efe254-72e6-4e06-9996-ba723fba4ef2")
+		(property "Reference" "Q26"
+			(at 149.86 62.2299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC547"
+			(at 149.86 64.7699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 149.86 65.405 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
+			(at 154.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
+			(at 154.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 154.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 154.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "3e802f9d-737b-4fb5-a5f9-a27e72ddd3a8")
+		)
+		(pin "2"
+			(uuid "3c871795-abbe-48ed-9a43-4798363d46bc")
+		)
+		(pin "1"
+			(uuid "d7bb52fa-d93f-4cb7-a26f-f81a63ae3c64")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q26")
 					(unit 1)
 				)
 			)
@@ -11202,7 +12506,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:BC547")
-		(at 222.25 128.27 0)
+		(at 217.17 128.27 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11213,7 +12517,7 @@
 		(dnp no)
 		(uuid "b2031ef1-4cc5-4559-a2ac-a9f2a899ada6")
 		(property "Reference" "Q11"
-			(at 217.17 126.9999 0)
+			(at 212.09 126.9999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11224,7 +12528,7 @@
 			)
 		)
 		(property "Value" "BC547"
-			(at 217.17 129.5399 0)
+			(at 212.09 129.5399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11234,8 +12538,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 217.17 130.175 0)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 212.09 130.175 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11248,7 +12552,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf"
-			(at 222.25 128.27 0)
+			(at 217.17 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11260,7 +12564,7 @@
 			)
 		)
 		(property "Description" "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"
-			(at 222.25 128.27 0)
+			(at 217.17 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11290,7 +12594,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 210.82 152.4 0)
+		(at 205.74 152.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11301,7 +12605,7 @@
 		(fields_autoplaced yes)
 		(uuid "b34622d6-3c2d-409f-ab3b-8db0e81573b2")
 		(property "Reference" "#PWR013"
-			(at 210.82 158.75 0)
+			(at 205.74 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11312,7 +12616,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 210.82 157.48 0)
+			(at 205.74 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11322,7 +12626,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 210.82 152.4 0)
+			(at 205.74 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11333,7 +12637,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 152.4 0)
+			(at 205.74 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11344,7 +12648,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 210.82 152.4 0)
+			(at 205.74 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11456,7 +12760,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:BC557")
-		(at 187.96 135.89 0)
+		(at 182.88 135.89 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -11467,7 +12771,7 @@
 		(dnp no)
 		(uuid "b710d65e-6a85-4914-8ba6-3bf6fe5d1f17")
 		(property "Reference" "Q10"
-			(at 193.04 137.1601 0)
+			(at 187.96 137.1601 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11478,7 +12782,7 @@
 			)
 		)
 		(property "Value" "BC557"
-			(at 193.04 134.6201 0)
+			(at 187.96 134.6201 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11488,8 +12792,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 193.04 133.985 0)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 187.96 133.985 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11502,7 +12806,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
-			(at 187.96 135.89 0)
+			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11514,7 +12818,7 @@
 			)
 		)
 		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
-			(at 187.96 135.89 0)
+			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11625,7 +12929,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 190.5 109.22 0)
+		(at 185.42 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11636,7 +12940,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf4f5e72-7fd1-4abc-9f11-33289cb54901")
 		(property "Reference" "R26"
-			(at 193.04 107.9499 0)
+			(at 187.96 107.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11647,7 +12951,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 193.04 110.4899 0)
+			(at 187.96 110.4899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11658,7 +12962,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 188.722 109.22 90)
+			(at 183.642 109.22 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11669,7 +12973,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 109.22 0)
+			(at 185.42 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11680,7 +12984,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 190.5 109.22 0)
+			(at 185.42 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11707,7 +13011,7 @@
 	)
 	(symbol
 		(lib_id "Reference_Voltage:TL431LP")
-		(at 138.43 154.94 270)
+		(at 119.38 153.67 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -11717,8 +13021,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf9ce8f7-6214-489e-8ed1-961684649cc5")
-		(property "Reference" "U1"
-			(at 141.478 151.384 90)
+		(property "Reference" "TL431LP"
+			(at 122.428 150.114 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11729,7 +13033,7 @@
 			)
 		)
 		(property "Value" "TL431LP"
-			(at 146.812 156.972 90)
+			(at 127.762 155.702 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11739,8 +13043,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 133.604 154.94 0)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 114.554 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11752,7 +13056,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl431.pdf"
-			(at 131.318 154.432 0)
+			(at 112.268 153.162 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11764,7 +13068,7 @@
 			)
 		)
 		(property "Description" "Shunt Regulator, TO-92"
-			(at 129.54 154.94 0)
+			(at 110.49 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11786,182 +13090,7 @@
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 199.39 81.28 90)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bfe83fe8-b424-4984-a74c-c2c50eeb2f49")
-		(property "Reference" "Q19"
-			(at 194.056 80.772 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 195.58 78.74 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 201.295 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 199.39 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 199.39 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "af26e10d-1730-49c8-93cf-7392603ba918")
-		)
-		(pin "1"
-			(uuid "8f2c44de-b26e-40d5-a79b-eb501742eb83")
-		)
-		(pin "2"
-			(uuid "5ff110a0-5fc8-4136-9630-bfd27b6bc4d2")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3906")
-		(at 85.09 29.21 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c3075190-05f2-46b6-ae54-e1e6d261d86f")
-		(property "Reference" "Q4"
-			(at 80.01 30.4801 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3906"
-			(at 80.01 27.9401 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 80.01 27.305 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-			(at 85.09 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-			(at 85.09 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3da31744-4226-4f7d-a4a2-473af733e22b")
-		)
-		(pin "3"
-			(uuid "44076420-4a52-467d-95da-64b10f87e2db")
-		)
-		(pin "2"
-			(uuid "230924a9-7b0e-4748-8856-9a20abee495d")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q4")
+					(reference "TL431LP")
 					(unit 1)
 				)
 			)
@@ -12000,7 +13129,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3266W_Vertical"
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical_HandSoldering"
 			(at 212.09 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -12086,7 +13215,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 107.95 146.05 0)
+		(at 88.9 144.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12097,7 +13226,7 @@
 		(fields_autoplaced yes)
 		(uuid "c444d644-3f56-4c4b-acd4-889f3b605480")
 		(property "Reference" "R22"
-			(at 110.49 144.7799 0)
+			(at 91.44 143.5099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12108,7 +13237,7 @@
 			)
 		)
 		(property "Value" "1.1k"
-			(at 110.49 147.3199 0)
+			(at 91.44 146.0499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12119,7 +13248,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 106.172 146.05 90)
+			(at 87.122 144.78 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12130,7 +13259,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 146.05 0)
+			(at 88.9 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12141,7 +13270,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 107.95 146.05 0)
+			(at 88.9 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12161,93 +13290,6 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "R22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 138.43 49.53 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c587e878-85dc-4b62-8d74-4701bd14d5d2")
-		(property "Reference" "Q14"
-			(at 143.51 50.8001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 143.51 48.2601 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 143.51 51.435 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 138.43 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 138.43 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "1b12ac76-96dd-4e24-bef8-bc3c7a1c7cec")
-		)
-		(pin "1"
-			(uuid "2be9cd70-1158-4f7f-b10a-5b4a683b54cd")
-		)
-		(pin "2"
-			(uuid "ed107380-0442-400a-b3b2-609c7b46b184")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q14")
 					(unit 1)
 				)
 			)
@@ -12335,96 +13377,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 59.69 73.66 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cef0e5ee-1ae8-438a-88f1-c86a53e6123e")
-		(property "Reference" "Q6"
-			(at 54.61 74.9301 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 54.61 72.3901 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 54.61 75.565 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 59.69 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 59.69 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "2b315aab-16b4-45e6-a7e7-eaa46f64ee39")
-		)
-		(pin "1"
-			(uuid "ac99f6b4-ad32-4645-ad8b-03219c6ea41d")
-		)
-		(pin "2"
-			(uuid "b51c3b76-ae5d-4d65-948d-00556147ac67")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 71.12 152.4 270)
+		(at 52.07 151.13 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12435,7 +13389,7 @@
 		(fields_autoplaced yes)
 		(uuid "cf6b3ab6-9222-4ac8-9a61-c192e0852537")
 		(property "Reference" "R19"
-			(at 69.8499 149.86 0)
+			(at 50.7999 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12446,7 +13400,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 72.3899 149.86 0)
+			(at 53.3399 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12457,7 +13411,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 71.12 150.622 90)
+			(at 52.07 149.352 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12468,7 +13422,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 152.4 0)
+			(at 52.07 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12479,7 +13433,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 71.12 152.4 0)
+			(at 52.07 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12668,84 +13622,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 63.5 30.48 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d4a2e138-a561-4c3c-9ac5-ccc40d217f8e")
-		(property "Reference" "#PWR025"
-			(at 63.5 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 63.5 35.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2ce590e6-61cc-41c5-9f44-7b4a9701207a")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 20.32 82.55 0)
 		(unit 1)
@@ -12756,7 +13632,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d4b76da0-2e2a-430b-97d2-d7deced73f56")
-		(property "Reference" "GND2"
+		(property "Reference" "V_ref_c_test1"
 			(at 25.4 90.932 0)
 			(hide yes)
 			(show_name no)
@@ -12816,7 +13692,7 @@
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "GND2")
+					(reference "V_ref_c_test1")
 					(unit 1)
 				)
 			)
@@ -12824,7 +13700,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 120.65 185.42 0)
+		(at 101.6 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12835,7 +13711,7 @@
 		(fields_autoplaced yes)
 		(uuid "d4dbe49a-a44f-41a4-bf79-a3ede4293416")
 		(property "Reference" "#PWR016"
-			(at 120.65 191.77 0)
+			(at 101.6 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12846,7 +13722,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 120.65 190.5 0)
+			(at 101.6 189.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12856,7 +13732,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 185.42 0)
+			(at 101.6 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12867,7 +13743,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 185.42 0)
+			(at 101.6 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12878,7 +13754,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 120.65 185.42 0)
+			(at 101.6 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12902,7 +13778,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 104.14 181.61 0)
+		(at 85.09 180.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12912,7 +13788,7 @@
 		(dnp no)
 		(uuid "d683243c-cd4c-4cc2-b567-d4cf3de41e0b")
 		(property "Reference" "R23"
-			(at 106.68 180.3399 0)
+			(at 87.63 179.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12923,7 +13799,7 @@
 			)
 		)
 		(property "Value" "800"
-			(at 98.552 182.372 0)
+			(at 79.502 181.102 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12934,7 +13810,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 102.362 181.61 90)
+			(at 83.312 180.34 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12945,7 +13821,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 181.61 0)
+			(at 85.09 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12956,7 +13832,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 104.14 181.61 0)
+			(at 85.09 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12983,7 +13859,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 153.67 158.75 0)
+		(at 134.62 157.48 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -12995,7 +13871,7 @@
 		(fields_autoplaced yes)
 		(uuid "d9ef0358-cbfa-44d8-8d51-c0cdf068f11a")
 		(property "Reference" "R2"
-			(at 151.13 157.4799 0)
+			(at 132.08 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13006,7 +13882,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 151.13 160.0199 0)
+			(at 132.08 158.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13017,7 +13893,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 155.448 158.75 90)
+			(at 136.398 157.48 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13028,7 +13904,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 158.75 0)
+			(at 134.62 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13039,7 +13915,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 153.67 158.75 0)
+			(at 134.62 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13059,6 +13935,117 @@
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC557_1")
+		(lib_id "Transistor_BJT:BC557")
+		(at 160.02 29.21 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dcd9c85c-3ac7-428f-a58f-af0cb424ae19")
+		(property "Reference" "Q5"
+			(at 165.1 30.4801 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 165.1 27.9401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 165.1 27.305 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 160.02 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 160.02 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 160.02 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 160.02 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e00e5ea1-256f-45aa-b985-699ca33c4813")
+		)
+		(pin "1"
+			(uuid "92744d8d-947b-4cdd-aebb-5f2b882ceb56")
+		)
+		(pin "3"
+			(uuid "3712a392-4336-4dac-896d-c8aaf8c69d93")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -13228,7 +14215,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 190.5 140.97 0)
+		(at 185.42 140.97 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13239,7 +14226,7 @@
 		(fields_autoplaced yes)
 		(uuid "e3cdf709-9681-44c5-aba6-a54f9c3c1705")
 		(property "Reference" "#PWR015"
-			(at 190.5 147.32 0)
+			(at 185.42 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13250,7 +14237,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 190.5 146.05 0)
+			(at 185.42 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13260,7 +14247,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 140.97 0)
+			(at 185.42 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13271,7 +14258,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 140.97 0)
+			(at 185.42 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13282,7 +14269,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 190.5 140.97 0)
+			(at 185.42 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13306,7 +14293,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 68.58 132.08 270)
+		(at 49.53 130.81 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13317,7 +14304,7 @@
 		(fields_autoplaced yes)
 		(uuid "e5a63fc3-5a30-47a3-b734-761cefad0d74")
 		(property "Reference" "R18"
-			(at 67.3099 129.54 0)
+			(at 48.2599 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13328,7 +14315,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 69.8499 129.54 0)
+			(at 50.7999 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13339,7 +14326,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 68.58 130.302 90)
+			(at 49.53 129.032 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13350,7 +14337,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 132.08 0)
+			(at 49.53 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13361,7 +14348,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 68.58 132.08 0)
+			(at 49.53 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13388,7 +14375,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 71.12 161.29 270)
+		(at 52.07 160.02 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13399,7 +14386,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea568286-034e-43fa-9434-a11184012456")
 		(property "Reference" "R20"
-			(at 69.8499 158.75 0)
+			(at 50.7999 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13410,7 +14397,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 72.3899 158.75 0)
+			(at 53.3399 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13421,7 +14408,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 71.12 159.512 90)
+			(at 52.07 158.242 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13432,7 +14419,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 161.29 0)
+			(at 52.07 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13443,7 +14430,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 71.12 161.29 0)
+			(at 52.07 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13469,93 +14456,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3906")
-		(at 143.51 29.21 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ebea2ee5-91be-4b5b-817e-e15a24bc0ce4")
-		(property "Reference" "Q15"
-			(at 138.43 30.4801 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N3906"
-			(at 138.43 27.9401 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 138.43 27.305 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF"
-			(at 143.51 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92"
-			(at 143.51 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ea0367ea-f3d8-48ef-8196-b059c1cc6e75")
-		)
-		(pin "3"
-			(uuid "74bc4a4c-68f2-4f18-a02a-6bb9deec6703")
-		)
-		(pin "2"
-			(uuid "4ccd3975-6966-4d47-82d6-e4486e628549")
-		)
-		(instances
-			(project "Prueba"
-				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "Q15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 21.59 72.39 0)
 		(unit 1)
@@ -13566,7 +14466,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "efd3588f-aceb-4c3a-9f4e-faae573affd7")
-		(property "Reference" "GND3"
+		(property "Reference" "V_ref_t_test1"
 			(at 26.67 80.772 0)
 			(hide yes)
 			(show_name no)
@@ -13626,7 +14526,118 @@
 		(instances
 			(project "Prueba"
 				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
-					(reference "GND3")
+					(reference "V_ref_t_test1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "BC557_1")
+		(lib_id "Transistor_BJT:BC557")
+		(at 199.39 64.77 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f6508200-0ef3-4d68-8422-a3d7ca417459")
+		(property "Reference" "Q6"
+			(at 204.47 66.0401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 204.47 63.5001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 204.47 62.865 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 199.39 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 199.39 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 199.39 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 199.39 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "1b9e1bc8-9f31-435c-8a02-bff369834512")
+		)
+		(pin "1"
+			(uuid "21ea53f7-11b6-4a98-91f6-c700fc69ef3d")
+		)
+		(pin "3"
+			(uuid "9ec697b8-62dc-4fdb-86c0-a8ea5a4ef218")
+		)
+		(instances
+			(project "Prueba"
+				(path "/70bda0a3-0c17-43ce-af47-54d014630cec"
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -13716,7 +14727,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 49.53 132.08 270)
+		(at 30.48 130.81 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13727,7 +14738,7 @@
 		(fields_autoplaced yes)
 		(uuid "f912c2c5-3cf1-4803-af78-cb98f5b3b6e0")
 		(property "Reference" "R17"
-			(at 48.2599 129.54 0)
+			(at 29.2099 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13738,7 +14749,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 50.7999 129.54 0)
+			(at 31.7499 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13749,7 +14760,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 49.53 130.302 90)
+			(at 30.48 129.032 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13760,7 +14771,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 49.53 132.08 0)
+			(at 30.48 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13771,7 +14782,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 49.53 132.08 0)
+			(at 30.48 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
