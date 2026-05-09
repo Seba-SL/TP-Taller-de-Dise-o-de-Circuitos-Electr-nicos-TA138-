@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1}Objetivo}{2}{}%
 \contentsline {section}{\numberline {2}Desarrollo}{2}{}%
 \contentsline {subsection}{\numberline {2.1}Fabricación de la PCB}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Mediciones}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Mediciones}{2}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}Banco de Pruebas}{3}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Análisis de confiabilidad de los componentes}{3}{}%
 \contentsline {subsubsection}{\numberline {2.2.3}Regulación de carga estática y dinámica}{4}{}%
