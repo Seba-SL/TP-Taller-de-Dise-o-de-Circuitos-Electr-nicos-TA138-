@@ -166,14 +166,24 @@ citestyle=apa
 		
 	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes y soldado adecuado.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\linewidth]{img/LDO/Placa_montada_1}
-		\caption{Placa montada.}
-		\label{fig:placamontada1}
-	\end{figure}
-
+\begin{figure}[H]
+	\centering
 	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/Placa_montada_1}
+		\caption{Placa montada}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/placa_montada_lateral}
+		\caption{Vista lateral}
+	\end{subfigure}
+	
+	\caption{Montaje de la placa LDO}
+	\label{fig:placamontada1}
+\end{figure}
 
 	\subsection{Mediciones}
 	  
@@ -186,9 +196,10 @@ citestyle=apa
 	%completar al medir
 	\begin{itemize}
 		\item Fuente : UNI-T, UTP33115TFL-II
-		\item Generador
+		\item Generador de Señales, Topware, 8105  
 		\item Osciloscopio : UNI-T, UTD2102CEX+
 		\item Multimetro: VT-POWER, M890G
+		\item Banco de baterías
 	\end{itemize}
 
 	\begin{figure}[H]
@@ -198,6 +209,31 @@ citestyle=apa
 		\label{fig:bancomedicion}
 	\end{figure}
 	
+	
+\begin{figure}[H]
+	\centering
+	
+	% =========================
+	% IMAGEN 1 (batería)
+	% =========================
+	\begin{minipage}{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/bateria_p_medir}
+		\caption{Banco de baterías para obtener tensión de referencia de bajo ruido.}
+		\label{fig:bateriapmedir}
+	\end{minipage}
+	\hfill
+	% =========================
+	% IMAGEN 2 (generador)
+	% =========================
+	\begin{minipage}{0.62\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/generador_señales}
+		\caption{Modelo de generador de señales utilizado en las pruebas.}
+		\label{fig:generadorsenales}
+	\end{minipage}
+	
+\end{figure}
 
 	\subsubsection{Análisis de confiabilidad de los componentes}
 	
@@ -368,7 +404,7 @@ citestyle=apa
 	
 	\subsubsection{Regulación de línea}
 	
-	Midiendo de la misma forma que en la figura \ref{medicionregcargabanco} las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
+	Midiendo de la misma forma que en la figura \ref{fig:medicionregcargabanco} las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
 	
 	Se caracteriza la regulación de linea tomando la variación de la salida respecto a la variación de la fuente para dos puntos. En este caso se utilizaron los puntos en donde la tensión de alimentación es de $5,03 \, V$ y  $15,94 \, V$. Obteniendo el valor de $0,035 \frac{V}{V}$ que caracteriza la regulación de linea.
 	
