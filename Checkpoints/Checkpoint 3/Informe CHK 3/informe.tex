@@ -405,6 +405,83 @@ citestyle=apa
 	Para una carga dinámica se debe considerar una carga activa que varié su corriente, se medirá utilizando como carga una fuente de corriente con un transistor. El regulador deberá mantener la tensión de salida con una variación acotada en
 	función de la variación de la corriente en la carga.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/Diagramas medicion/carga_activa}
+		\caption{Disposición del banco de medición para carga activa.}
+		\label{fig:cargaactiva}
+	\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		
+		\begin{tikzpicture}[transform shape, scale=1.2]
+			% Paths, nodes and wires:
+			\node[npn] at (33, 5){};
+			\draw (33, 4.25) to[american resistor, /tikz/circuitikz/bipoles/length=1.09cm, l={$R_E$}] (33, 2.5);
+			\node[sground] at (33, 2.5){};
+			\node[sground] at (30.98, 3.34){};
+			
+			\node[shape=rectangle, minimum width=1.215cm, minimum height=0.215cm] 
+			at (33.25, 7){}
+			node[anchor=north west, align=left, text width=0.827cm, inner sep=6pt] 
+			at (32.625, 7.125){$V_o$};
+			
+			\node[circ] at (33, 6.5){};
+			\draw (33, 5.75) -- (33, 6.5);
+			
+			\node[shape=rectangle, minimum width=4.84cm, minimum height=0.84cm] 
+			at (33.71, 4.118){}
+			node[anchor=north west, align=left, text width=4.452cm, inner sep=6pt] 
+			at (31.272, 4.555){\tiny Generador de\\funciones};
+			
+			\draw[-latex] (33.25, 5.812) -- (33.25, 5.375);
+			
+			\node[shape=rectangle, minimum width=1.215cm, minimum height=0.215cm] 
+			at (33.875, 5.75){}
+			node[anchor=north west, align=left, text width=0.827cm, inner sep=6pt] 
+			at (33.25, 5.875){$i_o$};
+			
+			\draw (31, 4.75) to[square voltage source, mirror] (30.98, 3.34);
+			\draw (32.16, 5) -- (31, 5) -- (31, 4.75);
+		\end{tikzpicture}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.53\textwidth}
+		
+		Se implementó una carga dinámica basada en un transistor NPN controlado mediante un generador de funciones configurado con una señal cuadrada de 1 kHz y 2 V pico. El colector del transistor se conecta a la salida del regulador, mientras que el emisor posee una resistencia $R_E$ de 1k hacia referencia, permitiendo fijar la corriente consumida.
+		
+		La amplitud de la señal aplicada a la base conmuta el transistor entre distintos niveles de conducción, generando cambios rápidos de corriente sobre la salida del regulador. Aplicando la ley de Kirchhoff en la malla base-emisor se obtiene:
+		
+		\[
+		V_{\text{gen}} - V_{BE(on)} - i_o R_E = 0
+		\]
+		
+		Despejando la corriente:
+		
+		\[
+		i_o = \frac{V_{\text{gen}} - V_{BE(on)}}{R_E}
+		\]
+		
+	\end{minipage}
+	
+	\caption{Implementación de carga dinámica para ensayo transitorio del regulador LDO.}
+	\label{fig:carga_dinamica}
+\end{figure}
+
+La Figura \ref{fig:cargaactivamedicion} presenta la respuesta dinámica del regulador LDO frente a variaciones rápidas de carga generadas mediante la carga activa implementada. Puede observarse un comportamiento \textit{subamortiguado}, caracterizado por la presencia de sobrepico y oscilaciones amortiguadas antes de alcanzar nuevamente el régimen estacionario.
+
+La forma temporal obtenida resulta consistente con la prevista durante la etapa de simulación y diseño, indicando que el modelo empleado representa adecuadamente la dinámica dominante del sistema. Sin embargo, la amplitud de las oscilaciones medidas experimentalmente resulta superior a la esperada, fenómeno atribuible principalmente a no idealidades de los componentes reales, capacitancias y resistencias parásitas del montaje, así como también a limitaciones del modelo utilizado para el transistor de paso y los elementos de compensación.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.88\linewidth]{img/LDO/carga_activa_Medicion}
+	\caption{Validación de respuesta dinámica en el laboratorio.}
+	\label{fig:cargaactivamedicion}
+\end{figure}
+
 	
 	\subsubsection{Regulación de línea}
 	
