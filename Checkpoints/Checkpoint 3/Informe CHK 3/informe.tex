@@ -30,6 +30,7 @@
 \usepackage{pdfpages}
 \usepackage{placeins}
 
+
 \newif\ifcheckpoint
 \checkpointfalse
 
@@ -143,15 +144,20 @@ citestyle=apa
 	Continuando con el diseño de un regulador lineal que cumpla con las especificaciones definidas en informes previos, en este \textit{checkpoint} se avanza hacia su implementación en un prototipo de circuito impreso (PCB), con el fin de caracterizar y validar experimentalmente las prestaciones obtenidas en la etapa de diseño.
 	
 		
-	\subsubsection{Corrección de errores}
+	\subsection{Corrección de errores}
 	
-	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa.
+	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa. Las principales se listan a continuación:
 	
+	\begin{itemize}
+		\item Diseño de PCB de simple faz y corrección de huellas.
+		\item Capacitor de filtrado de ruido de alimentación.
+		\item \textit{Jumpers} para des-habilitar lazos y limitador de corriente.
+	\end{itemize}
 	
 	
 	\section{Desarrollo}
 	
-	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el listado de partes y proveedores detallada en el apéndice \ref{sec:apendice_presupuesto}.
+	Para el desarrollo de este \textit{checkpoint 3} se adquirieron los materiales siguiendo el \textbf{listado de partes y proveedores} detallada en el apéndice \ref{sec:apendice_presupuesto}.
 	
 
 	
@@ -159,20 +165,30 @@ citestyle=apa
 	
 	\subsection{Fabricación de la PCB}
 	
-	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño fabricado, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB.
+	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño del prototipo sometido a las mediciones, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB detallado a continuación.
 	
-	Se utilizo el método de "planchado" a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
+	Se utilizo el método de planchado a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
 		
 	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes y soldado adecuado.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\linewidth]{img/LDO/Placa_montada_1}
-		\caption{Placa montada.}
-		\label{fig:placamontada1}
-	\end{figure}
-
+\begin{figure}[H]
+	\centering
 	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/Placa_montada_1}
+		\caption{Placa montada}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/placa_montada_lateral}
+		\caption{Vista lateral}
+	\end{subfigure}
+	
+	\caption{Montaje de la placa LDO}
+	\label{fig:placamontada1}
+\end{figure}
 
 	\subsection{Mediciones}
 	  
@@ -185,18 +201,44 @@ citestyle=apa
 	%completar al medir
 	\begin{itemize}
 		\item Fuente : UNI-T, UTP33115TFL-II
-		\item Generador
+		\item Generador de Señales, Topware, 8105  
 		\item Osciloscopio : UNI-T, UTD2102CEX+
 		\item Multimetro: VT-POWER, M890G
+		\item Banco de baterías
 	\end{itemize}
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=1\linewidth]{img/LDO/banco_medicion}
+		\includegraphics[width=0.8\linewidth]{img/LDO/banco_medicion}
 		\caption{banco de medición en laboratorio.}
 		\label{fig:bancomedicion}
 	\end{figure}
 	
+	
+\begin{figure}[H]
+	\centering
+	
+	% =========================
+	% IMAGEN 1 (batería)
+	% =========================
+	\begin{minipage}{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/bateria_p_medir}
+		\caption{Banco de baterías para obtener tensión de referencia de bajo ruido.}
+		\label{fig:bateriapmedir}
+	\end{minipage}
+	\hfill
+	% =========================
+	% IMAGEN 2 (generador)
+	% =========================
+	\begin{minipage}{0.62\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/LDO/generador_señales}
+		\caption{Modelo de generador de señales utilizado en las pruebas.}
+		\label{fig:generadorsenales}
+	\end{minipage}
+	
+\end{figure}
 
 	\subsubsection{Análisis de confiabilidad de los componentes}
 	
@@ -283,7 +325,6 @@ citestyle=apa
 		\end{tabular}
 	\end{table}
 	%Completar luego de medir
-	Con los resultados obtenidos se puede esperar un desvío en los resultados hacia... 
 	
 	\subsubsection{Regulación de carga estática y dinámica}
 	
@@ -291,33 +332,49 @@ citestyle=apa
 	
 	\paragraph{Regulación de carga estática }
 	
-	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y las curvas conseguidas tras interpolar los puntos medidos tanto para la medición en multimetro como en osciloscopio en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
+	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y la curva obtenida tras interpolar los puntos medidos en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
 	
-
-	\begin{table}[H]
+	En búsqueda de una mayor sensibilidad de medición se midió la diferencia de la tensión de salida con respecto una fuente fija de tensión de $5,22 \,V$ tal como se detalla en el diagrama de la figura \ref{fig:medicionregcargabanco}, luego dicha diferencia ,en el orden de los mV, fue la variación que afecto cada punto de medición.
+\begin{figure}[H]
+	\centering
+	
+	% =========================
+	% IZQUIERDA: IMAGEN
+	% =========================
+	\begin{minipage}{0.55\textwidth}
 		\centering
-		\caption{Mediciones de regulación de carga estática del LDO}
+		\includegraphics[width=\linewidth]{/home/sebastian/FIUBA-2do Cuatrimestre/Taller de Diseño Electrónico TA138/TP_Taller_de_Diseño_ TA138_G7/Checkpoints/Checkpoint 3/Informe CHK 3/img/LDO/Diagramas medicion/medicion_reg_carga_banco.png}
+		\caption{Banco de pruebas para medición de regulación de carga}
+		\label{fig:medicionregcargabanco}
+	\end{minipage}
+	\hfill
+	% =========================
+	% DERECHA: TABLA
+	% =========================
+	\begin{minipage}{0.42\textwidth}
+		\centering
+		\captionof{table}{Mediciones de regulación de carga estática del LDO}
+		\label{tab:reg_carga_ldo}
 		\begin{tabular}{|c|c|}
 			\hline
-			\textbf{Resistencia de carga $R_L$ [$\Omega$]} &
-			\textbf{$V_O$ Multímetro [V]} \\
+			\textbf{$R_L$ [$\Omega$]} &
+			\textbf{$V_O$ [V]} \\
 			\hline
-			
 			100k & 4.8186 \\
 			10k  & 4.8079 \\
-			4k7   & 4.8071 \\
+			4k7  & 4.8071 \\
 			1k   & 4.8038 \\
-			560    & 4.8025 \\
-			220    & 4.7950 \\
-			100    & 4.7830 \\
-			47     & 4.7630 \\
-			23.5   & 4.7650 \\
-			10     & 4.6270 \\
-			
+			560  & 4.8025 \\
+			220  & 4.7950 \\
+			100  & 4.7830 \\
+			47   & 4.7630 \\
+			23.5 & 4.7650 \\
+			10   & 4.6270 \\
 			\hline
 		\end{tabular}
-		\label{tab:reg_carga_ldo}
-	\end{table}
+	\end{minipage}
+	
+\end{figure}
 	
 	\begin{figure}[H]
 		\centering
@@ -326,7 +383,7 @@ citestyle=apa
 		\label{fig:regulacioncarga}
 	\end{figure}
 	
-	Tomando dos puntos en cada curva correspondientes a la resistencia de $1 k\Omega$  y de $47 \Omega$ y utilizando la expresión \ref{eq:rt_general} se llega a el valor de resistencia de salida de $0,1 \Omega$.
+	Tomando dos puntos de la curva correspondientes a la resistencia de $1 \, k\Omega$  y de $220 \, \Omega$ y utilizando la expresión \ref{eq:rt_general} se llega a el valor de resistencia de salida de $0,52 \Omega$.
 	
 	\begin{equation} 
 		R_T =
@@ -338,7 +395,7 @@ citestyle=apa
 			\left(
 			\dfrac{V_1}{V_2}\cdot\dfrac{R_2}{R_1}
 			\right)-1
-		} = 0,1 \, \Omega
+		} = 0,52 \, \Omega
 		\label{eq:rt_general}
 	\end{equation}
 	
@@ -348,12 +405,89 @@ citestyle=apa
 	Para una carga dinámica se debe considerar una carga activa que varié su corriente, se medirá utilizando como carga una fuente de corriente con un transistor. El regulador deberá mantener la tensión de salida con una variación acotada en
 	función de la variación de la corriente en la carga.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/Diagramas medicion/carga_activa}
+		\caption{Disposición del banco de medición para carga activa.}
+		\label{fig:cargaactiva}
+	\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		
+		\begin{tikzpicture}[transform shape, scale=1.2]
+			% Paths, nodes and wires:
+			\node[npn] at (33, 5){};
+			\draw (33, 4.25) to[american resistor, /tikz/circuitikz/bipoles/length=1.09cm, l={$R_E$}] (33, 2.5);
+			\node[sground] at (33, 2.5){};
+			\node[sground] at (30.98, 3.34){};
+			
+			\node[shape=rectangle, minimum width=1.215cm, minimum height=0.215cm] 
+			at (33.25, 7){}
+			node[anchor=north west, align=left, text width=0.827cm, inner sep=6pt] 
+			at (32.625, 7.125){$V_o$};
+			
+			\node[circ] at (33, 6.5){};
+			\draw (33, 5.75) -- (33, 6.5);
+			
+			\node[shape=rectangle, minimum width=4.84cm, minimum height=0.84cm] 
+			at (33.71, 4.118){}
+			node[anchor=north west, align=left, text width=4.452cm, inner sep=6pt] 
+			at (31.272, 4.555){\tiny Generador de\\funciones};
+			
+			\draw[-latex] (33.25, 5.812) -- (33.25, 5.375);
+			
+			\node[shape=rectangle, minimum width=1.215cm, minimum height=0.215cm] 
+			at (33.875, 5.75){}
+			node[anchor=north west, align=left, text width=0.827cm, inner sep=6pt] 
+			at (33.25, 5.875){$i_o$};
+			
+			\draw (31, 4.75) to[square voltage source, mirror] (30.98, 3.34);
+			\draw (32.16, 5) -- (31, 5) -- (31, 4.75);
+		\end{tikzpicture}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.53\textwidth}
+		
+		Se implementó una carga dinámica basada en un transistor NPN controlado mediante un generador de funciones configurado con una señal cuadrada de 1 kHz y 2 V pico. El colector del transistor se conecta a la salida del regulador, mientras que el emisor posee una resistencia $R_E$ de 1k hacia referencia, permitiendo fijar la corriente consumida.
+		
+		La amplitud de la señal aplicada a la base conmuta el transistor entre distintos niveles de conducción, generando cambios rápidos de corriente sobre la salida del regulador. Aplicando la ley de Kirchhoff en la malla base-emisor se obtiene:
+		
+		\[
+		V_{\text{gen}} - V_{BE(on)} - i_o R_E = 0
+		\]
+		
+		Despejando la corriente:
+		
+		\[
+		i_o = \frac{V_{\text{gen}} - V_{BE(on)}}{R_E}
+		\]
+		
+	\end{minipage}
+	
+	\caption{Implementación de carga dinámica para ensayo transitorio del regulador LDO.}
+	\label{fig:carga_dinamica}
+\end{figure}
+
+La Figura \ref{fig:cargaactivamedicion} presenta la respuesta dinámica del regulador LDO frente a variaciones rápidas de carga generadas mediante la carga activa implementada. Puede observarse un comportamiento \textit{subamortiguado}, caracterizado por la presencia de sobrepico y oscilaciones amortiguadas antes de alcanzar nuevamente el régimen estacionario.
+
+La forma temporal obtenida resulta consistente con la prevista durante la etapa de simulación y diseño, indicando que el modelo empleado representa adecuadamente la dinámica dominante del sistema. Sin embargo, la amplitud de las oscilaciones medidas experimentalmente resulta superior a la esperada, fenómeno atribuible principalmente a no idealidades de los componentes reales, capacitancias y resistencias parásitas del montaje, así como también a limitaciones del modelo utilizado para el transistor de paso y los elementos de compensación.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\linewidth]{img/LDO/carga_activa_Medicion}
+	\caption{Validación de respuesta dinámica en el laboratorio.}
+	\label{fig:cargaactivamedicion}
+\end{figure}
+
 	
 	\subsubsection{Regulación de línea}
 	
-	Midiendo las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
+	Midiendo de la misma forma que en la figura \ref{fig:medicionregcargabanco} las coordenadas de dos puntos de la curva de tensión de salida en función de la tensión de alimentación es posible calcular la regulación de línea. La estabilización de la tensión de salida resulta algo dependiente de la tensión de la fuente de entrada. Debido a esto, el rechazo del rizado de la fuente de entrada será bajo. Se puede observar la interpolación de los puntos medidos en la figura \ref{fig:regulaciondelinea}.
 	
-	Se caracteriza la regulación de linea tomando la variación de la salida respecto a la variación de la fuente para dos puntos. En este caso se utilizaron los puntos en donde la tensión de alimentación es de $5,26 \, V$ y  $16,46 \, V$. Obteniendo los valores de $0,00089 \, \frac{V}{V}$ para las mediciones en multimetro y $ 0,00179\, \frac{V}{V}$.
+	Se caracteriza la regulación de linea tomando la variación de la salida respecto a la variación de la fuente para dos puntos. En este caso se utilizaron los puntos en donde la tensión de alimentación es de $5,03 \, V$ y  $15,94 \, V$. Obteniendo el valor de $0,035 \frac{V}{V}$ que caracteriza la regulación de linea.
 	
 	
 	% Agregar para comparar con la simulación
@@ -365,14 +499,105 @@ citestyle=apa
 		\label{fig:regulaciondelinea}
 	\end{figure}
 		
+		
+		\[
+		Reg_{\text{mult}} = \frac{V_{O2,\text{mult}} - V_{O1,\text{mult}}}{V_{CC2} - V_{CC1}} = 0,035 \, \frac{V}{V}
+		\]
 	
 	\subsubsection{Limitación de corriente}
 	
 	El circuito cuenta con una limitación de corriente que se acciona al alcanzar un valor de corriente estimado y comienza el mecanismo de \textit{foldback} en donde la tensión se ajusta dejando de regular.
 	
-	\subsubsection{Eficiencia}
+	
+	Este mecanismo se observo al variar la carga y midiendo la corriente a través de un amperímetro.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/Diagramas medicion/corriente}
+		\caption{Disposición banco de pruebas para medir corriente y tensión de salida.}
+		\label{fig:corriente}
+	\end{figure}
+	
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../Graficos/regulacion_corriente}
+		\caption{Comparación entre lo esperado idealmente en regulación de corriente y lo logrado en el laboratorio al medir el prototipo.}
+		\label{fig:regulacioncorriente}
+	\end{figure}
+		
+	
+	Se puede observar en la figura \ref{fig:regulacioncorriente} como la medición se desvía respecto a lo esperado, alcanzando un valor máximo de corriente al rededor de 1 A, mientras que se conserva el limite en corto de unos 400 mA previsto en el diseño.
+	
+	En la tabla \ref{tab:foldback_medicion} se detallan los valores de resistencia contemplados y la corriente de salida alcanzada en los que se baso la interpolación.
+	
+	\begin{table}[H]
+		\centering
+		\caption{Mediciones experimentales de foldback en LDO variando la carga}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Resistencia $R_L$ [$\Omega$]} &
+			\textbf{Corriente $I_O$ [mA]} &
+			\textbf{Tensión $V_O$ [V]} \\
+			\hline
+			
+			0 (corto) & 400 & 0.00 \\
+			1.5       & 400 & 0.60 \\
+			2.5       & 410 & 1.03 \\
+			3.5       & 670 & 2.34 \\
+			4.5       & 980 & 4.41 \\
+			5.0       & 980 & 4.90 \\
+			
+			\hline
+		\end{tabular}
+		\label{tab:foldback_medicion}
+	\end{table}
 
+\subsubsection{Eficiencia}
 
+En un regulador lineal de bajo \textit{dropout} (LDO), la eficiencia se define como el cociente entre la potencia entregada a la carga y la potencia absorbida desde la fuente de alimentación, expresada como:
+
+\[
+\eta = \frac{P_O}{P_E} = \frac{V_O I_O}{V_{CC} I_{CC}}
+\]
+
+Debido a que un LDO regula la tensión disipando la diferencia de potencial entre la entrada y la salida sobre el transistor de paso, su eficiencia suele ser menor que la de reguladores conmutados. En particular, la potencia no aprovechada se transforma principalmente en calor. Por este motivo, la eficiencia depende fuertemente de la relación entre la tensión de salida y la tensión de entrada, alcanzando sus mejores valores cuando $V_{CC}$ es apenas superior a $V_O$, es decir, dentro de la zona de regulación cercana al \textit{dropout}. A medida que aumenta la diferencia entre entrada y salida, la disipación interna crece y la eficiencia disminuye considerablemente.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{../Graficos/eficiencia}
+	\caption{}
+	\label{fig:eficiencia}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Mediciones de eficiencia del regulador LDO variando $V_{CC}$}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{$V_{CC}$ [V]} &
+		\textbf{$I_{CC}$ [mA]} &
+		\textbf{$V_O$ [V]} &
+		\textbf{$I_O$ [mA]} &
+		\textbf{$P_O/P_E$ [-]} \\
+		\hline
+		
+		3.48  & 20 & 0.0203 & 0.0002 & 0.000058 \\
+		4.57  & 34 & 2.63   & 26.3   & 0.417 \\
+		4.81  & 41 & 3.18   & 31.8   & 0.506 \\
+		4.99  & 47 & 3.63   & 36.3   & 0.561 \\
+		5.37  & 59 & 4.63   & 46.3   & 0.642 \\
+		5.62  & 63 & 4.99   & 49.9   & 0.704 \\
+		6.25  & 64 & 4.99   & 49.9   & 0.620 \\
+		7.18  & 64 & 4.99   & 49.9   & 0.544 \\
+		8.20  & 65 & 4.99   & 49.9   & 0.469 \\
+		11.04 & 67 & 4.99   & 49.9   & 0.336 \\
+		13.13 & 68 & 5.00   & 49.99  & 0.280 \\
+		15.27 & 70 & 5.00   & 50.0   & 0.232 \\
+		\hline
+	\end{tabular}
+	\label{tab:eficiencia_ldo}
+\end{table}
 	\input{conclusiones}
 
 	{\footnotesize

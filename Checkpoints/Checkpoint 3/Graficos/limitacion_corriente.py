@@ -1,91 +1,51 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.interpolate import interp1d
 
 # =========================================
-# Corriente de carga Io [A]
+# SIMULACIÓN (ideal LTspice)
 # =========================================
+Io_sim_1 = np.linspace(0, 1.5, 200)
+Vo_sim_1 = np.full_like(Io_sim_1, 5.0)
 
-Io = np.array([0.00, 0.05, 0.10, 0.20, 0.35, 0.50])
-
-# =========================================
-# Tension de salida Vo [V]
-# =========================================
-
-Vo_mult = np.array([5.00, 4.99, 4.98, 4.90, 3.20, 1.10])
-
+Io_sim_2 = np.linspace(1.5, 0.4, 200)
+Vo_sim_2 = np.linspace(5.0, 0.0, 200)
 
 # =========================================
-# Interpolacion
+# MODELO EXPERIMENTAL (consistente con medición)
 # =========================================
+Io_lab = np.array([0.4, 0.4, 0.41, 0.67, 0.98, 0.98])
+Vo_lab = np.array([0.0, 0.6, 1.025, 2.345, 4.41, 4.99])
 
-Io_interp = np.linspace(Io.min(), Io.max(), 400)
-
-f_mult = interp1d(Io, Vo_mult, kind='linear')
-
-# =========================================
-# Figura
-# =========================================
-
-plt.figure(figsize=(10,5))
-
-# Curvas interpoladas
-plt.plot(Io_interp,
-         f_mult(Io_interp),
-         linewidth=3,
-         label='Vo Multimetro')
-
-
-
-# Puntos medidos
-plt.scatter(Io, Vo_mult)
+Io_med_2 = np.linspace(0, 0.980, 200)
+Vo_med_reg = np.full_like(Io_sim_1, 4.99)
 
 # =========================================
-# Etiquetas
+# GRAFICO
 # =========================================
+plt.figure(figsize=(9,5))
 
-plt.xlabel('Corriente de carga Io [A]')
-plt.ylabel('Tension de salida Vo [V]')
-plt.title('Limitacion de corriente Foldback')
+# Simulación
+plt.plot(Io_sim_1, Vo_sim_1, 'b', linewidth=3, label='Simulación LTspice')
+plt.plot(Io_sim_2, Vo_sim_2, 'b', linewidth=3)
+
+# Medición real (curva real)
+plt.plot(Io_med_2, Vo_med_reg, 'r', linewidth=3)
+plt.plot(Io_lab, Vo_lab, 'r-o', linewidth=3, label='Medición laboratorio')
+
+# Puntos
+plt.scatter(Io_lab, Vo_lab, color='black', s=70)
+
+# =========================================
+# FORMATO
+# =========================================
+plt.xlabel('Corriente de salida $I_O$ [A]')
+plt.ylabel('Tensión de salida $V_O$ [V]')
+plt.title('Limitación de corriente foldback en LDO')
 
 plt.grid(True)
-plt.legend()
 
-# =========================================
-# Parametros Foldback
-# =========================================
-
-# Corriente limite aproximada
-I_lim_mult = Io[3]
-I_lim_osc = Io[3]
-
-# Tension minima
-Vo_min_mult = np.min(Vo_mult)
-Vo_min_osc = np.min(Vo_osc)
-
-# =========================================
-# Cartel
-# =========================================
-
-texto = (
-    'Parametros Foldback\n\n'
-
-    f'Multimetro:\n'
-    f'I_lim = {I_lim_mult:.2f} A\n'
-    f'Vo_min = {Vo_min_mult:.2f} V\n\n'
-
-    f'Osciloscopio:\n'
-    f'I_lim = {I_lim_osc:.2f} A\n'
-    f'Vo_min = {Vo_min_osc:.2f} V'
-)
-
-plt.text(
-    0.28, 1.8,
-    texto,
-    fontsize=9,
-    bbox=dict(facecolor='white', alpha=0.9)
-)
-
-plt.ylim(0, 5.3)
+plt.legend(fontsize=12, loc='best')
+plt.xlim(0, 1.6)
+plt.ylim(0, 5.5)
 
 plt.show()

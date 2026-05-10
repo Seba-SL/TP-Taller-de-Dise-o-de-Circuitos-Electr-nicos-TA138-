@@ -61,11 +61,11 @@ Vo_lt = Vo_lt[mask_valid]
 plt.figure(figsize=(9,5))
 
 # Curvas interpoladas medidas
-plt.plot(   R_interp,f_mult(R_interp),label='Vo Multimetro',linewidth=3)
+plt.plot(   R_interp,f_mult(R_interp),label='Vo Multimetro',linewidth=3.5)
 
 
 # Puntos medidos
-plt.scatter(R, Vo_mult)
+plt.scatter(R, Vo_mult, s=80)
 
 # Curva LTspice
 #plt.plot(RL_lt,Vo_lt,'--',linewidth=3,label='Simulación LTspice')
@@ -79,20 +79,21 @@ plt.ylabel('Tension de salida Vo [V]')
 plt.title('Regulacion de carga del LDO')
 
 plt.grid(True)
-plt.legend()
+plt.legend( fontsize=12)
 
 # =========================================
 # CALCULO Rt
 # =========================================
 
-V1_mult = 5
-R1_mult = 1000
+V1_mult = Vo_mult[5]
+R1_mult = R[5]
 
-V2_mult = 4.99
-R2_mult = 47
+V2_mult = Vo_mult[3]
+R2_mult = R[3]
 
-V1_osc = 4.82
-V2_osc = 4.82
+print("Vo1 = "+ str(V1_mult) , "R_1: " + str(R1_mult) +"\n")
+print("Vo1 = "+ str(V2_mult) , "R_2: " + str(R2_mult))
+
 
 RT_mult = (
     ((1 - (V1_mult/V2_mult))*R2_mult) /
@@ -105,10 +106,12 @@ texto = (
 )
 
 plt.text(
-    750,
-    4.2,
+    0.88, 0.02,
     texto,
-    fontsize=11,
+    fontsize=12,
+    ha='right',
+    va='bottom',
+    transform=plt.gca().transAxes,
     bbox=dict(facecolor='white', alpha=0.85)
 )
 
@@ -127,10 +130,12 @@ texto = (
 )
 
 plt.text(
-    150,
-    3.95,
+    0.88, 0.6,
     texto,
-    fontsize=9,
+    fontsize=12,
+    ha='right',
+    va='top',
+    transform=plt.gca().transAxes,
     bbox=dict(facecolor='white', alpha=0.9)
 )
 
