@@ -13,12 +13,12 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{8}{}%
 \contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{9}{}%
 \contentsline {section}{\numberline {3}Conclusiones}{9}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{10}{}%
-\contentsline {subsection}{\numberline {A.1}LDO}{10}{}%
-\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{11}{}%
-\contentsline {subsection}{\numberline {B.1}LDO}{11}{}%
-\contentsline {section}{\numberline {C}Apéndice III: PCB}{12}{}%
-\contentsline {subsection}{\numberline {C.1}LDO capa superior}{12}{}%
-\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{13}{}%
-\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{14}{}%
-\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{15}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{11}{}%
+\contentsline {subsection}{\numberline {A.1}LDO}{11}{}%
+\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{12}{}%
+\contentsline {subsection}{\numberline {B.1}LDO}{12}{}%
+\contentsline {section}{\numberline {C}Apéndice III: PCB}{13}{}%
+\contentsline {subsection}{\numberline {C.1}LDO capa superior}{13}{}%
+\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{14}{}%
+\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{15}{}%
+\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{16}{}%
