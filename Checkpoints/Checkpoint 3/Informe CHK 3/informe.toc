@@ -11,7 +11,7 @@
 \contentsline {paragraph}{Regulación de carga dinámica}{5}{}%
 \contentsline {subsubsection}{\numberline {2.2.4}Regulación de línea}{6}{}%
 \contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{6}{}%
-\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{7}{}%
 \contentsline {section}{\numberline {3}Conclusiones}{8}{}%
 \contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{9}{}%
 \contentsline {subsection}{\numberline {A.1}LDO}{9}{}%

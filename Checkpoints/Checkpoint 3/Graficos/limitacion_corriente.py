@@ -14,7 +14,7 @@ Vo_sim_2 = np.linspace(5.0, 0.0, 200)
 # MODELO EXPERIMENTAL (consistente con medición)
 # =========================================
 Io_lab = np.array([0.4, 0.4, 0.41, 0.67, 0.98, 0.98])
-Vo_lab = np.array([0.0, 0.6, 1.025, 2.345, 4.41, 4.9])
+Vo_lab = np.array([0.0, 0.6, 1.025, 2.345, 4.41, 4.99])
 
 Io_med_2 = np.linspace(0, 0.980, 200)
 Vo_med_reg = np.full_like(Io_sim_1, 4.99)

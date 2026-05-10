@@ -325,7 +325,6 @@ citestyle=apa
 		\end{tabular}
 	\end{table}
 	%Completar luego de medir
-	Con los resultados obtenidos se puede esperar un desvío en los resultados hacia... 
 	
 	\subsubsection{Regulación de carga estática y dinámica}
 	
@@ -423,18 +422,30 @@ citestyle=apa
 		\label{fig:regulaciondelinea}
 	\end{figure}
 		
+		
+		\[
+		Reg_{\text{mult}} = \frac{V_{O2,\text{mult}} - V_{O1,\text{mult}}}{V_{CC2} - V_{CC1}} = 0,035 \, \frac{V}{V}
+		\]
 	
 	\subsubsection{Limitación de corriente}
 	
 	El circuito cuenta con una limitación de corriente que se acciona al alcanzar un valor de corriente estimado y comienza el mecanismo de \textit{foldback} en donde la tensión se ajusta dejando de regular.
 	
 	
+	Este mecanismo se observo al variar la carga y midiendo la corriente a través de un amperímetro.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{img/LDO/Diagramas medicion/corriente}
+		\caption{Disposición banco de pruebas para medir corriente y tensión de salida.}
+		\label{fig:corriente}
+	\end{figure}
 	
 		
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\linewidth]{../Graficos/regulacion_corriente}
-		\caption{ Comparación entre lo esperado idealmente en regulación de corriente y lo logrado en el laboratorio al medir el prototipo.}
+		\caption{Comparación entre lo esperado idealmente en regulación de corriente y lo logrado en el laboratorio al medir el prototipo.}
 		\label{fig:regulacioncorriente}
 	\end{figure}
 		
@@ -449,22 +460,31 @@ citestyle=apa
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{Resistencia $R_L$ [$\Omega$]} &
-			\textbf{Corriente $I_O$ [A]} &
+			\textbf{Corriente $I_O$ [mA]} &
 			\textbf{Tensión $V_O$ [V]} \\
 			\hline
 			
-			0 (corto) & 0.40 & 0.000 \\
-			1.5       & 0.40 & 0.600 \\
-			2.5       & 0.41 & 1.025 \\
-			3.5       & 0.67 & 2.345 \\
-			4.5       & 0.98 & 4.410 \\
-			5.0       & 0.98 & 4.900 \\
+			0 (corto) & 400 & 0.00 \\
+			1.5       & 400 & 0.60 \\
+			2.5       & 410 & 1.03 \\
+			3.5       & 670 & 2.34 \\
+			4.5       & 980 & 4.41 \\
+			5.0       & 980 & 4.90 \\
 			
 			\hline
 		\end{tabular}
 		\label{tab:foldback_medicion}
 	\end{table}
-	\subsubsection{Eficiencia}
+
+\subsubsection{Eficiencia}
+
+En un regulador lineal de bajo \textit{dropout} (LDO), la eficiencia se define como el cociente entre la potencia entregada a la carga y la potencia absorbida desde la fuente de alimentación, expresada como:
+
+\[
+\eta = \frac{P_O}{P_E} = \frac{V_O I_O}{V_{CC} I_{CC}}
+\]
+
+Debido a que un LDO regula la tensión disipando la diferencia de potencial entre la entrada y la salida sobre el transistor de paso, su eficiencia suele ser menor que la de reguladores conmutados. En particular, la potencia no aprovechada se transforma principalmente en calor. Por este motivo, la eficiencia depende fuertemente de la relación entre la tensión de salida y la tensión de entrada, alcanzando sus mejores valores cuando $V_{CC}$ es apenas superior a $V_O$, es decir, dentro de la zona de regulación cercana al \textit{dropout}. A medida que aumenta la diferencia entre entrada y salida, la disipación interna crece y la eficiencia disminuye considerablemente.
 
 \begin{figure}[H]
 	\centering
@@ -473,37 +493,34 @@ citestyle=apa
 	\label{fig:eficiencia}
 \end{figure}
 
-
 \begin{table}[H]
 	\centering
 	\caption{Mediciones de eficiencia del regulador LDO variando $V_{CC}$}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		\textbf{$V_{CC}$ [V]} &
-		\textbf{$I_{CC}$ [A]} &
+		\textbf{$I_{CC}$ [mA]} &
 		\textbf{$V_O$ [V]} &
-		\textbf{$I_O$ [A]} &
+		\textbf{$I_O$ [mA]} &
 		\textbf{$P_O/P_E$ [-]} \\
 		\hline
 		
-		3.48  & 0.020 & 0.0203 & 0.0000002 & 0.000058 \\
-		4.57  & 0.034 & 2.63   & 0.0263    & 0.417 \\
-		4.81  & 0.041 & 3.18   & 0.0318    & 0.506 \\
-		4.99  & 0.047 & 3.63   & 0.0363    & 0.561 \\
-		5.37  & 0.059 & 4.63   & 0.0463    & 0.642 \\
-		5.62  & 0.063 & 4.99   & 0.0499    & 0.704 \\
-		6.25  & 0.064 & 4.99   & 0.0499    & 0.620 \\
-		7.18  & 0.064 & 4.99   & 0.0499    & 0.544 \\
-		8.20  & 0.065 & 4.99   & 0.0499    & 0.469 \\
-		11.04 & 0.067 & 4.99   & 0.0499    & 0.336 \\
-		13.13 & 0.068 & 5.00   & 0.04999   & 0.280 \\
-		15.27 & 0.070 & 5.00   & 0.050     & 0.232 \\
+		3.48  & 20 & 0.0203 & 0.0002 & 0.000058 \\
+		4.57  & 34 & 2.63   & 26.3   & 0.417 \\
+		4.81  & 41 & 3.18   & 31.8   & 0.506 \\
+		4.99  & 47 & 3.63   & 36.3   & 0.561 \\
+		5.37  & 59 & 4.63   & 46.3   & 0.642 \\
+		5.62  & 63 & 4.99   & 49.9   & 0.704 \\
+		6.25  & 64 & 4.99   & 49.9   & 0.620 \\
+		7.18  & 64 & 4.99   & 49.9   & 0.544 \\
+		8.20  & 65 & 4.99   & 49.9   & 0.469 \\
+		11.04 & 67 & 4.99   & 49.9   & 0.336 \\
+		13.13 & 68 & 5.00   & 49.99  & 0.280 \\
+		15.27 & 70 & 5.00   & 50.0   & 0.232 \\
 		\hline
 	\end{tabular}
 	\label{tab:eficiencia_ldo}
 \end{table}
-		
-
 	\input{conclusiones}
 
 	{\footnotesize
