@@ -327,10 +327,11 @@ citestyle=apa
 	%Completar luego de medir
 	
 	\subsubsection{Regulación de carga estática y dinámica}
+	\label{sec:regulacion}
 	
 	La regulación idealmente no debe depender del tipo de carga, sin embargo una carga de poca resistencia consume mucha corriente que la fuente debe ser capaz de entregar y una carga que varié su resistencia infiere que la fuente debe cambiar su estado de equilibrio rápidamente a uno nuevo, esto previamente se a simulado, y en las próximas mediciones se verificara y se caracterizara el circuito de forma practica con componentes reales.
 	
-	\paragraph{Regulación de carga estática }
+	\paragraph{Regulación de carga estática }\hfill\break
 	
 	Para la regulación de carga se varia la resistencia de carga desde valores grandes de resistencias hacia los puntos críticos donde la corriente llega a su limite y debe actuar la regulación de corriente. Dichos valores medidos se encuentran tabulados en la tabla \ref{tab:reg_carga_ldo} y la curva obtenida tras interpolar los puntos medidos en la figura \ref{fig:regulacioncarga}. A su vez se realizo el calculo de resistencia de Thevenin correspondiente a la caracterización de la resistencia de salida del regulador lineal.
 	
@@ -343,7 +344,7 @@ citestyle=apa
 	% =========================
 	\begin{minipage}{0.55\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{/home/sebastian/FIUBA-2do Cuatrimestre/Taller de Diseño Electrónico TA138/TP_Taller_de_Diseño_ TA138_G7/Checkpoints/Checkpoint 3/Informe CHK 3/img/LDO/Diagramas medicion/medicion_reg_carga_banco.png}
+		\includegraphics[width=\linewidth]{img/LDO/Diagramas medicion/medicion_reg_carga_banco.png}
 		\caption{Banco de pruebas para medición de regulación de carga}
 		\label{fig:medicionregcargabanco}
 	\end{minipage}
@@ -400,7 +401,7 @@ citestyle=apa
 	\end{equation}
 	
 	
-	\paragraph{Regulación de carga dinámica}
+	\paragraph{Regulación de carga dinámica}\hfill\break
 	
 	Para una carga dinámica se debe considerar una carga activa que varié su corriente, se medirá utilizando como carga una fuente de corriente con un transistor. El regulador deberá mantener la tensión de salida con una variación acotada en
 	función de la variación de la corriente en la carga.
@@ -598,17 +599,42 @@ Debido a que un LDO regula la tensión disipando la diferencia de potencial entr
 	\end{tabular}
 	\label{tab:eficiencia_ldo}
 \end{table}
+
+	\subsection{Problemas encontrados}
+	Durante el desarrollo de las verificaciones y posterior medición, se encontraron algunos problemas no contemplados que se debieron solucionar previo a la obtención de datos final.
+	\paragraph{Compensación del lazo limitador de corriente}\hfill\break
+	El lazo de corriente limitador presenta un comportamiento inestable que no se refleja con las simulaciones, esto hace la respuesta fuertemente oscilatoria tras un cambio instantáneo de carga. Para las mediciones dinámicas de la sección \ref{sec:regulacion}, se lo debió anular utilizando los \textit{jumpers} integrados.
+	
+	Posterior a la medición empírica, se analiza el lazo para identificar el problema:
+	
+	Se obtiene el diagrama de bode en la figura \ref{fig:bode_shunt}, utilizando la misma técnica que en los lazos de tensión y corriente \textit{foldback}, y con $R_L = 0$.
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\linewidth]{../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_shunt}
+		\caption{Diagrama de módulo y fase del lazo limitador de corriente.}
+		\label{fig:bode_shunt}
+	\end{figure}
+	
+	La dificultad del análisis de este circuito radica en la operación de gran señal: observar que para corrientes de salida bajas, el transistor $Q_{16}$ se encuentra en corte. Lo que se espera es que, al aumentar la corriente de salida, el sistema progresivamente se acerque al modo de operación MAD, pero la figura \ref{fig:bode_shunt} solo da una idea aproximada de la ganancia de lazo. Es de esperar que el polo dominante se corra dependiendo de la polarización.
+	
+	Para compensar este lazo, es mejor utilizar el resultado empírico: el sistema oscila con una frecuencia de \SI{16}{\kilo\hertz}.
+	
+	\paragraph{Capacitor de suavizado de entrada}\hfill\break
+	
+	Se agrega un capacitor electrolítico de valor \SI{10}{\micro F} para suavizar la señal de entrada. Esto permite al circuito tomar corriente de forma abrupta, y minimiza el ruido de entrada a la salida del regulador.
+	
+	\paragraph{Rango de regulación}\hfill\break
+	
+	Las mediciones reflejan un rango de entrada $\SI{5.3}{V} < V_{in} < \SI{16.5}{V}$ para el cuál la salida $V_o \approx \SI{5}{V}$.
+	Una hipótesis, basada en la experiencia de diseño, es que la llave analógica satura cuando la tensión del lazo de corriente es muy pequeña. Una forma de evitar este fenómeno es reduciendo la resistencia $R_{16}$ y aumentando $R_{17}$. (\ref{fig:esquematicokicadldo}). Esto reduce la corriente por la rama central y, reduce la caída sobre $R_{16}$, mejorando el rango de $V_{ctrl}$, y en consecuencia el rango de regulación.
+
 	\input{conclusiones}
 
 	{\footnotesize
 		\printbibliography
 	}
-	
-	\subsection{Problemas encontrados}
-	\paragraph{Compensación del lazo limitador de corriente}
-	\paragraph{Capacitor de suavizado de entrada}
-	\paragraph{Ángulo de curva de corte del regulador \textit{Foldback}}
-	\paragraph{Rango de regulación}
+
 	
 	
 	\appendix
