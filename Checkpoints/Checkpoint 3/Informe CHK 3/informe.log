@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  9 MAY 2026 20:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  9 MAY 2026 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,10 +1331,15 @@ File: ../Graficos/regulacion_carga.png Graphic file (type png)
 Package pdftex.def Info: ../Graficos/regulacion_carga.png  used on input line 3
 41.
 (pdftex.def)             Requested size: 512.14963pt x 241.82594pt.
- [5 </home/sebastian/FIUBA-2do Cuatrimestre/Taller de Diseño Electrónico TA13
-8/TP_Taller_de_Diseño_ TA138_G7/Checkpoints/Checkpoint 3/Informe CHK 3/img/LDO
-/Diagramas medicion/medicion_reg_carga_banco.png> <../Graficos/regulacion_carga
-.png>]
+
+
+LaTeX Warning: Reference `medicionregcargabanco' on page 5 undefined on input l
+ine 371.
+
+[5 </home/sebastian/FIUBA-2do Cuatrimestre/Taller de Diseño Electrónico TA138
+/TP_Taller_de_Diseño_ TA138_G7/Checkpoints/Checkpoint 3/Informe CHK 3/img/LDO/
+Diagramas medicion/medicion_reg_carga_banco.png> <../Graficos/regulacion_carga.
+png>]
 <../Graficos/regulacion_de_linea.png, id=47, 722.7pt x 361.35pt>
 File: ../Graficos/regulacion_de_linea.png Graphic file (type png)
 <use ../Graficos/regulacion_de_linea.png>
@@ -1584,15 +1589,18 @@ LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'informe.run.xml'.
 \openout1 = `informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48978 strings out of 476091
- 1185119 string characters out of 5794082
+ 48979 strings out of 476091
+ 1185142 string characters out of 5794082
  2209521 words of memory out of 5000000
- 68820 multiletter control sequences out of 15000+600000
+ 68821 multiletter control sequences out of 15000+600000
  523629 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,17n,89p,1196b,2812s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1609,7 +1617,7 @@ onts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfcc2488.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on informe.pdf (13 pages, 1505816 bytes).
+Output written on informe.pdf (13 pages, 1506440 bytes).
 PDF statistics:
  174 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
