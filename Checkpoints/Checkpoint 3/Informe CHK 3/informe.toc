@@ -13,6 +13,11 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{6}{}%
 \contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{6}{}%
 \contentsline {section}{\numberline {3}Conclusiones}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Problemas encontrados}{6}{}%
+\contentsline {paragraph}{Compensación del lazo limitador de corriente}{6}{}%
+\contentsline {paragraph}{Capacitor de suavizado de entrada}{6}{}%
+\contentsline {paragraph}{Ángulo de curva de corte del regulador \textit {Foldback}}{6}{}%
+\contentsline {paragraph}{Rango de regulación}{6}{}%
 \contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{7}{}%
 \contentsline {subsection}{\numberline {A.1}LDO}{7}{}%
 \contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{8}{}%

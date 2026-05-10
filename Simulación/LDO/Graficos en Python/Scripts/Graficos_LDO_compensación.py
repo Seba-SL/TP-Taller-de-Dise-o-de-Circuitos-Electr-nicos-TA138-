@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import re
 
 # directorio donde está el script
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -41,17 +42,27 @@ def read_bode_file(filepath):
         next(f)
         for line in f:
             parts = line.strip().split('\t')
-            if len(parts) == 2:
-                frequency = float(parts[0])
-                # Parse formato complejo: (magnitud dB, fase°)
-                complex_str = parts[1].replace('(', '').replace(')', '').replace('°', '').replace('dB', '')
-                values = complex_str.split(',')
+            if len(parts) != 2:
+                continue
+
+            frequency = float(parts[0])
+            complex_str = parts[1]
+            match = re.search(r'\(?\s*([+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)\s*dB\s*,\s*([+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)', complex_str)
+            if match:
+                magnitude_db = float(match.group(1))
+                phase_deg = float(match.group(2))
+            else:
+                complex_clean = complex_str.replace('(', '').replace(')', '').replace('°', '').replace('dB', '').replace('�', '').strip()
+                values = [v.strip() for v in complex_clean.split(',') if v.strip()]
+                if len(values) < 2:
+                    continue
                 magnitude_db = float(values[0])
                 phase_deg = float(values[1])
-                
-                freq.append(frequency)
-                mag_db.append(magnitude_db)
-                fase_deg.append(phase_deg)
+
+            freq.append(frequency)
+            mag_db.append(magnitude_db)
+            fase_deg.append(phase_deg)
+
     
     freq = np.array(freq)
     mag_db = np.array(mag_db)
@@ -209,6 +220,46 @@ axs[1].legend(fontsize=10, loc="best")
 
 plt.tight_layout()
 plt.savefig(os.path.join(capturas_dir, "LDO_Bode_lazo_corriente_compensado.png"), dpi=300)
+plt.show()
+
+
+# ========== Diagrama de Bode - Lazo de corriente Shunt ==========
+
+archivo_shunt = os.path.join(datos_dir, "Bode_lazo_corriente_shunt.txt")
+freq_sh, mag_db_sh, fase_deg_sh = read_bode_file(archivo_shunt)
+
+f_0db_sh = find_0db_crossing(freq_sh, mag_db_sh)
+phase_margin_sh = np.interp(f_0db_sh, freq_sh, fase_deg_sh) if f_0db_sh is not None else None
+
+fig, axs = plt.subplots(2, 1, sharex=True, figsize=(10, 8))
+
+axs[0].semilogx(freq_sh, mag_db_sh, linewidth=3, color="tab:purple", label=r"$|T_A|$ shunt")
+axs[0].axhline(0, color="gray", linestyle=':', linewidth=1.5, alpha=0.6)
+if f_0db_sh is not None:
+    axs[0].axvline(f_0db_sh, color="tab:purple", linestyle='--', linewidth=1.5, alpha=0.7)
+    axs[0].text(f_0db_sh, 0.5, f"f0dB = {f_0db_sh:.2g} Hz", color="tab:purple", fontsize=10, va="bottom", ha="center")
+
+axs[0].set_ylabel("Magnitud (dB)", fontsize=12)
+axs[0].set_title("Diagrama de Bode - Lazo de Corriente Shunt", fontsize=14)
+axs[0].grid(True, which="both", alpha=0.3)
+axs[0].legend(fontsize=10, loc="best")
+
+label_sh = r"$\angle T_A$ shunt"
+if phase_margin_sh is not None:
+    label_sh += f" (Margen Fase = {phase_margin_sh:.2f}°)"
+
+axs[1].semilogx(freq_sh, fase_deg_sh, linewidth=3, color="tab:purple", label=label_sh)
+if f_0db_sh is not None:
+    axs[1].axvline(f_0db_sh, color="tab:purple", linestyle='--', linewidth=1.5, alpha=0.7)
+axs[1].axhline(0, color="gray", linestyle=':', linewidth=1.5, alpha=0.6)
+
+axs[1].set_xlabel("Frecuencia (Hz)", fontsize=12)
+axs[1].set_ylabel("Fase (°)", fontsize=12)
+axs[1].grid(True, which="both", alpha=0.3)
+axs[1].legend(fontsize=10, loc="best")
+
+plt.tight_layout()
+plt.savefig(os.path.join(capturas_dir, "LDO_Bode_lazo_corriente_shunt.png"), dpi=300)
 plt.show()
 
 
