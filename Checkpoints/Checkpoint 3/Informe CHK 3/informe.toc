@@ -11,14 +11,14 @@
 \contentsline {paragraph}{Regulación de carga dinámica}{5}{}%
 \contentsline {subsubsection}{\numberline {2.2.4}Regulación de línea}{6}{}%
 \contentsline {subsubsection}{\numberline {2.2.5}Limitación de corriente}{6}{}%
-\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{7}{}%
-\contentsline {section}{\numberline {3}Conclusiones}{7}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{8}{}%
-\contentsline {subsection}{\numberline {A.1}LDO}{8}{}%
-\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{9}{}%
-\contentsline {subsection}{\numberline {B.1}LDO}{9}{}%
-\contentsline {section}{\numberline {C}Apéndice III: PCB}{10}{}%
-\contentsline {subsection}{\numberline {C.1}LDO capa superior}{10}{}%
-\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{11}{}%
-\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{12}{}%
-\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}Eficiencia}{8}{}%
+\contentsline {section}{\numberline {3}Conclusiones}{8}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Simulaciones}{9}{}%
+\contentsline {subsection}{\numberline {A.1}LDO}{9}{}%
+\contentsline {section}{\numberline {B}Apéndice II: Esquemáticos}{10}{}%
+\contentsline {subsection}{\numberline {B.1}LDO}{10}{}%
+\contentsline {section}{\numberline {C}Apéndice III: PCB}{11}{}%
+\contentsline {subsection}{\numberline {C.1}LDO capa superior}{11}{}%
+\contentsline {subsection}{\numberline {C.2}LDO capa inferior}{12}{}%
+\contentsline {subsection}{\numberline {C.3}LDO Serigrafía superior}{13}{}%
+\contentsline {section}{\numberline {D}Apéndice IV: Presupuesto}{14}{}%
