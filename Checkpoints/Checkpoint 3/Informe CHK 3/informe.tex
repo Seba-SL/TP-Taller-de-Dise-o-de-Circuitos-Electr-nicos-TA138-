@@ -144,10 +144,15 @@ citestyle=apa
 	Continuando con el diseño de un regulador lineal que cumpla con las especificaciones definidas en informes previos, en este \textit{checkpoint} se avanza hacia su implementación en un prototipo de circuito impreso (PCB), con el fin de caracterizar y validar experimentalmente las prestaciones obtenidas en la etapa de diseño.
 	
 		
-	\subsubsection{Corrección de errores}
+	\subsection{Corrección de errores}
 	
-	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa.
+	Contemplando los errores advertidos del \textit{checkpoint} previo, se realizaron ciertas modificaciones pertinentes tanto al diseño del esquemático como al de la placa impresa. Las principales se listan a continuación:
 	
+	\begin{itemize}
+		\item Diseño de PCB de simple faz y corrección de huellas.
+		\item Capacitor de filtrado de ruido de alimentación.
+		\item \textit{Jumpers} para des-habilitar lazos y limitador de corriente.
+	\end{itemize}
 	
 	
 	\section{Desarrollo}
@@ -160,9 +165,9 @@ citestyle=apa
 	
 	\subsection{Fabricación de la PCB}
 	
-	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño fabricado, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB.
+	Tomando como referencia el diseño del circuito impreso presentado en el \textit{checkpoint 2} al que se le realizaron correcciones llegando finalmente al diseño del prototipo sometido a las mediciones, el cual se puede apreciar en el apéndice \ref{sec:apendice_PCB}, luego se dio paso a el proceso de fabricación del prototipo del PCB detallado a continuación.
 	
-	Se utilizo el método de "planchado" a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
+	Se utilizo el método de planchado a una placa de cobre FR4 marcando las pistas por medio de papel impreso de transferencia térmica aplicándole calor. Luego se sumergió la placa en cloruro férrico atacando el cobre sobrante.
 		
 	Luego, se aplicó la serigrafía superior utilizando el mismo método (véase Figura~\ref{fig:placamontada1}). A continuación, se realizaron las perforaciones correspondientes, se limpió la placa con alcohol isopropílico y se procedió al ensamblado del circuito mediante la colocación de los componentes y soldado adecuado.
 	
@@ -204,7 +209,7 @@ citestyle=apa
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=1\linewidth]{img/LDO/banco_medicion}
+		\includegraphics[width=0.8\linewidth]{img/LDO/banco_medicion}
 		\caption{banco de medición en laboratorio.}
 		\label{fig:bancomedicion}
 	\end{figure}
@@ -423,6 +428,42 @@ citestyle=apa
 	
 	El circuito cuenta con una limitación de corriente que se acciona al alcanzar un valor de corriente estimado y comienza el mecanismo de \textit{foldback} en donde la tensión se ajusta dejando de regular.
 	
+	
+	
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../Graficos/regulacion_corriente}
+		\caption{ Comparación entre lo esperado idealmente en regulación de corriente y lo logrado en el laboratorio al medir el prototipo.}
+		\label{fig:regulacioncorriente}
+	\end{figure}
+		
+	
+	Se puede observar en la figura \ref{fig:regulacioncorriente} como la medición se desvía respecto a lo esperado, alcanzando un valor máximo de corriente al rededor de 1 A, mientras que se conserva el limite en corto de unos 400 mA previsto en el diseño.
+	
+	En la tabla \ref{tab:foldback_medicion} se detallan los valores de resistencia contemplados y la corriente de salida alcanzada en los que se baso la interpolación.
+	
+	\begin{table}[H]
+		\centering
+		\caption{Mediciones experimentales de foldback en LDO variando la carga}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Resistencia $R_L$ [$\Omega$]} &
+			\textbf{Corriente $I_O$ [A]} &
+			\textbf{Tensión $V_O$ [V]} \\
+			\hline
+			
+			0 (corto) & 0.40 & 0.000 \\
+			1.5       & 0.40 & 0.600 \\
+			2.5       & 0.41 & 1.025 \\
+			3.5       & 0.67 & 2.345 \\
+			4.5       & 0.98 & 4.410 \\
+			5.0       & 0.98 & 4.900 \\
+			
+			\hline
+		\end{tabular}
+		\label{tab:foldback_medicion}
+	\end{table}
 	\subsubsection{Eficiencia}
 
 
