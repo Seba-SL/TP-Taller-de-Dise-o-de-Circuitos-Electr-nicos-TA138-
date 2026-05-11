@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.10)  10 MAY 2026 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.10)  10 MAY 2026 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1501,52 +1501,63 @@ te_shunt.png>
 Package pdftex.def Info: ../../../Simulación/LDO/Graficos en Python/Capturas/L
 DO_Bode_lazo_corriente_shunt.png  used on input line 614.
 (pdftex.def)             Requested size: 384.11221pt x 307.28789pt.
+ [10 <../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corrie
+nte_shunt.png>]
+<../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_s
+hunt_compensado.png, id=83, 722.7pt x 578.16pt>
+File: ../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corrie
+nte_shunt_compensado.png Graphic file (type png)
+<use ../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corrien
+te_shunt_compensado.png>
+Package pdftex.def Info: ../../../Simulación/LDO/Graficos en Python/Capturas/L
+DO_Bode_lazo_corriente_shunt_compensado.png  used on input line 661.
+(pdftex.def)             Requested size: 384.11221pt x 307.28789pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
-(conclusiones.tex [10 <../../../Simulación/LDO/Graficos en Python/Capturas/LDO
-_Bode_lazo_corriente_shunt.png>])
+(conclusiones.tex [11 <../../../Simulación/LDO/Graficos en Python/Capturas/LDO
+_Bode_lazo_corriente_shunt_compensado.png>])
 
-LaTeX Warning: Empty bibliography on input line 635.
+LaTeX Warning: Empty bibliography on input line 678.
 
-[11]
-<img/LDO/Esquematico_LDO_LTSPICE2.png, id=87, 1017.8025pt x 648.92438pt>
+[12]
+<img/LDO/Esquematico_LDO_LTSPICE2.png, id=93, 1073.51062pt x 685.05937pt>
 File: img/LDO/Esquematico_LDO_LTSPICE2.png Graphic file (type png)
 <use img/LDO/Esquematico_LDO_LTSPICE2.png>
 Package pdftex.def Info: img/LDO/Esquematico_LDO_LTSPICE2.png  used on input li
-ne 649.
-(pdftex.def)             Requested size: 645.73994pt x 411.72574pt.
+ne 692.
+(pdftex.def)             Requested size: 645.73994pt x 412.07365pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/esquematico_LDO_Kicad.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/esquematico_LDO_Kicad.pdf, id=88, 845.04686pt x 597.50786pt>
+<img/LDO/esquematico_LDO_Kicad.pdf, id=94, 845.07724pt x 597.55246pt>
 File: img/LDO/esquematico_LDO_Kicad.pdf Graphic file (type pdf)
 <use img/LDO/esquematico_LDO_Kicad.pdf>
 Package pdftex.def Info: img/LDO/esquematico_LDO_Kicad.pdf  used on input line 
-660.
-(pdftex.def)             Requested size: 645.73994pt x 456.59969pt.
-[12
+703.
+(pdftex.def)             Requested size: 645.73994pt x 456.60641pt.
+[13
 
  <./img/LDO/Esquematico_LDO_LTSPICE2.png>]
-Overfull \vbox (20.81113pt too high) has occurred while \output is active []
+Overfull \vbox (20.81786pt too high) has occurred while \output is active []
 
 
-[13 <./img/LDO/esquematico_LDO_Kicad.pdf>]
+[14 <./img/LDO/esquematico_LDO_Kicad.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/pistas_LDO.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/pistas_LDO.pdf, id=99, 597.50786pt x 845.04686pt>
+<img/LDO/pistas_LDO.pdf, id=103, 597.50786pt x 845.04686pt>
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf  used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf  used on input line 719.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1556,43 +1567,43 @@ und PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/pistas_LDO.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/pistas_LDO.pdf, id=101, page=1, 597.50786pt x 845.04686pt>
+<img/LDO/pistas_LDO.pdf, id=105, page=1, 597.50786pt x 845.04686pt>
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf, page 1>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 719.
 
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf, page 1>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 719.
 
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf, page 1>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 719.
 
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf, page 1>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 719.
 
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO.pdf, page 1>
-Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 676.
+Package pdftex.def Info: img/LDO/pistas_LDO.pdf , page1 used on input line 719.
 
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[14
+[15
 
  <./img/LDO/pistas_LDO.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/pistas_LDO_inferior.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/pistas_LDO_inferior.pdf, id=107, 597.50786pt x 845.04686pt>
+<img/LDO/pistas_LDO_inferior.pdf, id=111, 597.50786pt x 845.04686pt>
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf>
-Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf  used on input line 68
-1.
+Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf  used on input line 72
+4.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1602,41 +1613,41 @@ usion: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/pistas_LDO_inferior.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/pistas_LDO_inferior.pdf, id=109, page=1, 597.50786pt x 845.04686pt>
+<img/LDO/pistas_LDO_inferior.pdf, id=113, page=1, 597.50786pt x 845.04686pt>
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf, page 1>
 Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf , page1 used on input 
-line 681.
+line 724.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf, page 1>
 Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf , page1 used on input 
-line 681.
+line 724.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf, page 1>
 Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf , page1 used on input 
-line 681.
+line 724.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf, page 1>
 Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf , page1 used on input 
-line 681.
+line 724.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/pistas_LDO_inferior.pdf Graphic file (type pdf)
 <use img/LDO/pistas_LDO_inferior.pdf, page 1>
 Package pdftex.def Info: img/LDO/pistas_LDO_inferior.pdf , page1 used on input 
-line 681.
+line 724.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[15 <./img/LDO/pistas_LDO_inferior.pdf>]
+[16 <./img/LDO/pistas_LDO_inferior.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/Serigrafia_LDO_superior.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/Serigrafia_LDO_superior.pdf, id=115, 597.50786pt x 845.04686pt>
+<img/LDO/Serigrafia_LDO_superior.pdf, id=119, 597.50786pt x 845.04686pt>
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf  used on input lin
-e 686.
+e 729.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1646,41 +1657,41 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/Serigrafia_LDO_superior.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/LDO/Serigrafia_LDO_superior.pdf, id=117, page=1, 597.50786pt x 845.04686pt
+<img/LDO/Serigrafia_LDO_superior.pdf, id=121, page=1, 597.50786pt x 845.04686pt
 >
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf, page 1>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf , page1 used on in
-put line 686.
+put line 729.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf, page 1>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf , page1 used on in
-put line 686.
+put line 729.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf, page 1>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf , page1 used on in
-put line 686.
+put line 729.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf, page 1>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf , page1 used on in
-put line 686.
+put line 729.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/LDO/Serigrafia_LDO_superior.pdf Graphic file (type pdf)
 <use img/LDO/Serigrafia_LDO_superior.pdf, page 1>
 Package pdftex.def Info: img/LDO/Serigrafia_LDO_superior.pdf , page1 used on in
-put line 686.
+put line 729.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[16 <./img/LDO/Serigrafia_LDO_superior.pdf>]
+[17 <./img/LDO/Serigrafia_LDO_superior.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/Presupuesto.pdf): PDF inclusion: f
 ound PDF version <1.6>, but at most version <1.5> allowed
-<img/LDO/Presupuesto.pdf, id=123, 597.53635pt x 845.04686pt>
+<img/LDO/Presupuesto.pdf, id=127, 597.53635pt x 845.04686pt>
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf  used on input line 698.
+Package pdftex.def Info: img/LDO/Presupuesto.pdf  used on input line 741.
 (pdftex.def)             Requested size: 597.53488pt x 845.0448pt.
 
 
@@ -1690,33 +1701,33 @@ ound PDF version <1.6>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./img/LDO/Presupuesto.pdf): PDF inclusion: f
 ound PDF version <1.6>, but at most version <1.5> allowed
-<img/LDO/Presupuesto.pdf, id=125, page=1, 597.53635pt x 845.04686pt>
+<img/LDO/Presupuesto.pdf, id=129, page=1, 597.53635pt x 845.04686pt>
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf, page 1>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 698
+Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 741
 .
 (pdftex.def)             Requested size: 597.53488pt x 845.0448pt.
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf, page 1>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 698
+Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 741
 .
 (pdftex.def)             Requested size: 597.56223pt x 845.08348pt.
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf, page 1>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 698
+Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 741
 .
 (pdftex.def)             Requested size: 597.56223pt x 845.08348pt.
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf, page 1>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 698
+Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 741
 .
 (pdftex.def)             Requested size: 597.56223pt x 845.08348pt.
 File: img/LDO/Presupuesto.pdf Graphic file (type pdf)
 <use img/LDO/Presupuesto.pdf, page 1>
-Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 698
+Package pdftex.def Info: img/LDO/Presupuesto.pdf , page1 used on input line 741
 .
 (pdftex.def)             Requested size: 597.56223pt x 845.08348pt.
-[17
+[18
 
  <./img/LDO/Presupuesto.pdf>] (informe.aux
 LaTeX Info: Redefining \sptext on input line 9.
@@ -1727,24 +1738,15 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                informe
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'informe.run.xml'.
 \openout1 = `informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53101 strings out of 467870
- 1310463 string characters out of 5418355
- 2435034 words of memory out of 5000000
- 81453 multiletter control sequences out of 15000+600000
+ 53271 strings out of 467870
+ 1315371 string characters out of 5418355
+ 2437174 words of memory out of 5000000
+ 81623 multiletter control sequences out of 15000+600000
  641607 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,17n,118p,1198b,2814s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1768,9 +1770,9 @@ msfonts/cm/cmmi7.pfb><C:/Users/ramaz/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmr10.pfb><C:/Users/ramaz/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ramaz/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on informe.pdf (18 pages, 3679128 bytes).
+Output written on informe.pdf (19 pages, 3937525 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
+ 537 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 LTspice 24.1.5 for Windows
 Circuit: C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\LDO\simulacion_LDO_lazo_corriente_shunt.net
-Start Time: Sun May 10 15:58:11 2026
+Start Time: Sun May 10 22:47:56 2026
 solver = Normal
 Maximum thread count: 12
 tnom = 27
@@ -81,17 +81,129 @@ Gmin stepping failed
 Starting source stepping with srcstepmethod=0
 Source Step = 3.0303%
 Source Step = 33.3333%
-Source Step = 63.6364%
-vernier = 0.25
-Source Step = 68.1818%
-Source Step = 75.7576%
-Source Step = 83.3333%
-Source Step = 90.9091%
-Source Step = 98.4848%
-vernier = 0.375
+Source Step = 46.9697%
+Source Step = 54.5455%
+Source Step = 60.7955%
+vernier = 0.015625
+Source Step = 60.6297%
+Source Step = 60.6593%
+Source Step = 60.6889%
+Source Step = 60.7185%
+Source Step = 60.7481%
+vernier = 0.00146484
+Source Step = 60.7866%
+Source Step = 60.831%
+Source Step = 60.8754%
+Source Step = 60.9197%
+Source Step = 60.9641%
+vernier = 0.00219727
+Source Step = 61.0196%
+Source Step = 61.0862%
+Source Step = 61.1528%
+Source Step = 61.2194%
+Source Step = 61.286%
+vernier = 0.0032959
+Source Step = 61.3659%
+Source Step = 61.4657%
+Source Step = 61.5656%
+Source Step = 61.6655%
+Source Step = 61.7654%
+vernier = 0.00494385
+Source Step = 61.8802%
+Source Step = 62.03%
+Source Step = 62.1798%
+Source Step = 62.3297%
+Source Step = 62.4795%
+vernier = 0.00741577
+Source Step = 62.6443%
+Source Step = 62.869%
+Source Step = 63.0937%
+Source Step = 63.3184%
+Source Step = 63.5431%
+vernier = 0.0111237
+Source Step = 63.7791%
+Source Step = 64.1162%
+Source Step = 64.4533%
+Source Step = 64.7903%
+Source Step = 65.1274%
+Source Step = 65.4645%
+vernier = 0.0166855
+Source Step = 65.9701%
+Source Step = 66.4757%
+Source Step = 66.9814%
+Source Step = 67.487%
+Source Step = 67.9926%
+vernier = 0.0250282
+Source Step = 68.7258%
+Source Step = 69.4842%
+Source Step = 70.2426%
+Source Step = 71.0011%
+Source Step = 71.7595%
+vernier = 0.0375423
+Source Step = 72.8213%
+Source Step = 73.9589%
+Source Step = 75.0966%
+Source Step = 76.2342%
+Source Step = 77.3719%
+vernier = 0.0563135
+Source Step = 78.9077%
+Source Step = 80.6142%
+Source Step = 82.3206%
+Source Step = 84.0271%
+Source Step = 85.7336%
+vernier = 0.0844703
+Source Step = 87.952%
+Source Step = 90.5117%
+Source Step = 90.7917%
+Source Step = 90.8317%
+Source Step = 90.8717%
+Source Step = 90.9116%
+Source Step = 90.9516%
+Source Step = 90.9916%
+vernier = 0.00197977
+Source Step = 91.0516%
+Source Step = 91.1116%
+Source Step = 91.1716%
+Source Step = 91.2316%
+Source Step = 91.2916%
+vernier = 0.00296966
+Source Step = 91.3786%
+Source Step = 91.4686%
+Source Step = 91.5586%
+Source Step = 91.6486%
+Source Step = 91.7386%
+vernier = 0.00445449
+Source Step = 91.8645%
+Source Step = 91.9995%
+Source Step = 92.1345%
+Source Step = 92.2695%
+Source Step = 92.4045%
+vernier = 0.00668173
+Source Step = 92.5867%
+Source Step = 92.7892%
+Source Step = 92.9917%
+Source Step = 93.1941%
+Source Step = 93.3966%
+vernier = 0.0100226
+Source Step = 93.6598%
+Source Step = 93.9635%
+Source Step = 94.2673%
+Source Step = 94.571%
+Source Step = 94.8747%
+vernier = 0.0150339
+Source Step = 95.2543%
+Source Step = 95.7099%
+Source Step = 96.1655%
+Source Step = 96.6211%
+Source Step = 97.0766%
+vernier = 0.0225508
+Source Step = 97.6233%
+Source Step = 98.3067%
+Source Step = 98.99%
+Source Step = 99.6734%
 Source stepping succeeded in finding the operating point.
 
-Total elapsed time: 3.733 seconds.
+Total elapsed time: 3.855 seconds.
 
 Files loaded:
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\LDO\simulacion_LDO_lazo_corriente_shunt.net

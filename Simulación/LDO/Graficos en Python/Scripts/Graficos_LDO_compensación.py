@@ -263,6 +263,46 @@ plt.savefig(os.path.join(capturas_dir, "LDO_Bode_lazo_corriente_shunt.png"), dpi
 plt.show()
 
 
+# ========== Diagrama de Bode - Lazo de corriente Shunt Compensado ==========
+
+archivo_shunt_comp = os.path.join(datos_dir, "Bode_lazo_corriente_shunt_compensado.txt")
+freq_shc, mag_db_shc, fase_deg_shc = read_bode_file(archivo_shunt_comp)
+
+f_0db_shc = find_0db_crossing(freq_shc, mag_db_shc)
+phase_margin_shc = np.interp(f_0db_shc, freq_shc, fase_deg_shc) if f_0db_shc is not None else None
+
+fig, axs = plt.subplots(2, 1, sharex=True, figsize=(10, 8))
+
+axs[0].semilogx(freq_shc, mag_db_shc, linewidth=3, color="tab:cyan", label=r"$|T_A|$ shunt compensado")
+axs[0].axhline(0, color="gray", linestyle=':', linewidth=1.5, alpha=0.6)
+if f_0db_shc is not None:
+    axs[0].axvline(f_0db_shc, color="tab:cyan", linestyle='--', linewidth=1.5, alpha=0.7)
+    axs[0].text(f_0db_shc, 0.5, f"f0dB = {f_0db_shc:.2g} Hz", color="tab:cyan", fontsize=10, va="bottom", ha="center")
+
+axs[0].set_ylabel("Magnitud (dB)", fontsize=12)
+axs[0].set_title("Diagrama de Bode - Lazo de Corriente Shunt Compensado", fontsize=14)
+axs[0].grid(True, which="both", alpha=0.3)
+axs[0].legend(fontsize=10, loc="best")
+
+label_shc = r"$\angle T_A$ shunt compensado"
+if phase_margin_shc is not None:
+    label_shc += f" (Margen Fase = {phase_margin_shc:.2f}°)"
+
+axs[1].semilogx(freq_shc, fase_deg_shc, linewidth=3, color="tab:cyan", label=label_shc)
+if f_0db_shc is not None:
+    axs[1].axvline(f_0db_shc, color="tab:cyan", linestyle='--', linewidth=1.5, alpha=0.7)
+axs[1].axhline(0, color="gray", linestyle=':', linewidth=1.5, alpha=0.6)
+
+axs[1].set_xlabel("Frecuencia (Hz)", fontsize=12)
+axs[1].set_ylabel("Fase (°)", fontsize=12)
+axs[1].grid(True, which="both", alpha=0.3)
+axs[1].legend(fontsize=10, loc="best")
+
+plt.tight_layout()
+plt.savefig(os.path.join(capturas_dir, "LDO_Bode_lazo_corriente_shunt_compensado.png"), dpi=300)
+plt.show()
+
+
 # ========== Respuesta temporal Vcc vs Vo (compensado) ==========
 
 archivo_temporal = os.path.join(datos_dir, "Vcc_Vo_compensado.txt")

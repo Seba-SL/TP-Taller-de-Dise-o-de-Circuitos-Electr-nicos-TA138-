@@ -607,18 +607,61 @@ Debido a que un LDO regula la tensión disipando la diferencia de potencial entr
 	
 	Posterior a la medición empírica, se analiza el lazo para identificar el problema:
 	
-	Se obtiene el diagrama de bode en la figura \ref{fig:bode_shunt}, utilizando la misma técnica que en los lazos de tensión y corriente \textit{foldback}, y con $R_L = 0$.
+	Se obtiene el diagrama de bode en la figura \ref{fig:bode_shunt}, utilizando la misma técnica que en los lazos de tensión y corriente \textit{foldback}, y con $R_L = \SI{1}{\ohm}$. Se debe obtener solicitar una corriente de salida superior a la corriente de corte del lazo limitador, y al mismo tiempo anular el lazo de corriente \textit{foldback} para que no domine la limitación.
 	
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_shunt}
 		\caption{Diagrama de módulo y fase del lazo limitador de corriente.}
 		\label{fig:bode_shunt}
+		\end{figure}
+	
+	La dificultad del análisis de este circuito radica en la operación de gran señal: observar que para corrientes de salida bajas, el transistor $Q_{16}$ se encuentra en corte. Lo que se espera es que, al aumentar la corriente de salida, el sistema progresivamente se acerque al modo de operación MAD, por ello la figura \ref{fig:bode_shunt} solo da una idea aproximada de la ganancia de lazo. Es de esperar que el polo dominante se corra dependiendo de la polarización.
+	
+	Del análisis de la figura \ref{fig:limitador} se deduce que el nodo dominante será, potencialmente, el nodo $v_{ctrl}$, por tener las capacidades asociadas del transistor de paso, que son muy grandes. El nodo 1 será inevitablemente el otro polo visible en la figura \ref{fig:bode_shunt}. Se intentará entonces aplicar \textit{pole-splitting} (figura \ref{fig:limitador}), alejando ambos polos y conservando lo mejor posible la velocidad de respuesta, crítica en este caso. Además, aprovecha la amplificación de la configuración emisor común realimentado de $Q1$ para reducir el tamaño de la capacidad considerablemente.
+	
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\node[npn, rotate=-90, yscale=-1](N1) at (13.27, 8){} node[anchor=north] at (N1.text){$Q_2$};
+		\node[nigfetd, rotate=90, yscale=-1] at (12.269, 12){};
+		\node[pnp, xscale=-1](N2) at (11.16, 11){} node[anchor=east] at (N2.text){$Q_1$};
+		\draw (12, 11) -- (13.5, 11);
+		\node[circ](N3) at (13.5, 11){} node[anchor=west] at (N3.text){$v_{ctrl}$};
+		\node[circ] at (12, 11){};
+		\draw (11.16, 10.23) |- (12.5, 8);
+		\draw (11.16, 11.77) |- (10.25, 12);
+		\draw (11.5, 12) |- (10.25, 12);
+		\draw (15, 10) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_{}s$}] (15, 8);
+		\draw (15, 10) |- (13.04, 12);
+		\draw (14.04, 8) -- (15, 8);
+		\draw (13.27, 8.84) |- (15, 10);
+		\node[circ] at (15, 10){};
+		\draw (15, 8) -| (15, 7);
+		\node[circ] at (15, 8){};
+		\node[circ](N4) at (10.25, 12){} node[anchor=east] at (N4.text){$V_{in}$};
+		\node[circ](N5) at (15, 7){} node[anchor=west] at (N5.text){$v_o$};
+		\node[circ](N6) at (11.16, 8){} node[anchor=north] at (N6.text){$1$};
+		\node[circ] at (11.16, 12){};
+		\draw (11.16, 10.23) to[capacitor, /tikz/circuitikz/bipoles/length=0.700cm, l_={$C$}] (12.5, 10.25);
+		\draw (12.5, 10.25) -| (12.5, 11);
+		\node[circ] at (12.5, 11){};
+		\node[circ] at (11.16, 10.23){};
+	\end{tikzpicture}
+	\caption{Circuito del lazo limitador de corriente compensado.}
+	\label{fig:limitador}
 	\end{figure}
 	
-	La dificultad del análisis de este circuito radica en la operación de gran señal: observar que para corrientes de salida bajas, el transistor $Q_{16}$ se encuentra en corte. Lo que se espera es que, al aumentar la corriente de salida, el sistema progresivamente se acerque al modo de operación MAD, pero la figura \ref{fig:bode_shunt} solo da una idea aproximada de la ganancia de lazo. Es de esperar que el polo dominante se corra dependiendo de la polarización.
+	Utilizando un capacitor $C \approx \SI{30}{pF}$, se logra compensar el circuito con un márgen de fase muy satisfactorio, como se ve en la figura \ref{fig:bode_shunt_compensado}.
 	
-	Para compensar este lazo, es mejor utilizar el resultado empírico: el sistema oscila con una frecuencia de \SI{16}{\kilo\hertz}.
+	
+		\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{../../../Simulación/LDO/Graficos en Python/Capturas/LDO_Bode_lazo_corriente_shunt_compensado}
+	\caption{Diagrama de módulo y fase del lazo limitador de corriente compensado.}
+	\label{fig:bode_shunt_compensado}
+	\end{figure}
 	
 	\paragraph{Capacitor de suavizado de entrada}\hfill\break
 	
@@ -627,7 +670,7 @@ Debido a que un LDO regula la tensión disipando la diferencia de potencial entr
 	\paragraph{Rango de regulación}\hfill\break
 	
 	Las mediciones reflejan un rango de entrada $\SI{5.3}{V} < V_{in} < \SI{16.5}{V}$ para el cuál la salida $V_o \approx \SI{5}{V}$.
-	Una hipótesis, basada en la experiencia de diseño, es que la llave analógica satura cuando la tensión del lazo de corriente es muy pequeña. Una forma de evitar este fenómeno es reduciendo la resistencia $R_{16}$ y aumentando $R_{17}$. (\ref{fig:esquematicokicadldo}). Esto reduce la corriente por la rama central y, reduce la caída sobre $R_{16}$, mejorando el rango de $V_{ctrl}$, y en consecuencia el rango de regulación.
+	Una hipótesis, basada en la experiencia de diseño, es que la llave analógica satura cuando la tensión del lazo de corriente es muy pequeña. Una forma de evitar este fenómeno es reduciendo la resistencia $R_{16}$ y aumentando $R_{17}$ (figura \ref{fig:esquematicokicadldo}). Esto reduce la corriente por la rama central y, reduce la caída sobre $R_{16}$, mejorando el rango de $V_{ctrl}$, y en consecuencia el rango de regulación.
 
 	\input{conclusiones}
 
