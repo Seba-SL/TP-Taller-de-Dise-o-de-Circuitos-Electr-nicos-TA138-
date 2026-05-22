@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {4}Conclusiones}{2}{}%
 \contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{3}{}%
 \contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{3}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{3}{}%
