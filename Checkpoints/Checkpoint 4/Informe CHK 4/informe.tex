@@ -1,0 +1,185 @@
+
+\documentclass[]{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1.5cm,top=1.5cm,bottom=1.5cm,a4paper]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec} % Required for customizing section titles
+\usepackage[margin=1.5cm,top=1.5cm, bottom=1.5cm]{geometry} % Ajusta los márgenes aquí
+\usepackage{multicol} % Required for multicols environment
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{dingbat}
+\usepackage{booktabs} 
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{placeins}
+
+
+\newif\ifcheckpoint
+\checkpointfalse
+
+% función que devuelve color según checkpoint
+\newcommand{\checkpointcolor}[1]{%
+	\ifcase#1
+	yellow%
+	\or blue%
+	\or green%
+	\or red%
+	\or orange%
+	\else gray%
+	\fi
+}
+\newcommand{\checkpointstart}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Inicio checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\newcommand{\checkpointend}[1]{%
+	\ifcheckpoint
+	\edef\tempcolor{\checkpointcolor{#1}}%
+	\begin{tcolorbox}[
+		colback=\tempcolor!15,
+		colframe=\tempcolor!60!black,
+		boxrule=0pt,
+		arc=0pt,
+		width=\textwidth
+		]
+		\textbf{Fin checkpoint #1}
+	\end{tcolorbox}
+	\fi
+}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{babel}
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+citestyle=apa
+]{biblatex}
+
+\addbibresource{referencias.bib}
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		
+		\centering
+		{\includegraphics[scale=0.5]{img/Caratula.jpg}}
+		
+		\centerline
+		
+		{\bfseries\LARGE Taller de Diseño de Circuitos Electrónicos   \par}
+		
+		{\bfseries\LARGE TA138  \par}
+		\vspace{.5cm}
+		{\scshape\Large Facultad de Ingenier\'ia Universidad de Buenos Aires \par}
+		\vspace{1.5cm}
+		%{\scshape\Huge Trabajo Pr\'actico \par}
+		{\scshape\Huge Diseño de Fuente de Alimentación \par}
+		\vspace{2cm}
+		{\scshape\Large Checkpoint 4: Diseño y Validación de Conversor Buck en Lazo Abierto\par}
+		
+		
+		\vspace{2cm}
+		
+		\begin{tabular}{ p{4cm} p{2cm} p{4cm}}
+			\textbf{Alumnos:} & \textbf{Padr\'on:} & \textbf{Mail:} \\
+			Lazo, Sebastian Nahuel & 106213 &slazo@fi.uba.ar \\
+			Flores, Ahmed Ali & 106238 & aaflores@fi.uba.ar  \\
+			Mántaras, Ramiro  & 111510 &rmantaras@fi.uba.ar \\
+			
+		\end{tabular}
+		
+		
+		\vspace{1cm}
+		
+		\begin{tabular}{ p{6cm} p{6cm} p{6cm}}
+			\textbf{Docentes:}  
+			\\Teóricas: Julio Zola & Tutor: Sergio Andres Quinteros  
+		\end{tabular}
+		
+	\end{titlepage}
+	
+	
+	\newpage
+	
+	
+	\tableofcontents \label{Indice}
+	\newpage
+	
+\section{Introducción}
+
+En el checkpoint 4 se continúa con el desarrollo de una fuente de alimentación conmutada tipo buck destinada a obtener una tensión de salida regulada de 9.5 V a partir de una fuente de alimentación de continua proveniente de una batería. El sistema debe operar de manera eficiente frente a variaciones de tensión de entrada comprendidas entre 12 V y 30 V, permitiendo su utilización en aplicaciones industriales y automotrices destinadas a la alimentación de microcontroladores, sensores y sistemas de comunicación.
+
+En etapas previas del proyecto se desarrolló y verificó el funcionamiento de la conversión de 9,5 V a 5 V. En esta instancia se avanza sobre el diseño y validación de la etapa buck en lazo abierto, incorporando aspectos vinculados tanto a la simulación funcional como a el diseño circuital del sistema.
+
+Asimismo, se aborda el diseño del circuito generador PWM utilizado para el control de conmutación, el análisis de las características físicas y constructivas del inductor diseñado, y el desarrollo del diseño PCB correspondiente a la fuente buck en lazo abierto.
+
+\section{Objetivo}
+Los objetivos del presente checkpoint son:
+
+\begin{itemize}
+	\item Verificar mediante simulaciones el correcto funcionamiento de la fuente buck en configuración de lazo abierto.
+	
+	\item Diseñar e implementar el circuito PWM encargado de generar la señal de conmutación del convertidor.
+	
+	\item Analizar y definir las características físicas del inductor diseñado para la etapa de potencia.
+	
+	\item Realizar el diseño PCB de la fuente buck en lazo abierto considerando criterios de implementación electrónica y distribución física.
+	
+	\item Integrar los distintos bloques desarrollados con el fin de avanzar hacia una implementación funcional del sistema de alimentación switching.
+\end{itemize}
+
+
+
+
+	
+\section{Desarrollo}
+
+\section{Conclusiones}
+
+
+{\footnotesize
+	\printbibliography
+}
+
+
+
+\appendix
+\begin{landscape}
+	\section{Apéndice I: Simulaciones}
+	
+\end{landscape}
+
+\end{document}
