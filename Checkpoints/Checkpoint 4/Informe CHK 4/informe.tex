@@ -108,7 +108,7 @@ citestyle=apa
 		%{\scshape\Huge Trabajo Pr\'actico \par}
 		{\scshape\Huge Diseño de Fuente de Alimentación \par}
 		\vspace{2cm}
-		{\scshape\Large Checkpoint 4: Diseño y Validación de Conversor Buck en Lazo Abierto\par}
+		{\scshape\Large Checkpoint 4: Diseño y Validación de Conversor \textit{Buck} en Lazo Abierto\par}
 		
 		
 		\vspace{2cm}
@@ -140,11 +140,11 @@ citestyle=apa
 	
 \section{Introducción}
 
-En el checkpoint 4 se continúa con el desarrollo de una fuente de alimentación conmutada tipo buck destinada a obtener una tensión de salida regulada de 9.5 V a partir de una fuente de alimentación de continua proveniente de una batería. El sistema debe operar de manera eficiente frente a variaciones de tensión de entrada comprendidas entre 12 V y 30 V, permitiendo su utilización en aplicaciones industriales y automotrices destinadas a la alimentación de microcontroladores, sensores y sistemas de comunicación.
+En el checkpoint 4 se continúa con el desarrollo de una fuente de alimentación conmutada tipo \textit{buck} destinada a obtener una tensión de salida regulada de 9.5 V a partir de una fuente de alimentación de continua proveniente de una batería. El sistema debe operar de manera eficiente frente a variaciones de tensión de entrada comprendidas entre 12 V y 30 V, permitiendo su utilización en aplicaciones industriales y automotrices destinadas a la alimentación de microcontroladores, sensores y sistemas de comunicación.
 
-En etapas previas del proyecto se desarrolló y verificó el funcionamiento de la conversión de 9,5 V a 5 V. En esta instancia se avanza sobre el diseño y validación de la etapa buck en lazo abierto, incorporando aspectos vinculados tanto a la simulación funcional como a el diseño circuital del sistema.
+En etapas previas del proyecto se desarrolló y verificó el funcionamiento de la conversión de 9,5 V a 5 V, en el apéndice \ref{sec:etapa_previa} se agregaron mediciones extra pedidas y modificaciones de acuerdo a los errores encontrados en el checkpoint previo. En esta instancia se avanza sobre el diseño y validación de la etapa \textit{buck} en lazo abierto, incorporando aspectos vinculados tanto a la simulación funcional como a el diseño circuital del sistema.
 
-Asimismo, se aborda el diseño del circuito generador PWM utilizado para el control de conmutación, el análisis de las características físicas y constructivas del inductor diseñado, y el desarrollo del diseño PCB correspondiente a la fuente buck en lazo abierto.
+Asimismo, se aborda el diseño del circuito generador PWM utilizado para el control de conmutación, el análisis de las características físicas y constructivas del inductor diseñado, y el desarrollo del diseño PCB correspondiente a la fuente \textit{buck} en lazo abierto.
 
 \section{Objetivo}
 Los objetivos del presente checkpoint son:
@@ -175,11 +175,14 @@ Los objetivos del presente checkpoint son:
 }
 
 
-
+\newpage
 \appendix
-\begin{landscape}
-	\section{Apéndice I: Simulaciones}
-	
-\end{landscape}
+\section{Apéndice I: Etapa Previa}
+\label{sec:etapa_previa}
+
+\subsection{Compensación nodo limitador de corriente}
+
+
+
 
 \end{document}
