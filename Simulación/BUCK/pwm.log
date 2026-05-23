@@ -1,0 +1,12 @@
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\pwm.asc
+Start Time: Fri May 22 18:55:43 2026
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.00564138 to 0.00564138
+Total elapsed time: 6.215 seconds.
+
