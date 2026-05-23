@@ -1,12 +1,11 @@
-LTspice 24.1.5 for Windows
-Circuit: C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci贸n\BUCK\pwm.net
-Start Time: Sat May 23 17:06:28 2026
-Options: gmin=1e-10  abstol=1e-10  reltol=0.003
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci髇\BUCK\pwm.asc
+Start Time: Sat May 23 18:03:57 2026
 solver = Normal
-Maximum thread count: 12
+Maximum thread count: 8
 tnom = 27
 temp = 27
-method = trap
+method = modified trap
 gmin = 1e-10
 abstol = 1e-10
 reltol = 0.003
@@ -34,16 +33,26 @@ Gmin stepping failed
 Starting source stepping with srcstepmethod=0
 Source Step = 3.0303%
 Source Step = 33.3333%
-Source Step = 63.6364%
-Source Step = 93.9394%
+Source Step = 52.4621%
+Source Step = 54.3561%
+Source Step = 56.25%
+Source Step = 58.1439%
+Source Step = 60.0379%
+Source Step = 61.9318%
+vernier = 0.09375
+Source Step = 64.7727%
+Source Step = 67.6136%
+Source Step = 70.4545%
+Source Step = 73.2955%
+Source Step = 76.1364%
+vernier = 0.140625
+Source Step = 80.2557%
+Source Step = 84.517%
+Source Step = 88.7784%
+Source Step = 93.0398%
+Source Step = 97.3011%
+vernier = 0.210938
 Source stepping succeeded in finding the operating point.
 
-Total elapsed time: 0.261 seconds.
-
-Files loaded:
-C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci贸n\BUCK\pwm.net
-C:\Users\ramaz\AppData\Local\LTspice\lib\cmp\standard.dio
-C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci贸n\BUCK\Modelos\lm393.lib
-C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci贸n\BUCK\Modelos\TL082.txt
-C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulaci贸n\BUCK\Modelos\lm358.txt
+Total elapsed time: 1.570 seconds.
 
