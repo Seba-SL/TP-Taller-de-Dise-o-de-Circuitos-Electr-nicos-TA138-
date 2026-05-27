@@ -1548,7 +1548,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Reference_Voltage:TL431D"
+		(symbol "Reference_Voltage:TL431LP"
 			(pin_numbers
 				(hide yes)
 			)
@@ -1561,6 +1561,16 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
+				(at -2.54 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TL431LP"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1570,18 +1580,8 @@
 					)
 				)
 			)
-			(property "Value" "TL431D"
-				(at 0 -4.445 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-				(at 0 -6.35 0)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 0 -4.826 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1593,7 +1593,7 @@
 				)
 			)
 			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl431.pdf"
-				(at 0.254 -10.668 0)
+				(at 0.508 -7.112 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1604,8 +1604,8 @@
 					)
 				)
 			)
-			(property "Description" "Shunt Regulator, SO-8"
-				(at -0.254 -8.382 0)
+			(property "Description" "Shunt Regulator, TO-92"
+				(at 0 -8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1615,7 +1615,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "diode device shunt regulator"
+			(property "ki_keywords" "diode device regulator shunt"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1626,7 +1626,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOIC?8*3.9x4.9mm*P1.27mm*"
+			(property "ki_fp_filters" "TO*92*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1637,7 +1637,7 @@
 					)
 				)
 			)
-			(symbol "TL431D_0_1"
+			(symbol "TL431LP_0_1"
 				(polyline
 					(pts
 						(xy -1.27 0) (xy 0 0) (xy 1.27 0)
@@ -1652,7 +1652,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.762 -0.762) (xy -0.762 0.762) (xy -0.762 0.762) (xy 0.762 0) (xy -0.762 -0.762)
+						(xy -0.762 -0.762) (xy -0.762 0.762) (xy 0.762 0) (xy -0.762 -0.762)
 					)
 					(stroke
 						(width 0)
@@ -1675,23 +1675,11 @@
 					)
 				)
 			)
-			(symbol "TL431D_1_1"
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			(symbol "TL431LP_1_1"
 				(pin passive line
-					(at 2.54 0 180)
+					(at 0 2.54 270)
 					(length 2.54)
-					(name "K"
+					(name "REF"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1725,10 +1713,9 @@
 					)
 				)
 				(pin passive line
-					(at -2.54 0 0)
+					(at 2.54 0 180)
 					(length 2.54)
-					(hide yes)
-					(name "A"
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1736,62 +1723,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -2.54 0 0)
-					(length 2.54)
-					(hide yes)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -2.54 0 0)
-					(length 2.54)
-					(hide yes)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 2.54)
-					(name "REF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6183,7 +6114,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
 			(at 49.53 84.455 0)
 			(hide yes)
 			(show_name no)
@@ -6427,102 +6358,6 @@
 			(project "Buck"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
 					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Reference_Voltage:TL431D")
-		(at 33.02 96.52 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "aa19601d-2f62-4ae7-a9a8-cc185b483b63")
-		(property "Reference" "U1"
-			(at 30.48 95.2499 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TL431D"
-			(at 30.48 97.7899 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 26.67 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl431.pdf"
-			(at 22.352 96.266 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "Shunt Regulator, SO-8"
-			(at 24.638 96.774 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5a3f679a-e3ad-44f0-9e63-67af568e0c04")
-		)
-		(pin "7"
-			(uuid "12fa3929-5ae3-4572-9400-a85c69e62760")
-		)
-		(pin "8"
-			(uuid "ab57dfeb-6d4e-42a8-8c01-2327b6bfdbe2")
-		)
-		(pin "2"
-			(uuid "0cbd860b-28aa-405c-bda5-798c55da5eb9")
-		)
-		(pin "3"
-			(uuid "1172ee2e-7bf0-4750-b365-2a30d6991882")
-		)
-		(pin "6"
-			(uuid "541b3625-0b76-4e22-8661-4c8aa5181ac5")
-		)
-		(instances
-			(project "Buck"
-				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -6787,6 +6622,93 @@
 			(project "Buck"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Reference_Voltage:TL431LP")
+		(at 33.02 96.52 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b9a87b2c-e719-4100-9f9a-f951701d9324")
+		(property "Reference" "U5"
+			(at 30.48 95.2499 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TL431LP"
+			(at 30.48 97.7899 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_HandSolder"
+			(at 28.194 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl431.pdf"
+			(at 25.908 96.012 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "Shunt Regulator, TO-92"
+			(at 24.13 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8b274812-a9b7-4e4a-8c3a-01b96f4a7a3c")
+		)
+		(pin "2"
+			(uuid "b14aed60-70af-4ac0-9854-2fd15a55bedb")
+		)
+		(pin "3"
+			(uuid "f7a2967f-5891-4d1d-bd35-25be57ae0634")
+		)
+		(instances
+			(project "Buck"
+				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
+					(reference "U5")
 					(unit 1)
 				)
 			)
