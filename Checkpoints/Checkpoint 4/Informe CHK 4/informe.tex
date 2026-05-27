@@ -137,52 +137,122 @@ citestyle=apa
 	
 	\tableofcontents \label{Indice}
 	\newpage
+	\section{Introducción}
 	
-\section{Introducción}
-
-En el checkpoint 4 se continúa con el desarrollo de una fuente de alimentación conmutada tipo \textit{buck} destinada a obtener una tensión de salida regulada de 9.5 V a partir de una fuente de alimentación de continua proveniente de una batería. El sistema debe operar de manera eficiente frente a variaciones de tensión de entrada comprendidas entre 12 V y 30 V, permitiendo su utilización en aplicaciones industriales y automotrices destinadas a la alimentación de microcontroladores, sensores y sistemas de comunicación.
-
-En etapas previas del proyecto se desarrolló y verificó el funcionamiento de la conversión de 9,5 V a 5 V, en el apéndice \ref{sec:etapa_previa} se agregaron mediciones extra pedidas y modificaciones de acuerdo a los errores encontrados en el checkpoint previo. En esta instancia se avanza sobre el diseño y validación de la etapa \textit{buck} en lazo abierto, incorporando aspectos vinculados tanto a la simulación funcional como a el diseño circuital del sistema.
-
-Asimismo, se aborda el diseño del circuito generador PWM utilizado para el control de conmutación, el análisis de las características físicas y constructivas del inductor diseñado, y el desarrollo del diseño PCB correspondiente a la fuente \textit{buck} en lazo abierto.
-
-\section{Objetivo}
-Los objetivos del presente checkpoint son:
-
-\begin{itemize}
-	\item Verificar mediante simulaciones el correcto funcionamiento de la fuente buck en configuración de lazo abierto.
+	En el checkpoint 4 se continúa con el desarrollo de una fuente de alimentación conmutada tipo \textit{buck} destinada a obtener una tensión de salida regulada de 9.5 V a partir de una fuente de alimentación de continua proveniente de una batería. El sistema debe operar de manera eficiente frente a variaciones de tensión de entrada comprendidas entre 12 V y 30 V, permitiendo su utilización en aplicaciones industriales y automotrices destinadas a la alimentación de microcontroladores, sensores y sistemas de comunicación.
 	
-	\item Diseñar e implementar el circuito PWM encargado de generar la señal de conmutación del convertidor.
+	En etapas previas del proyecto se desarrolló y verificó el funcionamiento de la conversión de 9,5 V a 5 V, en el apéndice \ref{sec:etapa_previa} se agregaron mediciones extra pedidas y modificaciones de acuerdo a los errores encontrados en el checkpoint previo. En esta instancia se avanza sobre el diseño y validación de la etapa \textit{buck} en lazo abierto, incorporando aspectos vinculados tanto a la simulación funcional como a el diseño circuital del sistema.
 	
-	\item Analizar y definir las características físicas del inductor diseñado para la etapa de potencia.
+	Asimismo, se aborda el diseño del circuito generador PWM utilizado para el control de conmutación, el análisis de las características físicas y constructivas del inductor diseñado, y el desarrollo del diseño PCB correspondiente a la fuente \textit{buck} en lazo abierto.
 	
-	\item Realizar el diseño PCB de la fuente buck en lazo abierto considerando criterios de implementación electrónica y distribución física.
+	\section{Objetivo}
+	Los objetivos del presente checkpoint son:
 	
-	\item Integrar los distintos bloques desarrollados con el fin de avanzar hacia una implementación funcional del sistema de alimentación switching.
-\end{itemize}
-
-
-
-
+	\begin{itemize}
+		\item Verificar mediante simulaciones el correcto funcionamiento de la fuente buck en configuración de lazo abierto.
+		
+		\item Diseñar e implementar el circuito PWM encargado de generar la señal de conmutación del convertidor.
+		
+		\item Analizar y definir las características físicas del inductor diseñado para la etapa de potencia.
+		
+		\item Realizar el diseño PCB de la fuente buck en lazo abierto considerando criterios de implementación electrónica y distribución física.
+		
+		\item Integrar los distintos bloques desarrollados con el fin de avanzar hacia una implementación funcional del sistema de alimentación switching.
+	\end{itemize}
 	
-\section{Desarrollo}
-
-\section{Conclusiones}
-
-
-{\footnotesize
-	\printbibliography
-}
-
-
-\newpage
-\appendix
-\section{Apéndice I: Etapa Previa}
-\label{sec:etapa_previa}
-
-\subsection{Compensación nodo limitador de corriente}
-
-
-\subsection{Medición: Variaciones en tensión de referencia}
+	
+	
+	
+	
+	\section{Desarrollo}
+	
+	\subsection{Especificaciones del Regulador BUCK}
+	El sistema deberá operar con una tensión de entrada comprendida entre \SI{12}{V} y \SI{30}{V} considerándose como tensión típica \SI{24}{V}, entregando una tensión regulada nominal de aproximadamente \SI{9.5}{V}. 
+	
+	Asimismo, la corriente de salida deberá encontrarse en el rango de \SI{100}{mA} a \SI{1.5}{A}, manteniendo una eficiencia comprendida entre el 85\% y el 95\%, dependiendo de las condiciones de operación.
+	
+	La frecuencia de conmutación seleccionada para el convertidor será de aproximadamente 
+	\SI{120}{kHz}, admitiéndose variaciones hasta \SI{140}{kHz}.
+	
+	
+	
+	\subsubsection{Diseño del Convertidor BUCK}
+	
+	En términos generales, un convertidor \textit{buck} se alimenta de una señal de entrada a a regular, por medio de un transistor en conmutación y un diodo de conmutación rápida generan una señal cuadrada de ciclo de trabajo D (dusty cicle), la cual tiene como valor medio la tensión objetivo, la señal cuadrada generada es filtrada por un filtro LC, obteniendo de esta forma una tensión regulada con riple cuadrático. En el esquemático \ref{fig: buck_schematic}, se observa un circuito \textit{buck} inicial de diseño.
+	
+	\begin{figure}[H]
+		\centering
+		\resizebox{0.9\textwidth}{!}{
+			\begin{tikzpicture}[transform shape]
+				% Paths, nodes and wires:
+				\node[pigfete, rotate=90](N1) at (32.27, 5.5){} node[anchor=south] at (N1.text){$Q_s$};
+				\draw (27.5, 5.25) to[american voltage source, l={$V_E$}] (27.5, 3);
+				\draw (30, 5.5) to[capacitor, /tikz/circuitikz/bipoles/length=1.08cm, l={$C_E$}] (30, 3);
+				\draw (34.75, 3) to[full Schottky diode, /tikz/circuitikz/bipoles/length=0.756cm, l_={$D_{Schottky}$}] (34.75, 5.25);
+				\draw (38.5, 5.5) to[capacitor, /tikz/circuitikz/bipoles/length=1.08cm, l={$C$}] (38.5, 3);
+				\draw (35.25, 5.5) to[cute inductor, l={$L$}] (37.75, 5.5);
+				\draw (40.75, 5.5) to[american resistor, /tikz/circuitikz/bipoles/length=1.16cm, l={$R_{min}$}] (40.75, 2.75);
+				\draw (40.75, 2.75) |- (27.5, 2.5) -| (27.5, 3);
+				\draw (30, 3) -| (30, 2.5);
+				\draw (34.75, 3) -| (34.75, 2.5);
+				\draw (38.5, 3) -| (38.5, 2.5);
+				\draw (40.75, 5.5) |- (38.5, 5.5);
+				\draw (38.5, 5.5) -- (37.75, 5.5);
+				\draw (35.25, 5.5) |- (33.04, 5.5);
+				\draw (34.75, 5.25) -| (34.75, 5.5);
+				\draw (30, 5.5) -- (31.5, 5.5);
+				\draw (30, 5.5) |- (27.5, 5.5) -- (27.5, 5.25);
+				\draw (32, 4.5) -| (32, 3.75);
+				\node[circ] at (32, 3.75){};
+				\node[shape=rectangle, minimum width=2.715cm, minimum height=1.215cm] at (33.25, 3.625){} node[anchor=north west, align=left, text width=2.327cm, inner sep=6pt] at (31.875, 4.25){$V_{control}$};
+			\end{tikzpicture}
+		}
+		\caption{Circuito \textit{buck}.}
+		\label{fig:buck_schematic}
+		
+	\end{figure}
+	
+	
+	\begin{table}[H]
+		\centering
+		\caption{Especificaciones del regulador BUCK}
+		\label{tab:spec_buck}
+		\begin{tabular}{|c|c|}
+			\hline
+			Parámetro & Valor \\ \hline
+			Tensión de entrada $V_{IN}$ & \SI{12}{V} -- \SI{30}{V} \\ \hline
+			Tensión regulada $V_{REG}$ & \SI{9.5}{V} nominal \\ \hline
+			Corriente de salida $I_{OUT}$ & \SI{100}{mA} -- \SI{1.5}{A} \\ \hline
+			Eficiencia $\eta$ & 85\% -- 95\% \\ \hline
+			Frecuencia de conmutación $f_{sw}$ & \SI{120}{kHz} -- \SI{140}{kHz} \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	
+	
+	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
+	\subsection{Implementación de circuito PWM (PCB)}
+	\subsection{Características físicas del inductor diseñado}
+	\subsection{Diseño PCB de la buck en lazo abierto}
+	
+	
+	\section{Conclusiones}
+	
+	
+	{\footnotesize
+		\printbibliography
+	}
+	
+	
+	\newpage
+	\appendix
+	\section{Apéndice I: Etapa Previa}
+	\label{sec:etapa_previa}
+	
+	\subsection{Compensación nodo limitador de corriente}
+	
+	
+	\subsection{Medición: Variaciones en tensión de referencia}
+	
 
 \end{document}
