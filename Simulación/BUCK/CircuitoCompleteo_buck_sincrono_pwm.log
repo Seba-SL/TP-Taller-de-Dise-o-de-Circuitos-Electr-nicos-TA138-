@@ -1,6 +1,6 @@
 LTspice 24.1.5 for Windows
 Circuit: C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\CircuitoCompleteo_buck_sincrono_pwm.net
-Start Time: Tue May 26 20:48:32 2026
+Start Time: Tue May 26 21:42:50 2026
 Options: gmin=1e-10  abstol=1e-10  reltol=0.003
 solver = Normal
 Maximum thread count: 12
@@ -16,21 +16,22 @@ Instance "u6:x_gd_template:x_lo_stage:M_LO_PMOS": Length shorter than recommende
 Instance "u6:x_gd_template:x_lo_stage:M_LO_NMOS": Length shorter than recommended for a level 1 MOSFET.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
-Gmin = 10
+Increasing initial diagonal Gmin to 100
+Gmin = 100
 vernier = 0.5
 vernier = 0.25
+Gmin = 34.2672
 vernier = 0.125
-Gmin = 6.68666
 vernier = 0.0625
 vernier = 0.03125
 vernier = 0.015625
+Gmin = 33.0995
 vernier = 0.0078125
-Gmin = 6.72377
 vernier = 0.00390625
 vernier = 0.00195312
+Gmin = 32.9705
 vernier = 0.000976562
 vernier = 0.000488281
-Gmin = 6.72131
 Gmin = 0
 Gmin stepping failed
 
@@ -46,9 +47,9 @@ Source Step = 50.0178%
 vernier = 0.00146484
 Starting source stepping with srcstepmethod=1
 Source Step = 3.0303%
-Source Step = 7.38636%
-Source Step = 9.2803%
-vernier = 0.015625
+vernier = 0.25
+Source Step = 0.804924%
+Source Step = 0.846354%
 Source stepping failed
 
 Pseudo Transient failed in finding the operating point at 5.00122 µs.
@@ -61,7 +62,7 @@ Changing Tseed to 1e-05
 Changing Tseed to 1e-11
 Changing Tseed to 0.0001
 Changing Tseed to 1e-12
-Total elapsed time: 20.210 seconds.
+Total elapsed time: 13.703 seconds.
 
 Files loaded:
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\CircuitoCompleteo_buck_sincrono_pwm.net
