@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  26 MAY 2026 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  27 MAY 2026 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,16 +1301,17 @@ LaTeX Info: Redefining \% on input line 1.
 \openout5 = `informe.toc'.
 
 
-[1]
+[1] [2]
+<../../../../vcontrol.png, id=28, 987.2082pt x 466.1415pt>
+File: ../../../../vcontrol.png Graphic file (type png)
+<use ../../../../vcontrol.png>
+Package pdftex.def Info: ../../../../vcontrol.png  used on input line 232.
+(pdftex.def)             Requested size: 512.14963pt x 241.82594pt.
 
-LaTeX Warning: Reference `fig: buck_schematic' on page 2 undefined on input lin
-e 181.
 
-[2]
+LaTeX Warning: Empty bibliography on input line 254.
 
-LaTeX Warning: Empty bibliography on input line 243.
-
-[3] [4] (./informe.aux
+[3 <../../../../vcontrol.png>] [4] (./informe.aux
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -1328,29 +1329,30 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49516 strings out of 476091
- 1198422 string characters out of 5794082
- 2217430 words of memory out of 5000000
- 69380 multiletter control sequences out of 15000+600000
+ 49529 strings out of 476091
+ 1198730 string characters out of 5794082
+ 2213438 words of memory out of 5000000
+ 69390 multiletter control sequences out of 15000+600000
  523587 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,10n,89p,1196b,2812s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2488.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfsc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfti1000.pfb>
-Output written on informe.pdf (5 pages, 210889 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1
+000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc14
+40.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2488.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfsc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti100
+0.pfb>
+Output written on informe.pdf (5 pages, 264148 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

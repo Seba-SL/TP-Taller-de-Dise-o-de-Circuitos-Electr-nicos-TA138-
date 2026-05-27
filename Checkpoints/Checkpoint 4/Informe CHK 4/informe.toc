@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {2}Objetivo}{2}{}%
 \contentsline {section}{\numberline {3}Desarrollo}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Especificaciones del Regulador BUCK}{2}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Diseño del Convertidor BUCK}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Convertidor BUCK}{2}{}%
 \contentsline {subsection}{\numberline {3.2}Diseño verificado por simulación de la fuente buck a lazo abierto}{3}{}%
 \contentsline {subsection}{\numberline {3.3}Implementación de circuito PWM (PCB)}{3}{}%
 \contentsline {subsection}{\numberline {3.4}Características físicas del inductor diseñado}{3}{}%

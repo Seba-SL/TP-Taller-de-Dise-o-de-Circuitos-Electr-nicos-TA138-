@@ -169,16 +169,29 @@ citestyle=apa
 	\subsection{Especificaciones del Regulador BUCK}
 	El sistema deberá operar con una tensión de entrada comprendida entre \SI{12}{V} y \SI{30}{V} considerándose como tensión típica \SI{24}{V}, entregando una tensión regulada nominal de aproximadamente \SI{9.5}{V}. 
 	
-	Asimismo, la corriente de salida deberá encontrarse en el rango de \SI{100}{mA} a \SI{1.5}{A}, manteniendo una eficiencia comprendida entre el 85\% y el 95\%, dependiendo de las condiciones de operación.
+	Asimismo, la corriente de salida deberá encontrarse en el rango de \SI{750}{mA} a \SI{1.5}{A}, manteniendo una eficiencia comprendida entre el 85\% y el 95\%, dependiendo de las condiciones de operación.
 	
-	La frecuencia de conmutación seleccionada para el convertidor será de aproximadamente 
-	\SI{120}{kHz}, admitiéndose variaciones hasta \SI{140}{kHz}.
+	La frecuencia de conmutación seleccionada para el convertidor será del rango de 
+	\SI{120}{kHz} hasta \SI{140}{kHz}.
 	
+		\begin{table}[H]
+		\centering
+		\caption{Especificaciones del regulador BUCK}
+		\label{tab:spec_buck}
+		\begin{tabular}{|c|c|}
+			\hline
+			Parámetro & Valor \\ \hline
+			Tensión de entrada $V_{IN}$ & \SI{12}{V} -- \SI{30}{V} \\ \hline
+			Tensión regulada $V_{REG}$ & \SI{9.5}{V} nominal \\ \hline
+			Corriente de salida $I_{OUT}$ & \SI{750}{mA} -- \SI{1.5}{A} \\ \hline
+			Eficiencia $\eta$ & 85\% -- 95\% \\ \hline
+			Frecuencia de conmutación $f_{sw}$ & \SI{120}{kHz} -- \SI{140}{kHz} \\ \hline
+		\end{tabular}
+	\end{table}
 	
+	\subsubsection{Convertidor BUCK}
 	
-	\subsubsection{Diseño del Convertidor BUCK}
-	
-	En términos generales, un convertidor \textit{buck} se alimenta de una señal de entrada a a regular, por medio de un transistor en conmutación y un diodo de conmutación rápida generan una señal cuadrada de ciclo de trabajo D (dusty cicle), la cual tiene como valor medio la tensión objetivo, la señal cuadrada generada es filtrada por un filtro LC, obteniendo de esta forma una tensión regulada con riple cuadrático. En el esquemático \ref{fig: buck_schematic}, se observa un circuito \textit{buck} inicial de diseño.
+	En términos generales, un convertidor \textit{buck} se alimenta de una señal de entrada a a regular, por medio de un transistor en conmutación y un diodo de conmutación rápida generan una señal cuadrada que tiene como valor medio la tensión objetivo, la señal cuadrada generada es filtrada por un filtro LC, obteniendo de esta forma una tensión regulada con riple cuadrático. En la figura \ref{fig:buck_schematic}, se observa un circuito \textit{buck} inicial de diseño.
 	
 	\begin{figure}[H]
 		\centering
@@ -211,22 +224,20 @@ citestyle=apa
 		\label{fig:buck_schematic}
 		
 	\end{figure}
+
+	Entendiendo la señal de control como una señal periódica cuadrada que alterna entre una tensión suficiente para colocar al transistor en saturación (\textit{on}) y otra que lo lleva a corte (\textit{off}), en dicha señal se define el tiempo $t_{ON}$ como el tiempo que dura la señal que permite la conducción en el transistor en un periodo T. Aquí a su vez se define el ciclo de trabajo D (duty cicle) como $ D = \frac{t_{ON}}{T}$. 
 	
-	
-	\begin{table}[H]
+	\begin{figure}[H]
 		\centering
-		\caption{Especificaciones del regulador BUCK}
-		\label{tab:spec_buck}
-		\begin{tabular}{|c|c|}
-			\hline
-			Parámetro & Valor \\ \hline
-			Tensión de entrada $V_{IN}$ & \SI{12}{V} -- \SI{30}{V} \\ \hline
-			Tensión regulada $V_{REG}$ & \SI{9.5}{V} nominal \\ \hline
-			Corriente de salida $I_{OUT}$ & \SI{100}{mA} -- \SI{1.5}{A} \\ \hline
-			Eficiencia $\eta$ & 85\% -- 95\% \\ \hline
-			Frecuencia de conmutación $f_{sw}$ & \SI{120}{kHz} -- \SI{140}{kHz} \\ \hline
-		\end{tabular}
-	\end{table}
+		\includegraphics[width=1\linewidth]{../../../../vcontrol}
+		\caption{ Señal de control y señal conmutada lograda en el circuito buck.}
+		\label{fig:vcontrol}
+		\end{figure}
+
+	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta el transistor, el diodo y el inductor, pero con una tensión cercana a la tensión de alimentación. Tal como se ve en la figura \ref{fig:vcontrol}.
+
+	
+	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer estimación de D. 
 	
 	
 	

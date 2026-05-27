@@ -2,3 +2,4 @@
 *.op.raw
 *.net
 
+.history/
