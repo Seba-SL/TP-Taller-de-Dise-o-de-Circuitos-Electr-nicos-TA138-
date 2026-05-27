@@ -860,6 +860,418 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:MBR735"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MBR735"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-220-2_Vertical"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.onsemi.com/pub_link/Collateral/MBR735-D.PDF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "35V 7.5A Schottky Barrier Rectifier Diode, TO-220"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO?220*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MBR735_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MBR735_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Driver_FET:IR2111"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 1.27 13.335 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "IR2111"
+				(at 1.27 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.infineon.com/dgdl/ir2111.pdf?fileId=5546d462533600a4015355c810e51682"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Half-Bridge Driver, 600V, 250/500mA, PDIP-8/SOIC-8"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Gate Driver"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "IR2111_0_1"
+				(rectangle
+					(start -5.08 -10.16)
+					(end 5.08 10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "IR2111_1_1"
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 2.54)
+					(name "COM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 -7.62 180)
+					(length 2.54)
+					(name "LO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 7.62 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 180)
+					(length 2.54)
+					(name "VS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 5.08 180)
+					(length 2.54)
+					(name "HO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 7.62 180)
+					(length 2.54)
+					(name "VB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Reference_Voltage:TL431D"
 			(pin_numbers
 				(hide yes)
@@ -1834,6 +2246,18 @@
 		(uuid "774332e0-690d-4322-8155-09168ad94cdf")
 	)
 	(rectangle
+		(start 194.31 13.97)
+		(end 278.13 67.31)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "eab8b918-389e-4123-8423-ae391ccd2556")
+	)
+	(rectangle
 		(start 153.67 13.97)
 		(end 193.04 67.31)
 		(stroke
@@ -1865,6 +2289,16 @@
 		)
 		(uuid "75cf694c-313e-4cd2-ad3c-d4e4eb4a772f")
 	)
+	(text "Gate Driver\n"
+		(exclude_from_sim no)
+		(at 207.518 18.288 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "a27973dd-0e81-4943-8792-8c41648de6e2")
+	)
 	(text "Muestreo\n"
 		(exclude_from_sim no)
 		(at 164.338 18.034 0)
@@ -1874,6 +2308,12 @@
 			)
 		)
 		(uuid "f14a99be-498b-4580-a5b3-a3ec1c825f52")
+	)
+	(junction
+		(at 264.16 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0bb25e98-739d-4565-9387-c13f20c052a1")
 	)
 	(junction
 		(at 57.15 38.1)
@@ -1930,6 +2370,12 @@
 		(uuid "9113c1d4-9679-4da1-b7d6-57238986a0fb")
 	)
 	(junction
+		(at 233.68 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "92a36561-0876-47e8-a6e3-d838ba03db85")
+	)
+	(junction
 		(at 33.02 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1946,6 +2392,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "af31d7db-f2cb-4090-ad25-93dbf2b7fb95")
+	)
+	(junction
+		(at 254 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bf880202-b3e2-42f6-b37c-7b01ca1f2808")
 	)
 	(junction
 		(at 100.33 30.48)
@@ -2008,6 +2460,16 @@
 			(type default)
 		)
 		(uuid "19a930bf-d78d-4e32-bfd7-117a246151b1")
+	)
+	(wire
+		(pts
+			(xy 217.17 45.72) (xy 226.06 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20457d77-8a33-4d26-8c75-79ac370c7fc6")
 	)
 	(wire
 		(pts
@@ -2111,6 +2573,26 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 26.67) (xy 233.68 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5881a620-1a40-4889-8481-f533e0e1f8c6")
+	)
+	(wire
+		(pts
+			(xy 241.3 38.1) (xy 254 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59568ed1-6d6e-470d-bc79-01d519c920f0")
+	)
+	(wire
+		(pts
 			(xy 176.53 36.83) (xy 176.53 39.37)
 		)
 		(stroke
@@ -2118,6 +2600,16 @@
 			(type default)
 		)
 		(uuid "5bc070f5-00bc-4f1f-8938-c71c70ff301d")
+	)
+	(wire
+		(pts
+			(xy 254 26.67) (xy 264.16 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ce77111-9e97-4467-8aab-97dac8ac5767")
 	)
 	(wire
 		(pts
@@ -2241,6 +2733,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 21.59) (xy 233.68 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a61416bc-b1c9-4617-8894-d287622ab404")
+	)
+	(wire
+		(pts
 			(xy 80.01 41.91) (xy 80.01 30.48)
 		)
 		(stroke
@@ -2258,6 +2760,16 @@
 			(type default)
 		)
 		(uuid "b4d8f569-3c2e-4e0d-bcda-dd9bc8851f89")
+	)
+	(wire
+		(pts
+			(xy 264.16 50.8) (xy 264.16 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7be871b-e410-4f7c-8d13-6d5f6d22848e")
 	)
 	(wire
 		(pts
@@ -2341,6 +2853,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 26.67) (xy 242.57 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddfb87b5-2b61-4cc4-a833-2f2cd6fc0922")
+	)
+	(wire
+		(pts
 			(xy 66.04 46.99) (xy 72.39 46.99)
 		)
 		(stroke
@@ -2348,6 +2870,26 @@
 			(type default)
 		)
 		(uuid "e1294160-fd62-461b-9ba6-f95f0fa729e9")
+	)
+	(wire
+		(pts
+			(xy 264.16 27.94) (xy 264.16 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e139a75d-5fa3-4943-a538-47891fe07da7")
+	)
+	(wire
+		(pts
+			(xy 254 38.1) (xy 254 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1c59769-3e36-4385-88d4-e62dc275e7ec")
 	)
 	(wire
 		(pts
@@ -2371,6 +2913,26 @@
 	)
 	(wire
 		(pts
+			(xy 264.16 50.8) (xy 270.51 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee072613-1f3c-4365-9d92-80a35833b469")
+	)
+	(wire
+		(pts
+			(xy 254 26.67) (xy 250.19 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee8a70a1-230a-4d90-b18f-16a71e823199")
+	)
+	(wire
+		(pts
 			(xy 52.07 30.48) (xy 44.45 30.48)
 		)
 		(stroke
@@ -2378,6 +2940,36 @@
 			(type default)
 		)
 		(uuid "f0f91d60-c100-49aa-b951-f6fd2a90e40a")
+	)
+	(wire
+		(pts
+			(xy 241.3 50.8) (xy 264.16 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1874ddd-2139-4f6e-9106-e80099641b41")
+	)
+	(label "PWM"
+		(at 217.17 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "32118d6b-2d1d-4809-9738-b2220129f2c2")
+	)
+	(label "VEE"
+		(at 270.51 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "589518ee-4ec8-46c5-9fec-8004646f5523")
 	)
 	(label "Vo"
 		(at 176.53 29.21 180)
@@ -2388,6 +2980,16 @@
 			(justify right bottom)
 		)
 		(uuid "7a63513a-48cb-4c35-bc20-01b0ca78649f")
+	)
+	(label "Vctrl_L"
+		(at 241.3 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8ec86d46-a56c-4161-9cdc-edada6abe197")
 	)
 	(label "VEE"
 		(at 34.29 30.48 0)
@@ -2429,6 +3031,16 @@
 		)
 		(uuid "b699eb2e-b3f8-4446-b925-102e8e002770")
 	)
+	(label "VEE"
+		(at 233.68 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b76e3f6b-fb56-4018-b5be-2359a2357cfe")
+	)
 	(label "Vo"
 		(at 115.57 30.48 0)
 		(effects
@@ -2438,6 +3050,16 @@
 			(justify left bottom)
 		)
 		(uuid "baec49a5-956d-4b88-b90f-f4c85d169a12")
+	)
+	(label "Vctrl_H"
+		(at 241.3 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc09f02c-9c63-4c42-8aa6-905430226276")
 	)
 	(label "VEE"
 		(at 39.37 73.66 0)
@@ -2724,6 +3346,189 @@
 			(project "Buck"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Driver_FET:IR2111")
+		(at 233.68 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c4b1698-fc63-42c8-94c5-02d2023eb76d")
+		(property "Reference" "U2"
+			(at 235.8233 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IR2111"
+			(at 235.8233 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/ir2111.pdf?fileId=5546d462533600a4015355c810e51682"
+			(at 233.68 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Half-Bridge Driver, 600V, 250/500mA, PDIP-8/SOIC-8"
+			(at 233.68 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d0e9bc61-f75c-4002-a05d-3ef7903480a6")
+		)
+		(pin "6"
+			(uuid "16160ccc-7060-4302-9022-224c1c3d801a")
+		)
+		(pin "5"
+			(uuid "58c0caf3-4e68-4e65-bfb1-97cdde4e1791")
+		)
+		(pin "2"
+			(uuid "124e9e63-2fa2-4873-8533-fe334500e2db")
+		)
+		(pin "4"
+			(uuid "d18f398a-c9d4-48d8-bb5d-f7a94ac97ad2")
+		)
+		(pin "7"
+			(uuid "b1419504-8342-45a3-96c8-ba77e76ce183")
+		)
+		(pin "3"
+			(uuid "b63f10d9-824d-441e-a71e-49a69014d877")
+		)
+		(pin "8"
+			(uuid "8b6ccf7f-e3e6-4da0-a332-749ec160033c")
+		)
+		(instances
+			(project "Buck"
+				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 264.16 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4fd23728-aa08-4a9d-8f7b-3c4b7dab5477")
+		(property "Reference" "C3"
+			(at 267.97 30.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10n"
+			(at 267.97 33.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 265.1252 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 264.16 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2c380c1b-66e3-489c-9b18-d4f077332ea9")
+		)
+		(pin "2"
+			(uuid "a870b074-d67d-4e65-94fa-3e47f57fbbf9")
+		)
+		(instances
+			(project "Buck"
+				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -3415,6 +4220,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:MBR735")
+		(at 246.38 26.67 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a84fa2f2-80d8-4b2f-89a8-410a63891c41")
+		(property "Reference" "D2"
+			(at 246.6975 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MBR735"
+			(at 246.6975 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-2_Vertical"
+			(at 246.38 22.225 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.onsemi.com/pub_link/Collateral/MBR735-D.PDF"
+			(at 246.38 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "35V 7.5A Schottky Barrier Rectifier Diode, TO-220"
+			(at 246.38 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "db7dd85f-3300-4df5-955b-a66b197321b3")
+		)
+		(pin "1"
+			(uuid "3e39a91e-c894-43c1-ae01-af3d418fd278")
+		)
+		(instances
+			(project "Buck"
+				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Reference_Voltage:TL431D")
 		(at 33.02 96.52 270)
 		(mirror x)
@@ -3911,6 +4796,84 @@
 			(project "Buck"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 233.68 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2271d4f-55ac-479a-aaf3-3b51e6564eea")
+		(property "Reference" "#PWR04"
+			(at 233.68 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 233.68 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 233.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "660f8d0c-a715-45ea-b378-be2061c2832c")
+		)
+		(instances
+			(project "Buck"
+				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
