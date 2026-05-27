@@ -1,6 +1,6 @@
 LTspice 24.1.5 for Windows
 Circuit: C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\pwm.net
-Start Time: Tue May 26 19:56:37 2026
+Start Time: Wed May 27 18:00:30 2026
 Options: gmin=1e-10  abstol=1e-10  reltol=0.003
 solver = Normal
 Maximum thread count: 12
@@ -29,73 +29,9 @@ vernier = 0.000976562
 vernier = 0.000488281
 Gmin = 6.72131
 Gmin = 0
-Gmin stepping failed
+Gmin stepping succeeded in finding the operating point.
 
-Starting source stepping with srcstepmethod=0
-Source Step = 3.0303%
-Source Step = 33.3333%
-Source Step = 40.767%
-Source Step = 40.8736%
-Source Step = 40.992%
-Source Step = 41.1103%
-Source Step = 41.2287%
-Source Step = 41.3471%
-vernier = 0.00585938
-Source Step = 41.5128%
-Source Step = 41.6903%
-Source Step = 41.8679%
-Source Step = 42.0455%
-Source Step = 42.223%
-vernier = 0.00878906
-Source Step = 42.4627%
-Source Step = 42.729%
-Source Step = 42.9954%
-Source Step = 43.2617%
-Source Step = 43.5281%
-vernier = 0.0131836
-Source Step = 43.8743%
-Source Step = 44.2738%
-Source Step = 44.6733%
-Source Step = 45.0728%
-Source Step = 45.4723%
-vernier = 0.0197754
-Source Step = 45.9717%
-Source Step = 46.5709%
-Source Step = 47.1702%
-Source Step = 47.7694%
-Source Step = 48.3687%
-vernier = 0.0296631
-Source Step = 49.0878%
-Source Step = 49.9867%
-Source Step = 50.8856%
-Source Step = 51.7844%
-Source Step = 52.6833%
-vernier = 0.0444946
-Source Step = 53.717%
-Source Step = 55.0654%
-Source Step = 56.4137%
-Source Step = 57.762%
-Source Step = 59.1103%
-vernier = 0.0667419
-Source Step = 60.5935%
-Source Step = 62.616%
-Source Step = 64.6384%
-Source Step = 66.6609%
-Source Step = 68.6834%
-vernier = 0.100113
-Source Step = 70.807%
-Source Step = 73.8407%
-Source Step = 76.8745%
-Source Step = 79.9082%
-Source Step = 82.9419%
-Source Step = 85.9756%
-vernier = 0.150169
-Source Step = 90.5262%
-Source Step = 95.0768%
-Source Step = 99.6274%
-Source stepping succeeded in finding the operating point.
-
-Total elapsed time: 0.960 seconds.
+Total elapsed time: 0.369 seconds.
 
 Files loaded:
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\pwm.net
@@ -104,5 +40,7 @@ C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\lm393.l
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\TL082.txt
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\lm358.txt
 C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\TL431.spi
-C:\Users\ramaz\AppData\Local\LTspice\lib\sub\ADI.lib
+C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\LM319.txt
+C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\irf3205.spi
+C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\Modelos\ir2111.lib
 
