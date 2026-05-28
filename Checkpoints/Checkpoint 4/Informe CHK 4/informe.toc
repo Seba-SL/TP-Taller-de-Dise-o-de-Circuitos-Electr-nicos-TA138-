@@ -4,7 +4,8 @@
 \contentsline {section}{\numberline {3}Desarrollo}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Especificaciones del Regulador BUCK}{2}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}Convertidor BUCK}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C$ , $C_E$ , }{3}{}%
+\contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}{3}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Transistores de conmutación}{3}{}%
 \contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{3}{}%
 \contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{3}{}%
 \contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{3}{}%

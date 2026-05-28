@@ -5975,7 +5975,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c4b1698-fc63-42c8-94c5-02d2023eb76d")
-		(property "Reference" "U2"
+		(property "Reference" "IR2111"
 			(at 234.5533 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6058,7 +6058,7 @@
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U2")
+					(reference "IR2111")
 					(unit 1)
 				)
 			)
@@ -6637,7 +6637,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "98e573ef-e830-4896-a244-b0ac298722f7")
-		(property "Reference" "Q3"
+		(property "Reference" "BC546"
 			(at 167.64 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6729,7 +6729,7 @@
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "Q3")
+					(reference "BC546")
 					(unit 1)
 				)
 			)
@@ -7177,7 +7177,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "abcac92a-31ff-404d-9455-02f32ad6dbe6")
-		(property "Reference" "U1"
+		(property "Reference" "LM319"
 			(at 234.95 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7275,7 +7275,7 @@
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U1")
+					(reference "LM319")
 					(unit 1)
 				)
 			)
@@ -7371,7 +7371,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b1406f32-cfd6-4e59-96a9-0390960af8f2")
-		(property "Reference" "U3"
+		(property "Reference" "TL082"
 			(at 109.22 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7451,7 +7451,7 @@
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U3")
+					(reference "TL082")
 					(unit 1)
 				)
 			)
@@ -7788,7 +7788,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b9a87b2c-e719-4100-9f9a-f951701d9324")
-		(property "Reference" "U5"
+		(property "Reference" "TL431"
 			(at 148.59 81.2799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7857,7 +7857,7 @@
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U5")
+					(reference "TL431")
 					(unit 1)
 				)
 			)
@@ -8091,28 +8091,28 @@
 			)
 		)
 		(pin "4"
-			(uuid "ad3ce3e7-4a86-441d-b194-b707698966a7")
+			(uuid "ad3ce3e7-4a86-441d-b194-b707698966a8")
 		)
 		(pin "7"
-			(uuid "9e6ffa8f-9400-4a7b-972a-2ba4493f7e33")
+			(uuid "9e6ffa8f-9400-4a7b-972a-2ba4493f7e34")
 		)
 		(pin "6"
-			(uuid "03883836-2f55-45d8-aea6-b9cac2aa9b6e")
+			(uuid "03883836-2f55-45d8-aea6-b9cac2aa9b6f")
 		)
 		(pin "5"
-			(uuid "63056995-1b26-4ce7-889b-113e6d95641f")
+			(uuid "63056995-1b26-4ce7-889b-113e6d956420")
 		)
 		(pin "3"
-			(uuid "f96efaae-2365-4ae7-a0b8-0c0f351ce80d")
+			(uuid "f96efaae-2365-4ae7-a0b8-0c0f351ce80e")
 		)
 		(pin "2"
-			(uuid "3eeae578-c449-46ef-a1cf-4ed271a7c69e")
+			(uuid "3eeae578-c449-46ef-a1cf-4ed271a7c69f")
 		)
 		(pin "1"
-			(uuid "9a08f0a2-ae27-4ae4-a710-bfba220830ab")
+			(uuid "9a08f0a2-ae27-4ae4-a710-bfba220830ac")
 		)
 		(pin "8"
-			(uuid "696b2f69-2452-47ce-8730-ad7b0bc18d8f")
+			(uuid "696b2f69-2452-47ce-8730-ad7b0bc18d90")
 		)
 		(instances
 			(project "pwm"
@@ -8353,46 +8353,46 @@
 			)
 		)
 		(pin "8"
-			(uuid "d4e75160-3c73-46ec-ac51-fe1eb1bdcca9")
+			(uuid "d4e75160-3c73-46ec-ac51-fe1eb1bdccaa")
 		)
 		(pin "2"
-			(uuid "4267f117-c025-4c11-aeac-d7502a0ffb0d")
+			(uuid "4267f117-c025-4c11-aeac-d7502a0ffb0e")
 		)
 		(pin "14"
-			(uuid "760f67c2-bceb-42d5-9d67-c30543708754")
+			(uuid "760f67c2-bceb-42d5-9d67-c30543708755")
 		)
 		(pin "4"
-			(uuid "5105de39-d037-493d-9aa5-a147df1d1514")
+			(uuid "5105de39-d037-493d-9aa5-a147df1d1515")
 		)
 		(pin "5"
-			(uuid "b336be6e-5796-45e7-87c2-4007541da58c")
+			(uuid "b336be6e-5796-45e7-87c2-4007541da58d")
 		)
 		(pin "12"
-			(uuid "b6f2836d-2636-444b-9cbf-9610c14d48b6")
+			(uuid "b6f2836d-2636-444b-9cbf-9610c14d48b7")
 		)
 		(pin "7"
-			(uuid "300b19d9-57c9-40d5-954e-ad988dd164ff")
+			(uuid "300b19d9-57c9-40d5-954e-ad988dd16500")
 		)
 		(pin "3"
-			(uuid "acd7c3f8-7e9b-4a88-9b80-6ed77e0aaf98")
+			(uuid "acd7c3f8-7e9b-4a88-9b80-6ed77e0aaf99")
 		)
 		(pin "1"
-			(uuid "58303226-77a3-4dc6-bd1b-6f6f1aa08066")
+			(uuid "58303226-77a3-4dc6-bd1b-6f6f1aa08067")
 		)
 		(pin "13"
-			(uuid "0121cbdc-68b3-4f5f-8f32-413794530eb0")
+			(uuid "0121cbdc-68b3-4f5f-8f32-413794530eb1")
 		)
 		(pin "11"
-			(uuid "e79d23ed-799e-44af-8ea9-66a444c23781")
+			(uuid "e79d23ed-799e-44af-8ea9-66a444c23782")
 		)
 		(pin "10"
-			(uuid "1a5f68d7-ad06-45fc-84e9-e77e07bd7721")
+			(uuid "1a5f68d7-ad06-45fc-84e9-e77e07bd7722")
 		)
 		(pin "6"
-			(uuid "412324ec-25b3-43e2-bcef-063fdaa256a8")
+			(uuid "412324ec-25b3-43e2-bcef-063fdaa256a9")
 		)
 		(pin "9"
-			(uuid "c1897f1c-d470-47bb-ac8c-0050fb4cf650")
+			(uuid "c1897f1c-d470-47bb-ac8c-0050fb4cf651")
 		)
 		(instances
 			(project "pwm"
@@ -8815,7 +8815,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e028c84d-684b-49f8-b600-85cf231d267d")
-		(property "Reference" "U1"
+		(property "Reference" "LM319"
 			(at 156.21 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8869,51 +8869,51 @@
 			)
 		)
 		(pin "8"
-			(uuid "d4e75160-3c73-46ec-ac51-fe1eb1bdcca9")
+			(uuid "d4e75160-3c73-46ec-ac51-fe1eb1bdccab")
 		)
 		(pin "2"
-			(uuid "4267f117-c025-4c11-aeac-d7502a0ffb0d")
+			(uuid "4267f117-c025-4c11-aeac-d7502a0ffb0f")
 		)
 		(pin "14"
-			(uuid "760f67c2-bceb-42d5-9d67-c30543708754")
+			(uuid "760f67c2-bceb-42d5-9d67-c30543708756")
 		)
 		(pin "4"
-			(uuid "5105de39-d037-493d-9aa5-a147df1d1514")
+			(uuid "5105de39-d037-493d-9aa5-a147df1d1516")
 		)
 		(pin "5"
-			(uuid "b336be6e-5796-45e7-87c2-4007541da58c")
+			(uuid "b336be6e-5796-45e7-87c2-4007541da58e")
 		)
 		(pin "12"
-			(uuid "b6f2836d-2636-444b-9cbf-9610c14d48b6")
+			(uuid "b6f2836d-2636-444b-9cbf-9610c14d48b8")
 		)
 		(pin "7"
-			(uuid "300b19d9-57c9-40d5-954e-ad988dd164ff")
+			(uuid "300b19d9-57c9-40d5-954e-ad988dd16501")
 		)
 		(pin "3"
-			(uuid "acd7c3f8-7e9b-4a88-9b80-6ed77e0aaf98")
+			(uuid "acd7c3f8-7e9b-4a88-9b80-6ed77e0aaf9a")
 		)
 		(pin "1"
-			(uuid "58303226-77a3-4dc6-bd1b-6f6f1aa08066")
+			(uuid "58303226-77a3-4dc6-bd1b-6f6f1aa08068")
 		)
 		(pin "13"
-			(uuid "0121cbdc-68b3-4f5f-8f32-413794530eb0")
+			(uuid "0121cbdc-68b3-4f5f-8f32-413794530eb2")
 		)
 		(pin "11"
-			(uuid "e79d23ed-799e-44af-8ea9-66a444c23781")
+			(uuid "e79d23ed-799e-44af-8ea9-66a444c23783")
 		)
 		(pin "10"
-			(uuid "1a5f68d7-ad06-45fc-84e9-e77e07bd7721")
+			(uuid "1a5f68d7-ad06-45fc-84e9-e77e07bd7723")
 		)
 		(pin "6"
-			(uuid "412324ec-25b3-43e2-bcef-063fdaa256a8")
+			(uuid "412324ec-25b3-43e2-bcef-063fdaa256aa")
 		)
 		(pin "9"
-			(uuid "c1897f1c-d470-47bb-ac8c-0050fb4cf650")
+			(uuid "c1897f1c-d470-47bb-ac8c-0050fb4cf652")
 		)
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U1")
+					(reference "LM319")
 					(unit 2)
 				)
 			)
@@ -9089,7 +9089,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f583c346-c3ee-42ac-bf45-bdb7c909a926")
-		(property "Reference" "U3"
+		(property "Reference" "TL082"
 			(at 199.39 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9143,33 +9143,33 @@
 			)
 		)
 		(pin "4"
-			(uuid "ad3ce3e7-4a86-441d-b194-b707698966a7")
+			(uuid "ad3ce3e7-4a86-441d-b194-b707698966a9")
 		)
 		(pin "7"
-			(uuid "9e6ffa8f-9400-4a7b-972a-2ba4493f7e33")
+			(uuid "9e6ffa8f-9400-4a7b-972a-2ba4493f7e35")
 		)
 		(pin "6"
-			(uuid "03883836-2f55-45d8-aea6-b9cac2aa9b6e")
+			(uuid "03883836-2f55-45d8-aea6-b9cac2aa9b70")
 		)
 		(pin "5"
-			(uuid "63056995-1b26-4ce7-889b-113e6d95641f")
+			(uuid "63056995-1b26-4ce7-889b-113e6d956421")
 		)
 		(pin "3"
-			(uuid "f96efaae-2365-4ae7-a0b8-0c0f351ce80d")
+			(uuid "f96efaae-2365-4ae7-a0b8-0c0f351ce80f")
 		)
 		(pin "2"
-			(uuid "3eeae578-c449-46ef-a1cf-4ed271a7c69e")
+			(uuid "3eeae578-c449-46ef-a1cf-4ed271a7c6a0")
 		)
 		(pin "1"
-			(uuid "9a08f0a2-ae27-4ae4-a710-bfba220830ab")
+			(uuid "9a08f0a2-ae27-4ae4-a710-bfba220830ad")
 		)
 		(pin "8"
-			(uuid "696b2f69-2452-47ce-8730-ad7b0bc18d8f")
+			(uuid "696b2f69-2452-47ce-8730-ad7b0bc18d91")
 		)
 		(instances
 			(project "pwm"
 				(path "/c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
-					(reference "U3")
+					(reference "TL082")
 					(unit 2)
 				)
 			)
