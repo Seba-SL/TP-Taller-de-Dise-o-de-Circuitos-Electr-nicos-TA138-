@@ -7,15 +7,15 @@
 \contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Inductor $L$ y capacitor $C_S$}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Transistores de conmutación}{4}{}%
-\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{4}{}%
-\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{5}{}%
 \contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{5}{}%
 \contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{5}{}%
-\contentsline {subsection}{\numberline {3.7}Diseño PCB Completo}{5}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{7}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{8}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{8}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{8}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{9}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{9}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{10}{}%
+\contentsline {subsection}{\numberline {3.7}Diseño PCB Completo}{6}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{8}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{9}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{9}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{9}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{10}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{10}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{11}{}%
