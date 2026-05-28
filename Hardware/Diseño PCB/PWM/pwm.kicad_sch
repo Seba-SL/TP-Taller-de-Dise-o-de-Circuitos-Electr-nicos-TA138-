@@ -8503,7 +8503,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_THT:L_Axial_L20.0mm_D8.0mm_P25.40mm_Horizontal"
 			(at 100.33 24.13 0)
 			(hide yes)
 			(show_name no)
