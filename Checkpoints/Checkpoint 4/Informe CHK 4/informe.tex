@@ -236,7 +236,7 @@ citestyle=apa
 		
 	\end{figure}
 
-	Entendiendo la señal de control como una señal periódica cuadrada que alterna entre una tensión suficiente para colocar a los transistores en saturación (\textit{on}) y otra que lo lleva a corte (\textit{off}), en dicha señal se define el tiempo $t_{ON}$ como el tiempo que dura la señal que permite la conducción en el transistor en un periodo T. Aquí a su vez se define el ciclo de trabajo D (duty cicle) como $ D = \frac{t_{ON}}{T}$. 
+	Entendiendo la señal de control como una señal periódica cuadrada que alterna entre una tensión suficiente para colocar a los transistores en saturación (\textit{on}) y otra que los lleva a corte (\textit{off}), en dicha señal se define el tiempo $t_{ON}$ como el tiempo que dura la señal que permite la conducción en el transistor en un periodo T. Aquí a su vez se define el ciclo de trabajo D (duty cicle) como $ D = \frac{t_{ON}}{T}$. 
 	
 	\begin{figure}[H]
 		\centering
@@ -245,18 +245,23 @@ citestyle=apa
 		\label{fig:vcontrol}
 		\end{figure}
 
-	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta el transistor, el diodo y el inductor, pero con una tensión cercana a la tensión de alimentación. Tal como se ve en la figura \ref{fig:vcontrol}.
+	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta los transistores y el inductor, pero con una tensión cercana a la tensión de alimentación. Tal como se ve en la figura \ref{fig:vcontrol}.
 
 	
-	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer estimación de D.
+	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer aproximación de D.
 	
 	
 	\subsection{Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}
+	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
 	El modelo elegido para la aplicación es el transistor N-MOS \textbf{IRF3205}, debido a su costo moderado
+	
+	
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	\subsection{Implementación de circuito PWM (PCB)}
+	
+	Se implementa el circuito en placa impresa, mediante
 		
 	\begin{figure}[H]
 		\centering
@@ -286,6 +291,92 @@ citestyle=apa
 		\caption{}
 		\label{fig:pcbfrente}
 	\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Estadísticas de la PCB}
+	\label{tab:estadisticas_pcb}
+		
+		\begin{tabular}{|l|c|}
+		\hline
+		\textbf{Parámetro} & \textbf{Valor} \\
+		\hline
+		
+		\multicolumn{2}{|c|}{\textbf{Componentes}} \\
+		\hline
+		THT & 38 \\
+		SMD & 0 \\
+		No especificado & 0 \\
+		Total de componentes & 38 \\
+		\hline
+		
+		\multicolumn{2}{|c|}{\textbf{Pads}} \\
+		\hline
+		Agujeros pasantes & 93 \\
+		SMD & 0 \\
+		Conector & 5 \\
+		Total de pads & 93 \\
+		\hline
+		
+		\multicolumn{2}{|c|}{\textbf{Placa}} \\
+		\hline
+		Dimensiones & $100 \times 80 \,\mathrm{mm}$ \\
+		Área & $8000 \,\mathrm{mm}^2$ \\
+		Área de cobre frontal & $467.218 \,\mathrm{mm}^2$ \\
+		Área de cobre trasera & $6481.32 \,\mathrm{mm}^2$ \\
+		Margen mínimo de pista & $1.0 \,\mathrm{mm}$ \\
+		Ancho mínimo de pista & $0.2 \,\mathrm{mm}$ \\
+		Diámetro mínimo de taladro & $0.7 \,\mathrm{mm}$ \\
+		Espesor de la placa & $1.6 \,\mathrm{mm}$ \\
+		Área de huellas frontal & $1714.185 \,\mathrm{mm}^2$ \\
+		Densidad de huellas frontal & $21.43\%$ \\
+		Área de huellas posterior & $313.202 \,\mathrm{mm}^2$ \\
+		Densidad de huellas posterior & $3.92\%$ \\
+		\hline
+	\end{tabular}
+	\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\caption{Presupuesto estimado de componentes}
+	\label{tab:presupuesto_componentes}
+	
+	\begin{tabular}{|c|l|c|c|}
+		\hline
+		\textbf{Ítem} & \textbf{Componente} & \textbf{Cantidad} & \textbf{Observaciones} \\
+		\hline
+		
+		1  & BC546                          & 1  & Transistor NPN TO-92 \\
+		2  & Capacitor electrolítico 100\,uF & 2  & Radial \\
+		3  & Capacitor 10\,uF               & 1  & Cerámico/disco \\
+		4  & Capacitor 1\,nF                & 2  & Cerámico \\
+		5  & Capacitor 10\,nF               & 1  & Cerámico \\
+		6  & LED indicador                  & 1  & 4\,mm \\
+		7  & Diodo Schottky MBR735          & 1  & TO-220 \\
+		8  & Pin header 1x1                 & 4  & Señales/GND \\
+		9  & Bornera 2 vías                 & 2  & Entrada y salida \\
+		10 & Inductor 50\,uH                & 1  & Potencia \\
+		11 & LM319                          & 2  & Comparador DIP-8 \\
+		12 & IRF540N                        & 2  & MOSFET canal N \\
+		13 & Resistencia 10\,k$\Omega$      & 3  & 1/4 W \\
+		14 & Resistencia 1\,k$\Omega$       & 4  & 1/4 W \\
+		15 & Resistencia 33\,k$\Omega$      & 1  & 1/4 W \\
+		16 & Resistencia 100\,k$\Omega$     & 3  & 1/4 W \\
+		17 & Resistencia 5.6\,k$\Omega$     & 1  & 1/4 W \\
+		18 & Resistencia 22\,k$\Omega$      & 1  & 1/4 W \\
+		19 & Resistencia 100\,$\Omega$      & 1  & 1/4 W \\
+		20 & Resistencia 30\,k$\Omega$      & 1  & 1/4 W \\
+		21 & TL082                          & 2  & Amplificador operacional DIP-8 \\
+		22 & TL431                          & 1  & Referencia programable \\
+		23 & IR2111                         & 1  & Driver half-bridge \\
+		\hline
+		
+		\multicolumn{2}{|r|}{\textbf{Total de componentes}} & \textbf{38} & \\
+		\hline
+		
+	\end{tabular}
+\end{table}
 	
 	\section{Conclusiones}
 	
