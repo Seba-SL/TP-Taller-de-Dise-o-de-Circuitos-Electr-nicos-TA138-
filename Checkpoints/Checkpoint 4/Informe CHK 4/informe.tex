@@ -245,13 +245,85 @@ citestyle=apa
 		\label{fig:vcontrol}
 		\end{figure}
 
-	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta los transistores y el inductor, pero con una tensión cercana a la tensión de alimentación. Tal como se ve en la figura \ref{fig:vcontrol}.
+	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta los transistores y el inductor, pero con una tensión cercana a la tensión de alimentación, dicha señal se define como señal de conmutación o \textit{switching} $V_s$. Tal como se ve en la figura \ref{fig:vcontrol}.
 
 	
-	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer aproximación de D.
+	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer aproximación de D. Aproximando la salida del regulador como la componente continua de la señal de conmutación, idealizando el filtro LC.
+	
+	
+	\begin{equation}
+		V_o \approx V_{s_{\text{prom}}}
+		=
+		\frac{1}{T}\int_0^T v_s(t)\,dt
+	\end{equation}
+	
+	Considerando que durante el intervalo de conducción del transistor ($t_{on}$) la tensión aplicada al inductor es aproximadamente $(V_E - V_{SAT})$, y durante el intervalo restante ($T-t_{on}$) el diodo conduce imponiendo una tensión aproximada $-V_D$, la señal de conmutación puede modelarse como:
+	
+	\begin{equation}
+		v_s(t)=
+		\begin{cases}
+			V_E - V_{SAT}, & 0<t<t_{on} \\
+			-V_D, & t_{on}<t<T
+		\end{cases}
+	\end{equation}
+	
+	Por lo tanto, el valor promedio resulta:
+	
+	\begin{equation}
+		V_o \approx
+		\frac{1}{T}
+		\left[
+		\int_0^{t_{on}} (V_E - V_{SAT})\,dt
+		+
+		\int_{t_{on}}^T (-V_D)\,dt
+		\right]
+	\end{equation}
+	
+	Resolviendo las integrales:
+	
+	\begin{equation}
+		V_o \approx
+		\frac{1}{T}
+		\left[
+		(V_E - V_{SAT})t_{on}
+		-
+		V_D(T-t_{on})
+		\right]
+	\end{equation}
+	
+	Reordenando:
+	
+	\begin{equation}
+		V_o \approx
+		\frac{t_{on}}{T}(V_E - V_{SAT})
+		-
+		\frac{T-t_{on}}{T}V_D
+	\end{equation}
+	
+	Definiendo el ciclo de trabajo como:
+	
+	\begin{equation}
+		D = \frac{t_{on}}{T}
+	\end{equation}
+	
+	y teniendo en cuenta que:
+	
+	\begin{equation}
+		1-D = \frac{T-t_{on}}{T}
+	\end{equation}
+	
+	se obtiene finalmente:
+	
+	\begin{equation}
+		V_o \approx D(V_E - V_{SAT}) - (1-D)V_D
+	\end{equation}
 	
 	
 	\subsection{Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}
+	
+	\subsubsection{Inductor $L$ y capacitor $C_S$}
+	
+	
 	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
