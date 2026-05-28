@@ -6,11 +6,15 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Convertidor BUCK}{2}{}%
 \contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}{3}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Transistores de conmutación}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{3}{}%
-\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{3}{}%
-\contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{3}{}%
-\contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{3}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{3}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{4}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{4}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{4}{}%
+\contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{4}{}%
+\contentsline {subsection}{\numberline {3.7}Diseño PCB Completo}{5}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{5}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{6}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{6}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{6}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{7}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{7}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{8}{}%

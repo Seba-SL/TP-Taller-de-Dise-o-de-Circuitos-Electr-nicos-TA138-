@@ -257,9 +257,35 @@ citestyle=apa
 	El modelo elegido para la aplicación es el transistor N-MOS \textbf{IRF3205}, debido a su costo moderado
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	\subsection{Implementación de circuito PWM (PCB)}
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/pwm_pcb}
+		\caption{}
+		\label{fig:pwmpcb}
+	\end{figure}
+	
+
+		
 	\subsection{Características físicas del inductor diseñado}
 	\subsection{Diseño PCB de la buck en lazo abierto}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/buck_solo_pcb}
+		\caption{}
+		\label{fig:bucksolopcb}
+	\end{figure}
+	
+	
+	\subsection{Diseño PCB Completo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/PCB_frente}
+		\caption{}
+		\label{fig:pcbfrente}
+	\end{figure}
 	
 	\section{Conclusiones}
 	
@@ -278,6 +304,21 @@ citestyle=apa
 	
 	
 	\subsection{Medición: Variaciones en tensión de referencia}
-	
+\let\clearpage\relax
+
+\includepdf[
+pages=1,
+angle=90,
+fitpaper=true,
+pagecommand={\section{Apéndice II: PCB}\label{sec:apendice_PCB}\subsection{Esquematico.}}
+]{img/buck/esquematico_buck.pdf}
+
+
+
+\includepdf[
+pages=1,
+pagecommand={\subsection{Pistas}}
+]{img/buck/pistas_buck.pdf}
+
 
 \end{document}
