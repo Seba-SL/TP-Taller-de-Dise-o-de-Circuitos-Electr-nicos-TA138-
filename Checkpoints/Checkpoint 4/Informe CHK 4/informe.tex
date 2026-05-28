@@ -108,7 +108,7 @@ citestyle=apa
 		%{\scshape\Huge Trabajo Pr\'actico \par}
 		{\scshape\Huge Diseño de Fuente de Alimentación \par}
 		\vspace{2cm}
-		{\scshape\Large Checkpoint 4: Diseño y Validación de Conversor \textit{Buck} en Lazo Abierto\par}
+		{\scshape\Large Checkpoint 4: Diseño y Validación de Conversor \textit{Buck} a Lazo Abierto\par}
 		
 		
 		\vspace{2cm}
@@ -174,13 +174,14 @@ citestyle=apa
 	La frecuencia de conmutación seleccionada para el convertidor será del rango de 
 	\SI{120}{kHz} hasta \SI{140}{kHz}.
 	
+	\renewcommand{\arraystretch}{1.3}
 		\begin{table}[H]
 		\centering
 		\caption{Especificaciones del regulador BUCK}
 		\label{tab:spec_buck}
 		\begin{tabular}{|c|c|}
 			\hline
-			Parámetro & Valor \\ \hline
+			Parámetro & Valor \\  \hline \hline
 			Tensión de entrada $V_{IN}$ & \SI{12}{V} -- \SI{30}{V} \\ \hline
 			Tensión regulada $V_{REG}$ & \SI{9.5}{V} nominal \\ \hline
 			Corriente de salida $I_{OUT}$ & \SI{750}{mA} -- \SI{1.5}{A} \\ \hline
@@ -191,41 +192,51 @@ citestyle=apa
 	
 	\subsubsection{Convertidor BUCK}
 	
-	En términos generales, un convertidor \textit{buck} se alimenta de una señal de entrada a a regular, por medio de un transistor en conmutación y un diodo de conmutación rápida generan una señal cuadrada que tiene como valor medio la tensión objetivo, la señal cuadrada generada es filtrada por un filtro LC, obteniendo de esta forma una tensión regulada con riple cuadrático. En la figura \ref{fig:buck_schematic}, se observa un circuito \textit{buck} inicial de diseño.
+	En términos generales, un convertidor \textit{buck} se alimenta de una señal de entrada a a regular, por medio de dos transistores en conmutación, que generan una señal cuadrada que tiene como valor medio la tensión objetivo, la señal cuadrada generada es filtrada por un filtro LC, obteniendo de esta forma una tensión regulada con riple cuadrático. En la figura \ref{fig:buck_schematic}, se observa un circuito \textit{buck} inicial de diseño.
 	
 	\begin{figure}[H]
 		\centering
 		\resizebox{0.9\textwidth}{!}{
-			\begin{tikzpicture}[transform shape]
-				% Paths, nodes and wires:
-				\node[pigfete, rotate=90](N1) at (32.27, 5.5){} node[anchor=south] at (N1.text){$Q_s$};
-				\draw (27.5, 5.25) to[american voltage source, l={$V_E$}] (27.5, 3);
-				\draw (30, 5.5) to[capacitor, /tikz/circuitikz/bipoles/length=1.08cm, l={$C_E$}] (30, 3);
-				\draw (34.75, 3) to[full Schottky diode, /tikz/circuitikz/bipoles/length=0.756cm, l_={$D_{Schottky}$}] (34.75, 5.25);
-				\draw (38.5, 5.5) to[capacitor, /tikz/circuitikz/bipoles/length=1.08cm, l={$C$}] (38.5, 3);
-				\draw (35.25, 5.5) to[cute inductor, l={$L$}] (37.75, 5.5);
-				\draw (40.75, 5.5) to[american resistor, /tikz/circuitikz/bipoles/length=1.16cm, l={$R_{min}$}] (40.75, 2.75);
-				\draw (40.75, 2.75) |- (27.5, 2.5) -| (27.5, 3);
-				\draw (30, 3) -| (30, 2.5);
-				\draw (34.75, 3) -| (34.75, 2.5);
-				\draw (38.5, 3) -| (38.5, 2.5);
-				\draw (40.75, 5.5) |- (38.5, 5.5);
-				\draw (38.5, 5.5) -- (37.75, 5.5);
-				\draw (35.25, 5.5) |- (33.04, 5.5);
-				\draw (34.75, 5.25) -| (34.75, 5.5);
-				\draw (30, 5.5) -- (31.5, 5.5);
-				\draw (30, 5.5) |- (27.5, 5.5) -- (27.5, 5.25);
-				\draw (32, 4.5) -| (32, 3.75);
-				\node[circ] at (32, 3.75){};
-				\node[shape=rectangle, minimum width=2.715cm, minimum height=1.215cm] at (33.25, 3.625){} node[anchor=north west, align=left, text width=2.327cm, inner sep=6pt] at (31.875, 4.25){$V_{control}$};
-			\end{tikzpicture}
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\node[nigfetd, rotate=90](N1) at (11.77, 11){} node[anchor=south] at (N1.text){$Q_1$};
+	\node[nigfetd](N2) at (14, 9.27){} node[anchor=west] at (N2.text){$Q_2$};
+	\draw (18, 11) to[capacitor, l={$C_S$}] (18, 8);
+	\draw (20, 11) to[american resistor, l={$R_S$}] (20, 8);
+	\draw (14, 11) -- (14, 10);
+	\draw (18, 8) |- (14, 8) -| (14, 8.46);
+	\draw (18, 11) -- (20, 11);
+	\draw (20, 8) -- (18, 8);
+	\draw (12.039, 10.02) |- (11, 9.5);
+	\draw (14, 8.5) -| (14, 8.46);
+	\draw (13.02, 9) -| (11, 9);
+	\draw (9, 8) to[capacitor, l={$C_E$}] (9, 11);
+	\draw (9, 8) -- (14, 8);
+	\draw (9, 11) -- (11, 11);
+	\draw (12.54, 11) -- (14, 11);
+	\draw (14, 11) to[cute inductor, l={$L$}] (18, 11);
+	\draw (6, 11) to[battery, l={$V_E$}] (6, 8);
+	\node[circ] at (9, 11){};
+	\node[circ] at (9, 8){};
+	\node[circ](N3) at (11, 9.5){} node[anchor=east] at (N3.text){$H_{ctrl}$};
+	\node[circ](N4) at (11, 9){} node[anchor=east] at (N4.text){$L_{ctrl}$};
+	\node[circ] at (14, 8){};
+	\node[circ](N5) at (14, 11){} node[anchor=south] at (N5.text){$V_S$};
+	\node[circ] at (18, 11){};
+	\node[circ] at (18, 8){};
+	\node[circ](N6) at (20, 11){} node[anchor=south] at (N6.text){$V_o$};
+	\node[flowarrow] at (21.25, 11){};
+	\draw (20, 11) -- (21, 11);
+	\draw (9, 11) -- (6, 11);
+	\draw (9, 8) |- (6, 8);
+\end{tikzpicture}
 		}
 		\caption{Circuito \textit{buck}.}
 		\label{fig:buck_schematic}
 		
 	\end{figure}
 
-	Entendiendo la señal de control como una señal periódica cuadrada que alterna entre una tensión suficiente para colocar al transistor en saturación (\textit{on}) y otra que lo lleva a corte (\textit{off}), en dicha señal se define el tiempo $t_{ON}$ como el tiempo que dura la señal que permite la conducción en el transistor en un periodo T. Aquí a su vez se define el ciclo de trabajo D (duty cicle) como $ D = \frac{t_{ON}}{T}$. 
+	Entendiendo la señal de control como una señal periódica cuadrada que alterna entre una tensión suficiente para colocar a los transistores en saturación (\textit{on}) y otra que lo lleva a corte (\textit{off}), en dicha señal se define el tiempo $t_{ON}$ como el tiempo que dura la señal que permite la conducción en el transistor en un periodo T. Aquí a su vez se define el ciclo de trabajo D (duty cicle) como $ D = \frac{t_{ON}}{T}$. 
 	
 	\begin{figure}[H]
 		\centering
@@ -237,10 +248,13 @@ citestyle=apa
 	Teniendo en cuenta que el transistor permite replicar la señal de control en el nodo que interconecta el transistor, el diodo y el inductor, pero con una tensión cercana a la tensión de alimentación. Tal como se ve en la figura \ref{fig:vcontrol}.
 
 	
-	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer estimación de D. 
+	De esta relación estimando las tensiones de saturación y de caida de tensión en directa del diodo utilizado, se puede dar con una primer estimación de D.
 	
 	
-	
+	\subsection{Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}
+	\subsubsection{Transistores de conmutación}
+	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
+	El modelo elegido para la aplicación es el transistor N-MOS \textbf{IRF3205}, debido a su costo moderado
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	\subsection{Implementación de circuito PWM (PCB)}
 	\subsection{Características físicas del inductor diseñado}

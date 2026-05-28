@@ -4,10 +4,11 @@
 \contentsline {section}{\numberline {3}Desarrollo}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Especificaciones del Regulador BUCK}{2}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}Convertidor BUCK}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Diseño verificado por simulación de la fuente buck a lazo abierto}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Implementación de circuito PWM (PCB)}{3}{}%
-\contentsline {subsection}{\numberline {3.4}Características físicas del inductor diseñado}{3}{}%
-\contentsline {subsection}{\numberline {3.5}Diseño PCB de la buck en lazo abierto}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C$ , $C_E$ , }{3}{}%
+\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{3}{}%
+\contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{3}{}%
+\contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{3}{}%
 \contentsline {section}{\numberline {4}Conclusiones}{3}{}%
 \contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{4}{}%
 \contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{4}{}%
