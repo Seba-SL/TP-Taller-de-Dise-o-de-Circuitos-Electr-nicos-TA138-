@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  27 MAY 2026 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  27 MAY 2026 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,16 +1302,16 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 [1] [2]
-<../../../../vcontrol.png, id=28, 987.2082pt x 466.1415pt>
-File: ../../../../vcontrol.png Graphic file (type png)
-<use ../../../../vcontrol.png>
-Package pdftex.def Info: ../../../../vcontrol.png  used on input line 232.
+<img/buck/vcontrol.png, id=28, 987.2082pt x 466.1415pt>
+File: img/buck/vcontrol.png Graphic file (type png)
+<use img/buck/vcontrol.png>
+Package pdftex.def Info: img/buck/vcontrol.png  used on input line 232.
 (pdftex.def)             Requested size: 512.14963pt x 241.82594pt.
 
 
 LaTeX Warning: Empty bibliography on input line 254.
 
-[3 <../../../../vcontrol.png>] [4] (./informe.aux
+[3 <./img/buck/vcontrol.png>] [4] (./informe.aux
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -1330,7 +1330,7 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  49529 strings out of 476091
- 1198730 string characters out of 5794082
+ 1198697 string characters out of 5794082
  2213438 words of memory out of 5000000
  69390 multiletter control sequences out of 15000+600000
  523587 words of font info for 53 fonts, out of 8000000 for 9000

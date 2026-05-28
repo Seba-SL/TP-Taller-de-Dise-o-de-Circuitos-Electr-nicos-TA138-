@@ -4700,6 +4700,16 @@
 		)
 		(uuid "589518ee-4ec8-46c5-9fec-8004646f5523")
 	)
+	(label "Vo"
+		(at 143.51 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6265563c-0c38-4f04-ae14-0c6414d6315c")
+	)
 	(label "Vctrl_L"
 		(at 77.47 38.1 0)
 		(effects
@@ -8503,7 +8513,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_THT:L_Axial_L20.0mm_D8.0mm_P25.40mm_Horizontal"
 			(at 100.33 24.13 0)
 			(hide yes)
 			(show_name no)
