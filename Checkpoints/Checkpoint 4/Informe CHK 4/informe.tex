@@ -356,6 +356,22 @@ citestyle=apa
 	\end{equation}
 	
 	
+	El principio de funcionamiento del regulador se basa en la transferencia periódica de energía desde la fuente de entrada hacia la carga mediante la conmutación controlada de los dispositivos electrónicos de potencia. La tensión media de salida se regula variando el ciclo de trabajo $D$ de la señal PWM aplicada a las llaves de conmutación.
+
+	
+	Asimismo, se analizará el regulador operando en modo de conducción continua (CCM, \textit{Continuous Conduction Mode}), condición en la cual la corriente del inductor nunca se anula ni invierte su sentido. Bajo esta hipótesis, la corriente del inductor presenta una forma aproximadamente triangular con un valor medio distinto de cero, mientras que el capacitor forma una tensión integrando dicha tensión menos la corriente de salida, dado que la integral de una señal lineal que alterna entre pendiente positiva y negativa la tensión del capacitor sera una señal cuadrática tal como se observa en la figura \ref{fig:corrienteilriplevo}.
+	
+	A partir de estas consideraciones será posible determinar posteriormente los valores adecuados del inductor $L$ y del capacitor $C$, de forma tal de garantizar un funcionamiento estable en conducción continua y un rizado acotado en corriente y tensión.
+	
+	
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/buck/corriente_iL_riple_Vo}
+	\caption{Forma de la señal de corriente en el inductor y tensión en el capacitor del regulador.}
+	\label{fig:corrienteilriplevo}
+	\end{figure}
+
+
 	\subsection{Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}
 	
 	\subsubsection{Inductor $L$ y capacitor $C_S$}
