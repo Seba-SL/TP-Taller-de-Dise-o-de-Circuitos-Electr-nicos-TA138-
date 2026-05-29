@@ -557,7 +557,7 @@ citestyle=apa
 	\end{table}
 	
 	
-	Con los valores hallados en la tabla \ref{tab:criticos_mcc} se obtienen los limites para que el circuito trabaje en modo conducción continua, pero no serán los valores óptimos para regular la tensión, para asegurar que el riple sea
+	Con los valores hallados en la tabla \ref{tab:criticos_mcc} se obtienen los limites para que el circuito trabaje en modo conducción continua, pero no serán los valores óptimos para regular la tensión, para asegurar que el riple sea minimo se considera un capacitor $100 \, \mu F$ y para que la corriente continua de salida tenga alguna utilidad se coloca un diodo led que indique que el regulador esta encendido para eso se debe calcular un resistor 
 	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
@@ -572,43 +572,39 @@ citestyle=apa
 			\textbf{Componente} & \textbf{Símbolo} & \textbf{Valor / Modelo} & \textbf{Observaciones} \\
 			\hline
 			
-			Inductor de salida & \(L\) &  &  \\
+			Inductor de salida & \(L\) & $50 \mu H $&  \\
 			\hline
 			
-			Capacitor de salida & \(C\) &  &  \\
+			Capacitor de salida & \(C\) & $100 \mu F$ &  \\
 			\hline
 			
-			Capacitor de entrada & \(C_{in}\) &  &  \\
+			Capacitor de entrada & \(C_{in}\) & $100 \mu F$ &  \\
 			\hline
 			
-			MOSFET superior & \(Q_1\) &  &  \\
+			MOSFET superior & \(Q_1\) & N-MOS IRF3205  &  \\
 			\hline
 			
-			MOSFET inferior & \(Q_2\) &  &  \\
+			MOSFET inferior & \(Q_2\) & N-MOS IRF3205  &  \\
 			\hline
 			
-			Driver de compuerta &  &  &  \\
-			\hline
 			
 			Diodo LED indicador & LED &  &  \\
 			\hline
 			
 			Resistencia limitadora LED & \(R_{LED}\) &  &  \\
 			\hline
+
 			
-			Resistencia de carga & \(R_L\) &  &  \\
+			Frecuencia de conmutación & \(f_s\) & 140 kHz&  \\
 			\hline
 			
-			Frecuencia de conmutación & \(f_s\) &  &  \\
+			Tensión de entrada & \(V_{in}\) & 24 V &  \\
 			\hline
 			
-			Tensión de entrada & \(V_{in}\) &  &  \\
+			Tensión de salida & \(V_o\) & 9,5 v  &  \\
 			\hline
 			
-			Tensión de salida & \(V_o\) &  &  \\
-			\hline
-			
-			Corriente máxima de salida & \(I_o\) &  &  \\
+			Corriente máxima de salida & \(I_o\) & 1,5 A &  \\
 			\hline
 			
 		\end{tabular}
