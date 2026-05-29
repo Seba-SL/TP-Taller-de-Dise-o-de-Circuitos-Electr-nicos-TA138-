@@ -633,6 +633,100 @@ citestyle=apa
 
 		
 	\subsection{Características físicas del inductor diseñado}
+	
+	 Especificaciones:
+	
+	\begin{itemize}
+		\item $L = \SI{50}{\micro\henry}$: Inductancia requerida.
+		\item $I_{L,\mathrm{DC}} = \SI{1}{\ampere}$: Corriente media del inductor.
+		\item $f_{SW} = \SI{140}{\kilo\hertz}$: Frecuencia de conmutación.
+		\item $I_{L,\mathrm{MAX}} = \SI{1.5}{\ampere}$: Corriente máxima del inductor.
+		\item $P_{CU,\mathrm{MAX}} = \SI{1}{\watt}$: Pérdidas máximas permitidas en el cobre.
+	\end{itemize}
+	
+	A partir de las especificaciones del diseño, se utilizaron los métodos de Erickson y Tacca para el dimensionamiento del inductor. Para ello, se desarrolló un código en Python que permite obtener parámetros de diseño tales como:
+	
+	\begin{itemize}
+		\item Material del núcleo.
+		\item Tipo de núcleo.
+		\item Entrehierro necesario.
+		\item Número de vueltas.
+		\item Tipo de alambre.
+	\end{itemize}
+	
+	El método implementado se encuentra limitado al uso de núcleos del tipo EE. Sin embargo, también es posible realizar diseños utilizando otros tipos de núcleos, como toroides o solenoides, mediante procedimientos de cálculo equivalentes.
+	
+	\subsection*{Método de Erickson}
+	
+	El procedimiento de diseño utilizado consta de las siguientes etapas:
+	
+	\begin{enumerate}
+		\item Cálculo de la resistencia máxima del alambre: $R_{cu,\mathrm{max}}$ [$\si{\ohm}$].
+		\begin{align*}
+			\boxed{R_{cu,\mathrm{max}} = \SI{1}{\ohm}}
+		\end{align*}
+		
+		\item Determinación del material del núcleo a utilizar en función de la frecuencia de conmutación.
+		
+		Como nuestra frecuencia de conmutacion $\SI{140}{\kilo\hertz} < \SI{1}{\mega\hertz}$ utilizamos material tipo N67 que corresponde a ferrita.
+		\begin{align*}
+			\boxed{\text{Material} = N67}
+		\end{align*}
+		
+		\item Cálculo de la constante geométrica del núcleo: $K_g$ [$\si{\centi\meter^5}$].
+		\begin{align*}
+			\boxed{K_{g,\mathrm{min}} > \SI{0.0326e-03}{\centi\meter^5}}
+		\end{align*}
+		
+		Un tipo de nucleo cumple esa condicion es EE22:
+		\begin{align*}
+			\boxed{\text{Tipo de Nucleo} = EE22} \land \boxed{K_{g} = \SI{8.26e-03}{\centi\meter^5}}
+		\end{align*}
+		
+		\item Cálculo del entrehierro necesario: $l_g$ [$\si{\meter}$].
+		\begin{align*}
+			\boxed{l_g = \SI{3.831e-5}{\meter}}
+		\end{align*}
+		
+		\item Cálculo del número de vueltas: $n_l$.
+		\begin{align*}
+			\boxed{n_l = 6.09 \approx  7} 
+		\end{align*}
+		
+		\item Cálculo de la sección del alambre: $A_w$ [$\si{\centi\meter^2}$].
+		\begin{align*}
+			\boxed{A_{w,\mathrm{max}} < \SI{9.24e-3}{\centi\meter^2}} 
+		\end{align*}
+		
+		Un tipo de alambre de cobre que cumple esa condicion es AWG18:
+		\begin{align*}
+			\boxed{\text{Tipo de alambre de cobre} = AWG18} \land \boxed{A_w = \SI{8.228e-3}{\centi\meter^2}}
+		\end{align*}
+		
+		\item Verificación de la resistencia del alambre: $R_{cu}$ [$\si{\ohm}$].
+		\begin{align*}
+			\boxed{R_{cu} = \SI{0.00585}{\ohm} < R_{cu,\mathrm{max}} = \SI{1}{\ohm}}
+		\end{align*}
+		
+		\item Cálculo de la densidad de corriente en el conductor: $\Sigma_{I_L}$ [$\si{\ampere\per\milli\meter^2}$].
+		\begin{align*}
+			\boxed{\sigma_{I_L} = \SI{1.823}{\ampere\per\milli\meter^2} < \sigma_{I_{L,\mathrm{max}}} = \SI{5}{\ampere\per\milli\meter^2}}
+		\end{align*}
+		
+		\item Se verifica que no sature el núcleo:
+		\begin{align*}
+			\boxed{B_{max} = \SI{300}{\milli\tesla}} \\
+			\boxed{B_{max,calculado} = \SI{0.36}{\milli\tesla}}
+		\end{align*}
+		
+		\item Se calcula la profundidad de penetración Delta:
+		\begin{align*}
+			\boxed{\delta = \SI{0.02}{\centi\meter}} \\
+			\boxed{\dfrac{A}{2} = \SI{0.0545}{\centi\meter}}
+		\end{align*}
+		
+	\end{enumerate}
+	
 	\subsection{Diseño PCB de la buck en lazo abierto}
 	
 	\begin{figure}[H]
