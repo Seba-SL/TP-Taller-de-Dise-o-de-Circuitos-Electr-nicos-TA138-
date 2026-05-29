@@ -1,0 +1,187 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "LM319" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "U" (id 0) (at 0.762 0.0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "LM319" (id 1) (at 0 0.0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom))
+    )
+    (property "Footprint" "LM319:DIL14" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MF" "STMicroelectronics" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Description" "\n                        \n                            Comparator General Purpose Open-Collector, Open-Emitter, TTL 14-SO\n                        \n" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Package" "SOIC-14 STMicroelectronics" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Price" "None" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Check_prices" "https://www.snapeda.com/parts/LM319/STMicroelectronics/view-part/?ref=eda" (id 8) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "SnapEDA_Link" "https://www.snapeda.com/parts/LM319/STMicroelectronics/view-part/?ref=snap" (id 9) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MP" "LM319" (id 10) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Availability" "Not in stock" (id 11) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MAGASIN" "LM 319 (Armoire n°3) KYT 14 (Armoire n°5)" (id 12) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "LM319_1_0"
+      (text "V+" (at 1.778 3.937 900)
+        (effects (font (size 1.27 1.27)) (justify bottom left))
+      )
+      (text "V-" (at 1.778 -6.223 900)
+        (effects (font (size 1.27 1.27)) (justify bottom left))
+      )
+      (pin power_in line (at 0.0 7.62 270.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "11"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 0.0 -7.62 90.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "6"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+    (symbol "LM319_2_0"
+      (polyline
+        (pts (xy -2.54 7.62) (xy -2.54 4.0132)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.54 7.62) (xy -5.08 7.62)) (stroke (width 0.254))
+      )
+      (text "GND" (at -2.9464 7.239 0)
+        (effects (font (size 1.016 1.016)) (justify top right))
+      )
+      (polyline
+        (pts (xy -5.08 5.08) (xy -5.08 -5.08)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy -5.08 -5.08) (xy 5.08 0.0)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy 5.08 0.0) (xy -5.08 5.08)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy -3.81 3.175) (xy -3.81 1.905)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -4.445 2.54) (xy -3.175 2.54)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -4.445 -2.54) (xy -3.175 -2.54)) (stroke (width 0.1524))
+      )
+      (pin input line (at -7.62 2.54 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "4"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -7.62 -2.54 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "5"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at -7.62 7.62 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin output line (at 7.62 0.0 180.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "12"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+    (symbol "LM319_3_0"
+      (polyline
+        (pts (xy -2.54 7.62) (xy -2.54 4.0132)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.54 7.62) (xy -5.08 7.62)) (stroke (width 0.254))
+      )
+      (text "GND" (at -2.9464 7.239 0)
+        (effects (font (size 1.016 1.016)) (justify top right))
+      )
+      (polyline
+        (pts (xy -5.08 5.08) (xy -5.08 -5.08)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy -5.08 -5.08) (xy 5.08 0.0)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy 5.08 0.0) (xy -5.08 5.08)) (stroke (width 0.4064))
+      )
+      (polyline
+        (pts (xy -3.81 3.175) (xy -3.81 1.905)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -4.445 2.54) (xy -3.175 2.54)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -4.445 -2.54) (xy -3.175 -2.54)) (stroke (width 0.1524))
+      )
+      (pin input line (at -7.62 2.54 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "9"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -7.62 -2.54 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "10"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at -7.62 7.62 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "8"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin output line (at 7.62 0.0 180.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "7"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)
