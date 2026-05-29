@@ -371,12 +371,68 @@ citestyle=apa
 	\label{fig:corrienteilriplevo}
 	\end{figure}
 
+	La corriente de salida se puede aproximar a la corriente media en el inductor, justamente para que la corriente no se vuelva discontinua la corriente de salida debe ser mayor a cero, es por eso que se fija un resistor de salida para que la corriente de salida no llegue a ser nula. 
+	
+	\begin{equation}
+		I_O \approx \frac{I_{L\text{MAX}} + I_{L\text{MIN}}}{2}
+	\end{equation}
+	
+	
+
 
 	\subsection{Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}
 	
 	\subsubsection{Inductor $L$ y capacitor $C_S$}
 	
+	Teniendo en cuenta que para el ciclo \textit{off} la tensión de salida corresponde con aproximadamente la tensión en el inductor:
 	
+	\begin{equation}
+		V_o \approx L \frac{d i_L }{dt} = L \frac{ {I_{min}} - {I_{max}} }{  T - t_{on}}
+	\end{equation} 
+	
+	Despejando el valor de inductancia:
+	
+	\begin{equation}
+		L \approx V_o  \frac{  T - t_{on}}{ {I_{min}} - {I_{max}} }
+	\end{equation} 
+	
+	Sacando como factor común T de la expresión e ingresando D.
+
+	\begin{equation}
+	L \approx V_o  \frac{  T - t_{on}}{ {I_{min}} - {I_{max}} } =  V_o  T \frac{  (1 - \frac{t_{on}}{T})}{ {I_{min}} - {I_{max}} } 
+	\end{equation} 
+	
+	
+	\begin{equation}
+		L \approx  V_o  T \frac{  1 - D} {   I_{min} - {I_{max}}    } 
+	\end{equation} 
+	
+	Ahora sabiendo que $I_o = \frac{(I_{min} - I_{max})}{2}$ y despejando $ I_{min} = 2I_o - I_{max}$, se reemplaza:
+	
+	\begin{equation}
+		L \approx  V_o \cdot T \frac{  1 - D} {   (2I_o - I_{max}) - {I_{max}}    } 
+	\end{equation} 
+
+
+	\begin{equation}
+		L \approx  V_o \cdot T \frac{  1 - D} {   (2I_o - 2I_{max})   }  = V_o \cdot T \frac{  1 - D} {   2(I_o - I_{max})   }
+	\end{equation} 
+
+
+	
+	\begin{equation}
+		L \approx  V_o \cdot T \frac{  1 - D} {   (2I_o - 2I_{max})   }  = V_o  \frac{T}{2} \frac{  1 - D} {   (I_o - I_{max})   }
+	\end{equation} 
+
+	Reemplazando $T = \frac{1}{f}$ se obtiene finalmente la expresión:
+	
+	\begin{equation}
+		L =
+		\frac{1}{2f}
+		\left(
+		\frac{(1-D)V_S}{I_{L\text{MAX}} - I_S}
+		\right)
+	\end{equation}
 	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
