@@ -671,7 +671,7 @@
         "uuid": "c48fddb7-fbc0-4d03-a189-4d3fedbc1fd4"
       }
     ],
-    "used_designators": "J_sense1,Q1-4,R1-17,J_pwm1,#PWR1-10,L1,Vctrl_L1-2,LM1,C1-6,Vo1,BC1,D1-2,GND1,J1-5,TL1-2,U1-3,Vctrl_H1,VEE1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

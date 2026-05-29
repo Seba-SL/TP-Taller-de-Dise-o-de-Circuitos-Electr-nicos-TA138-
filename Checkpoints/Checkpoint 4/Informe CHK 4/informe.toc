@@ -6,16 +6,16 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Convertidor BUCK}{2}{}%
 \contentsline {subsection}{\numberline {3.2}Elección de elementos esenciales $L$ , $C_S$ , $C_E$ y $Q$}{5}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Inductor $L$ y capacitor $C_S$}{5}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Transistores de conmutación}{6}{}%
-\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{6}{}%
-\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{6}{}%
-\contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{6}{}%
-\contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{6}{}%
-\contentsline {subsection}{\numberline {3.7}Diseño PCB Completo}{7}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{9}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{10}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{10}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{10}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{11}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{11}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{12}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Transistores de conmutación}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{7}{}%
+\contentsline {subsection}{\numberline {3.4}Implementación de circuito PWM (PCB)}{7}{}%
+\contentsline {subsection}{\numberline {3.5}Características físicas del inductor diseñado}{7}{}%
+\contentsline {subsection}{\numberline {3.6}Diseño PCB de la buck en lazo abierto}{7}{}%
+\contentsline {subsection}{\numberline {3.7}Diseño PCB Completo}{8}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{10}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{11}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{11}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{11}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{12}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{12}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{13}{}%

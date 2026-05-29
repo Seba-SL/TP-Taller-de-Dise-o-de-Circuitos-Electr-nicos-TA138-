@@ -430,9 +430,131 @@ citestyle=apa
 		L =
 		\frac{1}{2f}
 		\left(
-		\frac{(1-D)V_S}{I_{L\text{MAX}} - I_S}
+		\frac{(1-D)V_S}{I_{L\text{MAX}} - I_o}
 		\right)
 	\end{equation}
+
+	De esta forma se puede estimar un valor de inductancia 
+	Partiendo de:
+	
+	\begin{equation}
+		L = \frac{1}{2f}\,\frac{(1-D)V_o}{(I_{L\text{MAX}} - I_o)}
+	\end{equation}
+	
+	y siendo para el modo crítico:
+	
+	\begin{equation}
+		I_o = I_{o\text{MIN}}
+	\end{equation}
+	
+	Resulta:
+	
+	\begin{equation}
+		I_{L\text{MAX}} = 2I_{o\text{MIN}}
+	\end{equation}
+	
+	\begin{equation}
+		L = \frac{(1-D)V_o}{2f\,I_{o\text{MIN}}}
+	\end{equation}
+	
+	Llamando \(R_{\text{MAX}}\) al valor máximo de \(R_c\):
+	
+	\begin{equation}
+		R_{\text{MAX}} = \frac{V_o}{I_{o\text{MIN}}}
+	\end{equation}
+	
+	se obtiene el valor crítico de \(L\) (\(L_{cr}\)) que permite continuar operando en modo continuo con una corriente de carga mínima o “carga mínima”:
+	
+	\begin{equation}
+		L_{cr} = \frac{(1-D)R_{\text{MAX}}}{2f}
+	\end{equation}
+	
+	Debe ser:
+	
+	\begin{equation}
+		L > L_{cr}
+	\end{equation}
+	
+	para operación en modo continuo.
+	
+	También puede encontrarse el valor crítico de la resistencia de carga que asegura el funcionamiento en modo continuo para un valor dado de \(L\):
+	
+	\begin{equation}
+		R_{cr} = \frac{2fL}{(1-D)}
+	\end{equation}
+	
+	Debe cumplirse:
+	
+	\begin{equation}
+		R < R_{cr}
+	\end{equation}
+	
+	para operación en modo continuo.
+	
+	Contemplando la frecuencia mayor brindada por las especificación con el objetivo de minimizar el riple en la salida, ya que el filtro pasa bajos LC atenuara mucho mas las frecuencias altas y también nos dará valores de L y C mas bajos para el mismo filtro.
+	
+	Reemplazando en las expresiones con los valores de frecuencia elegida $f = 140 \, kHz$, ciclo de trabajo $D = 0,395$, $I_{min} = 750 \, mA$, $I_{max} = 1,5 \,A$ y rimple de $\Delta V_o = 400 \, mV$, llegando a los valores críticos: 
+	
+	\begin{table}[H]
+		\centering
+		\caption{Valores críticos para conservar la conducción continua}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Parámetro crítico} & \textbf{Expresión utilizada} & \textbf{Condición para MCC} \\
+			\hline
+			
+			Inductancia crítica \(L_{cr}\) &
+			\(
+			L_{cr}= \frac{(1-D)V_o}{2f\,I_{o\text{MIN}}}
+			\)
+			&
+			\(
+			L > L_{cr} \approx 27,37 \, \mu H
+			\)
+			\\
+			
+			\hline
+			
+			Resistencia crítica \(R_{cr}\) &
+			\(
+			R_{cr}=\dfrac{2fL}{(1-D)}
+			\)
+			&
+			\(
+			R < R_{cr} \approx 12,67\, \Omega
+			\)
+			\\
+			
+			\hline
+			
+			Capacitancia crítica \(C_{cr}\) &
+			\(
+			C_{cr}=\dfrac{1-D}{16Lf^2\left(\dfrac{\Delta V_o}{V_o}\right)}
+			\)
+			&
+			\(
+			C > C_{cr} \approx 3,34 \, uF
+			\)
+			\\
+			
+			\hline
+			
+			Corriente mínima de carga \(I_{o\text{MIN}}\) &
+			\(
+			I_{o\text{MIN}}=\dfrac{(1-D)V_s}{2fL}
+			\)
+			&
+			\(
+			I_o >= I_{o\text{MIN}} = 750 \, mA
+			\)
+			\\
+			
+			\hline
+			
+		\end{tabular}
+		\label{tab:criticos_mcc}
+	\end{table}
 	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
