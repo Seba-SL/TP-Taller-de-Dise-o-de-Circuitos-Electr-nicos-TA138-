@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  29 MAY 2026 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  29 MAY 2026 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1315,88 +1315,92 @@ Package pdftex.def Info: img/buck/corriente_iL_riple_Vo.png  used on input line
  369.
 (pdftex.def)             Requested size: 358.50317pt x 169.27603pt.
  [5 <./img/buck/corriente_iL_riple_Vo.png>] [6]
+
+LaTeX Warning: Reference `' on page 7 undefined on input line 621.
+
 <img/buck/pwm_pcb.png, id=55, 932.48375pt x 499.8675pt>
 File: img/buck/pwm_pcb.png Graphic file (type png)
 <use img/buck/pwm_pcb.png>
-Package pdftex.def Info: img/buck/pwm_pcb.png  used on input line 571.
+Package pdftex.def Info: img/buck/pwm_pcb.png  used on input line 632.
 (pdftex.def)             Requested size: 358.50317pt x 192.1788pt.
-<img/buck/buck_solo_pcb.png, id=56, 1019.81pt x 317.185pt>
+[7]
+<img/buck/buck_solo_pcb.png, id=59, 1019.81pt x 317.185pt>
 File: img/buck/buck_solo_pcb.png Graphic file (type png)
 <use img/buck/buck_solo_pcb.png>
-Package pdftex.def Info: img/buck/buck_solo_pcb.png  used on input line 583.
+Package pdftex.def Info: img/buck/buck_solo_pcb.png  used on input line 644.
 (pdftex.def)             Requested size: 358.50317pt x 111.50522pt.
-<img/buck/PCB_frente.png, id=57, 647.41875pt x 530.98375pt>
+<img/buck/PCB_frente.png, id=60, 647.41875pt x 530.98375pt>
 File: img/buck/PCB_frente.png Graphic file (type png)
 <use img/buck/PCB_frente.png>
-Package pdftex.def Info: img/buck/PCB_frente.png  used on input line 593.
+Package pdftex.def Info: img/buck/PCB_frente.png  used on input line 654.
 (pdftex.def)             Requested size: 358.50317pt x 294.02698pt.
- [7 <./img/buck/pwm_pcb.png> <./img/buck/buck_solo_pcb.png>] [8 <./img/buck/PCB
-_frente.png>] [9]
+ [8 <./img/buck/pwm_pcb.png> <./img/buck/buck_solo_pcb.png>] [9 <./img/buck/PCB
+_frente.png>] [10]
 
-LaTeX Warning: Empty bibliography on input line 688.
+LaTeX Warning: Empty bibliography on input line 749.
 
-[10]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/buck/esquematico_buck.pdf, id=73, 845.04686pt x 597.50786pt>
-File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
-<use img/buck/esquematico_buck.pdf>
-Package pdftex.def Info: img/buck/esquematico_buck.pdf  used on input line 708.
-
-(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
-<use img/buck/esquematico_buck.pdf>
-Package pdftex.def Info: img/buck/esquematico_buck.pdf  used on input line 708.
-
-(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/buck/esquematico_buck.pdf, id=76, page=1, 845.04686pt x 597.50786pt>
-File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
-<use img/buck/esquematico_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
-ne 708.
-(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
-File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
-<use img/buck/esquematico_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
-ne 708.
-(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
 [11]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<img/buck/esquematico_buck.pdf, id=76, 845.04686pt x 597.50786pt>
+File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
+<use img/buck/esquematico_buck.pdf>
+Package pdftex.def Info: img/buck/esquematico_buck.pdf  used on input line 769.
+
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
+<use img/buck/esquematico_buck.pdf>
+Package pdftex.def Info: img/buck/esquematico_buck.pdf  used on input line 769.
+
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/esquematico_buck.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<img/buck/esquematico_buck.pdf, id=79, page=1, 845.04686pt x 597.50786pt>
 File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
 <use img/buck/esquematico_buck.pdf, page 1>
 Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
-ne 708.
+ne 769.
 (pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
 File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
 <use img/buck/esquematico_buck.pdf, page 1>
 Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
-ne 708.
+ne 769.
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+[12]
+File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
+<use img/buck/esquematico_buck.pdf, page 1>
+Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
+ne 769.
 (pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
 File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
 <use img/buck/esquematico_buck.pdf, page 1>
 Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
-ne 708.
+ne 769.
 (pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
- [12 <./img/buck/esquematico_buck.pdf>]
+File: img/buck/esquematico_buck.pdf Graphic file (type pdf)
+<use img/buck/esquematico_buck.pdf, page 1>
+Package pdftex.def Info: img/buck/esquematico_buck.pdf , page1 used on input li
+ne 769.
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+ [13 <./img/buck/esquematico_buck.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/pistas_buck.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/buck/pistas_buck.pdf, id=86, 597.50786pt x 845.04686pt>
+<img/buck/pistas_buck.pdf, id=89, 597.50786pt x 845.04686pt>
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf>
-Package pdftex.def Info: img/buck/pistas_buck.pdf  used on input line 715.
+Package pdftex.def Info: img/buck/pistas_buck.pdf  used on input line 776.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1404,7 +1408,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/pistas_buck.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf>
-Package pdftex.def Info: img/buck/pistas_buck.pdf  used on input line 715.
+Package pdftex.def Info: img/buck/pistas_buck.pdf  used on input line 776.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 
 
@@ -1414,46 +1418,49 @@ ion: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/buck/pistas_buck.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/buck/pistas_buck.pdf, id=89, page=1, 597.50786pt x 845.04686pt>
+<img/buck/pistas_buck.pdf, id=92, page=1, 597.50786pt x 845.04686pt>
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 71
-5.
+Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 77
+6.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 71
-5.
+Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 77
+6.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 71
-5.
+Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 77
+6.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 71
-5.
+Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 77
+6.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: img/buck/pistas_buck.pdf Graphic file (type pdf)
 <use img/buck/pistas_buck.pdf, page 1>
-Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 71
-5.
+Package pdftex.def Info: img/buck/pistas_buck.pdf , page1 used on input line 77
+6.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[13 <./img/buck/pistas_buck.pdf>] (./informe.aux
+[14 <./img/buck/pistas_buck.pdf>] (./informe.aux
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'informe.run.xml'.
 \openout1 = `informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49654 strings out of 476091
- 1200715 string characters out of 5794082
- 2217507 words of memory out of 5000000
- 69496 multiletter control sequences out of 15000+600000
+ 49656 strings out of 476091
+ 1200739 string characters out of 5794082
+ 2217516 words of memory out of 5000000
+ 69498 multiletter control sequences out of 15000+600000
  529766 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,19n,89p,1196b,2812s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1476,10 +1483,10 @@ frm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfsc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ti1000.pfb>
-Output written on informe.pdf (14 pages, 1823567 bytes).
+Output written on informe.pdf (15 pages, 1826043 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 187 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

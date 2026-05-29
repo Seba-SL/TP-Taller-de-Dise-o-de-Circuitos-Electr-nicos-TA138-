@@ -556,13 +556,74 @@ citestyle=apa
 		\label{tab:criticos_mcc}
 	\end{table}
 	
+	
+	Con los valores hallados en la tabla \ref{tab:criticos_mcc} se obtienen los limites para que el circuito trabaje en modo conducción continua, pero no serán los valores óptimos para regular la tensión, para asegurar que el riple sea
+	
 	\subsubsection{Transistores de conmutación}
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
 	El modelo elegido para la aplicación es el transistor N-MOS \textbf{IRF3205}, debido a su costo moderado
 	
+	\begin{table}[H]
+		\centering
+		\caption{Componentes seleccionados para el convertidor Buck}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Componente} & \textbf{Símbolo} & \textbf{Valor / Modelo} & \textbf{Observaciones} \\
+			\hline
+			
+			Inductor de salida & \(L\) &  &  \\
+			\hline
+			
+			Capacitor de salida & \(C\) &  &  \\
+			\hline
+			
+			Capacitor de entrada & \(C_{in}\) &  &  \\
+			\hline
+			
+			MOSFET superior & \(Q_1\) &  &  \\
+			\hline
+			
+			MOSFET inferior & \(Q_2\) &  &  \\
+			\hline
+			
+			Driver de compuerta &  &  &  \\
+			\hline
+			
+			Diodo LED indicador & LED &  &  \\
+			\hline
+			
+			Resistencia limitadora LED & \(R_{LED}\) &  &  \\
+			\hline
+			
+			Resistencia de carga & \(R_L\) &  &  \\
+			\hline
+			
+			Frecuencia de conmutación & \(f_s\) &  &  \\
+			\hline
+			
+			Tensión de entrada & \(V_{in}\) &  &  \\
+			\hline
+			
+			Tensión de salida & \(V_o\) &  &  \\
+			\hline
+			
+			Corriente máxima de salida & \(I_o\) &  &  \\
+			\hline
+			
+		\end{tabular}
+		\label{tab:componentes_buck}
+	\end{table}
 	
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
+	
+	
+	Se simulo mediante el software Ltspice utilizando el esquematico del anexo \ref{} el comportamiento del circuito utilizando los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores.
+	
+	
 	\subsection{Implementación de circuito PWM (PCB)}
+	
+	
 	
 	Se implementa el circuito en placa impresa, mediante
 		
