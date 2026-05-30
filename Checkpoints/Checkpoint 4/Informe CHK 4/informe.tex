@@ -563,6 +563,33 @@ citestyle=apa
 	Para la elección de transistores de paso debe hacerce un balance entre resistencia equivalente en conducción $R_{ON}$, sus capacidades parásitas $C_{gs}$, $C_{gd}$ y $C_{ds}$ y el costo.
 	El modelo elegido para la aplicación es el transistor N-MOS \textbf{IRF3205}, debido a su costo moderado
 	
+	
+	\subsubsection{Frecuencia de oscilador}
+	
+	Como regla práctica, a fin de maximizar la eficiencia, el periodo mínimo del oscilador debe ser aproximadamente cien veces mayor que el tiempo de conmutación del transistor. Porque así el MOSFET pasa más del 99 \% del tiempo en estados ideales (encendido o apagado) y menos del 1 \% del tiempo en la región de transición donde disipa mucha potencia.
+	
+	\begin{equation}
+		T_{sw} = 100\cdot t_{sw}
+	\end{equation}
+	
+	Cuando se aplica la corriente de entrada base, el transistor no se enciende inmediatamente. Al igual que la respuesta de frecuencia, los tiempos de conmutación de transistores se ven afectados por la capacitancia de la unión y el tiempo de tránsito de los electrones a través de las uniones. El tiempo entre la aplicación del impulso de entrada y el comienzo del flujo de corriente del colector se denomina el tiempo de retardo (td), incluso cuando el transistor comienza a encenderse, transcurre un tiempo finito antes de que el CI alcance su nivel máximo. Esto se conoce como el tiempo de subida ($t_{d_{on}}$) y de bajada $t_{d_{off}}$.
+	
+	El tiempo de subida se especifica como el tiempo requerido para que el CI pase del 10\% al 90\% de su nivel máximo. 
+
+
+	Para el IRF3205 el tiempo de retardo de encendido ($t_{d_{on}}$) es de $14 \, ns$ mientras que el tiempo de retardo de apagado ($t_{d_{off}}$) es de $50 \, ns$, por lo tanto el tiempo de conmutación vale $64 \, ns$ y de esta forma el periodo del oscilador debe ser mayor a $6.4 \, \mu s$ es decir la frecuencia debe ser menor a 156,25 Hz. Por lo tanto el transistor elegido puede ser usado para una conmutación de 140 kHz. 
+	
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.35\linewidth]{img/buck/tiempo_conmutacionIRF3205}
+		\caption{Formas de onda de tiempo de conmutación para el IRF3205.}
+		\label{fig:tiempoconmutacionirf3205}
+	\end{figure}
+	
+	
 	\begin{table}[H]
 		\centering
 		\caption{Componentes seleccionados para el convertidor Buck}
