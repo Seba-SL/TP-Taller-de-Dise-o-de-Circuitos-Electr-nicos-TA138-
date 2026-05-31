@@ -11,16 +11,17 @@
 \contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{8}{}%
 \contentsline {subsection}{\numberline {3.4}Diseño del lazo realimentador}{8}{}%
 \contentsline {subsubsection}{\numberline {3.4.1}Alimentación del lazo y tensión de referencia}{8}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Generador de señal triangular}{9}{}%
 \contentsline {subsection}{\numberline {3.5}Elección y diseño del \textit {Gate Driver}}{9}{}%
 \contentsline {subsection}{\numberline {3.6}}{9}{}%
 \contentsline {subsection}{\numberline {3.7}Implementación de circuito PWM (PCB)}{9}{}%
 \contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{10}{}%
-\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{11}{}%
-\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{11}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{13}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{14}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{14}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{14}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{14}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{14}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{15}{}%
+\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{12}{}%
+\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{12}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{14}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{15}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{15}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{15}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{16}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{16}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{17}{}%
