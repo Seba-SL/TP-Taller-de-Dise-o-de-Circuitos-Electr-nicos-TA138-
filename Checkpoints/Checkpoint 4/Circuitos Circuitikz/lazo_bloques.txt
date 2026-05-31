@@ -1,0 +1,694 @@
+{
+    "version": "0.1",
+    "tikzSettings": {},
+    "components": [
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 377.575,
+                    "y": -283.465
+                },
+                {
+                    "x": 453.165,
+                    "y": -283.465
+                }
+            ],
+            "id": "twoport"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 415.37,
+                    "y": -301.606
+                },
+                {
+                    "x": 415.37,
+                    "y": -264.567
+                }
+            ],
+            "id": "american resistor",
+            "scale": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 337.889,
+                "y": -264.567
+            },
+            "rotation": -180,
+            "id": "plain amp"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "v_{ref}",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 453.543,
+                "y": -246.426
+            },
+            "id": "circ"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "v_{o}",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 453.165,
+                "y": -283.086
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 377.953,
+                    "y": -246.426
+                },
+                {
+                    "x": 453.543,
+                    "y": -245.669
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 169.325,
+                "y": -246.426
+            },
+            "scale": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "id": "nigfetd"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 243.025,
+                "y": -246.426
+            },
+            "rotation": -180,
+            "id": "plain amp"
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 340.157,
+                "y": -264.567
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 56.693,
+                "y": 37.795
+            },
+            "text": {
+                "text": "Amplificador de error",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "tiny",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 245.669,
+                "y": -245.669
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 56.693,
+                "y": 37.795
+            },
+            "text": {
+                "text": "Comparador PWM",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "tiny",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 160.63,
+                "y": -245.669
+            },
+            "size": {
+                "x": 37.795,
+                "y": 37.795
+            }
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 198.049,
+                    "y": -246.426
+                },
+                {
+                    "x": 179.528,
+                    "y": -245.669
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -188.976
+                },
+                {
+                    "x": 288.001,
+                    "y": -227.906
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 321.26,
+                    "y": -170.079
+                },
+                {
+                    "x": 302.362,
+                    "y": -170.079
+                },
+                {
+                    "x": 302.362,
+                    "y": -188.976
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-",
+                "-|"
+            ]
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 359.433,
+                "y": -170.457
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 37.039,
+                "y": 37.795
+            },
+            "text": {
+                "text": "Generador de señal triangular",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "tiny",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 359.433,
+                "y": -170.457
+            },
+            "size": {
+                "x": 37.039,
+                "y": 37.795
+            }
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -170.079
+                },
+                {
+                    "x": 321.26,
+                    "y": -170.079
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -170.079
+                },
+                {
+                    "x": 340.914,
+                    "y": -170.457
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 415.748,
+                "y": -311.811
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 56.693,
+                "y": 37.795
+            },
+            "text": {
+                "text": "Escalado",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "small",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 160.63,
+                "y": -283.465
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 56.693,
+                "y": 37.795
+            },
+            "text": {
+                "text": "Gate Driver",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "small",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 161.008,
+                "y": -170.079
+            },
+            "size": {
+                "x": 37.039,
+                "y": 37.795
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 161.008,
+                    "y": -151.181
+                },
+                {
+                    "x": 161.008,
+                    "y": -188.976
+                }
+            ],
+            "id": "empty Schottky diode",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 161.008,
+                    "y": -188.976
+                },
+                {
+                    "x": 160.63,
+                    "y": -198.425
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 161.008,
+                    "y": -151.181
+                },
+                {
+                    "x": 160.63,
+                    "y": -141.732
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 160.63,
+                "y": -141.732
+            },
+            "id": "tlground"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_{ee}",
+                "anchor": "south",
+                "position": "default"
+            },
+            "position": {
+                "x": 161.008,
+                "y": -198.425
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 179.528,
+                    "y": -170.079
+                },
+                {
+                    "x": 188.976,
+                    "y": -170.079
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_{5V}",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 188.976,
+                "y": -170.079
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 359.433,
+                    "y": -189.354
+                },
+                {
+                    "x": 359.055,
+                    "y": -198.803
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 359.433,
+                    "y": -151.559
+                },
+                {
+                    "x": 359.055,
+                    "y": -142.11
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 359.055,
+                "y": -142.11
+            },
+            "id": "tlground"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_{5V}",
+                "anchor": "south",
+                "position": "default"
+            },
+            "position": {
+                "x": 359.433,
+                "y": -198.803
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -292.913
+                },
+                {
+                    "x": 339.779,
+                    "y": -302.362
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -245.67
+                },
+                {
+                    "x": 339.779,
+                    "y": -236.221
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 339.779,
+                "y": -236.221
+            },
+            "id": "tlground"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_{5V}",
+                "anchor": "south",
+                "position": "default"
+            },
+            "position": {
+                "x": 340.157,
+                "y": -302.362
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -292.913
+                },
+                {
+                    "x": 340.157,
+                    "y": -283.465
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 246.047,
+                    "y": -274.016
+                },
+                {
+                    "x": 245.669,
+                    "y": -283.465
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 246.047,
+                    "y": -226.773
+                },
+                {
+                    "x": 245.669,
+                    "y": -217.324
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 245.669,
+                "y": -217.324
+            },
+            "id": "tlground"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_{5V}",
+                "anchor": "south",
+                "position": "default"
+            },
+            "position": {
+                "x": 246.047,
+                "y": -283.465
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 246.047,
+                    "y": -274.016
+                },
+                {
+                    "x": 246.047,
+                    "y": -264.568
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 292.913,
+                    "y": -264.567
+                },
+                {
+                    "x": 288.001,
+                    "y": -264.946
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        }
+    ]
+}

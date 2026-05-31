@@ -31,6 +31,7 @@
 \usepackage{placeins}
 
 
+
 \newif\ifcheckpoint
 \checkpointfalse
 
@@ -495,6 +496,7 @@ citestyle=apa
 	
 	Reemplazando en las expresiones con los valores de frecuencia elegida $f = 140 \, kHz$, ciclo de trabajo $D = 0,395$, $I_{min} = 750 \, mA$, $I_{max} = 1,5 \,A$ y rimple de $\Delta V_o = 400 \, mV$, llegando a los valores críticos: 
 	
+	\renewcommand{\arraystretch}{1.5}
 	\begin{table}[H]
 		\centering
 		\caption{Valores críticos para conservar la conducción continua}
@@ -649,17 +651,147 @@ Para el IRF3205 el tiempo de retardo de encendido ($t_{d_{on}}$) es de $14 \, ns
 		\label{tab:componentes_buck}
 	\end{table}
 	
+	
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	
 	
-	Se simulo mediante el software Ltspice utilizando el esquematico del anexo \ref{} el comportamiento del circuito utilizando los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores.
+	Se simuló mediante el software Ltspice utilizando el esquematico del anexo \ref{} el comportamiento del circuito utilizando los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores.
 	
+	\subsection{Diseño del lazo realimentador}
+	
+	Una vez verificado el diseño de la fuente conmutada, se debe diseñar un lazo capaz de regularla. Para cumplir con este requerimiento, se parte de la salida de la fuente (figura \ref{fig:buck_schematic}), y se genera una señal PWM capaz de controlar la conmutación de los transistores. En la figura \ref{fig:bloque_PWM} puede verse la estructura simplificada del lazo.
+	
+	
+		\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\draw (9.99, 7.5) to[twoport] (11.99, 7.5);
+			\draw (10.99, 7.98) to[american resistor, /tikz/circuitikz/bipoles/length=0.700cm] (10.99, 7);
+			\node[plain amp, xscale=-1, yscale=-1] at (8.94, 7){};
+			\node[circ](N1) at (12, 6.52){} node[anchor=west] at (N1.text){$v_{ref}$};
+			\node[circ](N2) at (11.99, 7.49){} node[anchor=west] at (N2.text){$v_{o}$};
+			\draw (10, 6.52) -| (12, 6.5);
+			\node[nigfetd, xscale=0.5, yscale=0.5] at (4.48, 6.52){};
+			\node[plain amp, xscale=-1, yscale=-1] at (6.43, 6.52){};
+			\node[shape=rectangle, minimum width=1.465cm, minimum height=0.965cm] at (9, 7){} node[anchor=center, align=center, text width=1.077cm, inner sep=6pt] at (9, 7){\tiny Amplificador de error};
+			\node[shape=rectangle, minimum width=1.465cm, minimum height=0.965cm] at (6.5, 6.5){} node[anchor=center, align=center, text width=1.077cm, inner sep=6pt] at (6.5, 6.5){\tiny Comparador PWM};
+			\node[shape=rectangle, draw, line width=1pt, minimum width=0.965cm, minimum height=0.965cm] at (4.25, 6.5){};
+			\draw (5.24, 6.52) -| (4.75, 6.5);
+			\draw (8, 5) |- (7.62, 6.03);
+			\draw (8.5, 4.5) |- (8, 4.5) -| (8, 5);
+			\node[shape=rectangle, minimum width=1.945cm, minimum height=1.215cm] at (10.01, 4.375){} node[anchor=center, align=center, text width=1.557cm, inner sep=6pt] at (10.01, 4.375){\tiny Generador de señal triangular};
+			\node[shape=rectangle, draw, line width=1pt, minimum width=1.945cm, minimum height=1.225cm] at (10.01, 4.38){};
+			\draw (9, 4.5) -- (8.5, 4.5);
+			\draw (9, 4.5) -| (9.02, 4.51);
+			\node[shape=rectangle, minimum width=1.465cm, minimum height=0.965cm] at (11, 8.25){} node[anchor=center, align=center, text width=1.077cm, inner sep=6pt] at (11, 8.25){\small Escalado};
+			\node[shape=rectangle, minimum width=1.465cm, minimum height=0.965cm] at (4.25, 7.5){} node[anchor=center, align=center, text width=1.077cm, inner sep=6pt] at (4.25, 7.5){\small Gate Driver};
+			\node[shape=rectangle, draw, line width=1pt, minimum width=0.945cm, minimum height=0.965cm] at (4.26, 4.5){};
+			\draw (4.26, 4) to[empty Schottky diode, /tikz/circuitikz/bipoles/length=0.840cm] (4.26, 5);
+			\draw (4.26, 5) |- (4.25, 5.25);
+			\draw (4.26, 4) |- (4.25, 3.75);
+			\node[tlground] at (4.25, 3.75){};
+			\node[circ](N3) at (4.26, 5.25){} node[anchor=south] at (N3.text){$V_{E}$};
+			\draw (4.75, 4.5) -- (5, 4.5);
+			\node[circ](N4) at (5, 4.5){} node[anchor=west] at (N4.text){$V_{5V}$};
+			\draw (10, 5) |- (9.99, 5.25);
+			\draw (10.01, 3.75) |- (10, 3.5);
+			\node[tlground] at (10, 3.5){};
+			\node[circ](N5) at (10, 5.25){} node[anchor=south] at (N5.text){$V_{5V}$};
+			\draw (9, 7.75) |- (8.99, 8);
+			\draw (9, 6.5) |- (8.99, 6.25);
+			\node[tlground] at (8.99, 6.25){};
+			\node[circ](N6) at (9, 8){} node[anchor=south] at (N6.text){$V_{5V}$};
+			\draw (9, 7.75) -- (9, 7.5);
+			\draw (6.51, 7.25) |- (6.5, 7.5);
+			\draw (6.51, 6) |- (6.5, 5.75);
+			\node[tlground] at (6.5, 5.75){};
+			\node[circ](N7) at (6.51, 7.5){} node[anchor=south] at (N7.text){$V_{5V}$};
+			\draw (6.51, 7.25) -- (6.51, 7);
+			\draw (7.75, 7) |- (7.62, 7.01);
+		\end{tikzpicture}
+		\caption{Diagrama de bloques del lazo realimentador.}
+		\label{fig:bloque_PWM}
+	\end{figure}
+	
+	Se sensa la señal de salida y se obtiene el error respecto de una referencia. Luego, se compara el error con una señal triangular, cuyo objetivo es aumentar el duty si el error es negativo (tensión de salida baja) y disminuirlo si es positivo.
+	
+	\subsubsection{Alimentación del lazo y tensión de referencia}
+	Para el correcto funcionamiento del lazo, se busca que su tensión de alimentación sea independiente de la entrada $V_{E}$, por dos motivos: para proteger los comparadores y amplificadores de sobretensión, y para reducir el ruido del lazo. Asimismo, y con el objetivo de aumentar al máximo la excursión simétrica, se fija la tensión de referencia en la mitad de la tensión de alimentación.
+	
+	En la figura \ref{fig:regulador_431} puede verse el circuito de alimentación del lazo realimentador. Se implementa mediante el uso de un regulador ajustable \textbf{TL431} con el agregado de un transistor como fuente de corriente.
+	
+	Se busca, por limitación de los comparadores y amplificadores elegidos, una tensión de alimentación de \SI{5}{V}, y por ende una tensión de referencia de \SI{2.5}{V}
+	
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[transform shape]
+		% Paths, nodes and wires:
+		\draw (6, 4.75) to[empty Schottky diode, l={$TL431$}] (6, 7.25);
+		\draw (6, 8.25) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_1$}] (6, 9.75);
+		\draw (8, 6) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (8, 7.5);
+		\draw (8, 4.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (8, 6);
+		\draw (10, 6) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_4$}] (10, 7.5);
+		\draw (10, 4.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_5$}] (10, 6);
+		\node[npn](N1) at (8, 8.27){} node[anchor=west] at (N1.text){$Q_1$};
+		\draw (8, 9.04) -| (8, 10) |- (6, 10);
+		\draw (6, 9.75) -| (6, 10);
+		\draw (6, 8.25) -| (6, 7);
+		\draw (7.16, 8.27) -| (6, 8.25);
+		\draw (8, 7.5) -- (10, 7.5);
+		\draw (10, 4.5) -- (6, 4.5);
+		\draw (6, 4.5) -| (6, 4.75);
+		\draw (8, 6) |- (6.25, 6);
+		\draw (10, 6) -- (11, 6);
+		\node[circ] at (6, 8.25){};
+		\node[circ] at (8, 6){};
+		\node[circ] at (10, 6){};
+		\node[circ] at (8, 7.5){};
+		\node[circ] at (8, 4.5){};
+		\node[rground, xscale=-1, yscale=-1](N2) at (7, 10){} node[anchor=south] at ([yshift=0.32cm]N2.text){$V_E$};
+		\node[circ](N3) at (11, 6){} node[anchor=west] at (N3.text){$V_{med}$};
+		\draw (10, 7.5) -- (11, 7.5);
+		\node[circ] at (10, 7.5){};
+		\node[circ](N4) at (11, 7.5){} node[anchor=west] at (N4.text){$V_{5V}$};
+		\node[tlground] at (8, 4){};
+		\draw (8, 4) -| (8, 4.5);
+		\node[circ] at (7, 10){};
+	\end{tikzpicture}
+	\caption{Esquemático de circuito de alimentación del lazo realimentador.}
+	\label{fig:regulador_431}
+\end{figure}
+	
+	El resistor $R_1$ es el responsable de suministrar corriente al integrado. Se debe asegurar que provea al menos \SI{1}{mA} para todo el rango de operación de la fuente. Para asegurar no desperdiciar energía, se fija un valor lo más alto posible:
+	
+	\begin{equation}
+		I_{TL} = \frac{V_E - (V_{5V} + vbe_{on})}{R_1} = \frac{\SI{12}{V} - (\SI{5}{V} + \SI{0.7}{V})}{R_1} \to R_1 \approx \SI{5.6}{\kilo\ohm}.
+	\end{equation}
+	Y de este modo se asegura que, para tensiones de entrada más altas, no se superen los \SI{100}{mA}, la corriente admitida máxima.
+	
+	Las resistencias $R_{2-5}$ se fijan en \SI{10}{\kilo\ohm}. Su objetivo será fijar las tensiones de referencia para asegurar $V_{5V} = 5V$ y $V_{med} = 2,5V$. Su valor no debe ser demasiado chico para reducir el consumo pasivo, pero tampoco demasiado grande como para ser afectado fácilmente por el ruido electromagnético.
+	
+	Notar que $R_4$ y $R_5$ actúan de forma efectiva como divisor de tensión, pues la salida será la entrada de amplificadores y comparadores, de alta impedancia.
+	
+	\subsubsection{Generador de señal triangular}
+	
+	Para la generación de la señal triangular, se utiliza un comparador con histéresis en serie con un integrador. El circuito completo se muestra en la figura \ref{fig:triag}.
+	
+		\begin{figure}[H]
+		\centering
+		
+		\caption{Esquemático del generador de señal triangular.}
+		\label{fig:triag}
+	\end{figure}
+	
+	\subsection{Elección y diseño del \textit{Gate Driver}}
+	
+	\subsection{}
 	
 	\subsection{Implementación de circuito PWM (PCB)}
 	
 	
 	
-	Se implementa el circuito en placa impresa, mediante
+	Se implementa el circuito en placa impresa. Notar que se deja espacio para el cálculo e implementación de la compensación del lazo realimentador (ver $C_4$ y $C_2$ en la figura \ref{sec:apendice_PCB}), para el futuro cierre del lazo.
 		
 	\begin{figure}[H]
 		\centering
