@@ -15,13 +15,14 @@
 \contentsline {subsection}{\numberline {3.5}Elección y diseño del \textit {Gate Driver}}{9}{}%
 \contentsline {subsection}{\numberline {3.6}}{9}{}%
 \contentsline {subsection}{\numberline {3.7}Implementación de circuito PWM (PCB)}{9}{}%
-\contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{10}{}%
-\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{12}{}%
-\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{12}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{15}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{16}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{16}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{16}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{17}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{17}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{18}{}%
+\contentsline {subsubsection}{\numberline {3.7.1}Mediciones de la placa}{10}{}%
+\contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{11}{}%
+\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{13}{}%
+\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{13}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{16}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{17}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{17}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{17}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{18}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{18}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{19}{}%
