@@ -655,7 +655,24 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	
 	
-	Se simuló mediante el software Ltspice utilizando el esquematico del anexo \ref{} el comportamiento del circuito utilizando los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores.
+	Se simuló mediante el software Ltspice el comportamiento del circuito utilizando el esquematico de la captura \ref{fig:simulacionbucklazoabierto} y los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores si no un generador de pruebas en el transistor que implementaría el $t_{on}$ y un diodo de rapida conmutación en reemplazo del transistor de tiempo $t_{off}$ . 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/simulacion_buck_lazo_abierto}
+		\caption{Captura esquemático de simulación en ltspice de circuito \textit{buck} a lazo abierto.}
+		\label{fig:simulacionbucklazoabierto}
+	\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../../Simulación/BUCK/Datos/regulador_buck_Lazo_abierto}
+	\caption{}
+	\label{fig:reguladorbucklazoabierto}
+\end{figure}
+
+	
 	
 	\subsection{Diseño del lazo realimentador}
 	
