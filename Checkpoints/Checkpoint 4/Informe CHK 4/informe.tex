@@ -263,7 +263,7 @@ citestyle=apa
 		v_s(t)=
 		\begin{cases}
 			V_E - V_{SAT}, & 0<t<t_{on} \\
-			-V_D, & t_{on}<t<T
+			-V_{SAT}, & t_{on}<t<T
 		\end{cases}
 	\end{equation}
 	
@@ -275,7 +275,7 @@ citestyle=apa
 		\left[
 		\int_0^{t_{on}} (V_E - V_{SAT})\,dt
 		+
-		\int_{t_{on}}^T (-V_D)\,dt
+		\int_{t_{on}}^T (-V_{SAT})\,dt
 		\right]
 	\end{equation}
 	
@@ -287,7 +287,7 @@ citestyle=apa
 		\left[
 		(V_E - V_{SAT})t_{on}
 		-
-		V_D(T-t_{on})
+		V_{SAT}(T-t_{on})
 		\right]
 	\end{equation}
 	
@@ -297,7 +297,7 @@ citestyle=apa
 		V_o \approx
 		\frac{t_{on}}{T}(V_E - V_{SAT})
 		-
-		\frac{T-t_{on}}{T}V_D
+		\frac{T-t_{on}}{T}V_{SAT}
 	\end{equation}
 	
 	Definiendo el ciclo de trabajo como:
@@ -315,15 +315,13 @@ citestyle=apa
 	se obtiene finalmente:
 	
 	\begin{equation}
-		V_o \approx D(V_E - V_{SAT}) - (1-D)V_D
+		V_o \approx D(V_E - V_{SAT}) - (1-D)V_{SAT}
 	\end{equation}
 	
 	
-	Aproximando las caídas de tensión del transistor y del diodo a cero:
+	Aproximando las caídas de tensión de los transistores en conducción a cero:
 	
 	\begin{equation}
-		V_D \approx 0
-		\qquad ; \qquad
 		V_{SAT} \approx 0
 	\end{equation}
 	
@@ -634,14 +632,6 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 			
 			MOSFET inferior & \(Q_2\) & N-MOS IRF3205  &  \\
 			\hline
-			
-			
-			Diodo LED indicador & LED &  &  \\
-			\hline
-			
-			Resistencia limitadora LED & \(R_{LED}\) &  &  \\
-			\hline
-
 			
 			Frecuencia de conmutación & \(f_s\) & 140 kHz&  \\
 			\hline
