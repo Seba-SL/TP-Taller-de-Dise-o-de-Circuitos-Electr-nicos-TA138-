@@ -18,10 +18,10 @@
 \contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{10}{}%
 \contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{12}{}%
 \contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{12}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{14}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{15}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{15}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{15}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{16}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{16}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{17}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{15}{}%
+\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{16}{}%
+\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{16}{}%
+\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{16}{}%
+\contentsline {section}{\numberline {B}Apéndice II: PCB}{17}{}%
+\contentsline {subsection}{\numberline {B.1}Esquematico.}{17}{}%
+\contentsline {subsection}{\numberline {B.2}Pistas}{18}{}%
