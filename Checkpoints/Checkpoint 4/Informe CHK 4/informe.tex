@@ -1086,98 +1086,233 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 		
 	\subsection{Características físicas del inductor diseñado}
 	
-	 Especificaciones:
+Especificaciones:
+
+\begin{itemize}
+	\item $L = \SI{50}{\micro\henry}$: Inductancia requerida.
+	\item $I_{L,\mathrm{DC}} = \SI{750}{\milli\ampere}$: Corriente media del inductor.
+	\item $f_{SW} = \SI{140}{\kilo\hertz}$: Frecuencia de conmutación.
+	\item $I_{L,\mathrm{MAX}} = \SI{1.5}{\ampere}$: Corriente máxima del inductor.
+	\item $P_{CU,\mathrm{MAX}} = \SI{1}{\watt}$: Pérdidas máximas permitidas en el cobre.
+\end{itemize}
+
+A partir de las especificaciones del diseño, se utilizaron los métodos de Erickson y Tacca para el dimensionamiento del inductor. Para ello, se desarrolló un código en Python que permite obtener parámetros de diseño tales como:
+
+\begin{itemize}
+	\item Material del núcleo.
+	\item Tipo de núcleo.
+	\item Entrehierro necesario.
+	\item Número de vueltas.
+	\item Tipo de alambre.
+\end{itemize}
+
+El método implementado se encuentra limitado al uso de núcleos del tipo EE. Sin embargo, también es posible realizar diseños utilizando otros tipos de núcleos, como toroides o solenoides, mediante procedimientos de cálculo equivalentes.
+
+\subsection*{Método de Erickson}
+
+El procedimiento de diseño empleado consta de las siguientes etapas:
+
+\begin{enumerate}
 	
-	\begin{itemize}
-		\item $L = \SI{50}{\micro\henry}$: Inductancia requerida.
-		\item $I_{L,\mathrm{DC}} = \SI{1}{\ampere}$: Corriente media del inductor.
-		\item $f_{SW} = \SI{140}{\kilo\hertz}$: Frecuencia de conmutación.
-		\item $I_{L,\mathrm{MAX}} = \SI{1.5}{\ampere}$: Corriente máxima del inductor.
-		\item $P_{CU,\mathrm{MAX}} = \SI{1}{\watt}$: Pérdidas máximas permitidas en el cobre.
-	\end{itemize}
+	\item Cálculo de la resistencia máxima admisible del conductor:
+	$R_{cu,\mathrm{max}}$ [$\si{\ohm}$].
+	\begin{align*}
+		\boxed{R_{cu,\mathrm{max}} = \SI{1.77}{\ohm}}
+	\end{align*}
 	
-	A partir de las especificaciones del diseño, se utilizaron los métodos de Erickson y Tacca para el dimensionamiento del inductor. Para ello, se desarrolló un código en Python que permite obtener parámetros de diseño tales como:
+	\item Selección del material del núcleo en función de la frecuencia de conmutación.
 	
-	\begin{itemize}
-		\item Material del núcleo.
-		\item Tipo de núcleo.
-		\item Entrehierro necesario.
-		\item Número de vueltas.
-		\item Tipo de alambre.
-	\end{itemize}
+	Dado que la frecuencia de conmutación es
+	\begin{align*}
+		f_{SW} = \SI{140}{\kilo\hertz}
+	\end{align*}
 	
-	El método implementado se encuentra limitado al uso de núcleos del tipo EE. Sin embargo, también es posible realizar diseños utilizando otros tipos de núcleos, como toroides o solenoides, mediante procedimientos de cálculo equivalentes.
+	se selecciona un material de ferrita tipo N87, adecuado para aplicaciones de electrónica de potencia en este rango de frecuencias.
+	\begin{align*}
+		\boxed{\text{Material} = \mathrm{N87}}
+	\end{align*}
 	
-	\subsection*{Método de Erickson}
+	\item Cálculo de la constante geométrica mínima requerida del núcleo:
+	$K_g$ [$\si{\centi\meter^5}$].
+	\begin{align*}
+		\boxed{K_{g,\mathrm{min}} = \SI{0.0183e-3}{\centi\meter^5}}
+	\end{align*}
 	
-	El procedimiento de diseño utilizado consta de las siguientes etapas:
+	Se selecciona un núcleo tipo EE16, cuya constante geométrica satisface la condición requerida:
+	\begin{align*}
+		\boxed{\text{Tipo de núcleo} = \mathrm{EE16}}
+		\qquad
+		\boxed{K_g = \SI{2.02e-3}{\centi\meter^5}}
+	\end{align*}
 	
-	\begin{enumerate}
-		\item Cálculo de la resistencia máxima del alambre: $R_{cu,\mathrm{max}}$ [$\si{\ohm}$].
-		\begin{align*}
-			\boxed{R_{cu,\mathrm{max}} = \SI{1}{\ohm}}
-		\end{align*}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/diseño_inductor/tipos-de-nucleos.png}
+		\caption{Tipos de núcleos}
+		\label{fig:tipos-de-nucleo}
+	\end{figure}
+	
+	\item Cálculo del entrehierro requerido:
+	$l_g$ [$\si{\meter}$].
+	\begin{align*}
+		\boxed{l_g = \SI{8.267e-5}{\meter}}
+	\end{align*}
+	
+	\item Cálculo del número de vueltas.
+	\begin{align*}
+		\boxed{n_l = 13.15 \approx 13}
+	\end{align*}
+	
+	\item Cálculo de la sección máxima permitida para el conductor:
+	$A_w$ [$\si{\centi\meter^2}$].
+	\begin{align*}
+		\boxed{A_{w,\mathrm{max}} = \SI{4.82e-3}{\centi\meter^2}}
+	\end{align*}
+	
+	Se selecciona un conductor AWG20, cuya sección transversal cumple con el requisito establecido:
+	\begin{align*}
+		\boxed{\text{Tipo de alambre} = \mathrm{AWG20}}
+		\qquad
+		\boxed{A_w = \SI{3.243e-3}{\centi\meter^2}}
+	\end{align*}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/diseño_inductor/tipos-de-alambre.png}
+		\caption{Tipos de alambre de cobre}
+		\label{fig:tipos-de-alambre}
+	\end{figure}
+	
+	\item Verificación de la resistencia del conductor.
+	\begin{align*}
+		\boxed{
+			R_{cu} = \SI{0.0234}{\ohm}
+			<
+			R_{cu,\mathrm{max}} = \SI{1.77}{\ohm}
+		}
+	\end{align*}
+	
+	Por lo tanto, la condición de pérdidas en cobre se satisface.
+	
+	\item Verificación de la densidad de corriente.
+	\begin{align*}
+		\boxed{
+			\sigma_{I_L}
+			=
+			\SI{4.625}{\ampere\per\milli\meter^2}
+			<
+			\sigma_{I_{L,\mathrm{max}}}
+			=
+			\SI{5}{\ampere\per\milli\meter^2}
+		}
+	\end{align*}
+	
+	Por lo tanto, la densidad de corriente se encuentra dentro de los límites admisibles.
+	
+	\item Verificación de saturación del núcleo.
+	\begin{align*}
+		\boxed{B = \SI{0.31}{\milli\tesla} < B_{\max} = \SI{300}{\milli\tesla}}
+	\end{align*}
+	
+	El núcleo elegido no entra en saturación. Cumple esta condición.
+	
+	\item Verificación del efecto pelicular.
+	\begin{align*}
+		\boxed{\delta = \SI{0.02}{\centi\meter}}
+		\qquad
+		\boxed{\dfrac{d_{AWG20}}{2} = \SI{0.035}{\centi\meter}}
+	\end{align*}
+	
+	Dado que
+	\[
+	\delta < \frac{d_{AWG20}}{2}
+	\]
+	
+	el efecto pelicular no puede despreciarse para el conductor seleccionado.
+	
+\end{enumerate}
+
+
+Resumiendo, el diseño del inductor nos queda de la siguiente forma:
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|l|c|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Diseño del Inductor}} \\
+		\hline
+		\textbf{Parámetro} & \textbf{Valor} \\
+		\hline
+		Tipo de material & N87 \\
+		\hline
+		Tipo de núcleo & EE16 \\
+		\hline
+		Entrehierro (gap) & $l_g=\SI{0.082}{\milli\meter}$ \\
+		\hline
+		Número de vueltas & $n_l=13$ \\
+		\hline
+		Tipo de alambre & AWG\#20 \\
+		\hline
+	\end{tabular}
+	\caption{Parámetros de diseño del inductor de $L=\SI{50}{\micro\henry}$}
+	\label{tab:diseno_inductor}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{4cm}|p{4cm}|p{3cm}|c|}
+		\hline
+		\textbf{Verificación} &
+		\textbf{Valores} &
+		\textbf{Condición} &
+		\textbf{Resultado} \\
+		\hline
 		
-		\item Determinación del material del núcleo a utilizar en función de la frecuencia de conmutación.
+		Resistencia del cobre &
+		$R_{CU}=\SI{0.023}{\ohm}$
 		
-		Como nuestra frecuencia de conmutacion $\SI{140}{\kilo\hertz} < \SI{1}{\mega\hertz}$ utilizamos material tipo N67 que corresponde a ferrita.
-		\begin{align*}
-			\boxed{\text{Material} = N67}
-		\end{align*}
+		$R_{CU,\max}=\SI{1.77}{\ohm}$ &
+		$R_{CU}<R_{CU,\max}$ &
+		Cumple \\
+		\hline
 		
-		\item Cálculo de la constante geométrica del núcleo: $K_g$ [$\si{\centi\meter^5}$].
-		\begin{align*}
-			\boxed{K_{g,\mathrm{min}} > \SI{0.0326e-03}{\centi\meter^5}}
-		\end{align*}
+		Densidad de corriente &
+		$\Sigma_{I_L}=\SI{4.62}{\ampere\per\milli\meter^2}$
 		
-		Un tipo de nucleo cumple esa condicion es EE22:
-		\begin{align*}
-			\boxed{\text{Tipo de Nucleo} = EE22} \land \boxed{K_{g} = \SI{8.26e-03}{\centi\meter^5}}
-		\end{align*}
+		$\Sigma_{I_{L,\max}}=\SI{5}{\ampere\per\milli\meter^2}$ &
+		$\Sigma_{I_L}<\Sigma_{I_{L,\max}}$ &
+		Cumple \\
+		\hline
 		
-		\item Cálculo del entrehierro necesario: $l_g$ [$\si{\meter}$].
-		\begin{align*}
-			\boxed{l_g = \SI{3.831e-5}{\meter}}
-		\end{align*}
+		Saturación del núcleo &
+		$B=\SI{0.31}{\milli\tesla}$
 		
-		\item Cálculo del número de vueltas: $n_l$.
-		\begin{align*}
-			\boxed{n_l = 6.09 \approx  7} 
-		\end{align*}
+		$B_{\max}=\SI{300}{\milli\tesla}$ &
+		$B<B_{\max}$ &
+		Cumple \\
+		\hline
 		
-		\item Cálculo de la sección del alambre: $A_w$ [$\si{\centi\meter^2}$].
-		\begin{align*}
-			\boxed{A_{w,\mathrm{max}} < \SI{9.24e-3}{\centi\meter^2}} 
-		\end{align*}
+		Efecto pelicular &
+		$\delta=\SI{0.02}{\centi\meter}$
 		
-		Un tipo de alambre de cobre que cumple esa condicion es AWG18:
-		\begin{align*}
-			\boxed{\text{Tipo de alambre de cobre} = AWG18} \land \boxed{A_w = \SI{8.228e-3}{\centi\meter^2}}
-		\end{align*}
+		$\dfrac{d_{AWG20}}{2}=\SI{0.035}{\centi\meter}$ &
+		$\delta>\dfrac{d}{2}$ &
+		No cumple \\
+		\hline
 		
-		\item Verificación de la resistencia del alambre: $R_{cu}$ [$\si{\ohm}$].
-		\begin{align*}
-			\boxed{R_{cu} = \SI{0.00585}{\ohm} < R_{cu,\mathrm{max}} = \SI{1}{\ohm}}
-		\end{align*}
-		
-		\item Cálculo de la densidad de corriente en el conductor: $\Sigma_{I_L}$ [$\si{\ampere\per\milli\meter^2}$].
-		\begin{align*}
-			\boxed{\sigma_{I_L} = \SI{1.823}{\ampere\per\milli\meter^2} < \sigma_{I_{L,\mathrm{max}}} = \SI{5}{\ampere\per\milli\meter^2}}
-		\end{align*}
-		
-		\item Se verifica que no sature el núcleo:
-		\begin{align*}
-			\boxed{B_{max} = \SI{300}{\milli\tesla}} \\
-			\boxed{B_{max,calculado} = \SI{0.36}{\milli\tesla}}
-		\end{align*}
-		
-		\item Se calcula la profundidad de penetración Delta:
-		\begin{align*}
-			\boxed{\delta = \SI{0.02}{\centi\meter}} \\
-			\boxed{\dfrac{A}{2} = \SI{0.0545}{\centi\meter}}
-		\end{align*}
-		
-	\end{enumerate}
+	\end{tabular}
+	\caption{Verificaciones de diseño del inductor}
+	\label{tab:verificaciones_inductor}
+\end{table}
+
+Se observa que la última condición no se cumple, por lo que el conductor seleccionado presenta efecto pelicular. Una posible solución consistiría en utilizar un alambre de menor diámetro, de manera que la profundidad de penetración sea mayor que el radio del conductor y el efecto pelicular pueda despreciarse. Sin embargo, al reducir el diámetro del alambre también disminuye su sección transversal, lo que incrementa la densidad de corriente y podría llevar a superar el límite de diseño establecido.
+
+Otra alternativa consiste en emplear un conductor multifilar, compuesto por pequeños hilos de cobre conectadas en paralelo. De esta manera, cada hilo puede cumplir individualmente con la condición de profundidad de penetración, reduciendo las pérdidas asociadas al efecto pelicular sin incrementar significativamente la densidad de corriente total del conductor.
+
+Cabe destacar que los resultados obtenidos corresponden a un diseño teórico o ideal del inductor. En la práctica, el diseño final se encuentra condicionado por la disponibilidad de materiales y componentes en el mercado. Por este motivo, suele ser necesario adaptar los parámetros calculados a los materiales que pueden conseguirse en el mercado.
 	
 	\subsection{Diseño PCB de la buck en lazo abierto}
 	
