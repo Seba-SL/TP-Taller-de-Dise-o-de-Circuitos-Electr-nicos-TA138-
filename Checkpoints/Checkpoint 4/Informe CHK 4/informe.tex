@@ -747,7 +747,36 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 	
 	Se sensa la señal de salida y se obtiene el error respecto de una referencia. Luego, se compara el error con una señal triangular, cuyo objetivo es aumentar el duty si el error es negativo (tensión de salida baja) y disminuirlo si es positivo.
 	
+		\subsubsection{Escalador de señal de salida}
 	
+	Se busca comparar la señal de salida con una tensión de referencia más baja. Para ello debe escalarse $V_o$ de tal modo que, si $V_o$ tiene el valor deseado, $v_{med} = V_o \cdot escalado$. Se elige una combinación de resistores tal que $\SI{9.5}{V} \cdot escalado = v_{med} =\SI{2.5}{V} \to escalado = 0.263$. La figura \ref{fig:escalado} muestra su topología.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\draw (8, 8) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_1$}] (8, 6);
+			\draw (9, 8) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_2$}] (9, 6);
+			\draw (8, 6) to[american resistor, /tikz/circuitikz/bipoles/length=0.840cm, l={$R_3$}] (8, 4.5);
+			\node[ground] at (8, 4.5){};
+			\draw (8, 6) -- (9, 6);
+			\draw (9, 8) -- (8, 8);
+			\draw (8, 8) -| (8, 8.5);
+			\node[circ](N1) at (8, 8.5){} node[anchor=south] at (N1.text){$V_o$};
+			\node[circ] at (8, 8){};
+			\node[circ] at (8, 6){};
+			\draw (8, 6) -- (7, 6);
+			\node[flowarrow, xscale=-1, yscale=-1](N2) at (7, 6){} node[anchor=east] at ([xshift=-0.3cm]N2.text){$v_{sense}$};
+		\end{tikzpicture}
+		\caption{Bloque de escalado.}
+		\label{fig:escalado}
+	\end{figure}
+	
+	Se eligen dos resistores de valor $R_{1-2} = \SI{56}{\kilo\ohm}$ y otro de valor $R_3 = \SI{10}{\kilo\ohm}$:
+	
+	\begin{equation}
+		escalado = \frac{R_3}{R_1 // R_2 + R_3} = 0.263
+	\end{equation}
 \subsubsection{Alimentación del lazo y tensión de referencia}
 	Para el correcto funcionamiento del lazo, se busca que su tensión de alimentación sea independiente de la entrada $V_{E}$, por dos motivos: para proteger los comparadores y amplificadores de sobretensión, y para reducir el ruido del lazo. Asimismo, y con el objetivo de aumentar al máximo la excursión simétrica, se fija la tensión de referencia en la mitad de la tensión de alimentación.
 	
@@ -810,17 +839,208 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 	
 		\begin{figure}[H]
 		\centering
-		
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\node[op amp](N1) at (9.19, 6.49){} node[anchor=center] at (N1.text){$TL082$};
+			\node[op amp, yscale=-1](N2) at (14.19, 6.49){} node[anchor=center] at (N2.text){$LM319$};
+			\draw (16.5, 8) to[american resistor, /tikz/circuitikz/bipoles/length=0.980cm, l={$R_{pu}$}] (16.5, 6.5);
+			\draw (13, 6.98) to[american resistor, /tikz/circuitikz/bipoles/length=0.980cm, l_={$R_1$}] (11, 7);
+			\draw (15.5, 8.5) to[american resistor, /tikz/circuitikz/bipoles/length=0.980cm, l={$R_2$}] (13, 8.5);
+			\draw (13.5, 10) to[american resistor, /tikz/circuitikz/bipoles/length=0.980cm, l={$R_C$}] (12, 10);
+			\draw (13, 7) -| (13, 8.5) -- (13.25, 8.5);
+			\draw (15.38, 6.49) -| (17.5, 10) -- (13.5, 10);
+			\draw (8, 8.25) to[capacitor, /tikz/circuitikz/bipoles/length=1.12cm, l={$C$}] (10, 8.25);
+			\draw (10, 8.25) -| (11, 7);
+			\draw (7, 8.25) -| (7, 10) -- (12, 10);
+			\node[circ] at (11, 7){};
+			\node[circ] at (7, 8.25){};
+			\draw (8, 6.98) -| (7, 8.25);
+			\draw (7, 8.25) -- (8, 8.25);
+			\draw (15.5, 8.5) -| (15.5, 6.5);
+			\draw (10.38, 6.49) -| (11, 7);
+			\node[circ] at (13, 7){};
+			\node[circ] at (15.5, 6.5){};
+			\node[rground, xscale=-1, yscale=-1](N3) at (9.107, 7.029){} node[anchor=south] at ([yshift=0.33cm]N3.text){$V_{5V}$};
+			\node[ground] at (9.107, 5.951){};
+			\node[ground] at (14.107, 5.951){};
+			\node[rground, xscale=-1, yscale=-1](N4) at (14.107, 7.029){} node[anchor=south] at ([yshift=0.33cm]N4.text){$V_{5V}$};
+			\node[circ](N5) at (8, 6){} node[anchor=east] at (N5.text){$V_{med}$};
+			\node[circ](N6) at (13, 6){} node[anchor=east] at (N6.text){$V_{med}$};
+			\node[circ](N7) at (11.75, 8.25){} node[anchor=west] at (N7.text){$v_{triag}$};
+			\node[rground, xscale=-1, yscale=-1](N8) at (16.5, 8){} node[anchor=south] at ([yshift=0.33cm]N8.text){$V_{5V}$};
+			\node[circ] at (16.5, 6.5){};
+			\draw (11, 8.25) -- (11.75, 8.25);
+			\node[circ] at (11, 8.25){};
+		\end{tikzpicture}
 		\caption{Esquemático del generador de señal triangular.}
 		\label{fig:triag}
 	\end{figure}
 	
+	La elección de los integrados \textbf{TL082} y \textbf{LM319} se basa principalmente en la frecuencia de operación objetivo (tabla \ref{tab:spec_buck}), y en su capacidad para operar con fuente simple. Para ello se buscó un slew rate mayor que el requerido para la señal triangular (en este caso, los \SI{20}{V/\micro s} son ideales), y una velocidad de respuesta muy inferior a la requerida para generar la señal cuadrada.
+	
+	La elección de valores de los componentes de la figura \ref{fig:triag} se hace en base al siguiente criterio:
+	
+	\begin{itemize}
+		\item Los resistores $R_1$ y $R_2$ definen la amplitud de la señal triangular, mediante el ajuste de los puntos de comparación del comparador con histéresis. Del análisis se deduce la siguiente fórmula:
+		\begin{equation}
+			V_{lim} = v_{med} \cdot \left( 1 \pm \frac{R_1}{R_2} \right)
+		\end{equation}
+		Teniendo en cuenta los márgenes (Output Voltage Swing) del \textbf{TL082}, la amplitud máxima será de $\approx \SI{2.6}{V}$. Como tal, se fija $R_1 = \SI{33}{\kilo\ohm}$ y $R_2 = \SI{100}{\kilo\ohm}$. La señal triangular se moverá entre los límites $\SI{1.67}{V} < v_{triag} < \SI{3.3}{V}$.
+		
+		\item La resistencia $R_{pu}$ es necesaria por ser el LM319 \textit{open-collector}. Se fija en $R_{pu} = \SI{1}{\kilo\hertz}$ para no consumir mucha corriente (\SI{5}{mA}), pero no afectar demasiado la carga y descarga de $C$.
+		
+		\item A continuación debe fijarse la frecuencia de operación. Se fija primero $C = \SI{1}{nF}$, pues es un valor válido para capacitores cerámicos (que funcionan correctamente en el rango $\sim \SI{100}{\kilo\hertz}$).
+		
+		Analizando la expresión característica de un amplificador integrador, se obtiene que los tiempos de crecimiento y decrecimiento están determinados por:
+		\begin{equation}
+			\Delta t_c = 2 \cdot \frac{R1}{R2} \cdot (R_C + R_{pu}) \cdot C
+		\end{equation}
+		\begin{equation}
+			\Delta t_d = 2 \cdot \frac{R1}{R2} \cdot R_C \cdot C
+		\end{equation}
+		
+		Se busca una frecuencia de operación de $\sim \SI{130}{\kilo\hertz} \to T = \Delta t_c + \Delta t_d \sim \SI{7.7}{\micro s}$.
+		Se fija $R_{C} = \SI{4.7}{\kilo\ohm}$.
+		
+		\begin{equation}
+			t_c = \SI{4.35}{\micro s}, \qquad \Delta t_d = \SI{3.7}{\micro s} \to f_s =\approx \SI{124}{\kilo\hertz}
+		\end{equation}
+		
+		\textit{Observación:} el hecho de que la frecuencia no sea exactamente triangular no afecta de ninguna manera la generación de la señal PWM, solo alterará el movimiento de su fase.
+		\textit{Observación:} La salida del generador de señal triangular deberá ser de alta impedancia.
+	\end{itemize}
+	
+	\subsubsection{Amplificador de error y comparador PWM}
+	
+	Una vez diseñados los bloques que generan la señal triangular, la señal de sensado y la señal de referencia, se las deberá comparar para obtener una señal PWM modulada. Se colocan en serie un amplificador inversor, para amplificar el error al rango de la señal triangular, y luego se compara la salida con la señal triangular. El circuito final se ve en la figura \ref{fig:amp_error}.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\node[op amp](N1) at (7.81, 8){} node[anchor=center] at (N1.text){$TL082$};
+			\draw (11.5, 9.5) to[american resistor, l={$R_4$}] (14.5, 9.5);
+			\draw (11.75, 8) to[american resistor, l={$R_3$}] (9, 8);
+			\node[op amp, yscale=-1](N2) at (12.94, 7.51){} node[anchor=center] at (N2.text){$LM319$};
+			\draw (6.5, 10) to[american resistor, l={$R_2$}] (9.25, 10);
+			\draw (6.5, 8.5) to[american resistor, l={$R_1$}] (3.75, 8.5);
+			\draw (11.5, 9.5) -| (11.5, 8);
+			\draw (14.13, 7.51) -| (14.5, 9.5);
+			\draw (14.5, 7.51) -| (16, 7.5);
+			\draw (9.25, 10) -- (9.25, 8);
+			\draw (6.5, 10) |- (6.62, 8.49);
+			\node[circ] at (11.5, 8){};
+			\node[circ] at (14.5, 7.5){};
+			\node[circ] at (9.25, 8){};
+			\node[circ] at (6.5, 8.49){};
+			\node[circ](N3) at (16, 7.5){} node[anchor=west] at ([xshift=-0.02cm]N3.text){$PWM$};
+			\node[inputarrow](N4) at (6.62, 7.51){} node[anchor=east] at ([xshift=-0.07cm]N4.text){$v_{med}$};
+			\node[inputarrow](N5) at (3, 8.5){} node[anchor=east] at ([xshift=-0.09cm]N5.text){$v_{sense}$};
+			\node[inputarrow](N6) at (11.75, 7.02){} node[anchor=east] at ([xshift=-0.07cm]N6.text){$v_{triag}$};
+			\node[ground] at (7.727, 7.461){};
+			\node[ground] at (12.857, 6.971){};
+			\node[rground, xscale=-1, yscale=-1](N7) at (7.727, 8.539){} node[anchor=south] at ([yshift=0.32cm]N7.text){$V_{5V}$};
+			\node[rground, xscale=-1, yscale=-1](N8) at (12.857, 8.049){} node[anchor=south] at ([yshift=0.32cm]N8.text){$V_{5V}$};
+			\draw (15.25, 9.5) to[american resistor, l={$R_{pu}$}] (15.25, 7.5);
+			\node[rground, xscale=-1, yscale=-1](N9) at (15.25, 9.5){} node[anchor=south] at ([yshift=0.32cm]N9.text){$V_{5V}$};
+			\node[circ] at (15.25, 7.5){};
+			\draw (3.75, 7) to[empty ZZener diode, /tikz/circuitikz/bipoles/length=0.980cm, l={$D_1$}] (3.75, 8.5);
+			\draw (3, 8.5) -- (3.75, 8.5);
+			\node[circ] at (3.75, 8.5){};
+			\node[tlground] at (3.75, 7){};
+		\end{tikzpicture}
+		\caption{Esquemático del amplificador de error y comparador PWM.}
+		\label{fig:amp_error}
+	\end{figure}
+	
+	La elección de los valores sigue el siguiente criterio:
+	\begin{itemize}
+		\item Se coloca un diodo Zener con $V_z = \SI{5.2}{V}$ para proteger la entrada de sobrepicos de tensión ocasionados por el transitorio de la fuente switching, para proteger al lazo realimentador.
+		
+		\item Para el amplificador inversor, se busca que, para el rango de regulación máximo, el valor del error se encuentre justo en el límite del valor pico de la señal triangular. Se fija este rango como $\pm \SI{1}{V}$ respecto del valor de $V_o$ esperado. Para encontrar el valor de $A_v = R_2 / R_1$, se debe evaluar considerando el escalado:
+		
+		\begin{equation}
+			\SI{1.5}{V} \cdot escalado \cdot A_v = \SI{0.8}{V} \to A_v \approx 3.
+		\end{equation}
+		
+		Se fija, con este propósito, $R_1 = \SI{10}{\kilo\ohm}$ y $R_2 = \SI{33}{\kilo\ohm}$.
+		
+		\item Los resistores del comparador con histéresis cumplen la función de hacer la transición entre estados del PWM limpia, y por lo tanto la histéresis será muy pequeña y tendrá valor $R_3/R_4$. Se fijan valores $R_3 = \SI{1}{\kilo\ohm}$ y $R_4 = \SI{10}{\kilo\ohm}$ para una histéresis del 10\%. Debido a que el error estacionario debe ser 0, su valor no afecta en gran medida al consumo pasivo de corriente.
+		
+		\item El valor del resistor $R_{pu}$ se fija en $R_{pu} = \SI{10}{\kilo\ohm}$. De este modo la corriente de consumo pasivo será $\sim \SI{500}{\micro\ampere}$. Dado que la entrada del gate driver es de alta impedancia, este valor no es crítico para el funcionamiento.
+	\end{itemize}
+	
 	\subsection{Elección y diseño del \textit{Gate Driver}}
+	Para el manejo de los transistores de conmutación, se utiliza un \textit{gate driver} que asegure la conmutación de la fuente de forma segura. Dado que se trata de una fuente sincrónica, además de implementar un control por \textit{High-Side}, deberá tenerse en cuenta el tiempo muerto.
 	
-	\subsection{}
+	Por simplicidad, se elige el driver \textbf{IR2111}. Este módulo tiene integrado ambos controles (\textit{High-Side} y \textit{Low-Side}), además del control del tiempo muerto.
 	
+	El circuito de control tiene la forma de la figura \ref{fig:gatedriver}.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[transform shape]
+			% Paths, nodes and wires:
+			\draw (8.5, 11) to[full Schottky diode, /tikz/circuitikz/bipoles/length=0.840cm, l={$D$}] (11, 11);
+			\node[shape=rectangle, draw, line width=1pt, minimum width=1.465cm, minimum height=1.965cm] at (9.75, 9.25){};
+			\draw (11.75, 11) to[capacitor, /tikz/circuitikz/bipoles/length=0.840cm, l={$C$}] (11.75, 9);
+			\draw (11, 11) -- (11.75, 11);
+			\draw (10.5, 10) -| (11, 11);
+			\draw (10.5, 8.5) -- (12.5, 8.5);
+			\draw (10.5, 9) -- (11.75, 9) -- (12.5, 9);
+			\draw (10.5, 9.5) -- (12.5, 9.5);
+			\node[circ] at (11, 11){};
+			\node[circ] at (11.75, 9){};
+			\draw (8.5, 11) -| (8.5, 9.75) -- (9, 9.75);
+			\draw (9, 9) -- (7.75, 9);
+			\draw (9, 8.5) -- (8.5, 8.5) -| (8.5, 8.25);
+			\node[tlground] at (8.5, 8.25){};
+			\node[trarrow](N1) at (7.638, 9){} node[anchor=east] at (N1.text){$PWM$};
+			\node[trarrow](N2) at (12.5, 8.5){} node[anchor=west] at (N2.text){$L_{ctrl}$};
+			\node[trarrow](N3) at (12.5, 9){} node[anchor=west] at (N3.text){$V_s$};
+			\node[trarrow](N4) at (12.5, 9.5){} node[anchor=west] at (N4.text){$H_{ctrl}$};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (9.063, 9.75){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (9.063, 9.75){\small $V_{cc}$};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (9.062, 8.5){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (9.062, 8.5){\small GND};
+			\node[shape=rectangle, minimum width=0.402cm, minimum height=0.34cm] at (9.125, 9){} node[anchor=center, align=center, text width=0.014cm, inner sep=6pt] at (9.125, 9){\small IN};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9.937){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9.937){\small $V_B$};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9.437){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9.437){\small $H_o$};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 8.5){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 8.5){\small $L_o$};
+			\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9){\small $V_s$};
+			\node[shape=rectangle, minimum width=1.59cm, minimum height=0.527cm] at (9.625, 8.031){} node[anchor=north west, align=left, text width=1.202cm, inner sep=6pt] at (8.813, 8.312){IR2111};
+		\end{tikzpicture}
+		\caption{Esquemático del \textit{gate-driver}.}
+		\label{fig:gatedriver}
+	\end{figure}
+	
+	\subsection{Simulaciones del lazo de realimentación}
+	
+	Se realizan diferentes simulaciones sobre el archivo de la figura \ref{fig:sim_pwm}. Será de interés la triangular resultante, la señal pwm generada y su interacción con el valor medido. Para la medición a lazo abierto, se simula una entrada senoidal de valor medio \SI{9.5}{V}, con una amplitud de \SI{1.5}{V}.
+	
+	La señal triangular resultante puede verse en la figura \ref{fig:sim_triag}, y su interacción con la señal de salida PWM puede verse en la figura \ref{fig:sim_pwm2}.
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/BUCK/simulacion_pwm_Lazo_abierto}
+		\caption{Archivo de simulación del circuito PWM a lazo abierto.}
+		\label{fig:sim_pwm}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{../../../Simulación/BUCK/Datos/grafico_pwm}
+		\caption{Señal triangular simulada.}
+		\label{fig:sim_triag}
+	\end{figure}
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{../../../Simulación/BUCK/Datos/grafico_pwm2}
+		\caption{Señal PWM resultante.}
+		\label{fig:sim_pwm2}
+	\end{figure}
+	
+	Se observa que el comportamiento es coherente con los resultados calculados, con la salvedad de la frecuencia de oscilación, que es un poco más alta $f_s = \SI{128}{\kilo\hertz}$.
 	\subsection{Implementación de circuito PWM (PCB)}
-	
 	
 	
 	Se implementa el circuito en placa impresa. Notar que se deja espacio para el cálculo e implementación de la compensación del lazo realimentador (ver $C_4$ y $C_2$ en la figura \ref{sec:apendice_PCB}), para el futuro cierre del lazo. Se realizo un diseño simple faz a modo prototipo con ciertas conexiones cableadas en la capa superior y \textit{jumpers} para testeo como se aprecia en la figura \ref{fig:pwmpcb}, luego se implemento mediante transferencia térmica y corrosión de cobre sobrante de la placa con el uso de percloruro férrico obteniendo la placa Fig. \ref{fig:pcbpwmplaca}.
@@ -843,7 +1063,7 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 	\subsubsection{Mediciones de la placa}
 	
 	
-	Ya en el laboratorio se verifico el funcionamiento del PWM, alimentando el circuito con fuentes de laboratorio y utilizando un osciloscopio para observar y medir la señal como se puede ver en la figura \ref{fig:bancopruebaspwm}. Para verificar la modulación del ancho de pulso se coloco una fuente a la terminal de muestreo y se vario la tensión levemente.
+	Ya en el laboratorio se verifica el funcionamiento del PWM, alimentando el circuito con fuentes de laboratorio y utilizando un osciloscopio para observar y medir la señal como se puede ver en la figura \ref{fig:bancopruebaspwm}. Para verificar la modulación del ancho de pulso se coloco una fuente a la terminal de muestreo y se vario la tensión levemente.
 	
 	\begin{figure}[H]
 		\centering
@@ -862,7 +1082,7 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 		\label{fig:capturasoscpwm}
 	\end{figure}
 	
-	
+	Notar que, según el esquemático de la imagen \ref{sec:apendice_PCB}, el comparador con histéresis de la imagen \ref{fig:amp_error} no se encuentra implementado. Esto hace el flanco de conmutación muy ruidoso, debido a la naturaleza también ruidosa de la señal de entrada $v_{sense}$.
 		
 	\subsection{Características físicas del inductor diseñado}
 	
