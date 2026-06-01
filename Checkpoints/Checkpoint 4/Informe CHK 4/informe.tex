@@ -1077,7 +1077,7 @@ Mientras que en la Fig. \ref{fig:corrientesiliobucklazoabierto} se verifica que 
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\linewidth]{img/buck/capturas_osc_pwm}
+		\includegraphics[width=0.6\linewidth]{img/buck/capturas_osc_pwm}
 		\caption{Capturas del osciloscopio midiendo el pulso modulado y la señal triangular del oscilador.}
 		\label{fig:capturasoscpwm}
 	\end{figure}
@@ -1433,6 +1433,13 @@ Cabe destacar que los resultados obtenidos corresponden a un diseño teórico o 
 	
 	\section{Conclusiones}
 	
+	Se pudo asegurar el funcionamiento del lazo de realimentación, mediante simulaciones y mediciones. Mientras que el funcionamiento de la fuente a lazo abierto se verificó por simulación.
+	
+	Para el funcionamiento íntegro de la fuente switching, resta la fabricación del bobinado y la compensación del lazo realimentador.
+	
+	Asimismo, se deben agregar algunas instancias de protección, tanto para la fuente como para la carga, y de este modo asegurar la calidad de la fuente en su estado final.
+	
+	
 	
 	{\footnotesize
 		\printbibliography
@@ -1441,23 +1448,15 @@ Cabe destacar que los resultados obtenidos corresponden a un diseño teórico o 
 	
 	\newpage
 	\appendix
-	\section{Apéndice I: Etapa Previa}
-	\label{sec:etapa_previa}
-	
-	\subsection{Compensación nodo limitador de corriente}
-	
-	
-	\subsection{Medición: Variaciones en tensión de referencia}
-\let\clearpage\relax
 
 \includepdf[
 pages=1,
 angle=90,
 fitpaper=true,
-pagecommand={\section{Apéndice II: PCB}\label{sec:apendice_PCB}\subsection{Esquematico.}}
+pagecommand={\section{Apéndice I: PCB}\label{sec:apendice_PCB}\subsection{Esquematico.}}
 ]{img/buck/esquematico_buck.pdf}
 
-
+\let\clearpage\relax
 
 \includepdf[
 pages=1,

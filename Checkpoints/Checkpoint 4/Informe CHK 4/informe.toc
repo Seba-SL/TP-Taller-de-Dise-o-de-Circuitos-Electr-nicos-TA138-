@@ -10,19 +10,18 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Frecuencia de oscilador}{7}{}%
 \contentsline {subsection}{\numberline {3.3}Diseño verificado por simulación de la fuente buck a lazo abierto}{8}{}%
 \contentsline {subsection}{\numberline {3.4}Diseño del lazo realimentador}{9}{}%
-\contentsline {subsubsection}{\numberline {3.4.1}Alimentación del lazo y tensión de referencia}{9}{}%
-\contentsline {subsubsection}{\numberline {3.4.2}Generador de señal triangular}{10}{}%
-\contentsline {subsection}{\numberline {3.5}Elección y diseño del \textit {Gate Driver}}{10}{}%
-\contentsline {subsection}{\numberline {3.6}}{10}{}%
-\contentsline {subsection}{\numberline {3.7}Implementación de circuito PWM (PCB)}{10}{}%
-\contentsline {subsubsection}{\numberline {3.7.1}Mediciones de la placa}{11}{}%
-\contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{12}{}%
-\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{16}{}%
-\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{16}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{19}{}%
-\contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{20}{}%
-\contentsline {subsection}{\numberline {A.1}Compensación nodo limitador de corriente}{20}{}%
-\contentsline {subsection}{\numberline {A.2}Medición: Variaciones en tensión de referencia}{20}{}%
-\contentsline {section}{\numberline {B}Apéndice II: PCB}{20}{}%
-\contentsline {subsection}{\numberline {B.1}Esquematico.}{20}{}%
-\contentsline {subsection}{\numberline {B.2}Pistas}{21}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Escalador de señal de salida}{9}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Alimentación del lazo y tensión de referencia}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.3}Generador de señal triangular}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.4}Amplificador de error y comparador PWM}{11}{}%
+\contentsline {subsection}{\numberline {3.5}Elección y diseño del \textit {Gate Driver}}{12}{}%
+\contentsline {subsection}{\numberline {3.6}Simulaciones del lazo de realimentación}{12}{}%
+\contentsline {subsection}{\numberline {3.7}Implementación de circuito PWM (PCB)}{14}{}%
+\contentsline {subsubsection}{\numberline {3.7.1}Mediciones de la placa}{14}{}%
+\contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{16}{}%
+\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{19}{}%
+\contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{20}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{22}{}%
+\contentsline {section}{\numberline {A}Apéndice I: PCB}{23}{}%
+\contentsline {subsection}{\numberline {A.1}Esquematico.}{23}{}%
+\contentsline {subsection}{\numberline {A.2}Pistas}{24}{}%
