@@ -1,0 +1,467 @@
+{
+    "version": "0.1",
+    "tikzSettings": {},
+    "components": [
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 321.26,
+                    "y": -415.748
+                },
+                {
+                    "x": 415.748,
+                    "y": -415.748
+                }
+            ],
+            "label": {
+                "value": "D"
+            },
+            "id": "full Schottky diode",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 368.503,
+                "y": -349.606
+            },
+            "size": {
+                "x": 56.693,
+                "y": 75.591
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 444.094,
+                    "y": -415.748
+                },
+                {
+                    "x": 444.094,
+                    "y": -340.157
+                }
+            ],
+            "label": {
+                "value": "C"
+            },
+            "id": "capacitor",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 415.748,
+                    "y": -415.748
+                },
+                {
+                    "x": 444.094,
+                    "y": -415.748
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                null
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 396.85,
+                    "y": -377.953
+                },
+                {
+                    "x": 415.748,
+                    "y": -415.748
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 396.85,
+                    "y": -321.26
+                },
+                {
+                    "x": 472.441,
+                    "y": -321.26
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 396.85,
+                    "y": -340.157
+                },
+                {
+                    "x": 444.094,
+                    "y": -340.157
+                },
+                {
+                    "x": 472.441,
+                    "y": -340.157
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|",
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 396.85,
+                    "y": -359.055
+                },
+                {
+                    "x": 472.441,
+                    "y": -359.055
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 415.748,
+                "y": -415.748
+            },
+            "id": "circ"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 444.094,
+                "y": -340.157
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 321.26,
+                    "y": -415.748
+                },
+                {
+                    "x": 321.26,
+                    "y": -368.504
+                },
+                {
+                    "x": 340.157,
+                    "y": -368.504
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|",
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -340.157
+                },
+                {
+                    "x": 292.913,
+                    "y": -340.157
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -321.26
+                },
+                {
+                    "x": 321.26,
+                    "y": -321.26
+                },
+                {
+                    "x": 321.26,
+                    "y": -311.812
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|",
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 321.26,
+                "y": -311.812
+            },
+            "id": "tlground"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "PWM",
+                "anchor": "east",
+                "position": "default"
+            },
+            "position": {
+                "x": 288.68,
+                "y": -340.157
+            },
+            "id": "trarrow"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "L_{ctrl}",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 472.441,
+                "y": -321.26
+            },
+            "id": "trarrow"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_s",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 472.441,
+                "y": -340.157
+            },
+            "id": "trarrow"
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "H_{ctrl}",
+                "anchor": "west",
+                "position": "default"
+            },
+            "position": {
+                "x": 472.441,
+                "y": -359.055
+            },
+            "id": "trarrow"
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 351.969,
+                "y": -368.504
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "$V_{cc}$",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 356.693,
+                "y": -321.26
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "GND",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 351.969,
+                "y": -340.157
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 16.535,
+                "y": 14.173
+            },
+            "text": {
+                "text": "IN",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 385.039,
+                "y": -377.953
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "$V_B$",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 385.039,
+                "y": -356.693
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "$H_o$",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 385.039,
+                "y": -321.26
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "$L_o$",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 385.039,
+                "y": -340.157
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 14.173,
+                "y": 14.173
+            },
+            "text": {
+                "text": "$V_s$",
+                "align": 1,
+                "justify": 0,
+                "fontSize": "footnotesize",
+                "showPlaceholderText": true
+            }
+        },
+        {
+            "type": "rect",
+            "position": {
+                "x": 363.78,
+                "y": -303.543
+            },
+            "stroke": {
+                "opacity": 0
+            },
+            "size": {
+                "x": 61.417,
+                "y": 21.26
+            },
+            "text": {
+                "text": "IR2111",
+                "showPlaceholderText": true
+            }
+        }
+    ]
+}

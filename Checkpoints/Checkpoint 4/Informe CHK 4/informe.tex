@@ -899,7 +899,9 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	
 	\subsubsection{Amplificador de error y comparador PWM}
 	
-			\begin{figure}[H]
+	Una vez diseñados los bloques que generan la señal triangular, la señal de sensado y la señal de referencia, se las deberá comparar para obtener una señal PWM modulada. Se colocan en serie un amplificador inversor, para amplificar el error al rango de la señal triangular, y luego se compara la salida con la señal triangular. El circuito final se ve en la figura \ref{fig:amp_error}.
+	
+	\begin{figure}[H]
 		\centering
 \begin{tikzpicture}[transform shape]
 	% Paths, nodes and wires:
@@ -920,8 +922,8 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	\node[circ] at (6.5, 8.49){};
 	\node[circ](N3) at (16, 7.5){} node[anchor=west] at ([xshift=-0.02cm]N3.text){$PWM$};
 	\node[inputarrow](N4) at (6.62, 7.51){} node[anchor=east] at ([xshift=-0.07cm]N4.text){$v_{med}$};
-	\node[inputarrow](N5) at (3.75, 8.5){} node[anchor=east] at ([xshift=-0.09cm]N5.text){$v_{sense}$};
-	\node[inputarrow](N6) at (11.75, 7.02){} node[anchor=east] at ([xshift=-0.07cm]N6.text){$v_{med}$};
+	\node[inputarrow](N5) at (3, 8.5){} node[anchor=east] at ([xshift=-0.09cm]N5.text){$v_{sense}$};
+	\node[inputarrow](N6) at (11.75, 7.02){} node[anchor=east] at ([xshift=-0.07cm]N6.text){$v_{triag}$};
 	\node[ground] at (7.727, 7.461){};
 	\node[ground] at (12.857, 6.971){};
 	\node[rground, xscale=-1, yscale=-1](N7) at (7.727, 8.539){} node[anchor=south] at ([yshift=0.32cm]N7.text){$V_{5V}$};
@@ -929,14 +931,76 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	\draw (15.25, 9.5) to[american resistor, l={$R_{pu}$}] (15.25, 7.5);
 	\node[rground, xscale=-1, yscale=-1](N9) at (15.25, 9.5){} node[anchor=south] at ([yshift=0.32cm]N9.text){$V_{5V}$};
 	\node[circ] at (15.25, 7.5){};
+	\draw (3.75, 7) to[empty ZZener diode, /tikz/circuitikz/bipoles/length=0.980cm, l={$D_1$}] (3.75, 8.5);
+	\draw (3, 8.5) -- (3.75, 8.5);
+	\node[circ] at (3.75, 8.5){};
+	\node[tlground] at (3.75, 7){};
 \end{tikzpicture}
-		\caption{Esquemático del generador de señal triangular.}
+		\caption{Esquemático del amplificador de error y comparador PWM.}
 		\label{fig:amp_error}
 	\end{figure}
 	
+	La elección de los valores sigue el siguiente criterio:
+	\begin{itemize}
+		\item Se coloca un diodo Zener con $V_z = \SI{5.2}{V}$ para proteger la entrada de sobrepicos de tensión ocasionados por el transitorio de la fuente switching, para proteger al lazo realimentador.
+		
+		\item Para el amplificador inversor, se busca que, para el rango de regulación máximo, el valor del error se encuentre justo en el límite del valor pico de la señal triangular. Se fija este rango como $\pm \SI{1}{V}$ respecto del valor de $V_o$ esperado. Para encontrar el valor de $A_v = R_2 / R_1$, se debe evaluar considerando el escalado:
+		
+		\begin{equation}
+			\SI{1.5}{V} \cdot escalado \cdot A_v = \SI{0.8}{V} \to A_v \approx 3.
+		\end{equation}
+		
+		Se fija, con este propósito, $R_1 = \SI{10}{\kilo\ohm}$ y $R_2 = \SI{33}{\kilo\ohm}$.
+		
+		\item Los resistores del comparador con histéresis cumplen la función de hacer la transición entre estados del PWM limpia, y por lo tanto la histéresis será muy pequeña y tendrá valor $R_3/R_4$. Se fijan valores $R_3 = \SI{1}{\kilo\ohm}$ y $R_4 = \SI{10}{\kilo\ohm}$ para una histéresis del 10\%. Debido a que el error estacionario debe ser 0, su valor no afecta en gran medida al consumo pasivo de corriente.
+		
+		\item El valor del resistor $R_{pu}$ se fija en $R_{pu} = \SI{10}{\kilo\ohm}$. De este modo la corriente de consumo pasivo será $\sim \SI{500}{\micro\ampere}$. Dado que la entrada del gate driver es de alta impedancia, este valor no es crítico para el funcionamiento.
+	\end{itemize}
+	
 	\subsection{Elección y diseño del \textit{Gate Driver}}
 	
-	\subsection{}
+	Para el manejo de los transistores de conmutación, se utiliza un \textit{gate driver} que asegure la conmutación de la fuente de forma segura. Dado que se trata de una fuente sincrónica, además de implementar un control por \textit{High-Side}, deberá tenerse en cuenta el tiempo muerto.
+	
+	Por simplicidad, se elige el driver \textbf{IR2111}. Este módulo tiene integrado ambos controles (\textit{High-Side} y \textit{Low-Side}), además del control del tiempo muerto.
+	
+	El circuito de control tiene la forma de la figura \ref{fig:gatedriver}.
+	
+	\begin{figure}[H]
+		\centering
+\begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\draw (8.5, 11) to[full Schottky diode, /tikz/circuitikz/bipoles/length=0.840cm, l={$D$}] (11, 11);
+	\node[shape=rectangle, draw, line width=1pt, minimum width=1.465cm, minimum height=1.965cm] at (9.75, 9.25){};
+	\draw (11.75, 11) to[capacitor, /tikz/circuitikz/bipoles/length=0.840cm, l={$C$}] (11.75, 9);
+	\draw (11, 11) -- (11.75, 11);
+	\draw (10.5, 10) -| (11, 11);
+	\draw (10.5, 8.5) -- (12.5, 8.5);
+	\draw (10.5, 9) -- (11.75, 9) -- (12.5, 9);
+	\draw (10.5, 9.5) -- (12.5, 9.5);
+	\node[circ] at (11, 11){};
+	\node[circ] at (11.75, 9){};
+	\draw (8.5, 11) -| (8.5, 9.75) -- (9, 9.75);
+	\draw (9, 9) -- (7.75, 9);
+	\draw (9, 8.5) -- (8.5, 8.5) -| (8.5, 8.25);
+	\node[tlground] at (8.5, 8.25){};
+	\node[trarrow](N1) at (7.638, 9){} node[anchor=east] at (N1.text){$PWM$};
+	\node[trarrow](N2) at (12.5, 8.5){} node[anchor=west] at (N2.text){$L_{ctrl}$};
+	\node[trarrow](N3) at (12.5, 9){} node[anchor=west] at (N3.text){$V_s$};
+	\node[trarrow](N4) at (12.5, 9.5){} node[anchor=west] at (N4.text){$H_{ctrl}$};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (9.063, 9.75){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (9.063, 9.75){\small $V_{cc}$};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (9.062, 8.5){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (9.062, 8.5){\small GND};
+	\node[shape=rectangle, minimum width=0.402cm, minimum height=0.34cm] at (9.125, 9){} node[anchor=center, align=center, text width=0.014cm, inner sep=6pt] at (9.125, 9){\small IN};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9.937){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9.937){\small $V_B$};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9.437){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9.437){\small $H_o$};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 8.5){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 8.5){\small $L_o$};
+	\node[shape=rectangle, minimum width=0.34cm, minimum height=0.34cm] at (10, 9){} node[anchor=center, align=center, text width=-0.048cm, inner sep=6pt] at (10, 9){\small $V_s$};
+	\node[shape=rectangle, minimum width=1.59cm, minimum height=0.527cm] at (9.625, 8.031){} node[anchor=north west, align=left, text width=1.202cm, inner sep=6pt] at (8.813, 8.312){IR2111};
+\end{tikzpicture}
+		\caption{Esquemático del \textit{gate-driver}.}
+		\label{fig:gatedriver}
+	\end{figure}
+	
+	\subsection{Simulaciones del lazo de realimentación}
 	
 	\subsection{Implementación de circuito PWM (PCB)}
 	
@@ -957,7 +1021,7 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 		\caption{Placa terminada y montada.}
 		\label{fig:pcbpwmplaca}
 	\end{figure}
-
+	
 	
 	\subsubsection{Mediciones de la placa}
 	
