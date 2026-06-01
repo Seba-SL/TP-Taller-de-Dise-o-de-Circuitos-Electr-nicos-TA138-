@@ -1,0 +1,197 @@
+{
+    "version": "0.1",
+    "tikzSettings": {},
+    "components": [
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -302.362
+                },
+                {
+                    "x": 302.362,
+                    "y": -226.772
+                }
+            ],
+            "label": {
+                "value": "R_1"
+            },
+            "id": "american resistor",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -302.362
+                },
+                {
+                    "x": 340.157,
+                    "y": -226.772
+                }
+            ],
+            "label": {
+                "value": "R_2"
+            },
+            "id": "american resistor",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -226.772
+                },
+                {
+                    "x": 302.362,
+                    "y": -170.079
+                }
+            ],
+            "label": {
+                "value": "R_3"
+            },
+            "id": "american resistor",
+            "scale": {
+                "x": 0.6,
+                "y": 0.6
+            }
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 302.362,
+                "y": -170.079
+            },
+            "id": "ground"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -226.772
+                },
+                {
+                    "x": 340.157,
+                    "y": -226.772
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 340.157,
+                    "y": -302.362
+                },
+                {
+                    "x": 302.362,
+                    "y": -302.362
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -302.362
+                },
+                {
+                    "x": 302.362,
+                    "y": -321.26
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "V_o",
+                "anchor": "south",
+                "position": "default"
+            },
+            "position": {
+                "x": 302.362,
+                "y": -321.26
+            },
+            "id": "circ"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 302.362,
+                "y": -302.362
+            },
+            "id": "circ"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 302.362,
+                "y": -226.772
+            },
+            "id": "circ"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 302.362,
+                    "y": -226.772
+                },
+                {
+                    "x": 264.567,
+                    "y": -226.772
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "label": {
+                "value": "v_{sense}",
+                "anchor": "east",
+                "position": "default",
+                "distance": "0.42cm"
+            },
+            "position": {
+                "x": 264.567,
+                "y": -226.772
+            },
+            "rotation": -180,
+            "id": "flowarrow"
+        }
+    ]
+}

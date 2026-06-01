@@ -1,6 +1,6 @@
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\ramaz\Desktop\Circuitos II\TP-TA138-G7\Simulación\BUCK\pwm.asc
-Start Time: Fri May 29 19:55:00 2026
+Start Time: Sun May 31 19:04:44 2026
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -34,5 +34,5 @@ Gmin = 5.50104
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
-Total elapsed time: 6.863 seconds.
+Total elapsed time: 2.366 seconds.
 
