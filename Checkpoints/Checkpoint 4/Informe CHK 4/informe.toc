@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {3.7}Implementación de circuito PWM (PCB)}{10}{}%
 \contentsline {subsubsection}{\numberline {3.7.1}Mediciones de la placa}{11}{}%
 \contentsline {subsection}{\numberline {3.8}Características físicas del inductor diseñado}{12}{}%
-\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{15}{}%
+\contentsline {subsection}{\numberline {3.9}Diseño PCB de la buck en lazo abierto}{16}{}%
 \contentsline {subsection}{\numberline {3.10}Diseño PCB Completo}{16}{}%
 \contentsline {section}{\numberline {4}Conclusiones}{19}{}%
 \contentsline {section}{\numberline {A}Apéndice I: Etapa Previa}{20}{}%
