@@ -655,7 +655,24 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	\subsection{Diseño verificado por simulación de la fuente buck a lazo abierto}
 	
 	
-	Se simuló mediante el software Ltspice utilizando el esquematico del anexo \ref{} el comportamiento del circuito utilizando los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores.
+	Se simuló mediante el software Ltspice el comportamiento del circuito utilizando el esquematico de la captura \ref{fig:simulacionbucklazoabierto} y los diferentes modelos de componentes a lazo abierto, es decir sin utilizar la realimentación para el control de los transistores si no un generador de pruebas en el transistor que implementaría el $t_{on}$ y un diodo de rapida conmutación en reemplazo del transistor de tiempo $t_{off}$ . 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/simulacion_buck_lazo_abierto}
+		\caption{Captura esquemático de simulación en ltspice de circuito \textit{buck} a lazo abierto.}
+		\label{fig:simulacionbucklazoabierto}
+	\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../../Simulación/BUCK/Datos/regulador_buck_Lazo_abierto}
+	\caption{}
+	\label{fig:reguladorbucklazoabierto}
+\end{figure}
+
+	
 	
 	\subsection{Diseño del lazo realimentador}
 	
@@ -925,16 +942,46 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	
 	
 	
-	Se implementa el circuito en placa impresa. Notar que se deja espacio para el cálculo e implementación de la compensación del lazo realimentador (ver $C_4$ y $C_2$ en la figura \ref{sec:apendice_PCB}), para el futuro cierre del lazo.
+	Se implementa el circuito en placa impresa. Notar que se deja espacio para el cálculo e implementación de la compensación del lazo realimentador (ver $C_4$ y $C_2$ en la figura \ref{sec:apendice_PCB}), para el futuro cierre del lazo. Se realizo un diseño simple faz a modo prototipo con ciertas conexiones cableadas en la capa superior y \textit{jumpers} para testeo como se aprecia en la figura \ref{fig:pwmpcb}, luego se implemento mediante transferencia térmica y corrosión de cobre sobrante de la placa con el uso de percloruro férrico obteniendo la placa Fig. \ref{fig:pcbpwmplaca}.
 		
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/buck/pwm_pcb}
-		\caption{}
+		\caption{Modelo 3D del PWM en circuito impreso.}
 		\label{fig:pwmpcb}
 	\end{figure}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/pcb_pwm_placa}
+		\caption{Placa terminada y montada.}
+		\label{fig:pcbpwmplaca}
+	\end{figure}
 
+	
+	\subsubsection{Mediciones de la placa}
+	
+	
+	Ya en el laboratorio se verifico el funcionamiento del PWM, alimentando el circuito con fuentes de laboratorio y utilizando un osciloscopio para observar y medir la señal como se puede ver en la figura \ref{fig:bancopruebaspwm}. Para verificar la modulación del ancho de pulso se coloco una fuente a la terminal de muestreo y se vario la tensión levemente.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/banco_pruebas_pwm}
+		\caption{Banco de pruebas.}
+		\label{fig:bancopruebaspwm}
+	\end{figure}
+
+	
+	Se puede observar la señal triangular y el pulso modulado en la figura \ref{fig:capturasoscpwm}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/buck/capturas_osc_pwm}
+		\caption{Capturas del osciloscopio midiendo el pulso modulado y la señal triangular del oscilador.}
+		\label{fig:capturasoscpwm}
+	\end{figure}
+	
+	
 		
 	\subsection{Características físicas del inductor diseñado}
 	
@@ -1033,12 +1080,16 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 	
 	\subsection{Diseño PCB de la buck en lazo abierto}
 	
+	Se diseño el circuito \textit{buck} de forma que se pueda utilizar a lazo abierto modularizando la placa, en la figura \ref{fig:bucksolopcb} se puede observar el modelo en tres dimensiones del sector de la placa correspondiente al circuito \textit{buck}. 
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/buck/buck_solo_pcb}
-		\caption{}
+		\caption{Diseño del PCB del circuito buck.}
 		\label{fig:bucksolopcb}
 	\end{figure}
+	
+	
 	
 	
 	\subsection{Diseño PCB Completo}
@@ -1050,6 +1101,14 @@ Por lo tanto el periodo de oscilación tiene que ser como mínimo T $ \geq   100
 		\label{fig:pcbfrente}
 	\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/buck/pcb_BUCK}
+	\caption{}
+	\label{fig:pcbbuck}
+\end{figure}
+
+	
 \begin{table}[H]
 	\centering
 	\caption{Estadísticas de la PCB}
